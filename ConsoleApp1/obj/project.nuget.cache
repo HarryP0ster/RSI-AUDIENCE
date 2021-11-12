@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "33bX3FzZhr/yqY9h/6cBgNd7y8HPO0oDXycgu4BbE0KjHzLv28AJtTAKaGjlfpHy1nq7VCQO8VmaW8VgO4+Svg==",
+  "success": true,
+  "projectFilePath": "C:\\RSI_AUDIENCE\\ConsoleApp1\\appIn.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.1-beta1\\newtonsoft.json.13.0.1-beta1.nupkg.sha512"
+  ],
+  "logs": []
+}

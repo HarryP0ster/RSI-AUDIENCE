@@ -1,0 +1,374 @@
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appIn.exe
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appOut.exe
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bassmix.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\basswasapi.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass_fx.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass_vst.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass_wadsp.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassalac.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basscd.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassdsd.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassenc.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassenc_ogg.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassenc_opus.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassflac.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basshls.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassmidi.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassopus.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basswma.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basswv.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basszxtune.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_aac.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_ac3.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_adx.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_ape.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_mpc.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_ofr.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_spx.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_tta.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_winamp.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\OptimFROG.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\tags.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bass.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bassmix.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\basswasapi.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bass_fx.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bass_vst.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassalac.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basscd.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassdsd.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassenc.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassenc_ogg.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassenc_opus.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassflac.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basshls.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassmidi.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassopus.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basswma.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basswv.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basszxtune.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_aac.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_ac3.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_ape.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_mpc.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_ofr.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_spx.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_tta.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\OptimFROG.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\tags.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bassasio.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bassasio.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.exe
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Program.cs
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agora_rtc_sdk.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agora_rtc_sdk.lib
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\bass.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Bass.Net.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\bassasio.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\iris.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-fdkaac.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-ffmpeg.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-mpg123.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-soundtouch.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libhwcodec.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.deps.json
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.runtimeconfig.json
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.runtimeconfig.dev.json
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ref\RSI X Desktop.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.pdb
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Firebase.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\LiteDB.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ManagedBass.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ManagedBass.Asio.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\MaterialSkin.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ReaLTaiizor.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\SocketIOClient.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\SocketIOClient.Newtonsoft.Json.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\System.Reactive.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\System.Text.Json.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agorartc.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appIn.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appOut.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agorartc.pdb
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appIn.pdb
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appOut.pdb
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Bass.Net.xml
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csprojAssemblyReference.cache
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.Broadcaster.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.ChatWnd.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.DevicesForm.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.DumpForm.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.HelpingClass.DBTest.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.Ingestor.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.LangSelectDlg.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.MainForm.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.NewDevices.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.ScreenSharing.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.Spectator.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.TransLater.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.Xtractor.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.Properties.Resources.resources
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csproj.GenerateResource.cache
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).GeneratedMSBuildEditorConfig.editorconfig
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).AssemblyInfoInputs.cache
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).AssemblyInfo.cs
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csproj.CoreCompileInputs.cache
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csproj.CopyComplete
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Desktop.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\ref\RSI X Desktop.dll
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Desktop.pdb
+C:\RSI_INTER\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).genruntimeconfig.cache
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appIn.exe
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appOut.exe
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bassmix.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\basswasapi.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass_fx.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass_vst.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass_wadsp.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassalac.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basscd.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassdsd.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassenc.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassenc_ogg.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassenc_opus.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassflac.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basshls.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassmidi.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassopus.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basswma.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basswv.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basszxtune.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_aac.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_ac3.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_adx.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_ape.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_mpc.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_ofr.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_spx.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_tta.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_winamp.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\OptimFROG.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\tags.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bass.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bassmix.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\basswasapi.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bass_fx.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bass_vst.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassalac.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basscd.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassdsd.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassenc.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassenc_ogg.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassenc_opus.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassflac.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basshls.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassmidi.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassopus.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basswma.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basswv.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basszxtune.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_aac.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_ac3.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_ape.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_mpc.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_ofr.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_spx.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_tta.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\OptimFROG.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\tags.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bassasio.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bassasio.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.exe
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Program.cs
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agora_rtc_sdk.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agora_rtc_sdk.lib
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\bass.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Bass.Net.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\bassasio.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\iris.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-fdkaac.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-ffmpeg.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-mpg123.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-soundtouch.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libhwcodec.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.deps.json
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.runtimeconfig.json
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.runtimeconfig.dev.json
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ref\RSI X Desktop.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.pdb
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Firebase.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\LiteDB.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ManagedBass.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ManagedBass.Asio.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\MaterialSkin.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ReaLTaiizor.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\SocketIOClient.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\SocketIOClient.Newtonsoft.Json.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\System.Reactive.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\System.Text.Json.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agorartc.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appIn.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appOut.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agorartc.pdb
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appIn.pdb
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appOut.pdb
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Bass.Net.xml
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csprojAssemblyReference.cache
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.Broadcaster.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.ChatWnd.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.DevicesForm.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.DumpForm.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.HelpingClass.DBTest.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.Ingestor.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.LangSelectDlg.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.MainForm.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.NewDevices.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.ScreenSharing.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.Spectator.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.TransLater.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.Xtractor.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.Properties.Resources.resources
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csproj.GenerateResource.cache
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).GeneratedMSBuildEditorConfig.editorconfig
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).AssemblyInfoInputs.cache
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).AssemblyInfo.cs
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csproj.CoreCompileInputs.cache
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csproj.CopyComplete
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Desktop.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\ref\RSI X Desktop.dll
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Desktop.pdb
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).genruntimeconfig.cache
+C:\RSI_AUD\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.Audience.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bassmix.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\basswasapi.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass_fx.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass_vst.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bass_wadsp.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassalac.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basscd.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassdsd.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassenc.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassenc_ogg.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassenc_opus.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassflac.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basshls.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassmidi.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bassopus.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basswma.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basswv.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\basszxtune.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_aac.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_ac3.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_adx.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_ape.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_mpc.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_ofr.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_spx.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_tta.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\bass_winamp.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\OptimFROG.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\Addon\tags.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bass.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bassmix.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\basswasapi.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bass_fx.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bass_vst.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassalac.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basscd.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassdsd.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassenc.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassenc_ogg.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassenc_opus.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassflac.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basshls.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassmidi.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bassopus.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basswma.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basswv.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\basszxtune.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_aac.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_ac3.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_ape.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_mpc.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_ofr.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_spx.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\bass_tta.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\OptimFROG.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\Addon\tags.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x86\bassasio.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\x64\bassasio.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appIn.exe
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appOut.exe
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.exe
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Program.cs
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agora_rtc_sdk.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agora_rtc_sdk.lib
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\bass.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Bass.Net.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\bassasio.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\iris.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-fdkaac.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-ffmpeg.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-mpg123.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libagora-soundtouch.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\libhwcodec.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.deps.json
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.runtimeconfig.json
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.runtimeconfig.dev.json
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ref\RSI X Desktop.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\RSI X Desktop.pdb
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Firebase.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\LiteDB.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ManagedBass.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ManagedBass.Asio.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\MaterialSkin.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\ReaLTaiizor.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\SocketIOClient.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\SocketIOClient.Newtonsoft.Json.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\System.Reactive.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\System.Text.Json.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agorartc.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appIn.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appOut.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\agorartc.pdb
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appIn.pdb
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\appOut.pdb
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\bin\Debug\net5.0-windows\Bass.Net.xml
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csprojAssemblyReference.cache
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.Audience.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.Broadcaster.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.ChatWnd.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.DevicesForm.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.DumpForm.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.HelpingClass.DBTest.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.Ingestor.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.LangSelectDlg.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.MainForm.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.NewDevices.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.ScreenSharing.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.Spectator.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.TransLater.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.forms.Xtractor.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI_X_Desktop.Properties.Resources.resources
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csproj.GenerateResource.cache
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).GeneratedMSBuildEditorConfig.editorconfig
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).AssemblyInfoInputs.cache
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).AssemblyInfo.cs
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csproj.CoreCompileInputs.cache
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).csproj.CopyComplete
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Desktop.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\ref\RSI X Desktop.dll
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Desktop.pdb
+C:\RSI_AUDIENCE\RSI X Technical ToolKit (beta)\obj\Debug\net5.0-windows\RSI X Technical ToolKit (beta).genruntimeconfig.cache
