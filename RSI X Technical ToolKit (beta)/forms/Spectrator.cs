@@ -111,7 +111,7 @@ namespace RSI_X_Desktop
             //Выпадающий список языков
             if (!IsOriginal)
             {
-                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
+                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex);
                 AgoraObject.JoinChannelSrc(InterRoom);
             }
         }
@@ -262,6 +262,11 @@ namespace RSI_X_Desktop
             path.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
 
             tableLayoutPanel1.Region = new Region(path);
+        }
+
+        private void mSwitchOriginal_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

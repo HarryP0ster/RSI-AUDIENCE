@@ -28,6 +28,8 @@ namespace RSI_X_Desktop
         public static bool IsLocalVideoMute { get; private set; }
 
         public static bool IsAllRemoteAudioMute { get; private set; }
+        public static bool IsHostAudioMute { get; private set; }
+        public static bool IsSrcAudioMute { get; private set; }
         public static bool IsAllRemoteVideoMute { get; private set; }
 
         public static bool IsAllTransLatersAudioMute { get; private set; }
@@ -165,6 +167,20 @@ namespace RSI_X_Desktop
             m_channelTransl?.MuteAllRemoteAudioStreams(mute);
 
             IsAllTransLatersAudioMute = m_channelTransl != null &&
+                                        mute;
+        }
+        static public void MuteHostAudioStream(bool mute)
+        {
+            m_channelHost?.MuteAllRemoteAudioStreams(mute);
+
+            IsHostAudioMute = m_channelHost != null &&
+                                        mute;
+        }
+        static public void MuteSrcAudioStream(bool mute)
+        {
+            m_channelSrc?.MuteAllRemoteAudioStreams(mute);
+
+            IsSrcAudioMute = m_channelSrc != null &&
                                         mute;
         }
         #endregion

@@ -51,12 +51,10 @@ namespace RSI_X_Desktop
             foreach (string lang in TarLang)
             {
                 // only EN_S_###
-                if (lang[3] == 'S') continue;
-                int Index = lang.IndexOf("_");
-                string lang_short = lang.Remove(Index, lang.Length - Index);
+                if (lang.Split('_')[1] != "S") continue;
+                string lang_short = lang.Split('_')[0];
                 langBox.Items.Add(lang_short);
             }
-            //langBox.Items.RemoveAt(0);
             langBox.SelectedIndex = 0;
         }
 
@@ -128,8 +126,9 @@ namespace RSI_X_Desktop
             //Выпадающий список языков
             if (!IsOriginal)
             {
-                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex);
+                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
                 bool ret = AgoraObject.JoinChannelSrc(InterRoom);
+                AgoraObject.MuteSrcAudioStream(false);
             }
         }
 
@@ -138,17 +137,21 @@ namespace RSI_X_Desktop
             //Включение оригинальной дорожки (floor)
             if (IsOriginal)
             {
-                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex);
+                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
                 AgoraObject.JoinChannelSrc(InterRoom);
+                AgoraObject.MuteHostAudioStream(true);
+                AgoraObject.MuteSrcAudioStream(false);
                 mSwitchOriginal.Checked = false;
             }
             else
             {
-                AgoraObject.LeaveSrcChannel();
+                //AgoraObject.LeaveSrcChannel();
                 if (ChToken == string.Empty)
                     AgoraObject.JoinChannelHost(AgoraObject.GetHostName(), AgoraObject.GetHostToken(), 0, "");
                 else
                     AgoraObject.JoinChannelHost(HostName, ChToken, 0, "");
+                AgoraObject.MuteHostAudioStream(false);
+                AgoraObject.MuteSrcAudioStream(true);
                 mSwitchOriginal.Checked = true;
             }
             langBox.Enabled = IsOriginal;

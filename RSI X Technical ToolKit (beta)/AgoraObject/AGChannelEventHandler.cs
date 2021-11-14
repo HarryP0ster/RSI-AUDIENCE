@@ -326,6 +326,7 @@ namespace RSI_X_Desktop
                     AgoraObject.Rtc.SetupRemoteVideo(canv);
                     break;
                 case CHANNEL_TYPE.CHANNEL_SRC:
+                    break;
                 default:
                     break;
             }

@@ -57,17 +57,17 @@ namespace RSI_X_Desktop
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox8, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1297, 80);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1482, 107);
             this.tableLayoutPanel1.TabIndex = 35;
             // 
             // pictureBox8
@@ -75,10 +75,10 @@ namespace RSI_X_Desktop
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox8.Location = new System.Drawing.Point(5, 3);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.pictureBox8.Location = new System.Drawing.Point(6, 4);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(107, 74);
+            this.pictureBox8.Size = new System.Drawing.Size(122, 99);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 35;
             this.pictureBox8.TabStop = false;
@@ -90,10 +90,10 @@ namespace RSI_X_Desktop
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(122, 28);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label9.Location = new System.Drawing.Point(140, 39);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(200, 24);
+            this.label9.Size = new System.Drawing.Size(248, 29);
             this.label9.TabIndex = 36;
             this.label9.Text = "Name of conference";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -102,16 +102,16 @@ namespace RSI_X_Desktop
             // 
             this.tableLayoutPanel3.AutoSize = true;
             this.tableLayoutPanel3.ColumnCount = 10;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel3.Controls.Add(this.langBox, 7, 0);
             this.tableLayoutPanel3.Controls.Add(this.pictureBoxMuteVideo, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.pictureBoxFullscreen, 9, 0);
@@ -121,12 +121,12 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.Controls.Add(this.button1, 5, 0);
             this.tableLayoutPanel3.Controls.Add(this.mSwitchOriginal, 6, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 550);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 733);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1297, 38);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1482, 51);
             this.tableLayoutPanel3.TabIndex = 37;
             // 
             // langBox
@@ -136,10 +136,10 @@ namespace RSI_X_Desktop
             this.langBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.langBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.langBox.FormattingEnabled = true;
-            this.langBox.Location = new System.Drawing.Point(1154, 4);
-            this.langBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.langBox.Location = new System.Drawing.Point(1319, 7);
+            this.langBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.langBox.Name = "langBox";
-            this.langBox.Size = new System.Drawing.Size(55, 29);
+            this.langBox.Size = new System.Drawing.Size(62, 36);
             this.langBox.TabIndex = 36;
             this.langBox.SelectedIndexChanged += new System.EventHandler(this.langBox_SelectedIndexChanged);
             // 
@@ -147,10 +147,10 @@ namespace RSI_X_Desktop
             // 
             this.pictureBoxMuteVideo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxMuteVideo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxMuteVideo.Location = new System.Drawing.Point(4, 3);
-            this.pictureBoxMuteVideo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxMuteVideo.Location = new System.Drawing.Point(5, 4);
+            this.pictureBoxMuteVideo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pictureBoxMuteVideo.Name = "pictureBoxMuteVideo";
-            this.pictureBoxMuteVideo.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxMuteVideo.Size = new System.Drawing.Size(36, 43);
             this.pictureBoxMuteVideo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxMuteVideo.TabIndex = 1;
             this.pictureBoxMuteVideo.TabStop = false;
@@ -160,10 +160,10 @@ namespace RSI_X_Desktop
             // 
             this.pictureBoxFullscreen.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxFullscreen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxFullscreen.Location = new System.Drawing.Point(1261, 3);
-            this.pictureBoxFullscreen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxFullscreen.Location = new System.Drawing.Point(1441, 4);
+            this.pictureBoxFullscreen.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pictureBoxFullscreen.Name = "pictureBoxFullscreen";
-            this.pictureBoxFullscreen.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxFullscreen.Size = new System.Drawing.Size(36, 43);
             this.pictureBoxFullscreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFullscreen.TabIndex = 2;
             this.pictureBoxFullscreen.TabStop = false;
@@ -173,10 +173,10 @@ namespace RSI_X_Desktop
             // 
             this.pictureBoxSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSettings.Location = new System.Drawing.Point(1221, 3);
-            this.pictureBoxSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxSettings.Location = new System.Drawing.Point(1395, 4);
+            this.pictureBoxSettings.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pictureBoxSettings.Name = "pictureBoxSettings";
-            this.pictureBoxSettings.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxSettings.Size = new System.Drawing.Size(36, 43);
             this.pictureBoxSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSettings.TabIndex = 3;
             this.pictureBoxSettings.TabStop = false;
@@ -186,10 +186,10 @@ namespace RSI_X_Desktop
             // 
             this.pictureBoxAudioVolumeStatus.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBoxAudioVolumeStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxAudioVolumeStatus.Location = new System.Drawing.Point(44, 3);
-            this.pictureBoxAudioVolumeStatus.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxAudioVolumeStatus.Location = new System.Drawing.Point(51, 4);
+            this.pictureBoxAudioVolumeStatus.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pictureBoxAudioVolumeStatus.Name = "pictureBoxAudioVolumeStatus";
-            this.pictureBoxAudioVolumeStatus.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxAudioVolumeStatus.Size = new System.Drawing.Size(36, 43);
             this.pictureBoxAudioVolumeStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxAudioVolumeStatus.TabIndex = 38;
             this.pictureBoxAudioVolumeStatus.TabStop = false;
@@ -200,11 +200,11 @@ namespace RSI_X_Desktop
             this.trackBarVolumeBar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.trackBarVolumeBar.AutoSize = false;
             this.trackBarVolumeBar.BackColor = System.Drawing.SystemColors.Control;
-            this.trackBarVolumeBar.Location = new System.Drawing.Point(84, 6);
-            this.trackBarVolumeBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.trackBarVolumeBar.Location = new System.Drawing.Point(97, 9);
+            this.trackBarVolumeBar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.trackBarVolumeBar.Maximum = 100;
             this.trackBarVolumeBar.Name = "trackBarVolumeBar";
-            this.trackBarVolumeBar.Size = new System.Drawing.Size(92, 25);
+            this.trackBarVolumeBar.Size = new System.Drawing.Size(104, 33);
             this.trackBarVolumeBar.TabIndex = 37;
             this.trackBarVolumeBar.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBarVolumeBar.Value = 100;
@@ -218,9 +218,10 @@ namespace RSI_X_Desktop
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(626, 3);
+            this.button1.Location = new System.Drawing.Point(724, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 31);
+            this.button1.Size = new System.Drawing.Size(107, 41);
             this.button1.TabIndex = 39;
             this.button1.Text = "Sign off";
             this.button1.UseVisualStyleBackColor = false;
@@ -230,7 +231,7 @@ namespace RSI_X_Desktop
             // 
             this.mSwitchOriginal.AutoSize = true;
             this.mSwitchOriginal.Depth = 0;
-            this.mSwitchOriginal.Location = new System.Drawing.Point(1026, 0);
+            this.mSwitchOriginal.Location = new System.Drawing.Point(1189, 0);
             this.mSwitchOriginal.Margin = new System.Windows.Forms.Padding(0);
             this.mSwitchOriginal.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mSwitchOriginal.MouseState = MaterialSkin.MouseState.HOVER;
@@ -240,6 +241,7 @@ namespace RSI_X_Desktop
             this.mSwitchOriginal.TabIndex = 40;
             this.mSwitchOriginal.Text = "Original  ";
             this.mSwitchOriginal.UseVisualStyleBackColor = true;
+            this.mSwitchOriginal.CheckedChanged += new System.EventHandler(this.mSwitchOriginal_CheckedChanged);
             // 
             // pictureBoxRemoteVideo
             // 
@@ -247,23 +249,23 @@ namespace RSI_X_Desktop
             this.pictureBoxRemoteVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBoxRemoteVideo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxRemoteVideo.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxRemoteVideo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 200);
+            this.pictureBoxRemoteVideo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 267);
             this.pictureBoxRemoteVideo.Name = "pictureBoxRemoteVideo";
-            this.pictureBoxRemoteVideo.Size = new System.Drawing.Size(1297, 588);
+            this.pictureBoxRemoteVideo.Size = new System.Drawing.Size(1482, 784);
             this.pictureBoxRemoteVideo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxRemoteVideo.TabIndex = 39;
             this.pictureBoxRemoteVideo.TabStop = false;
             // 
             // Spectator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1297, 588);
+            this.ClientSize = new System.Drawing.Size(1482, 784);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.pictureBoxRemoteVideo);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MinimumSize = new System.Drawing.Size(802, 548);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.MinimumSize = new System.Drawing.Size(914, 715);
             this.Name = "Spectator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RSI X Desktop Audience";
