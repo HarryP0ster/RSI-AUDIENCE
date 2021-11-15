@@ -42,13 +42,13 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.mSwitchOriginal = new MaterialSkin.Controls.MaterialSwitch();
             this.labelVideo = new System.Windows.Forms.Label();
-            this.labelMicrophone = new System.Windows.Forms.Label();
+            this.labelAudio = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.trackBar1 = new ReaLTaiizor.Controls.DungeonTrackBar();
             this.labelVolume = new System.Windows.Forms.Label();
             this.langBox = new MaterialSkin.Controls.MaterialComboBox();
             this.RemotePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxRemoteVideo = new System.Windows.Forms.PictureBox();
+            this.PBRemoteVideo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new ReaLTaiizor.Controls.Button();
@@ -60,7 +60,7 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.RemotePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRemoteVideo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBRemoteVideo)).BeginInit();
             this.SuspendLayout();
             // 
             // FormAudience
@@ -240,7 +240,7 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.Controls.Add(this.mSwitchOriginal, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelVideo, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.labelMicrophone, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.labelAudio, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.langBox, 5, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -285,21 +285,21 @@ namespace RSI_X_Desktop
             this.labelVideo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelVideo.Click += new System.EventHandler(this.labelVideo_Click);
             // 
-            // labelMicrophone
+            // labelAudio
             // 
-            this.labelMicrophone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelMicrophone.AutoSize = true;
-            this.labelMicrophone.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelMicrophone.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMicrophone.ForeColor = System.Drawing.Color.White;
-            this.labelMicrophone.Location = new System.Drawing.Point(89, 20);
-            this.labelMicrophone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelMicrophone.Name = "labelMicrophone";
-            this.labelMicrophone.Size = new System.Drawing.Size(77, 29);
-            this.labelMicrophone.TabIndex = 18;
-            this.labelMicrophone.Text = "AUDIO";
-            this.labelMicrophone.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelMicrophone.Click += new System.EventHandler(this.labelMicrophone_Click);
+            this.labelAudio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelAudio.AutoSize = true;
+            this.labelAudio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelAudio.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAudio.ForeColor = System.Drawing.Color.White;
+            this.labelAudio.Location = new System.Drawing.Point(89, 20);
+            this.labelAudio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelAudio.Name = "labelAudio";
+            this.labelAudio.Size = new System.Drawing.Size(77, 29);
+            this.labelAudio.TabIndex = 18;
+            this.labelAudio.Text = "AUDIO";
+            this.labelAudio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAudio.Click += new System.EventHandler(this.labelMicrophone_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -394,7 +394,7 @@ namespace RSI_X_Desktop
             this.RemotePanel.ColumnCount = 2;
             this.RemotePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.58074F));
             this.RemotePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.41926F));
-            this.RemotePanel.Controls.Add(this.pictureBoxRemoteVideo, 0, 0);
+            this.RemotePanel.Controls.Add(this.PBRemoteVideo, 0, 0);
             this.RemotePanel.Controls.Add(this.panel1, 1, 0);
             this.RemotePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RemotePanel.Location = new System.Drawing.Point(3, 77);
@@ -404,17 +404,17 @@ namespace RSI_X_Desktop
             this.RemotePanel.Size = new System.Drawing.Size(1268, 589);
             this.RemotePanel.TabIndex = 3;
             // 
-            // pictureBoxRemoteVideo
+            // PBRemoteVideo
             // 
-            this.pictureBoxRemoteVideo.BackColor = System.Drawing.Color.Silver;
-            this.pictureBoxRemoteVideo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxRemoteVideo.BackgroundImage")));
-            this.pictureBoxRemoteVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxRemoteVideo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxRemoteVideo.Location = new System.Drawing.Point(3, 3);
-            this.pictureBoxRemoteVideo.Name = "pictureBoxRemoteVideo";
-            this.pictureBoxRemoteVideo.Size = new System.Drawing.Size(1053, 583);
-            this.pictureBoxRemoteVideo.TabIndex = 0;
-            this.pictureBoxRemoteVideo.TabStop = false;
+            this.PBRemoteVideo.BackColor = System.Drawing.Color.Silver;
+            this.PBRemoteVideo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBRemoteVideo.BackgroundImage")));
+            this.PBRemoteVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PBRemoteVideo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PBRemoteVideo.Location = new System.Drawing.Point(3, 3);
+            this.PBRemoteVideo.Name = "PBRemoteVideo";
+            this.PBRemoteVideo.Size = new System.Drawing.Size(1053, 583);
+            this.PBRemoteVideo.TabIndex = 0;
+            this.PBRemoteVideo.TabStop = false;
             // 
             // panel1
             // 
@@ -496,7 +496,7 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.RemotePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRemoteVideo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBRemoteVideo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -504,13 +504,13 @@ namespace RSI_X_Desktop
         #endregion
 
         private ReaLTaiizor.Forms.FormTheme FormAudience;
-        private System.Windows.Forms.PictureBox pictureBoxRemoteVideo;
+        private System.Windows.Forms.PictureBox PBRemoteVideo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox PictureBoxLogo;
         private ReaLTaiizor.Controls.SkyLabel RoomNameLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label labelMicrophone;
+        private System.Windows.Forms.Label labelAudio;
         private System.Windows.Forms.Label labelVideo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;

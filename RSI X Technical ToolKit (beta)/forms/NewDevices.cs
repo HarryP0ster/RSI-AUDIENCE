@@ -222,10 +222,6 @@ namespace RSI_X_Desktop.forms
         {
             if (AgoraObject.CurrentForm != CurForm.FormAudience)
             {
-                AgoraObject.Rtc.EnableLocalVideo(false);
-                TransLater TransForm = AgoraObject.GetTranslatorForm();
-                if (TransForm != null)
-                    TransForm.SetLocalVideoPreview();
                 Dispose();
             }
         }
@@ -274,14 +270,6 @@ namespace RSI_X_Desktop.forms
 
         internal void CloseButton_Click(object sender, EventArgs e)
         {
-            if (AgoraObject.CurrentForm != CurForm.FormAudience)
-            {
-                TransLater TransForm = AgoraObject.GetTranslatorForm();
-                if (TransForm != null)
-                {
-                    TransForm.DevicesClosed(this);
-                }
-            }
             Close();
         }
 

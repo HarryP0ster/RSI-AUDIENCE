@@ -46,12 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="forms\TranslatorWnd.resx" />
     <EmbeddedResource Remove="X-tractor.resx" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="forms\TranslatorWnd.resx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -67,8 +62,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\agorartc\agorartc\agorartc\agorartc.csproj" />
-    <ProjectReference Include="..\ConsoleApp1\appIn.csproj" />
-    <ProjectReference Include="..\ConsoleOutput\appOut.csproj" />
   </ItemGroup>
 
   <ItemGroup>

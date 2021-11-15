@@ -71,13 +71,13 @@ namespace RSI_X_Desktop
             AgoraObject.SetWndEventHandler(this);
 
             //pictureBoxRemoteVideo.Width = this.Width;
-            RemoteWnd = pictureBoxRemoteVideo.Handle;
+            RemoteWnd = PBRemoteVideo.Handle;
             UpdateLangComboBox();
 
             mSwitchOriginal.Checked = true;
 
-            pictureBoxRemoteVideo.Invalidate();
-            labelMicrophone.ForeColor = Color.Red;
+            PBRemoteVideo.Invalidate();
+            labelAudio.ForeColor = Color.Red;
             labelVideo.ForeColor = Color.Red;
 
             return res;
@@ -86,12 +86,15 @@ namespace RSI_X_Desktop
         public void UpdateRemoteWnd()
         {
             AgoraObject.Rtc.StopPreview();
-            pictureBoxRemoteVideo.Invalidate();
+            PBRemoteVideo.Invalidate();
         }
 
         private void labelMicrophone_Click(object sender, EventArgs e)
         {
-
+            AgoraObject.MuteAllRemoteAudioStream(!AgoraObject.IsAllRemoteAudioMute);
+            labelAudio.ForeColor = AgoraObject.IsAllRemoteAudioMute ?
+                Color.White :
+                Color.Red;
         }
 
         private void labelVideo_Click(object sender, EventArgs e)
@@ -100,6 +103,7 @@ namespace RSI_X_Desktop
             labelVideo.ForeColor = AgoraObject.IsAllRemoteVideoMute ?
                 Color.White :
                 Color.Red;
+            PBRemoteVideo.Refresh();
         }
 
         private void labelVolume_Click(object sender, EventArgs e)
@@ -183,7 +187,7 @@ namespace RSI_X_Desktop
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Owner.Close();
+            Close();
         }
 
         private void Settings_Click(object sender, EventArgs e)
@@ -234,15 +238,15 @@ namespace RSI_X_Desktop
 
         public void Animator(Panel panel, int offset_x, int offset_y, int itterations, int delay)
         {
-            pictureBoxRemoteVideo.Refresh();
-            pictureBoxRemoteVideo.SuspendLayout();
+            PBRemoteVideo.Refresh();
+            PBRemoteVideo.SuspendLayout();
             for (int ind = 0; ind < itterations; ind++)
             {
                 RemotePanel.ColumnStyles[1].Width = RemotePanel.ColumnStyles[1].Width - offset_x;
-                pictureBoxRemoteVideo.Size = new Size(pictureBoxRemoteVideo.Size.Width - offset_x, pictureBoxRemoteVideo.Size.Height);
+                PBRemoteVideo.Size = new Size(PBRemoteVideo.Size.Width - offset_x, PBRemoteVideo.Size.Height);
                 //Thread.Sleep(1);
             }
-            pictureBoxRemoteVideo.ResumeLayout();
+            PBRemoteVideo.ResumeLayout();
         }
 
         private void ChildClosed(object sender, EventArgs e)

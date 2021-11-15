@@ -17,21 +17,10 @@ namespace RSI_X_Desktop.forms
     {
         static private string userName = "";
         
-        AppDomain currentDomain = AppDomain.CurrentDomain;
-
         public MainForm()
         {
-            currentDomain.UnhandledException += new UnhandledExceptionEventHandler(MyHandler);
-
             StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
-        }
-
-        private void MyHandler(object sender, UnhandledExceptionEventArgs e)
-        {
-            // Send 'exit' when exception
-            if (DBReader.IsConnected)
-                DBReader.LeaveRoom();
         }
 
 
