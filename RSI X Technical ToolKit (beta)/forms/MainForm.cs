@@ -41,11 +41,6 @@ namespace RSI_X_Desktop.forms
             GC.Collect();
         }
 
-        private void CloseAppButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -105,11 +100,6 @@ namespace RSI_X_Desktop.forms
             //    NewTextBox.Invalidate();
             //    AgoraObject.CurrentForm = CurForm.None;
             //}
-        }
-
-        private void HideButton_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
 
         static public void UpdateName(string name) 

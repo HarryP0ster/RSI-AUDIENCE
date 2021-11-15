@@ -2,6 +2,56 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="forms\Audience.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\Broadcaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\ChatWnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\Devices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\DumpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\HelpingClass\DBTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\HelpingClass\MessagePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="forms\Ingestor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\LangSelectDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\NewDevices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\ScreenSharing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\Spectrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\TransLater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\TranslatorWnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="forms\Xtractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

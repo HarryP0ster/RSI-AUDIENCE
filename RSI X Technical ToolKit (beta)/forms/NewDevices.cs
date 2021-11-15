@@ -220,11 +220,14 @@ namespace RSI_X_Desktop.forms
 
         private void NewDevices_FormClosed(object sender, FormClosedEventArgs e)
         {
-            AgoraObject.Rtc.EnableLocalVideo(false);
-            TransLater TransForm = AgoraObject.GetTranslatorForm();
-            if (TransForm != null)
-                TransForm.SetLocalVideoPreview();
-            Dispose();
+            if (AgoraObject.CurrentForm != CurForm.FormAudience)
+            {
+                AgoraObject.Rtc.EnableLocalVideo(false);
+                TransLater TransForm = AgoraObject.GetTranslatorForm();
+                if (TransForm != null)
+                    TransForm.SetLocalVideoPreview();
+                Dispose();
+            }
         }
 
         private void trackBarSoundIn_ValueChanged(object sender, EventArgs e)
@@ -271,16 +274,15 @@ namespace RSI_X_Desktop.forms
 
         internal void CloseButton_Click(object sender, EventArgs e)
         {
-            TransLater TransForm = AgoraObject.GetTranslatorForm();
-            if (TransForm != null)
+            if (AgoraObject.CurrentForm != CurForm.FormAudience)
             {
-                Close();
-                TransForm.DevicesClosed(this);
+                TransLater TransForm = AgoraObject.GetTranslatorForm();
+                if (TransForm != null)
+                {
+                    TransForm.DevicesClosed(this);
+                }
             }
-            else
-            {
-                Close();
-            }
+            Close();
         }
 
         private void trackBarSoundIn_ValueChanged()

@@ -13,7 +13,7 @@ namespace RSI_X_Desktop
     public partial class Audience : Form, IFormHostHolder
     {
         public IntPtr RemoteWnd { get; private set; }
-        private DevicesForm devices;
+        private NewDevices devices;
 
         private List<string> TarLang;
         private bool IsOriginal = false;
@@ -21,7 +21,6 @@ namespace RSI_X_Desktop
         private string ChToken = string.Empty;
         private string HostName = string.Empty;
         private bool IsMixerOpen = false;
-        private int audioLastVolume;
 
         [DllImport("winmm.dll")]
         public static extern int waveOutGetVolume(IntPtr hwo, out uint dwVolume); //Контроль громкости
@@ -38,7 +37,9 @@ namespace RSI_X_Desktop
         {
             this.DoubleBuffered = true;
             RoomNameLabel.Text = AgoraObject.GetComplexToken().GetRoomName;
-
+            FormAudience.Parent = this;
+            RemotePanel.ColumnStyles[1].Width = 0;
+            ResizeForm(new Size(1280, 800), this);
             //Spectator_SizeChanged(this, new EventArgs());
             JoinChannel();
         }
@@ -90,10 +91,7 @@ namespace RSI_X_Desktop
 
         private void labelMicrophone_Click(object sender, EventArgs e)
         {
-            AgoraObject.MuteAllRemoteAudioStream(!AgoraObject.IsAllRemoteAudioMute);
-            labelMicrophone.ForeColor = AgoraObject.IsAllRemoteAudioMute ?
-                 Color.White :
-                 Color.Red;
+
         }
 
         private void labelVideo_Click(object sender, EventArgs e)
@@ -168,6 +166,111 @@ namespace RSI_X_Desktop
 
             Owner.Show();
             Owner.Refresh();
+        }
+
+        private void ResizeForm(Size size, Form target)
+        {
+            target.MaximumSize = size;
+            target.MinimumSize = size;
+            target.Size = size;
+        }
+        private void ResizeForm(Size size, ReaLTaiizor.Forms.FormTheme target)
+        {
+            target.MaximumSize = size;
+            target.MinimumSize = size;
+            target.Size = size;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Owner.Close();
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            if (devices == null || devices.IsDisposed)
+            {
+                devices = new NewDevices();
+                devices.FormClosed += ChildClosed;
+                CallSidePanel(devices);
+                devices.typeOfAlligment(true);
+            }
+            else
+            {
+                DevicesClosed(devices);
+            }
+        }
+
+        private void HomeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CallSidePanel(Form Wnd)
+        {
+            panel1.SuspendLayout();
+            Wnd.Size = panel1.Size;
+            Wnd.Location = panel1.Location;
+            Wnd.TopLevel = false;
+            Wnd.Dock = DockStyle.Fill;
+            panel1.Controls.Add(Wnd);
+            panel1.BringToFront();
+            if (panel1.Visible == false || Wnd.Visible == false)
+            {
+                panel1.ResumeLayout();
+                //panel1.Location = new Point(Size.Width, panel1.Location.Y);
+                panel1.Show();
+                Animator(panel1, -2, 0, 25, 1);
+                Wnd.Show();
+            }
+        }
+
+        internal void DevicesClosed(Form Wnd)
+        {
+            Animator(panel1, 2, 0, 25, 1);
+            panel1.Hide();
+            GC.Collect();
+        }
+
+        public void Animator(Panel panel, int offset_x, int offset_y, int itterations, int delay)
+        {
+            pictureBoxRemoteVideo.Refresh();
+            pictureBoxRemoteVideo.SuspendLayout();
+            for (int ind = 0; ind < itterations; ind++)
+            {
+                RemotePanel.ColumnStyles[1].Width = RemotePanel.ColumnStyles[1].Width - offset_x;
+                pictureBoxRemoteVideo.Size = new Size(pictureBoxRemoteVideo.Size.Width - offset_x, pictureBoxRemoteVideo.Size.Height);
+                //Thread.Sleep(1);
+            }
+            pictureBoxRemoteVideo.ResumeLayout();
+        }
+
+        private void ChildClosed(object sender, EventArgs e)
+        {
+            if (this != null && !this.IsDisposed)
+                DevicesClosed(devices);
+        }
+
+        private void nightControlBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Point ptn = e.Location;
+            if (!(ptn.X > 46 && ptn.X < 94)) return;
+            this.BringToFront();
+            if (this.Size.Width == 1280)
+            {
+                ResizeForm(Screen.PrimaryScreen.WorkingArea.Size, this);
+                ResizeForm(Screen.PrimaryScreen.WorkingArea.Size, FormAudience);
+            }
+            else
+            {
+                ResizeForm(new Size(1280, 800), this);
+                ResizeForm(new Size(1280, 800), FormAudience);
+            }
+        }
+
+        private void Audience_Resize(object sender, EventArgs e)
+        {
+            CenterToScreen();
         }
     }
 }

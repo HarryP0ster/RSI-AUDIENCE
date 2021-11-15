@@ -32,6 +32,7 @@ namespace RSI_X_Desktop.forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.formTheme1 = new ReaLTaiizor.Forms.FormTheme();
+            this.controlBox1 = new ReaLTaiizor.Controls.ControlBox();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.TimeLabel = new ReaLTaiizor.Controls.MoonLabel();
             this.tableLayoutPanelButtons = new System.Windows.Forms.TableLayoutPanel();
@@ -48,8 +49,6 @@ namespace RSI_X_Desktop.forms
             this.labelLogo = new System.Windows.Forms.Label();
             this.VersionLabel = new ReaLTaiizor.Controls.MoonLabel();
             this.LocalTimeLabel = new ReaLTaiizor.Controls.MoonLabel();
-            this.CloseAppButton = new ReaLTaiizor.Controls.SpaceButton();
-            this.HideButton = new ReaLTaiizor.Controls.SpaceButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.formTheme1.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
@@ -62,9 +61,8 @@ namespace RSI_X_Desktop.forms
             // formTheme1
             // 
             this.formTheme1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
+            this.formTheme1.Controls.Add(this.controlBox1);
             this.formTheme1.Controls.Add(this.tableLayoutPanelMain);
-            this.formTheme1.Controls.Add(this.CloseAppButton);
-            this.formTheme1.Controls.Add(this.HideButton);
             this.formTheme1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formTheme1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.formTheme1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
@@ -77,8 +75,27 @@ namespace RSI_X_Desktop.forms
             this.formTheme1.SmartBounds = false;
             this.formTheme1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.formTheme1.TabIndex = 0;
-            this.formTheme1.Text = "RSI EXCHANGE INTERPRETER";
+            this.formTheme1.Text = "RSI EXCHANGE AUDIENCE";
             this.formTheme1.Click += new System.EventHandler(this.formTheme1_Click);
+            // 
+            // controlBox1
+            // 
+            this.controlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.controlBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.controlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
+            this.controlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.controlBox1.DefaultLocation = false;
+            this.controlBox1.EnableHoverHighlight = true;
+            this.controlBox1.EnableMaximizeButton = false;
+            this.controlBox1.EnableMinimizeButton = true;
+            this.controlBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.controlBox1.Location = new System.Drawing.Point(710, 0);
+            this.controlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
+            this.controlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.controlBox1.Name = "controlBox1";
+            this.controlBox1.Size = new System.Drawing.Size(90, 25);
+            this.controlBox1.TabIndex = 93;
+            this.controlBox1.Text = "controlBox1";
             // 
             // tableLayoutPanelMain
             // 
@@ -292,12 +309,12 @@ namespace RSI_X_Desktop.forms
             this.labelBeta.AutoSize = true;
             this.labelBeta.Font = new System.Drawing.Font("Bahnschrift Condensed", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelBeta.ForeColor = System.Drawing.Color.White;
-            this.labelBeta.Location = new System.Drawing.Point(287, 6);
+            this.labelBeta.Location = new System.Drawing.Point(300, 6);
             this.labelBeta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBeta.Name = "labelBeta";
-            this.labelBeta.Size = new System.Drawing.Size(98, 24);
+            this.labelBeta.Size = new System.Drawing.Size(72, 24);
             this.labelBeta.TabIndex = 1;
-            this.labelBeta.Text = "INTERPRETER";
+            this.labelBeta.Text = "AUDIENCE";
             // 
             // labelLogo
             // 
@@ -341,40 +358,6 @@ namespace RSI_X_Desktop.forms
             this.LocalTimeLabel.Text = "Local Time";
             this.LocalTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // CloseAppButton
-            // 
-            this.CloseAppButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseAppButton.Customization = "Kioq/zIyMv8yMjL/Kioq/y8vL/8nJyf//v7+/yMjI/8qKir/";
-            this.CloseAppButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CloseAppButton.Image = null;
-            this.CloseAppButton.Location = new System.Drawing.Point(761, 0);
-            this.CloseAppButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.CloseAppButton.Name = "CloseAppButton";
-            this.CloseAppButton.NoRounding = false;
-            this.CloseAppButton.Size = new System.Drawing.Size(31, 23);
-            this.CloseAppButton.TabIndex = 88;
-            this.CloseAppButton.Text = "X";
-            this.CloseAppButton.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CloseAppButton.Transparent = false;
-            this.CloseAppButton.Click += new System.EventHandler(this.CloseAppButton_Click);
-            // 
-            // HideButton
-            // 
-            this.HideButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HideButton.Customization = "Kioq/zIyMv8yMjL/Kioq/y8vL/8nJyf//v7+/yMjI/8qKir/";
-            this.HideButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.HideButton.Image = null;
-            this.HideButton.Location = new System.Drawing.Point(723, 0);
-            this.HideButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.HideButton.Name = "HideButton";
-            this.HideButton.NoRounding = false;
-            this.HideButton.Size = new System.Drawing.Size(31, 23);
-            this.HideButton.TabIndex = 87;
-            this.HideButton.Text = "-";
-            this.HideButton.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.HideButton.Transparent = false;
-            this.HideButton.Click += new System.EventHandler(this.HideButton_Click);
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -383,8 +366,7 @@ namespace RSI_X_Desktop.forms
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.formTheme1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -392,7 +374,7 @@ namespace RSI_X_Desktop.forms
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(126, 50);
             this.Name = "MainForm";
-            this.Text = "RSI EXCHANGE INTERPRETER";
+            this.Text = "RSI EXCHANGE AUDIENCE";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
@@ -418,8 +400,6 @@ namespace RSI_X_Desktop.forms
         private ReaLTaiizor.Controls.Button ResetButton;
         private ReaLTaiizor.Controls.DungeonHeaderLabel dungeonHeaderLabel1;
         private ReaLTaiizor.Controls.MoonLabel VersionLabel;
-        private ReaLTaiizor.Controls.SpaceButton HideButton;
-        private ReaLTaiizor.Controls.SpaceButton CloseAppButton;
         private System.Windows.Forms.Timer timer1;
         private ReaLTaiizor.Controls.MoonLabel LocalTimeLabel;
         private ReaLTaiizor.Controls.MoonLabel TimeLabel;
@@ -432,5 +412,6 @@ namespace RSI_X_Desktop.forms
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.Label labelBeta;
         private System.Windows.Forms.Label labelLogo;
+        private ReaLTaiizor.Controls.ControlBox controlBox1;
     }
 }

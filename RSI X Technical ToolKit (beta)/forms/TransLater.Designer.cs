@@ -64,6 +64,7 @@ namespace RSI_X_Desktop
             this.TranslPrevPage = new ReaLTaiizor.Controls.SocialButton();
             this.panelRelayButtons = new ReaLTaiizor.Controls.LostPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new ReaLTaiizor.Controls.Button();
             this.formTheme1.SuspendLayout();
             this.MainLayout.SuspendLayout();
             this.PanelBot.SuspendLayout();
@@ -220,13 +221,12 @@ namespace RSI_X_Desktop
             // 
             this.lostCancelButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lostCancelButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.lostCancelButton1.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.rsi_microphone_100;
             this.lostCancelButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.lostCancelButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lostCancelButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lostCancelButton1.ForeColor = System.Drawing.Color.White;
             this.lostCancelButton1.HoverColor = System.Drawing.Color.IndianRed;
-            this.lostCancelButton1.Image = global::RSI_X_Desktop.Properties.Resources.rsi_microphone_100;
+            this.lostCancelButton1.Image = null;
             this.lostCancelButton1.Location = new System.Drawing.Point(607, 4);
             this.lostCancelButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lostCancelButton1.Name = "lostCancelButton1";
@@ -359,7 +359,7 @@ namespace RSI_X_Desktop
             this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseButton.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CloseButton.Image = global::RSI_X_Desktop.Properties.Resources.RSI_HR_EXIT1;
+            this.CloseButton.Image = null;
             this.CloseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CloseButton.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.CloseButton.Location = new System.Drawing.Point(1184, 14);
@@ -379,7 +379,7 @@ namespace RSI_X_Desktop
             this.SettingButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SettingButton.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.SettingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SettingButton.Image = global::RSI_X_Desktop.Properties.Resources.RSI_HR_SETTINGS3;
+            this.SettingButton.Image = null;
             this.SettingButton.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.SettingButton.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.SettingButton.Location = new System.Drawing.Point(1118, 14);
@@ -399,7 +399,7 @@ namespace RSI_X_Desktop
             this.ResetButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ResetButton.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.ResetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ResetButton.Image = global::RSI_X_Desktop.Properties.Resources.RSI_HR_HOME1;
+            this.ResetButton.Image = null;
             this.ResetButton.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ResetButton.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.ResetButton.Location = new System.Drawing.Point(1052, 14);
@@ -413,7 +413,6 @@ namespace RSI_X_Desktop
             // 
             // parrotPictureBox2
             // 
-            this.parrotPictureBox2.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.logotype_compressed;
             this.parrotPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.parrotPictureBox2.ColorLeft = System.Drawing.Color.DodgerBlue;
             this.parrotPictureBox2.ColorRight = System.Drawing.Color.DodgerBlue;
@@ -479,7 +478,6 @@ namespace RSI_X_Desktop
             // PanelNothing
             // 
             this.PanelNothing.BackColor = System.Drawing.Color.Silver;
-            this.PanelNothing.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.logotype_black;
             this.PanelNothing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PanelNothing.Controls.Add(this.pictureBoxRemoteVideo);
             this.PanelNothing.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -492,7 +490,6 @@ namespace RSI_X_Desktop
             // pictureBoxRemoteVideo
             // 
             this.pictureBoxRemoteVideo.BackColor = System.Drawing.Color.Silver;
-            this.pictureBoxRemoteVideo.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.logotype_black;
             this.pictureBoxRemoteVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBoxRemoteVideo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxRemoteVideo.Location = new System.Drawing.Point(0, 0);
@@ -557,7 +554,6 @@ namespace RSI_X_Desktop
             // LiveBox
             // 
             this.LiveBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.LiveBox.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.RSI_HR_LIVEBOX;
             this.LiveBox.ColorLeft = System.Drawing.Color.DodgerBlue;
             this.LiveBox.ColorRight = System.Drawing.Color.DodgerBlue;
             this.LiveBox.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
@@ -582,7 +578,7 @@ namespace RSI_X_Desktop
             this.TranslPage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TranslPage.DownEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.TranslPage.HoverEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
-            this.TranslPage.Image = global::RSI_X_Desktop.Properties.Resources.RSI_HR_RIGHT;
+            this.TranslPage.Image = null;
             this.TranslPage.Location = new System.Drawing.Point(929, 477);
             this.TranslPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TranslPage.Name = "TranslPage";
@@ -633,7 +629,7 @@ namespace RSI_X_Desktop
             this.TranslPrevPage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TranslPrevPage.DownEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.TranslPrevPage.HoverEllipseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(86)))), ((int)(((byte)(95)))));
-            this.TranslPrevPage.Image = global::RSI_X_Desktop.Properties.Resources.RSI_HR_LEFT;
+            this.TranslPrevPage.Image = null;
             this.TranslPrevPage.Location = new System.Drawing.Point(69, 477);
             this.TranslPrevPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TranslPrevPage.Name = "TranslPrevPage";
@@ -661,6 +657,23 @@ namespace RSI_X_Desktop
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Image = null;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.button1.Size = new System.Drawing.Size(120, 40);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // TransLater
             // 
@@ -733,5 +746,6 @@ namespace RSI_X_Desktop
         private System.Windows.Forms.Label labelMicrophone;
         private System.Windows.Forms.Label labelVideo;
         private System.Windows.Forms.Label labelVolume;
+        private ReaLTaiizor.Controls.Button button1;
     }
 }
