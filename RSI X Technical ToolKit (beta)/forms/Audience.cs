@@ -25,8 +25,6 @@ namespace RSI_X_Desktop
         [DllImport("winmm.dll")]
         public static extern int waveOutGetVolume(IntPtr hwo, out uint dwVolume); //Контроль громкости
 
-        [DllImport("winmm.dll")]
-        public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume); //Контроль громкости
 
         public Audience()
         {
@@ -117,10 +115,14 @@ namespace RSI_X_Desktop
 
         private void trackBar1_ValueChanged()
         {
-            int NewVolume = ((ushort.MaxValue / 100) * trackBar1.Value);
-            uint NewVolumeAllChannels = (((uint)NewVolume & 0x0000ffff) | ((uint)NewVolume << 16));
+            NewDevices.SetVolume(trackBar1.Value);
+            if (devices != null && devices.IsDisposed == false)
+                devices.UpdateSoundTrackBar();
 
-            waveOutSetVolume(IntPtr.Zero, NewVolumeAllChannels);
+        }
+        public void SetTrackBarVolume(int volume) 
+        {
+            trackBar1.Value = volume;
         }
 
         private void langBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -166,7 +168,7 @@ namespace RSI_X_Desktop
             AgoraObject.MuteAllRemoteAudioStream(false);
             AgoraObject.MuteAllRemoteVideoStream(false);
 
-            waveOutSetVolume(IntPtr.Zero, uint.MaxValue);
+            NewDevices.waveOutSetVolume(IntPtr.Zero, uint.MaxValue);
 
             Owner.Show();
             Owner.Refresh();
@@ -195,7 +197,6 @@ namespace RSI_X_Desktop
             if (devices == null || devices.IsDisposed)
             {
                 devices = new NewDevices();
-                devices.FormClosed += ChildClosed;
                 CallSidePanel(devices);
                 devices.typeOfAlligment(true);
             }
@@ -229,8 +230,9 @@ namespace RSI_X_Desktop
             }
         }
 
-        internal void DevicesClosed(Form Wnd)
+        public void DevicesClosed(Form Wnd)
         {
+            Wnd.Close();
             Animator(panel1, 2, 0, 25, 1);
             panel1.Hide();
             GC.Collect();
@@ -247,12 +249,6 @@ namespace RSI_X_Desktop
                 //Thread.Sleep(1);
             }
             PBRemoteVideo.ResumeLayout();
-        }
-
-        private void ChildClosed(object sender, EventArgs e)
-        {
-            if (this != null && !this.IsDisposed)
-                DevicesClosed(devices);
         }
 
         private void nightControlBox1_MouseClick(object sender, MouseEventArgs e)

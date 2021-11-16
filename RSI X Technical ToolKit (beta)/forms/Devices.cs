@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using ReaLTaiizor;
 using agorartc;
 using RSI_X_Desktop.forms;
@@ -14,51 +15,58 @@ using static System.Environment;
 
 namespace RSI_X_Desktop.forms
 {
-    public partial class NewDevices : Form
+    public partial class Devices : Form
     {
-        AgoraAudioRecordingDeviceManager audioInDeviceManager;
-        AgoraAudioPlaybackDeviceManager audioOutDeviceManager;
-        AgoraVideoDeviceManager videoDeviceManager;
+        [DllImport("winmm.dll")]
+        public  static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume); //Контроль громкости
+        private static int volume = 100;
+        public int Volume { get => volume; }
+        
+        private IFormHostHolder workForm = AgoraObject.GetWorkForm;
+        private AgoraAudioRecordingDeviceManager audioInDeviceManager;
+        private AgoraAudioPlaybackDeviceManager audioOutDeviceManager;
+        private AgoraVideoDeviceManager videoDeviceManager;
 
-        public NewDevices()
+        public Devices()
         {
             InitializeComponent();
         }
-
-        private void formTheme1_Click(object sender, EventArgs e)
+        public static void SetVolume(int value) 
         {
+            volume = value;
+            int NewVolume = ((ushort.MaxValue / 100) * value);
+            uint NewVolumeAllChannels = (((uint)NewVolume & 0x0000ffff) | ((uint)NewVolume << 16));
 
+            waveOutSetVolume(IntPtr.Zero, NewVolumeAllChannels);
         }
 
         private void NewDevices_Load(object sender, EventArgs e)
         {
-            button1.Location = new Point(button1.Location.X, General.Height - button1.Height - 15);
-            button2.Location = new Point(button2.Location.X, Sound.Height - button2.Height - 15);
-            button3.Location = new Point(button3.Location.X, Sound.Height - button3.Height - 15);
-            button4.Location = new Point(button4.Location.X, Video.Height - button4.Height - 15);
-            button5.Location = new Point(button5.Location.X, Video.Height - button5.Height - 15);
+            //BtnCloseGeneral.Location = new Point(BtnCloseGeneral.Location.X, General.Height - BtnCloseGeneral.Height - 15);
+            //BtnCloseSound.Location = new Point(BtnCloseSound.Location.X, Sound.Height - BtnCloseSound.Height - 15);
+            //BtnAcceptSound.Location = new Point(BtnAcceptSound.Location.X, Sound.Height - BtnAcceptSound.Height - 15);
 
             audioInDeviceManager = AgoraObject.Rtc.CreateAudioRecordingDeviceManager();
             audioOutDeviceManager = AgoraObject.Rtc.CreateAudioPlaybackDeviceManager();
             videoDeviceManager = AgoraObject.Rtc.CreateVideoDeviceManager();
 
-            trackBarSoundIn.Value = audioInDeviceManager.GetDeviceVolume();
-            trackBarSoundOut.Value = audioOutDeviceManager.GetDeviceVolume();
+            //trackBarSoundIn.Value = audioInDeviceManager.GetDeviceVolume();
+            trackBarSoundOut.Value = Volume;
 
-            comboBoxAudioInput.DataSource = getListAudioInputDevices();
+            //comboBoxAudioInput.DataSource = getListAudioInputDevices();
             comboBoxAudioOutput.DataSource = getListAudioOutDevices();
-            comboBoxVideo.DataSource = getListVideoDevices();
+            //comboBoxVideo.DataSource = getListVideoDevices();
 
-            comboBoxAudioInput.SelectedIndex = getActiveAudioInputDevice();
+            //comboBoxAudioInput.SelectedIndex = getActiveAudioInputDevice();
             comboBoxAudioOutput.SelectedIndex = getActiveAudioOutputDevice();
-            comboBoxVideo.SelectedIndex = getActiveVideoDevice();
+            //comboBoxVideo.SelectedIndex = getActiveVideoDevice();
 
             getComputerDescription();
 
-            AgoraObject.Rtc.StartPreview();
-            VideoCanvas vc = new((ulong)pictureBoxLocalVideoTest.Handle, 0);
-            AgoraObject.Rtc.EnableVideo();
-            AgoraObject.Rtc.SetupLocalVideo(vc);
+            //AgoraObject.Rtc.StartPreview();
+            //VideoCanvas vc = new((ulong)pictureBoxLocalVideoTest.Handle, 0);
+            //AgoraObject.Rtc.EnableVideo();
+            //AgoraObject.Rtc.SetupLocalVideo(vc);
         }
 
         private void getComputerDescription()
@@ -226,20 +234,6 @@ namespace RSI_X_Desktop.forms
             }
         }
 
-        private void trackBarSoundIn_ValueChanged(object sender, EventArgs e)
-        {
-            audioInDeviceManager.SetDeviceVolume(
-                ((TrackBar)sender).Value
-                );
-        }
-
-        private void trackBarSoundOut_ValueChanged(object sender, EventArgs e)
-        {
-            audioOutDeviceManager.SetDeviceVolume(
-                ((TrackBar)sender).Value
-                );
-        }
-
         public void SetAudienceSettings()
         {
             materialShowTabControl1.SelectTab(1);
@@ -247,11 +241,11 @@ namespace RSI_X_Desktop.forms
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
-            int indIN = comboBoxAudioInput.SelectedIndex;
-            string nameIN, idIN;
+            //int indIN = comboBoxAudioInput.SelectedIndex;
+            //string nameIN, idIN;
 
-            audioInDeviceManager.GetDeviceInfoByIndex(indIN, out nameIN, out idIN);
-            audioInDeviceManager.SetCurrentDevice(idIN);
+            //audioInDeviceManager.GetDeviceInfoByIndex(indIN, out nameIN, out idIN);
+            //audioInDeviceManager.SetCurrentDevice(idIN);
 
             int indOUT = comboBoxAudioOutput.SelectedIndex;
             string nameOUT, idOUT;
@@ -259,28 +253,32 @@ namespace RSI_X_Desktop.forms
             audioOutDeviceManager.GetDeviceInfoByIndex(indOUT, out nameOUT, out idOUT);
             audioOutDeviceManager.SetCurrentDevice(idOUT);
 
-            int indVID = comboBoxVideo.SelectedIndex;
-            string nameVID, idVID;
+            //int indVID = comboBoxVideo.SelectedIndex;
+            //string nameVID, idVID;
 
-            videoDeviceManager.GetDeviceInfoByIndex(indVID, out nameVID, out idVID);
-            videoDeviceManager.SetCurrentDevice(idVID);
+            //videoDeviceManager.GetDeviceInfoByIndex(indVID, out nameVID, out idVID);
+            //videoDeviceManager.SetCurrentDevice(idVID);
 
             CloseButton_Click(sender, e);
         }
 
         internal void CloseButton_Click(object sender, EventArgs e)
         {
+
+            if (workForm != null)
+                workForm.DevicesClosed(this);
             Close();
-        }
-
-        private void trackBarSoundIn_ValueChanged()
-        {
-
         }
 
         private void trackBarSoundOut_ValueChanged()
         {
-            //audioOutDeviceManager.SetDeviceVolume(trackBarSoundIn.Value);
+            SetVolume(trackBarSoundOut.Value);
+            if (workForm != null)
+                workForm.SetTrackBarVolume(trackBarSoundOut.Value);
+        }
+        public void UpdateSoundTrackBar() 
+        {
+            trackBarSoundOut.Value = volume;
         }
         public void typeOfAlligment(bool sign)
         {

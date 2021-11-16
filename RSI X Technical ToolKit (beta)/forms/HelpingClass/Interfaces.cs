@@ -6,6 +6,8 @@ namespace RSI_X_Desktop
     {
         public IntPtr RemoteWnd { get; }
         public void UpdateRemoteWnd();
+        public void DevicesClosed(System.Windows.Forms.Form Wnd);
+        public void SetTrackBarVolume(int volume);
     }
     public interface IFormInterpreterHolder 
     { }
