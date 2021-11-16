@@ -150,7 +150,7 @@ namespace RSI_X_Desktop
                 AgoraObject.MuteSrcAudioStream(false);
                 foxLabel1.Text = langBox.Text;
                 foxLabel1.Refresh();
-                langBox.SelectedItem = "";
+                RoomNameLabel.Focus();
             }
         }
 
