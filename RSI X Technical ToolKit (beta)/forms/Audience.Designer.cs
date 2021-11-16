@@ -48,11 +48,14 @@ namespace RSI_X_Desktop
             this.labelVolume = new System.Windows.Forms.Label();
             this.langBox = new MaterialSkin.Controls.MaterialComboBox();
             this.RemotePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.PBRemoteVideo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelEmpty = new System.Windows.Forms.Panel();
+            this.PBRemoteVideo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new ReaLTaiizor.Controls.Button();
             this.airTabPage1 = new ReaLTaiizor.Controls.AirTabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.FormAudience.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -60,7 +63,9 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.RemotePanel.SuspendLayout();
+            this.PanelEmpty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBRemoteVideo)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormAudience
@@ -242,7 +247,7 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.Controls.Add(this.labelVideo, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelAudio, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.langBox, 5, 0);
+            this.tableLayoutPanel3.Controls.Add(this.panel2, 5, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 672);
@@ -371,7 +376,7 @@ namespace RSI_X_Desktop
             this.langBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.langBox.DropDownWidth = 121;
             this.langBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.langBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.langBox.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.langBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.langBox.FormattingEnabled = true;
             this.langBox.IntegralHeight = false;
@@ -380,7 +385,7 @@ namespace RSI_X_Desktop
             "Test",
             "Test",
             "Test"});
-            this.langBox.Location = new System.Drawing.Point(1146, 10);
+            this.langBox.Location = new System.Drawing.Point(0, 8);
             this.langBox.MaxDropDownItems = 4;
             this.langBox.MouseState = MaterialSkin.MouseState.OUT;
             this.langBox.Name = "langBox";
@@ -394,8 +399,8 @@ namespace RSI_X_Desktop
             this.RemotePanel.ColumnCount = 2;
             this.RemotePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.58074F));
             this.RemotePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.41926F));
-            this.RemotePanel.Controls.Add(this.PBRemoteVideo, 0, 0);
             this.RemotePanel.Controls.Add(this.panel1, 1, 0);
+            this.RemotePanel.Controls.Add(this.PanelEmpty, 0, 0);
             this.RemotePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RemotePanel.Location = new System.Drawing.Point(3, 77);
             this.RemotePanel.Name = "RemotePanel";
@@ -403,18 +408,6 @@ namespace RSI_X_Desktop
             this.RemotePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.RemotePanel.Size = new System.Drawing.Size(1268, 589);
             this.RemotePanel.TabIndex = 3;
-            // 
-            // PBRemoteVideo
-            // 
-            this.PBRemoteVideo.BackColor = System.Drawing.Color.Silver;
-            this.PBRemoteVideo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBRemoteVideo.BackgroundImage")));
-            this.PBRemoteVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PBRemoteVideo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PBRemoteVideo.Location = new System.Drawing.Point(3, 3);
-            this.PBRemoteVideo.Name = "PBRemoteVideo";
-            this.PBRemoteVideo.Size = new System.Drawing.Size(1053, 583);
-            this.PBRemoteVideo.TabIndex = 0;
-            this.PBRemoteVideo.TabStop = false;
             // 
             // panel1
             // 
@@ -424,6 +417,30 @@ namespace RSI_X_Desktop
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(203, 583);
             this.panel1.TabIndex = 1;
+            // 
+            // PanelEmpty
+            // 
+            this.PanelEmpty.BackColor = System.Drawing.Color.Silver;
+            this.PanelEmpty.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.logotype_black;
+            this.PanelEmpty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PanelEmpty.Controls.Add(this.PBRemoteVideo);
+            this.PanelEmpty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelEmpty.Location = new System.Drawing.Point(3, 3);
+            this.PanelEmpty.Name = "PanelEmpty";
+            this.PanelEmpty.Size = new System.Drawing.Size(1053, 583);
+            this.PanelEmpty.TabIndex = 2;
+            // 
+            // PBRemoteVideo
+            // 
+            this.PBRemoteVideo.BackColor = System.Drawing.Color.Silver;
+            this.PBRemoteVideo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBRemoteVideo.BackgroundImage")));
+            this.PBRemoteVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PBRemoteVideo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PBRemoteVideo.Location = new System.Drawing.Point(0, 0);
+            this.PBRemoteVideo.Name = "PBRemoteVideo";
+            this.PBRemoteVideo.Size = new System.Drawing.Size(1053, 583);
+            this.PBRemoteVideo.TabIndex = 0;
+            this.PBRemoteVideo.TabStop = false;
             // 
             // label1
             // 
@@ -471,6 +488,26 @@ namespace RSI_X_Desktop
             this.airTabPage1.SquareColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(87)))), ((int)(((byte)(100)))));
             this.airTabPage1.TabIndex = 5;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.foxLabel1);
+            this.panel2.Controls.Add(this.langBox);
+            this.panel2.Location = new System.Drawing.Point(1146, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(119, 63);
+            this.panel2.TabIndex = 42;
+            // 
+            // foxLabel1
+            // 
+            this.foxLabel1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.foxLabel1.ForeColor = System.Drawing.Color.White;
+            this.foxLabel1.Location = new System.Drawing.Point(23, 20);
+            this.foxLabel1.Name = "foxLabel1";
+            this.foxLabel1.Size = new System.Drawing.Size(65, 19);
+            this.foxLabel1.TabIndex = 43;
+            this.foxLabel1.Text = "TEST";
+            this.foxLabel1.Click += new System.EventHandler(this.foxLabel1_Click);
+            // 
             // Audience
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -496,7 +533,9 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.RemotePanel.ResumeLayout(false);
+            this.PanelEmpty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBRemoteVideo)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -527,5 +566,8 @@ namespace RSI_X_Desktop
         private System.Windows.Forms.TableLayoutPanel RemotePanel;
         private System.Windows.Forms.Panel panel1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private System.Windows.Forms.Panel PanelEmpty;
+        private System.Windows.Forms.Panel panel2;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel1;
     }
 }

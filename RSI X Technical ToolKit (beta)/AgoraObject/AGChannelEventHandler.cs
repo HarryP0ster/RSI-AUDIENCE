@@ -207,9 +207,11 @@ namespace RSI_X_Desktop
             //TODO: добавить очистку окон коллег через state == REMOTE_VIDEO_STATE_STOPPED
             switch (state) {
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_DECODING:
+                    ((Audience)form).Invoke(((Audience)form).CallRefresh, true);
                     FirstFrameDecoding(channelId, uid, reason);
                     break;
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_STOPPED:
+                    ((Audience)form).Invoke(((Audience)form).CallRefresh, false);
                     VideoStreamHasStopped(channelId, uid, reason);
                     break;
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_FROZEN:
