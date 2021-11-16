@@ -13,7 +13,7 @@ namespace RSI_X_Desktop
     public partial class Audience : Form, IFormHostHolder
     {
         public IntPtr RemoteWnd { get; private set; }
-        private NewDevices devices;
+        private Devices devices;
 
         private List<string> TarLang;
         private bool IsOriginal = false;
@@ -115,7 +115,7 @@ namespace RSI_X_Desktop
 
         private void trackBar1_ValueChanged()
         {
-            NewDevices.SetVolume(trackBar1.Value);
+            Devices.SetVolume(trackBar1.Value);
             if (devices != null && devices.IsDisposed == false)
                 devices.UpdateSoundTrackBar();
 
@@ -168,7 +168,7 @@ namespace RSI_X_Desktop
             AgoraObject.MuteAllRemoteAudioStream(false);
             AgoraObject.MuteAllRemoteVideoStream(false);
 
-            NewDevices.waveOutSetVolume(IntPtr.Zero, uint.MaxValue);
+            Devices.waveOutSetVolume(IntPtr.Zero, uint.MaxValue);
 
             Owner.Show();
             Owner.Refresh();
@@ -196,7 +196,7 @@ namespace RSI_X_Desktop
         {
             if (devices == null || devices.IsDisposed)
             {
-                devices = new NewDevices();
+                devices = new Devices();
                 CallSidePanel(devices);
                 devices.typeOfAlligment(true);
             }

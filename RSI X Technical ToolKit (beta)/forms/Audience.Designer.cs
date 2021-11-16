@@ -156,9 +156,9 @@ namespace RSI_X_Desktop
             this.RoomNameLabel.Location = new System.Drawing.Point(124, 0);
             this.RoomNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RoomNameLabel.Name = "RoomNameLabel";
-            this.RoomNameLabel.Size = new System.Drawing.Size(237, 68);
+            this.RoomNameLabel.Size = new System.Drawing.Size(71, 68);
             this.RoomNameLabel.TabIndex = 4;
-            this.RoomNameLabel.Text = "RR (don\'t remove me)";
+            this.RoomNameLabel.Text = "room";
             this.RoomNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PictureBoxLogo
