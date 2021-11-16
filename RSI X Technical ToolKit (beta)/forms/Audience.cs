@@ -82,6 +82,8 @@ namespace RSI_X_Desktop
             AgoraObject.Rtc.EnableLocalVideo(false);
             AgoraObject.Rtc.EnableLocalAudio(false);
             AgoraObject.SetWndEventHandler(this);
+            AgoraObject.MuteLocalAudioStream(true);
+            AgoraObject.MuteLocalVideoStream(true);
 
             //pictureBoxRemoteVideo.Width = this.Width;
             RemoteWnd = PBRemoteVideo.Handle;
