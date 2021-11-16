@@ -41,6 +41,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="library\**" />
+    <EmbeddedResource Remove="library\**" />
+    <None Remove="library\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="AgoraObject\XAgoraObject.cs" />
     <Compile Remove="X-tractor.cs" />
     <Compile Remove="X-tractor.Designer.cs" />
   </ItemGroup>
@@ -50,6 +57,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="bass.dll" />
+    <None Remove="Bass.Net.dll" />
+    <None Remove="Bass.Net.xml" />
+    <None Remove="bassasio.dll" />
     <None Remove="Resources\anime.png" />
     <None Remove="Resources\asdasd.png" />
     <None Remove="Resources\background _compressed.jpg" />
@@ -251,15 +262,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="agora_rtc_sdk.lib">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="bass.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Bass.Net.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="bassasio.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="iris.dll">
