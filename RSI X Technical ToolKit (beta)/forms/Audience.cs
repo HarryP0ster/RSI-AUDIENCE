@@ -43,6 +43,8 @@ namespace RSI_X_Desktop
             //Spectator_SizeChanged(this, new EventArgs());
             CallRefresh = new RefreshRemoteWnd(RefreshDelegate);
             JoinChannel();
+            //foxLabel1.Parent = langBox;
+            //panel3.Parent = langBox;
         }
 
         public void RefreshDelegate()
@@ -146,6 +148,9 @@ namespace RSI_X_Desktop
                 var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
                 bool ret = AgoraObject.JoinChannelSrc(InterRoom);
                 AgoraObject.MuteSrcAudioStream(false);
+                foxLabel1.Text = langBox.Text;
+                foxLabel1.Refresh();
+                langBox.SelectedItem = "";
             }
         }
 
@@ -159,6 +164,9 @@ namespace RSI_X_Desktop
                 AgoraObject.MuteHostAudioStream(true);
                 AgoraObject.MuteSrcAudioStream(AgoraObject.IsAllRemoteAudioMute);
                 mSwitchOriginal.Checked = false;
+                foxLabel1.ForeColor = Color.White;
+                foxLabel1.BackColor = Color.FromArgb(61, 61, 61);
+                panel3.BackColor = Color.FromArgb(61, 61, 61);
             }
             else
             {
@@ -170,6 +178,9 @@ namespace RSI_X_Desktop
                 AgoraObject.MuteHostAudioStream(AgoraObject.IsAllRemoteAudioMute);
                 AgoraObject.MuteSrcAudioStream(true);
                 mSwitchOriginal.Checked = true;
+                foxLabel1.ForeColor = Color.Gray;
+                foxLabel1.BackColor = Color.FromArgb(58, 58, 58);
+                panel3.BackColor = Color.FromArgb(58, 58, 58);
             }
             langBox.Enabled = IsOriginal;
             IsOriginal = !IsOriginal;
@@ -280,7 +291,7 @@ namespace RSI_X_Desktop
                 ResizeForm(new Size(1280, 800), FormAudience);
             }
         }
-
+        #region Events
         private void Audience_Resize(object sender, EventArgs e)
         {
             CenterToScreen();
@@ -288,7 +299,89 @@ namespace RSI_X_Desktop
 
         private void foxLabel1_Click(object sender, EventArgs e)
         {
+            if (!IsOriginal)
+            {
+                langBox.Focus();
+                langBox.DroppedDown = true;
+            }
+        }
+
+        private void langBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
+
+        private void langBox_Enter(object sender, EventArgs e)
+        {
+            if (!IsOriginal)
+            {
+                foxLabel1.ForeColor = Color.White;
+                foxLabel1.BackColor = Color.FromArgb(56, 56, 56);
+                panel3.BackColor = Color.FromArgb(56, 56, 56);
+            }
+        }
+
+        private void langBox_Leave(object sender, EventArgs e)
+        {
+            if (!IsOriginal)
+            {
+                foxLabel1.ForeColor = Color.White;
+                foxLabel1.BackColor = Color.FromArgb(61, 61, 61);
+                panel3.BackColor = Color.FromArgb(61, 61, 61);
+            }
+        }
+
+        private void langBox_DropDown(object sender, EventArgs e)
+        {
+            if (!IsOriginal)
+            {
+                foxLabel1.ForeColor = Color.White;
+                foxLabel1.BackColor = Color.FromArgb(56, 56, 56);
+                panel3.BackColor = Color.FromArgb(56, 56, 56);
+            }
+        }
+
+        private void langBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (!IsOriginal)
+            {
+                foxLabel1.ForeColor = Color.White;
+                foxLabel1.BackColor = Color.FromArgb(56, 56, 56);
+                panel3.BackColor = Color.FromArgb(56, 56, 56);
+            }
+        }
+
+        private void foxLabel1_MouseEnter(object sender, EventArgs e)
+        {
+            if (!langBox.Focused && !IsOriginal)
+            {
+                foxLabel1.ForeColor = Color.White;
+                foxLabel1.BackColor = Color.FromArgb(59, 59, 59);
+                panel3.BackColor = Color.FromArgb(59, 59, 59);
+            }
+        }
+
+
+        private void panel2_MouseLeave(object sender, EventArgs e)
+        {
+            if (!IsOriginal)
+            {
+                RoomNameLabel.Focus();
+                foxLabel1.ForeColor = Color.White;
+                foxLabel1.BackColor = Color.FromArgb(61, 61, 61);
+                panel3.BackColor = Color.FromArgb(61, 61, 61);
+            }
+        }
+
+        private void langBox_MouseEnter(object sender, EventArgs e)
+        {
+            if (!IsOriginal)
+            {
+                foxLabel1.ForeColor = Color.White;
+                foxLabel1.BackColor = Color.FromArgb(59, 59, 59);
+                panel3.BackColor = Color.FromArgb(59, 59, 59);
+            }
+        }
+        #endregion
     }
 }

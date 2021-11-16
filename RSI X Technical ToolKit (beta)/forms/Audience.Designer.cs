@@ -46,6 +46,9 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.trackBar1 = new ReaLTaiizor.Controls.DungeonTrackBar();
             this.labelVolume = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.langBox = new MaterialSkin.Controls.MaterialComboBox();
             this.RemotePanel = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,18 +57,17 @@ namespace RSI_X_Desktop
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new ReaLTaiizor.Controls.Button();
             this.airTabPage1 = new ReaLTaiizor.Controls.AirTabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.FormAudience.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.RemotePanel.SuspendLayout();
             this.PanelEmpty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBRemoteVideo)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormAudience
@@ -365,34 +367,78 @@ namespace RSI_X_Desktop
             this.labelVolume.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelVolume.Click += new System.EventHandler(this.labelVolume_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.langBox);
+            this.panel2.Location = new System.Drawing.Point(1146, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(119, 63);
+            this.panel2.TabIndex = 42;
+            this.panel2.MouseLeave += new System.EventHandler(this.panel2_MouseLeave);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.panel3.Controls.Add(this.foxLabel1);
+            this.panel3.Location = new System.Drawing.Point(14, 17);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(81, 33);
+            this.panel3.TabIndex = 43;
+            this.panel3.Click += new System.EventHandler(this.foxLabel1_Click);
+            // 
+            // foxLabel1
+            // 
+            this.foxLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.foxLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.foxLabel1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.foxLabel1.ForeColor = System.Drawing.Color.White;
+            this.foxLabel1.Location = new System.Drawing.Point(16, 5);
+            this.foxLabel1.Name = "foxLabel1";
+            this.foxLabel1.Size = new System.Drawing.Size(65, 25);
+            this.foxLabel1.TabIndex = 43;
+            this.foxLabel1.Text = "TEST";
+            this.foxLabel1.Click += new System.EventHandler(this.foxLabel1_Click);
+            this.foxLabel1.MouseEnter += new System.EventHandler(this.foxLabel1_MouseEnter);
+            // 
             // langBox
             // 
-            this.langBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.langBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.langBox.AutoResize = false;
-            this.langBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.langBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.langBox.Depth = 0;
             this.langBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.langBox.DropDownHeight = 174;
             this.langBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.langBox.DropDownWidth = 121;
             this.langBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.langBox.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.langBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.langBox.Font = new System.Drawing.Font("Bahnschrift", 1.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.langBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.langBox.FormattingEnabled = true;
             this.langBox.IntegralHeight = false;
             this.langBox.ItemHeight = 43;
             this.langBox.Items.AddRange(new object[] {
             "Test",
-            "Test",
             "Test"});
             this.langBox.Location = new System.Drawing.Point(0, 8);
+            this.langBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
             this.langBox.MaxDropDownItems = 4;
             this.langBox.MouseState = MaterialSkin.MouseState.OUT;
             this.langBox.Name = "langBox";
             this.langBox.Size = new System.Drawing.Size(119, 49);
             this.langBox.StartIndex = 0;
             this.langBox.TabIndex = 42;
+            this.langBox.DropDown += new System.EventHandler(this.langBox_DropDown);
             this.langBox.SelectedIndexChanged += new System.EventHandler(this.langBox_SelectedIndexChanged);
+            this.langBox.DropDownClosed += new System.EventHandler(this.langBox_DropDownClosed);
+            this.langBox.TextChanged += new System.EventHandler(this.langBox_TextChanged);
+            this.langBox.Enter += new System.EventHandler(this.langBox_Enter);
+            this.langBox.Leave += new System.EventHandler(this.langBox_Leave);
+            this.langBox.MouseEnter += new System.EventHandler(this.langBox_MouseEnter);
+            this.langBox.MouseLeave += new System.EventHandler(this.panel2_MouseLeave);
             // 
             // RemotePanel
             // 
@@ -488,26 +534,6 @@ namespace RSI_X_Desktop
             this.airTabPage1.SquareColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(87)))), ((int)(((byte)(100)))));
             this.airTabPage1.TabIndex = 5;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.foxLabel1);
-            this.panel2.Controls.Add(this.langBox);
-            this.panel2.Location = new System.Drawing.Point(1146, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(119, 63);
-            this.panel2.TabIndex = 42;
-            // 
-            // foxLabel1
-            // 
-            this.foxLabel1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.foxLabel1.ForeColor = System.Drawing.Color.White;
-            this.foxLabel1.Location = new System.Drawing.Point(23, 20);
-            this.foxLabel1.Name = "foxLabel1";
-            this.foxLabel1.Size = new System.Drawing.Size(65, 19);
-            this.foxLabel1.TabIndex = 43;
-            this.foxLabel1.Text = "TEST";
-            this.foxLabel1.Click += new System.EventHandler(this.foxLabel1_Click);
-            // 
             // Audience
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -532,10 +558,11 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.RemotePanel.ResumeLayout(false);
             this.PanelEmpty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBRemoteVideo)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -569,5 +596,6 @@ namespace RSI_X_Desktop
         private System.Windows.Forms.Panel PanelEmpty;
         private System.Windows.Forms.Panel panel2;
         private ReaLTaiizor.Controls.FoxLabel foxLabel1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
