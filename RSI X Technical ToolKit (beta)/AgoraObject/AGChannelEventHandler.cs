@@ -103,23 +103,6 @@ namespace RSI_X_Desktop
             switch (chType)
             {
                 case CHANNEL_TYPE.CHANNEL_HOST:
-
-                    hostBroacsters.Remove(uid);
-                    Console.WriteLine("UserOffLine");
-
-                    if (hostBroacsters.Count > 0)
-                    {
-                        if (form.RemoteWnd == IntPtr.Zero) return;
-                        VideoCanvas canv = new ((ulong)form.RemoteWnd, hostBroacsters.Last());
-                        canv.renderMode = ((int)RENDER_MODE_TYPE.RENDER_MODE_HIDDEN);
-                        canv.channelId = channelId;
-
-
-                        AgoraObject.Rtc.SetupRemoteVideo(canv);
-                    }
-                    else
-                        form.UpdateRemoteWnd();
-                    break;
                 case CHANNEL_TYPE.CHANNEL_TRANSL:
                 case CHANNEL_TYPE.CHANNEL_DEST:
                 case CHANNEL_TYPE.CHANNEL_SRC:
@@ -211,7 +194,14 @@ namespace RSI_X_Desktop
                     FirstFrameDecoding(channelId, uid, reason);
                     break;
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_STOPPED:
-                    ((Audience)form).Invoke(((Audience)form).CallRefresh, false);
+                    hostBroacsters.Remove(uid);
+                    Console.WriteLine("UserOffLine");
+
+                    if (hostBroacsters.Count == 0)
+                    {
+                        if (form == null) return;
+                        ((Audience)form).Invoke(((Audience)form).CallRefresh, false);
+                    }
                     VideoStreamHasStopped(channelId, uid, reason);
                     break;
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_FROZEN:
