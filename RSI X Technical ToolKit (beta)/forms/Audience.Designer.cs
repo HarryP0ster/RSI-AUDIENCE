@@ -73,8 +73,8 @@ namespace RSI_X_Desktop
             // FormAudience
             // 
             this.FormAudience.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
-            this.FormAudience.Controls.Add(this.nightControlBox1);
             this.FormAudience.Controls.Add(this.tableLayoutPanel1);
+            this.FormAudience.Controls.Add(this.nightControlBox1);
             this.FormAudience.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FormAudience.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormAudience.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
@@ -105,7 +105,7 @@ namespace RSI_X_Desktop
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(1132, -6);
+            this.nightControlBox1.Location = new System.Drawing.Point(1138, -2);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -117,20 +117,23 @@ namespace RSI_X_Desktop
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.RemotePanel, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 28);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1274, 744);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1274, 750);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -163,9 +166,9 @@ namespace RSI_X_Desktop
             this.RoomNameLabel.Location = new System.Drawing.Point(124, 0);
             this.RoomNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RoomNameLabel.Name = "RoomNameLabel";
-            this.RoomNameLabel.Size = new System.Drawing.Size(88, 68);
+            this.RoomNameLabel.Size = new System.Drawing.Size(140, 68);
             this.RoomNameLabel.TabIndex = 4;
-            this.RoomNameLabel.Text = "room";
+            this.RoomNameLabel.Text = "Room Name";
             this.RoomNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PictureBoxLogo
@@ -252,7 +255,7 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.Controls.Add(this.panel2, 5, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 672);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 678);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -283,10 +286,10 @@ namespace RSI_X_Desktop
             this.labelVideo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelVideo.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelVideo.ForeColor = System.Drawing.Color.White;
-            this.labelVideo.Location = new System.Drawing.Point(4, 16);
+            this.labelVideo.Location = new System.Drawing.Point(4, 20);
             this.labelVideo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelVideo.Name = "labelVideo";
-            this.labelVideo.Size = new System.Drawing.Size(77, 36);
+            this.labelVideo.Size = new System.Drawing.Size(77, 29);
             this.labelVideo.TabIndex = 19;
             this.labelVideo.Text = "VIDEO";
             this.labelVideo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,10 +302,10 @@ namespace RSI_X_Desktop
             this.labelAudio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelAudio.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelAudio.ForeColor = System.Drawing.Color.White;
-            this.labelAudio.Location = new System.Drawing.Point(89, 16);
+            this.labelAudio.Location = new System.Drawing.Point(89, 20);
             this.labelAudio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAudio.Name = "labelAudio";
-            this.labelAudio.Size = new System.Drawing.Size(77, 36);
+            this.labelAudio.Size = new System.Drawing.Size(77, 29);
             this.labelAudio.TabIndex = 18;
             this.labelAudio.Text = "AUDIO";
             this.labelAudio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -358,10 +361,10 @@ namespace RSI_X_Desktop
             this.labelVolume.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelVolume.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelVolume.ForeColor = System.Drawing.Color.White;
-            this.labelVolume.Location = new System.Drawing.Point(4, 13);
+            this.labelVolume.Location = new System.Drawing.Point(4, 17);
             this.labelVolume.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelVolume.Name = "labelVolume";
-            this.labelVolume.Size = new System.Drawing.Size(97, 36);
+            this.labelVolume.Size = new System.Drawing.Size(97, 29);
             this.labelVolume.TabIndex = 21;
             this.labelVolume.Text = "VOLUME";
             this.labelVolume.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -447,11 +450,11 @@ namespace RSI_X_Desktop
             this.RemotePanel.Controls.Add(this.panel1, 1, 0);
             this.RemotePanel.Controls.Add(this.PanelEmpty, 0, 0);
             this.RemotePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RemotePanel.Location = new System.Drawing.Point(3, 77);
+            this.RemotePanel.Location = new System.Drawing.Point(3, 78);
             this.RemotePanel.Name = "RemotePanel";
             this.RemotePanel.RowCount = 1;
             this.RemotePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.RemotePanel.Size = new System.Drawing.Size(1268, 589);
+            this.RemotePanel.Size = new System.Drawing.Size(1268, 594);
             this.RemotePanel.TabIndex = 3;
             // 
             // panel1
@@ -460,19 +463,18 @@ namespace RSI_X_Desktop
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1062, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(203, 583);
+            this.panel1.Size = new System.Drawing.Size(203, 588);
             this.panel1.TabIndex = 1;
             // 
             // PanelEmpty
             // 
             this.PanelEmpty.BackColor = System.Drawing.Color.Silver;
-            this.PanelEmpty.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.logotype_black;
             this.PanelEmpty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PanelEmpty.Controls.Add(this.PBRemoteVideo);
             this.PanelEmpty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelEmpty.Location = new System.Drawing.Point(3, 3);
             this.PanelEmpty.Name = "PanelEmpty";
-            this.PanelEmpty.Size = new System.Drawing.Size(1053, 583);
+            this.PanelEmpty.Size = new System.Drawing.Size(1053, 588);
             this.PanelEmpty.TabIndex = 2;
             // 
             // PBRemoteVideo
@@ -483,7 +485,7 @@ namespace RSI_X_Desktop
             this.PBRemoteVideo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PBRemoteVideo.Location = new System.Drawing.Point(0, 0);
             this.PBRemoteVideo.Name = "PBRemoteVideo";
-            this.PBRemoteVideo.Size = new System.Drawing.Size(1053, 583);
+            this.PBRemoteVideo.Size = new System.Drawing.Size(1053, 588);
             this.PBRemoteVideo.TabIndex = 0;
             this.PBRemoteVideo.TabStop = false;
             // 
