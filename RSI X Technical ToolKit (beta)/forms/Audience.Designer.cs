@@ -414,6 +414,7 @@ namespace RSI_X_Desktop
             // PanelEmpty
             // 
             this.PanelEmpty.BackColor = System.Drawing.Color.Silver;
+            this.PanelEmpty.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelEmpty.BackgroundImage")));
             this.PanelEmpty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PanelEmpty.Controls.Add(this.PBRemoteVideo);
             this.PanelEmpty.Dock = System.Windows.Forms.DockStyle.Fill;

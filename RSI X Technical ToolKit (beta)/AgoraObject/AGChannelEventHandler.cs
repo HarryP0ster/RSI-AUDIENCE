@@ -21,6 +21,7 @@ namespace RSI_X_Desktop
         internal List<uint> hostBroacsters = new();
         private IFormHostHolder form;
         public CHANNEL_TYPE chType { get; private set; }
+        HashSet<uint> Hosts = new();
 
         public AGChannelEventHandler(IFormHostHolder form_new, CHANNEL_TYPE new_chType)
         {
@@ -135,6 +136,7 @@ namespace RSI_X_Desktop
 
         public override void OnChannelRemoteVideoStats(string channelId, RemoteVideoStats stats)
         {
+            Hosts.Add(stats.uid);
         }
 
         public override void OnChannelRemoteAudioStats(string channelId, RemoteAudioStats stats)
@@ -197,7 +199,9 @@ namespace RSI_X_Desktop
                     hostBroacsters.Remove(uid);
                     Console.WriteLine("UserOffLine");
 
-                    if (hostBroacsters.Count == 0)
+                    if (Hosts.Contains(uid))
+                        Hosts.Remove(uid);
+                    if (Hosts.Count == 0)
                     {
                         if (form == null) return;
                         ((Audience)form).Invoke(((Audience)form).CallRefresh, false);
