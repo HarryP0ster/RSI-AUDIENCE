@@ -510,7 +510,7 @@ namespace RSI_X_Desktop
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1280, 740);
+            this.ClientSize = new System.Drawing.Size(1280, 800);
             this.Controls.Add(this.FormAudience);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
