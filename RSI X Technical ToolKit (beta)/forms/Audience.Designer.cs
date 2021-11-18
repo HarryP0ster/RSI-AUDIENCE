@@ -396,8 +396,8 @@ namespace RSI_X_Desktop
             this.mSwitchOriginal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.mSwitchOriginal.Depth = 0;
             this.mSwitchOriginal.Font = new System.Drawing.Font("Segoe UI", 2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mSwitchOriginal.Location = new System.Drawing.Point(0, 16);
-            this.mSwitchOriginal.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.mSwitchOriginal.Location = new System.Drawing.Point(0, 14);
+            this.mSwitchOriginal.Margin = new System.Windows.Forms.Padding(0);
             this.mSwitchOriginal.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mSwitchOriginal.MouseState = MaterialSkin.MouseState.HOVER;
             this.mSwitchOriginal.Name = "mSwitchOriginal";
@@ -413,7 +413,8 @@ namespace RSI_X_Desktop
             this.labelOrig.AutoSize = true;
             this.labelOrig.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelOrig.ForeColor = System.Drawing.Color.White;
-            this.labelOrig.Location = new System.Drawing.Point(53, 18);
+            this.labelOrig.Location = new System.Drawing.Point(53, 15);
+            this.labelOrig.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.labelOrig.Name = "labelOrig";
             this.labelOrig.Size = new System.Drawing.Size(87, 29);
             this.labelOrig.TabIndex = 42;
