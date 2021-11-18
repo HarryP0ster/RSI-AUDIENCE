@@ -288,7 +288,7 @@ namespace RSI_X_Desktop
         #region Events
         private void Audience_Resize(object sender, EventArgs e)
         {
-            CenterToScreen();
+            //CenterToScreen();
         }
         #endregion
     }
