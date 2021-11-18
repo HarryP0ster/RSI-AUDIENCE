@@ -384,11 +384,11 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel5.Controls.Add(this.mSwitchOriginal, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.labelOrig, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(1019, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(1033, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(143, 65);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(129, 65);
             this.tableLayoutPanel5.TabIndex = 43;
             // 
             // mSwitchOriginal
@@ -411,12 +411,12 @@ namespace RSI_X_Desktop
             // 
             this.labelOrig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelOrig.AutoSize = true;
-            this.labelOrig.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelOrig.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelOrig.ForeColor = System.Drawing.Color.White;
-            this.labelOrig.Location = new System.Drawing.Point(53, 15);
-            this.labelOrig.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.labelOrig.Location = new System.Drawing.Point(53, 18);
+            this.labelOrig.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.labelOrig.Name = "labelOrig";
-            this.labelOrig.Size = new System.Drawing.Size(87, 29);
+            this.labelOrig.Size = new System.Drawing.Size(73, 25);
             this.labelOrig.TabIndex = 42;
             this.labelOrig.Text = "ORIGINAL";
             this.labelOrig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
