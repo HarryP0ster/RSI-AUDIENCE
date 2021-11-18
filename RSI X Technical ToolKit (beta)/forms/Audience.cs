@@ -150,7 +150,7 @@ namespace RSI_X_Desktop
                 var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
                 bool ret = AgoraObject.JoinChannelSrc(InterRoom);
                 AgoraObject.MuteSrcAudioStream(false);
-                RoomNameLabel.Focus();
+                //RoomNameLabel.Focus();
             }
         }
 
@@ -164,6 +164,8 @@ namespace RSI_X_Desktop
                 AgoraObject.MuteHostAudioStream(true);
                 AgoraObject.MuteSrcAudioStream(AgoraObject.IsAllRemoteAudioMute);
                 mSwitchOriginal.Checked = false;
+                langBox.Focus();
+                labelOrig.ForeColor = Color.White;
             }
             else
             {
@@ -175,6 +177,7 @@ namespace RSI_X_Desktop
                 AgoraObject.MuteHostAudioStream(AgoraObject.IsAllRemoteAudioMute);
                 AgoraObject.MuteSrcAudioStream(true);
                 mSwitchOriginal.Checked = true;
+                labelOrig.ForeColor = Color.Red;
             }
             langBox.Enabled = IsOriginal;
             IsOriginal = !IsOriginal;
@@ -291,5 +294,15 @@ namespace RSI_X_Desktop
             //CenterToScreen();
         }
         #endregion
+
+        private void langBox_MouseEnter(object sender, EventArgs e)
+        {
+            langBox.Refresh();
+        }
+
+        private void langBox_Click(object sender, EventArgs e)
+        {
+            langBox.Refresh();
+        }
     }
 }

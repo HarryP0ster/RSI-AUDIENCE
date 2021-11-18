@@ -39,7 +39,6 @@ namespace RSI_X_Desktop
             this.Settings = new ReaLTaiizor.Controls.Button();
             this.ExitApp = new ReaLTaiizor.Controls.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.mSwitchOriginal = new MaterialSkin.Controls.MaterialSwitch();
             this.labelVideo = new System.Windows.Forms.Label();
             this.labelAudio = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,6 +46,9 @@ namespace RSI_X_Desktop
             this.labelVolume = new System.Windows.Forms.Label();
             this.comboBoxPanel = new System.Windows.Forms.TableLayoutPanel();
             this.langBox = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.mSwitchOriginal = new MaterialSkin.Controls.MaterialSwitch();
+            this.labelOrig = new System.Windows.Forms.Label();
             this.RemotePanel = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelEmpty = new System.Windows.Forms.Panel();
@@ -62,6 +64,7 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.comboBoxPanel.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.RemotePanel.SuspendLayout();
             this.PanelEmpty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBRemoteVideo)).BeginInit();
@@ -218,13 +221,13 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.mSwitchOriginal, 4, 0);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.Controls.Add(this.labelVideo, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelAudio, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxPanel, 5, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 4, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 682);
@@ -234,23 +237,6 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1274, 71);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // mSwitchOriginal
-            // 
-            this.mSwitchOriginal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mSwitchOriginal.AutoSize = true;
-            this.mSwitchOriginal.Depth = 0;
-            this.mSwitchOriginal.Location = new System.Drawing.Point(1040, 17);
-            this.mSwitchOriginal.Margin = new System.Windows.Forms.Padding(0);
-            this.mSwitchOriginal.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.mSwitchOriginal.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mSwitchOriginal.Name = "mSwitchOriginal";
-            this.mSwitchOriginal.Ripple = true;
-            this.mSwitchOriginal.Size = new System.Drawing.Size(125, 37);
-            this.mSwitchOriginal.TabIndex = 41;
-            this.mSwitchOriginal.Text = "Original  ";
-            this.mSwitchOriginal.UseVisualStyleBackColor = true;
-            this.mSwitchOriginal.CheckedChanged += new System.EventHandler(this.mSwitchOriginal_CheckedChanged);
-            // 
             // labelVideo
             // 
             this.labelVideo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -258,7 +244,7 @@ namespace RSI_X_Desktop
             this.labelVideo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelVideo.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelVideo.ForeColor = System.Drawing.Color.White;
-            this.labelVideo.Location = new System.Drawing.Point(4, 21);
+            this.labelVideo.Location = new System.Drawing.Point(71, 21);
             this.labelVideo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelVideo.Name = "labelVideo";
             this.labelVideo.Size = new System.Drawing.Size(57, 29);
@@ -274,7 +260,7 @@ namespace RSI_X_Desktop
             this.labelAudio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelAudio.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelAudio.ForeColor = System.Drawing.Color.White;
-            this.labelAudio.Location = new System.Drawing.Point(69, 21);
+            this.labelAudio.Location = new System.Drawing.Point(4, 21);
             this.labelAudio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAudio.Name = "labelAudio";
             this.labelAudio.Size = new System.Drawing.Size(59, 29);
@@ -386,6 +372,53 @@ namespace RSI_X_Desktop
             this.langBox.StartIndex = 0;
             this.langBox.TabIndex = 43;
             this.langBox.SelectedIndexChanged += new System.EventHandler(this.langBox_SelectedIndexChanged);
+            this.langBox.Click += new System.EventHandler(this.langBox_Click);
+            this.langBox.MouseEnter += new System.EventHandler(this.langBox_MouseEnter);
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.AutoSize = true;
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.Controls.Add(this.mSwitchOriginal, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.labelOrig, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(1019, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(143, 65);
+            this.tableLayoutPanel5.TabIndex = 43;
+            // 
+            // mSwitchOriginal
+            // 
+            this.mSwitchOriginal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.mSwitchOriginal.Depth = 0;
+            this.mSwitchOriginal.Font = new System.Drawing.Font("Segoe UI", 2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mSwitchOriginal.Location = new System.Drawing.Point(0, 14);
+            this.mSwitchOriginal.Margin = new System.Windows.Forms.Padding(0);
+            this.mSwitchOriginal.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mSwitchOriginal.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mSwitchOriginal.Name = "mSwitchOriginal";
+            this.mSwitchOriginal.Ripple = true;
+            this.mSwitchOriginal.Size = new System.Drawing.Size(50, 37);
+            this.mSwitchOriginal.TabIndex = 41;
+            this.mSwitchOriginal.UseVisualStyleBackColor = true;
+            this.mSwitchOriginal.CheckedChanged += new System.EventHandler(this.mSwitchOriginal_CheckedChanged);
+            // 
+            // labelOrig
+            // 
+            this.labelOrig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelOrig.AutoSize = true;
+            this.labelOrig.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelOrig.ForeColor = System.Drawing.Color.White;
+            this.labelOrig.Location = new System.Drawing.Point(53, 18);
+            this.labelOrig.Name = "labelOrig";
+            this.labelOrig.Size = new System.Drawing.Size(87, 29);
+            this.labelOrig.TabIndex = 42;
+            this.labelOrig.Text = "ORIGINAL";
+            this.labelOrig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // RemotePanel
             // 
@@ -533,6 +566,8 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.comboBoxPanel.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.RemotePanel.ResumeLayout(false);
             this.PanelEmpty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBRemoteVideo)).EndInit();
@@ -568,5 +603,7 @@ namespace RSI_X_Desktop
         private System.Windows.Forms.Panel PanelEmpty;
         private ReaLTaiizor.Controls.MaterialComboBox langBox;
         private System.Windows.Forms.TableLayoutPanel comboBoxPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label labelOrig;
     }
 }
