@@ -23,7 +23,11 @@ namespace RSI_X_Desktop.forms
         public int Volume { get => volume; }
         
         private IFormHostHolder workForm = AgoraObject.GetWorkForm;
-        private AgoraAudioPlaybackDeviceManager audioOutDeviceManager;
+        private AgoraAudioPlaybackDeviceManager SpeakersManager;
+        static List<string> Speakers;
+
+        private static int oldVolumeOut;
+        private static string oldSpeaker;
 
         public Devices()
         {
@@ -40,11 +44,27 @@ namespace RSI_X_Desktop.forms
 
         private void NewDevices_Load(object sender, EventArgs e)
         {
-            audioOutDeviceManager = AgoraObject.Rtc.CreateAudioPlaybackDeviceManager();
-            trackBarSoundOut.Value = Volume;
-            comboBoxAudioOutput.DataSource = getListAudioOutDevices();
-            comboBoxAudioOutput.SelectedIndex = getActiveAudioOutputDevice();
+            SpeakersManager = AgoraObject.Rtc.CreateAudioPlaybackDeviceManager();
+
+            oldVolumeOut = Volume;
+            trackBarSoundOut.Value = oldVolumeOut;
+            
+            Speakers = getListAudioOutDevices();
+            UpdateComboBoxSpeaker();
             getComputerDescription();
+        }
+        private void UpdateComboBoxSpeaker()
+        {
+            bool hasOldSpeaker = Speakers.Any((s) => s == oldSpeaker);
+
+            int index = hasOldSpeaker ?
+                Speakers.FindLastIndex((s) => s == oldSpeaker) :
+                index = getActiveAudioOutputDevice();
+
+            oldSpeaker = Speakers[index];
+
+            comboBoxAudioOutput.DataSource = Speakers;
+            comboBoxAudioOutput.SelectedIndex = index;
         }
 
         private void getComputerDescription()
@@ -68,11 +88,11 @@ namespace RSI_X_Desktop.forms
         {
             int id = -1;
 
-            audioOutDeviceManager.GetCurrentDeviceInfo(out string idAcvite, out string nameAcitve);
+            SpeakersManager.GetCurrentDeviceInfo(out string idAcvite, out string nameAcitve);
 
-            for (int i = 0; i < audioOutDeviceManager.GetDeviceCount(); i++)
+            for (int i = 0; i < SpeakersManager.GetDeviceCount(); i++)
             {
-                var ret = audioOutDeviceManager.GetDeviceInfoByIndex(i, out string name, out string deviceid);
+                var ret = SpeakersManager.GetDeviceInfoByIndex(i, out string name, out string deviceid);
                 if (idAcvite == deviceid)
                 {
                     id = i;
@@ -89,11 +109,11 @@ namespace RSI_X_Desktop.forms
         {
             List<string> devicesOut = new();
 
-            for (int i = 0; i < audioOutDeviceManager.GetDeviceCount(); i++)
+            for (int i = 0; i < SpeakersManager.GetDeviceCount(); i++)
             {
                 string device, id;
 
-                var ret = audioOutDeviceManager.GetDeviceInfoByIndex(i, out device, out id);
+                var ret = SpeakersManager.GetDeviceInfoByIndex(i, out device, out id);
 
                 if (ret == ERROR_CODE.ERR_OK)
                     devicesOut.Add(device);
@@ -110,7 +130,7 @@ namespace RSI_X_Desktop.forms
             int ind = ((ComboBox)sender).SelectedIndex;
             string name, id;
 
-            audioOutDeviceManager.GetDeviceInfoByIndex(ind, out name, out id);
+            SpeakersManager.GetDeviceInfoByIndex(ind, out name, out id);
             //audioOutDeviceManager.SetCurrentDevice(id);
         }
 
@@ -126,18 +146,20 @@ namespace RSI_X_Desktop.forms
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
-            int indOUT = comboBoxAudioOutput.SelectedIndex;
-            string nameOUT, idOUT;
-            audioOutDeviceManager.GetDeviceInfoByIndex(indOUT, out nameOUT, out idOUT);
-            audioOutDeviceManager.SetCurrentDevice(idOUT);
+            oldSpeaker = Speakers[comboBoxAudioOutput.SelectedIndex];
+            oldVolumeOut = trackBarSoundOut.Value;
+
             CloseButton_Click(sender, e);
         }
 
         internal void CloseButton_Click(object sender, EventArgs e)
         {
+            trackBarSoundOut.Value = oldVolumeOut;
+            trackBarSoundOut_ValueChanged();
 
-            if (workForm != null)
-                workForm.DevicesClosed(this);
+            SpeakersManager.SetCurrentDevice(oldSpeaker);
+
+            AgoraObject.GetWorkForm?.DevicesClosed(this);
             Close();
         }
 
