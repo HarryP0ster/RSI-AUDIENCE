@@ -50,10 +50,8 @@ namespace RSI_X_Desktop
             this.mSwitchOriginal = new MaterialSkin.Controls.MaterialSwitch();
             this.labelOrig = new System.Windows.Forms.Label();
             this.RemotePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.PanelEmpty = new System.Windows.Forms.Panel();
             this.streamsTable = new System.Windows.Forms.TableLayoutPanel();
-            this.PBRemoteVideo = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new ReaLTaiizor.Controls.Button();
@@ -67,9 +65,6 @@ namespace RSI_X_Desktop
             this.comboBoxPanel.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.RemotePanel.SuspendLayout();
-            this.PanelEmpty.SuspendLayout();
-            this.streamsTable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBRemoteVideo)).BeginInit();
             this.SuspendLayout();
             // 
             // FormAudience
@@ -428,8 +423,8 @@ namespace RSI_X_Desktop
             this.RemotePanel.ColumnCount = 2;
             this.RemotePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.58074F));
             this.RemotePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.41926F));
+            this.RemotePanel.Controls.Add(this.streamsTable, 0, 0);
             this.RemotePanel.Controls.Add(this.panel1, 1, 0);
-            this.RemotePanel.Controls.Add(this.PanelEmpty, 0, 0);
             this.RemotePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RemotePanel.Location = new System.Drawing.Point(3, 78);
             this.RemotePanel.Name = "RemotePanel";
@@ -437,6 +432,22 @@ namespace RSI_X_Desktop
             this.RemotePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.RemotePanel.Size = new System.Drawing.Size(1274, 598);
             this.RemotePanel.TabIndex = 3;
+            // 
+            // streamsTable
+            // 
+            this.streamsTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.streamsTable.BackColor = System.Drawing.Color.Silver;
+            this.streamsTable.ColumnCount = 1;
+            this.streamsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.streamsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.streamsTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.streamsTable.Location = new System.Drawing.Point(3, 3);
+            this.streamsTable.Name = "streamsTable";
+            this.streamsTable.RowCount = 1;
+            this.streamsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.streamsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.streamsTable.Size = new System.Drawing.Size(1058, 592);
+            this.streamsTable.TabIndex = 2;
             // 
             // panel1
             // 
@@ -446,47 +457,6 @@ namespace RSI_X_Desktop
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 592);
             this.panel1.TabIndex = 1;
-            // 
-            // PanelEmpty
-            // 
-            this.PanelEmpty.BackColor = System.Drawing.Color.Silver;
-            this.PanelEmpty.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelEmpty.BackgroundImage")));
-            this.PanelEmpty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PanelEmpty.Controls.Add(this.streamsTable);
-            this.PanelEmpty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelEmpty.Location = new System.Drawing.Point(3, 3);
-            this.PanelEmpty.Name = "PanelEmpty";
-            this.PanelEmpty.Size = new System.Drawing.Size(1058, 592);
-            this.PanelEmpty.TabIndex = 2;
-            // 
-            // streamsTable
-            // 
-            this.streamsTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.streamsTable.ColumnCount = 1;
-            this.streamsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.streamsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.streamsTable.Controls.Add(this.PBRemoteVideo, 0, 0);
-            this.streamsTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.streamsTable.Location = new System.Drawing.Point(0, 0);
-            this.streamsTable.Name = "streamsTable";
-            this.streamsTable.RowCount = 1;
-            this.streamsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.streamsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.streamsTable.Size = new System.Drawing.Size(1058, 592);
-            this.streamsTable.TabIndex = 0;
-            // 
-            // PBRemoteVideo
-            // 
-            this.PBRemoteVideo.BackColor = System.Drawing.Color.Silver;
-            this.PBRemoteVideo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PBRemoteVideo.BackgroundImage")));
-            this.PBRemoteVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PBRemoteVideo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PBRemoteVideo.Location = new System.Drawing.Point(0, 0);
-            this.PBRemoteVideo.Margin = new System.Windows.Forms.Padding(0);
-            this.PBRemoteVideo.Name = "PBRemoteVideo";
-            this.PBRemoteVideo.Size = new System.Drawing.Size(1058, 592);
-            this.PBRemoteVideo.TabIndex = 0;
-            this.PBRemoteVideo.TabStop = false;
             // 
             // nightControlBox1
             // 
@@ -589,9 +559,6 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.RemotePanel.ResumeLayout(false);
-            this.PanelEmpty.ResumeLayout(false);
-            this.streamsTable.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PBRemoteVideo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -599,7 +566,6 @@ namespace RSI_X_Desktop
         #endregion
 
         private ReaLTaiizor.Forms.FormTheme FormAudience;
-        private System.Windows.Forms.PictureBox PBRemoteVideo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox PictureBoxLogo;
@@ -621,7 +587,6 @@ namespace RSI_X_Desktop
         private System.Windows.Forms.TableLayoutPanel RemotePanel;
         private System.Windows.Forms.Panel panel1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
-        private System.Windows.Forms.Panel PanelEmpty;
         private ReaLTaiizor.Controls.MaterialComboBox langBox;
         private System.Windows.Forms.TableLayoutPanel comboBoxPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;

@@ -16,9 +16,6 @@ namespace RSI_X_Desktop
 
         private List<string> TarLang;
         private bool IsOriginal = false;
-        private string AppCID = string.Empty;
-        private string ChToken = string.Empty;
-        private string HostName = string.Empty;
         private bool IsMixerOpen = false;
         public delegate void RefreshRemoteWnd(bool param);
         public RefreshRemoteWnd CallRefresh;
@@ -93,7 +90,6 @@ namespace RSI_X_Desktop
             mSwitchOriginal.Checked = true;
 
             AgoraObject.JoinChannelHost(AgoraObject.GetHostName(), AgoraObject.GetHostToken(), 0, "");
-            PBRemoteVideo.Invalidate();
             labelAudio.ForeColor = Color.Red;
             labelVideo.ForeColor = Color.Red;
 
@@ -103,7 +99,6 @@ namespace RSI_X_Desktop
         public void UpdateRemoteWnd()
         {
             AgoraObject.Rtc.StopPreview();
-            PBRemoteVideo.Invalidate();
         }
         public void NewBroadcaster(uint uid, UserInfo info)
         {
@@ -299,15 +294,17 @@ namespace RSI_X_Desktop
 
         public void Animator(Panel panel, int offset_x, int offset_y, int itterations, int delay)
         {
-            PBRemoteVideo.Refresh();
-            PBRemoteVideo.SuspendLayout();
+            //pictureBoxRemoteVideo.Refresh();
+            Thread.Sleep(delay);
+            streamsTable.SuspendLayout();
             for (int ind = 0; ind < itterations; ind++)
             {
                 RemotePanel.ColumnStyles[1].Width = RemotePanel.ColumnStyles[1].Width - offset_x;
-                PBRemoteVideo.Size = new Size(PBRemoteVideo.Size.Width - offset_x, PBRemoteVideo.Size.Height);
+                streamsTable.Size = new Size(streamsTable.Size.Width - offset_x, streamsTable.Size.Height);
                 //Thread.Sleep(1);
             }
-            PBRemoteVideo.ResumeLayout();
+            streamsTable.ResumeLayout();
+            streamsTable.Refresh();
         }
 
         private void nightControlBox1_MouseClick(object sender, MouseEventArgs e)
@@ -365,7 +362,10 @@ namespace RSI_X_Desktop
                     streamsTable.ColumnCount++;
                     streamsTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
                     foreach (ColumnStyle col in streamsTable.ColumnStyles)
+                    {
+                        col.SizeType = SizeType.Percent;
                         col.Width = 100F;
+                    }
                     AddOrder = true;
                 }
                 else
@@ -373,7 +373,10 @@ namespace RSI_X_Desktop
                     streamsTable.RowCount++;
                     streamsTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
                     foreach (RowStyle row in streamsTable.RowStyles)
+                    {
+                        row.SizeType = SizeType.Percent;
                         row.Height = 100F;
+                    }
                     AddOrder = false;
                 }
             }

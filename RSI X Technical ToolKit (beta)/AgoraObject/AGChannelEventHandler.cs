@@ -21,7 +21,6 @@ namespace RSI_X_Desktop
         internal List<uint> hostBroacsters = new();
         private IFormHostHolder form;
         public CHANNEL_TYPE chType { get; private set; }
-        HashSet<uint> Hosts = new();
 
         public AGChannelEventHandler(IFormHostHolder form_new, CHANNEL_TYPE new_chType)
         {
@@ -141,7 +140,6 @@ namespace RSI_X_Desktop
 
         public override void OnChannelRemoteVideoStats(string channelId, RemoteVideoStats stats)
         {
-            Hosts.Add(stats.uid);
         }
 
         public override void OnChannelRemoteAudioStats(string channelId, RemoteAudioStats stats)
@@ -197,20 +195,8 @@ namespace RSI_X_Desktop
             //TODO: добавить очистку окон коллег через state == REMOTE_VIDEO_STATE_STOPPED
             switch (state) {
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_DECODING:
-                    ((Audience)form).Invoke(((Audience)form).CallRefresh, true);
-                    FirstFrameDecoding(channelId, uid, reason);
                     break;
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_STOPPED:
-                    hostBroacsters.Remove(uid);
-                    Console.WriteLine("UserOffLine");
-
-                    if (Hosts.Contains(uid))
-                        Hosts.Remove(uid);
-                    if (Hosts.Count == 0)
-                    {
-                        if (form == null) return;
-                        ((Audience)form).Invoke(((Audience)form).CallRefresh, false);
-                    }
                     VideoStreamHasStopped(channelId, uid, reason);
                     break;
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_FROZEN:
@@ -252,15 +238,6 @@ namespace RSI_X_Desktop
             switch (chType)
             {
                 case CHANNEL_TYPE.CHANNEL_HOST:
-                    if (form.RemoteWnd == IntPtr.Zero) return;
-
-                    hostBroacsters.Add(uid);
-                    canv = new((ulong)form.RemoteWnd, uid);
-                    canv.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
-                    canv.channelId = channelId;
-
-                    AgoraObject.Rtc.SetupRemoteVideo(canv);
-                    break;
                 case CHANNEL_TYPE.CHANNEL_TRANSL:
                 case CHANNEL_TYPE.CHANNEL_DEST:
                 case CHANNEL_TYPE.CHANNEL_SRC:
