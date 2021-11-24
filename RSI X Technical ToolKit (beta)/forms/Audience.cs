@@ -355,6 +355,9 @@ namespace RSI_X_Desktop
             newPreview.BackColor = Color.FromArgb(85, 85, 85);
             newPreview.Margin = Padding.Empty;
             List<bool> temp_list = new List<bool>(TakenPages);
+
+            streamsTable.BackgroundImage = null;
+
             if (temp_list.Contains(false) == false)
             {
                 if (AddOrder == false)
@@ -420,6 +423,9 @@ namespace RSI_X_Desktop
             int index = streamsTable.ColumnCount * streamsTable.RowCount;
             hostBroadcasters.Remove(uid);
 
+            if (hostBroadcasters.Count == 0)
+                streamsTable.BackgroundImage = Properties.Resources.logotype_black;
+
             if (index - hostBroadcasters.Count <= streamsTable.ColumnCount && AddOrder)
             {
                 streamsTable.ColumnStyles.RemoveAt(streamsTable.ColumnStyles.Count - 1);
@@ -462,6 +468,50 @@ namespace RSI_X_Desktop
                 }
             }
             streamsTable.Refresh();
+        }
+
+        internal void UpdateMember(uint uid)
+        {
+            if (hostBroadcasters.ContainsKey(uid))
+            {
+                if (InvokeRequired)
+                {
+                    Invoke((MethodInvoker)delegate
+                    {
+                        hostBroadcasters[uid].Invalidate();
+                    });
+                }
+                else
+                    hostBroadcasters[uid].Invalidate();
+            }
+        }
+
+        internal void UpdateMember(uint uid, string channelId)
+        {
+            if (hostBroadcasters.ContainsKey(uid))
+            {
+                if (InvokeRequired)
+                {
+                    Invoke((MethodInvoker)delegate
+                    {
+                        var ret = new VideoCanvas((ulong)hostBroadcasters[uid].Handle, uid);
+                        ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
+                        ret.channelId = channelId;
+                        ret.uid = uid;
+
+                        AgoraObject.Rtc.SetupRemoteVideo(ret);
+                    });
+                }
+                else
+                {
+                    var ret = new VideoCanvas((ulong)hostBroadcasters[uid].Handle, uid);
+                    ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
+                    ret.channelId = channelId;
+                    ret.uid = uid;
+
+                    AgoraObject.Rtc.SetupRemoteVideo(ret);
+                }
+            }
         }
         #endregion
     }

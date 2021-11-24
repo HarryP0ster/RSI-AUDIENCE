@@ -437,6 +437,8 @@ namespace RSI_X_Desktop
             // 
             this.streamsTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.streamsTable.BackColor = System.Drawing.Color.Silver;
+            this.streamsTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("streamsTable.BackgroundImage")));
+            this.streamsTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.streamsTable.ColumnCount = 1;
             this.streamsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.streamsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
