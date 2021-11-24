@@ -23,6 +23,10 @@ namespace RSI_X_Desktop
         public delegate void RefreshRemoteWnd(bool param);
         public RefreshRemoteWnd CallRefresh;
 
+        private bool AddOrder = false;
+        private bool[] TakenPages = new bool[1];
+        private Dictionary<uint, PictureBox> hostBroadcasters = new();
+
         [DllImport("winmm.dll")]
         public static extern int waveOutGetVolume(IntPtr hwo, out uint dwVolume); //Контроль громкости
 
@@ -48,12 +52,12 @@ namespace RSI_X_Desktop
 
         public void RefreshDelegate()
         {
-            PBRemoteVideo.Visible = !AgoraObject.IsAllRemoteVideoMute;
+            streamsTable.Visible = !AgoraObject.IsAllRemoteVideoMute;
         }
 
         public void RefreshDelegate(bool state)
         {
-            PBRemoteVideo.Visible = state;
+            streamsTable.Visible = state;
         }
 
         private void UpdateLangComboBox()
@@ -83,9 +87,9 @@ namespace RSI_X_Desktop
             AgoraObject.SetWndEventHandler(this);
 
             //pictureBoxRemoteVideo.Width = this.Width;
-            RemoteWnd = PBRemoteVideo.Handle;
+            //RemoteWnd = PBRemoteVideo.Handle;
             UpdateLangComboBox();
-
+            
             mSwitchOriginal.Checked = true;
 
             AgoraObject.JoinChannelHost(AgoraObject.GetHostName(), AgoraObject.GetHostToken(), 0, "");
@@ -102,16 +106,46 @@ namespace RSI_X_Desktop
             PBRemoteVideo.Invalidate();
         }
         public void NewBroadcaster(uint uid, UserInfo info)
-        { 
+        {
             //throw new NotImplementedException(); 
+            if (info.userAccount.StartsWith("HOST") && !hostBroadcasters.ContainsKey(uid))
+            {
+                if (InvokeRequired)
+                    Invoke((MethodInvoker)delegate
+                    {
+                        AddNewMember(uid);
+                    });
+                else
+                    AddNewMember(uid);
+            }
         }
         public void BroadcasterUpdateInfo(uint uid, UserInfo info)
-        { 
+        {
             //throw new NotImplementedException(); 
+            if (info.userAccount.StartsWith("HOST") && !hostBroadcasters.ContainsKey(uid))
+            {
+                if (InvokeRequired)
+                    Invoke((MethodInvoker)delegate
+                    {
+                        AddNewMember(uid);
+                    });
+                else
+                    AddNewMember(uid);
+            }
         }
         public void BroadcasterLeave(uint uid)
-        { 
-            //throw new NotImplementedException(); 
+        {
+            //throw new NotImplementedException();
+            if (hostBroadcasters.ContainsKey(uid))
+            {
+                if (InvokeRequired)
+                    Invoke((MethodInvoker)delegate
+                    {
+                        RemoveMember(uid);
+                    });
+                else
+                    RemoveMember(uid);
+            }
         }
 
         private void labelMicrophone_Click(object sender, EventArgs e)
@@ -308,5 +342,124 @@ namespace RSI_X_Desktop
         {
             langBox.Refresh();
         }
+
+
+        #region MembersControl
+
+        private void AddNewMember(uint uid)
+        {
+            PictureBox newPreview = new();
+
+            string channelId = AgoraObject.GetHostName();
+
+            newPreview.Dock = DockStyle.Fill;
+            newPreview.BackgroundImage = Properties.Resources.video_call_empty;
+            newPreview.BackgroundImageLayout = ImageLayout.Center;
+            newPreview.BackColor = Color.FromArgb(85, 85, 85);
+            newPreview.Margin = Padding.Empty;
+            List<bool> temp_list = new List<bool>(TakenPages);
+            if (temp_list.Contains(false) == false)
+            {
+                if (AddOrder == false)
+                {
+                    streamsTable.ColumnCount++;
+                    streamsTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+                    foreach (ColumnStyle col in streamsTable.ColumnStyles)
+                        col.Width = 100F;
+                    AddOrder = true;
+                }
+                else
+                {
+                    streamsTable.RowCount++;
+                    streamsTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+                    foreach (RowStyle row in streamsTable.RowStyles)
+                        row.Height = 100F;
+                    AddOrder = false;
+                }
+            }
+            int index = streamsTable.ColumnCount * streamsTable.RowCount;
+            hostBroadcasters.Add(uid, newPreview);
+            TakenPages = new bool[index];
+            streamsTable.Controls.Clear();
+
+            int current_row = 0;
+            int current_col = 0;
+            foreach (PictureBox hwnd in hostBroadcasters.Values)
+            {
+                for (int i = 0; i < TakenPages.Length; i++)
+                {
+                    if (TakenPages[i] == false)
+                    {
+                        TakenPages[i] = true;
+                        streamsTable.Controls.Add(hwnd, current_col, current_row);
+                        current_col++;
+                        if (current_col >= streamsTable.ColumnStyles.Count)
+                        {
+                            current_col = 0;
+                            current_row++;
+                        }
+                        break;
+                    }
+                }
+            }
+
+            var ret = new VideoCanvas((ulong)newPreview.Handle, uid);
+            ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
+            ret.channelId = channelId;
+            ret.uid = uid;
+
+            AgoraObject.Rtc.SetupRemoteVideo(ret);
+            streamsTable.Refresh();
+        }
+
+        private void RemoveMember(uint uid)
+        {
+            int index = streamsTable.ColumnCount * streamsTable.RowCount;
+            hostBroadcasters.Remove(uid);
+
+            if (index - hostBroadcasters.Count <= streamsTable.ColumnCount && AddOrder)
+            {
+                streamsTable.ColumnStyles.RemoveAt(streamsTable.ColumnStyles.Count - 1);
+                streamsTable.ColumnCount--;
+                foreach (ColumnStyle col in streamsTable.ColumnStyles)
+                    col.Width = 100F;
+                AddOrder = false;
+            }
+            else if (index - hostBroadcasters.Count >= streamsTable.RowCount && !AddOrder)
+            {
+                streamsTable.RowStyles.RemoveAt(streamsTable.RowStyles.Count - 1);
+                streamsTable.RowCount--;
+                foreach (RowStyle row in streamsTable.RowStyles)
+                    row.Height = 100F;
+                AddOrder = true;
+            }
+
+            index = streamsTable.ColumnCount * streamsTable.RowCount;
+            TakenPages = new bool[index];
+            streamsTable.Controls.Clear();
+
+            int current_row = 0;
+            int current_col = 0;
+            foreach (PictureBox hwnd in hostBroadcasters.Values)
+            {
+                for (int i = 0; i < TakenPages.Length; i++)
+                {
+                    if (TakenPages[i] == false)
+                    {
+                        TakenPages[i] = true;
+                        streamsTable.Controls.Add(hwnd, current_col, current_row);
+                        current_col++;
+                        if (current_col >= streamsTable.ColumnStyles.Count)
+                        {
+                            current_col = 0;
+                            current_row++;
+                        }
+                        break;
+                    }
+                }
+            }
+            streamsTable.Refresh();
+        }
+        #endregion
     }
 }

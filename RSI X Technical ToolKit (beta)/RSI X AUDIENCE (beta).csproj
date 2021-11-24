@@ -160,7 +160,6 @@
     <None Remove="Resources\video-conference.png" />
     <None Remove="Resources\video.png" />
     <None Remove="Resources\video1.png" />
-    <None Remove="Resources\video_call_empty.png" />
     <None Remove="Resources\webcam.png" />
     <None Remove="Resources\лого.png" />
     <None Remove="Resources\микрофон.png" />
