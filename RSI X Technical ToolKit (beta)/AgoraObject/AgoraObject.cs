@@ -24,8 +24,6 @@ namespace RSI_X_Desktop
 
         public static bool IsJoin { get; private set; }
 
-        public static bool IsLocalAudioMute { get; private set; }
-        public static bool IsLocalVideoMute { get; private set; }
 
         public static bool IsAllRemoteAudioMute { get; private set; }
         public static bool IsHostAudioMute { get; private set; }
@@ -49,24 +47,18 @@ namespace RSI_X_Desktop
         internal static Tokens room = new Tokens();
 
         internal static AgoraRtcChannel m_channelSrc;
-        internal static AgoraRtcChannel m_channelTransl;
         internal static AgoraRtcChannel m_channelHost;
-        internal static AgoraRtcChannel m_channelTarget;
-        internal static Dictionary<string, AgoraRtcChannel> m_listChannels = new();
 
         internal static AGChannelEventHandler srcHandler;
-        internal static AGChannelEventHandler translHandler;
         internal static AGChannelEventHandler hostHandler;
-        internal static AGChannelEventHandler targetHandler;
         private static IFormHostHolder workForm;
         public static IFormHostHolder GetWorkForm { get => workForm; }
         public static bool m_channelSrcJoin     { get; private set; } = false;
         public static bool m_channelHostJoin    { get; private set; } = false;
 
-        private static bool m_channelTranslPublish = false;
-        private static string  m_channelTargetPublish = String.Empty;
-        private static string  m_currentChannelSrc = String.Empty;
         public readonly static System.Text.UTF8Encoding utf8enc = new();
+
+        internal static Dictionary<uint, UserInfo> hostBroacsters = new();
 
         [DllImport("USER32.DLL")]
         static extern bool GetWindowRect(IntPtr hWnd, out System.Drawing.Rectangle lpRect);
@@ -75,19 +67,7 @@ namespace RSI_X_Desktop
         {
             Rtc = AgoraRtcEngine.CreateRtcEngine();
             Rtc.Initialize(new RtcEngineContext(AppID));
-
-            Rtc.SetVideoProfile(VIDEO_PROFILE_TYPE.VIDEO_PROFILE_LANDSCAPE_180P_3, false);
         }
-
-        private static void SetPublishAudioProfile()
-        {
-            Rtc.SetAudioProfile(AUDIO_PROFILE_TYPE.AUDIO_PROFILE_MUSIC_HIGH_QUALITY, AUDIO_SCENARIO_TYPE.AUDIO_SCENARIO_CHATROOM_GAMING);
-        }
-        private static void SetDefaultAudioProfile()
-        {
-            Rtc.SetAudioProfile(AUDIO_PROFILE_TYPE.AUDIO_PROFILE_MUSIC_STANDARD, AUDIO_SCENARIO_TYPE.AUDIO_SCENARIO_CHATROOM_GAMING);
-        }
-
         #region token logic
         static public bool JoinRoom(string code)
         {
@@ -100,32 +80,6 @@ namespace RSI_X_Desktop
         public static string GetHostName()              => room.GetHostName;
         public static List<string> GetLangCollection()  => room.GetLanguages.Keys.ToList();
         #endregion
-
-        #region Mute local audio/video
-        static public ERROR_CODE MuteLocalAudioStream(bool mute)
-        {
-            ERROR_CODE res;
-
-            res = Rtc.MuteLocalAudioStream(mute);
-
-            if (res == ERROR_CODE.ERR_OK)
-                IsLocalAudioMute = mute;
-
-            return res;
-        }
-
-        static public ERROR_CODE MuteLocalVideoStream(bool mute)
-        {
-            ERROR_CODE res;
-
-            res = Rtc.MuteLocalVideoStream(mute);
-
-            if (res == ERROR_CODE.ERR_OK)
-                IsLocalVideoMute = mute;
-
-            return res;
-        }
-        #endregion
         
         #region  mute remote video\audio
         static public void MuteAllRemoteAudioStream(bool mute)
@@ -133,7 +87,6 @@ namespace RSI_X_Desktop
             Rtc.MuteAllRemoteAudioStreams(mute);
             m_channelHost?.MuteAllRemoteAudioStreams(mute);
             m_channelSrc?.MuteAllRemoteAudioStreams(mute);
-            m_channelTransl?.MuteAllRemoteAudioStreams(mute);
 
             IsAllRemoteAudioMute = mute;
         }
@@ -142,17 +95,8 @@ namespace RSI_X_Desktop
         {
             Rtc.MuteAllRemoteVideoStreams(mute);
             m_channelHost?.MuteAllRemoteVideoStreams(mute);
-            m_channelTransl?.MuteAllRemoteVideoStreams(mute);
 
             IsAllRemoteVideoMute = mute;
-        }
-
-        static public void MuteAllTransLatersAudioStream(bool mute) 
-        {
-            m_channelTransl?.MuteAllRemoteAudioStreams(mute);
-
-            IsAllTransLatersAudioMute = m_channelTransl != null &&
-                                        mute;
         }
         static public void MuteHostAudioStream(bool mute)
         {
@@ -174,9 +118,7 @@ namespace RSI_X_Desktop
         {
             Rtc.InitEventHandler(new AGEngineEventHandler(form));
             srcHandler = new AGChannelEventHandler(form, CHANNEL_TYPE.CHANNEL_SRC);
-            translHandler = new AGChannelEventHandler(form, CHANNEL_TYPE.CHANNEL_TRANSL);
             hostHandler = new AGChannelEventHandler(form, CHANNEL_TYPE.CHANNEL_HOST);
-            targetHandler = new AGChannelEventHandler(form, CHANNEL_TYPE.CHANNEL_DEST);
             workForm = form;
         }
         
@@ -219,7 +161,7 @@ namespace RSI_X_Desktop
 
             m_channelHost = Rtc.CreateChannel(lpChannelName);
             m_channelHost.InitChannelEventHandler(hostHandler);
-            m_channelHost.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_AUDIENCE);
+            m_channelHost.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_BROADCASTER);
             m_channelHost.SetDefaultMuteAllRemoteVideoStreams(false);
 
             ChannelMediaOptions options = new();
@@ -227,7 +169,9 @@ namespace RSI_X_Desktop
             options.autoSubscribeVideo = !IsAllRemoteVideoMute;
 
 
-            ERROR_CODE ret = m_channelHost.JoinChannel(token, info, nUID, options);
+            //ERROR_CODE ret = m_channelHost.JoinChannel(token, info, nUID, options);
+            ERROR_CODE ret = m_channelHost.JoinChannelWithUserAccount(token, "SPECTRATOR", options);
+
 
             m_channelHostJoin = (0 == ret);
 
@@ -240,5 +184,29 @@ namespace RSI_X_Desktop
             m_channelHostJoin = false;
         }
         #endregion
+        internal static void NewUserOnHost(uint uid, UserInfo user)
+        {
+            if (hostBroacsters.ContainsKey(uid))
+                hostBroacsters[uid] = user; 
+            else
+                hostBroacsters.Add(uid, user);
+            workForm.NewBroadcaster(uid, user);
+        }
+        internal static void UpdateHostUserInfo(uint uid, UserInfo user)
+        {
+            if (hostBroacsters.ContainsKey(uid))
+            {
+                hostBroacsters[uid] = user;
+                workForm.BroadcasterUpdateInfo(uid, user);
+            }
+        }
+        internal static void RemoveHostUserInfo(uint uid)
+        {
+            if (hostBroacsters.ContainsKey(uid))
+            {
+                hostBroacsters.Remove(uid);
+                workForm.BroadcasterLeave(uid);
+            }
+        }
     }
 }

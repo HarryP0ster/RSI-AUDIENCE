@@ -88,6 +88,9 @@ namespace RSI_X_Desktop
                 case CHANNEL_TYPE.CHANNEL_TRANSL:
                 case CHANNEL_TYPE.CHANNEL_DEST:
                 case CHANNEL_TYPE.CHANNEL_HOST:
+                    AgoraObject.Rtc.GetUserInfoByUid(uid, out UserInfo user);
+                    AgoraObject.NewUserOnHost(uid, user);
+                    break;
                 case CHANNEL_TYPE.CHANNEL_SRC:
                 default:
                     break;
@@ -103,9 +106,11 @@ namespace RSI_X_Desktop
         {
             switch (chType)
             {
-                case CHANNEL_TYPE.CHANNEL_HOST:
                 case CHANNEL_TYPE.CHANNEL_TRANSL:
                 case CHANNEL_TYPE.CHANNEL_DEST:
+                case CHANNEL_TYPE.CHANNEL_HOST:
+                    AgoraObject.RemoveHostUserInfo(uid);
+                    break;
                 case CHANNEL_TYPE.CHANNEL_SRC:
                 default:
                     break;

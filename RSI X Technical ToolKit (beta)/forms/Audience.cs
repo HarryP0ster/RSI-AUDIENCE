@@ -36,15 +36,14 @@ namespace RSI_X_Desktop
         private void Audience_Load(object sender, EventArgs e)
         {
             this.DoubleBuffered = true;
-            RoomNameLabel.Text = AgoraObject.GetComplexToken().GetRoomName;
             FormAudience.Parent = this;
-            RemotePanel.ColumnStyles[1].Width = 0;
             ResizeForm(new Size(1280, 800), this);
-            //Spectator_SizeChanged(this, new EventArgs());
+
+            RoomNameLabel.Text = AgoraObject.GetComplexToken().GetRoomName;
+            RemotePanel.ColumnStyles[1].Width = 0;
             CallRefresh = new RefreshRemoteWnd(RefreshDelegate);
+            
             JoinChannel();
-            //foxLabel1.Parent = langBox;
-            //panel3.Parent = langBox;
         }
 
         public void RefreshDelegate()
@@ -82,8 +81,6 @@ namespace RSI_X_Desktop
             AgoraObject.Rtc.EnableLocalVideo(false);
             AgoraObject.Rtc.EnableLocalAudio(false);
             AgoraObject.SetWndEventHandler(this);
-            AgoraObject.MuteLocalAudioStream(true);
-            AgoraObject.MuteLocalVideoStream(true);
 
             //pictureBoxRemoteVideo.Width = this.Width;
             RemoteWnd = PBRemoteVideo.Handle;
@@ -91,6 +88,7 @@ namespace RSI_X_Desktop
 
             mSwitchOriginal.Checked = true;
 
+            AgoraObject.JoinChannelHost(AgoraObject.GetHostName(), AgoraObject.GetHostToken(), 0, "");
             PBRemoteVideo.Invalidate();
             labelAudio.ForeColor = Color.Red;
             labelVideo.ForeColor = Color.Red;
@@ -102,6 +100,18 @@ namespace RSI_X_Desktop
         {
             AgoraObject.Rtc.StopPreview();
             PBRemoteVideo.Invalidate();
+        }
+        public void NewBroadcaster(uint uid, UserInfo info)
+        { 
+            //throw new NotImplementedException(); 
+        }
+        public void BroadcasterUpdateInfo(uint uid, UserInfo info)
+        { 
+            //throw new NotImplementedException(); 
+        }
+        public void BroadcasterLeave(uint uid)
+        { 
+            //throw new NotImplementedException(); 
         }
 
         private void labelMicrophone_Click(object sender, EventArgs e)
@@ -163,22 +173,16 @@ namespace RSI_X_Desktop
                 AgoraObject.JoinChannelSrc(InterRoom);
                 AgoraObject.MuteHostAudioStream(true);
                 AgoraObject.MuteSrcAudioStream(AgoraObject.IsAllRemoteAudioMute);
-                mSwitchOriginal.Checked = false;
                 langBox.Focus();
                 labelOrig.ForeColor = Color.White;
             }
             else
             {
-                //AgoraObject.LeaveSrcChannel();
-                if (ChToken == string.Empty)
-                    AgoraObject.JoinChannelHost(AgoraObject.GetHostName(), AgoraObject.GetHostToken(), 0, "");
-                else
-                    AgoraObject.JoinChannelHost(HostName, ChToken, 0, "");
                 AgoraObject.MuteHostAudioStream(AgoraObject.IsAllRemoteAudioMute);
                 AgoraObject.MuteSrcAudioStream(true);
-                mSwitchOriginal.Checked = true;
                 labelOrig.ForeColor = Color.Red;
             }
+            mSwitchOriginal.Checked = !IsOriginal;
             langBox.Enabled = IsOriginal;
             IsOriginal = !IsOriginal;
         }
