@@ -44,9 +44,14 @@ namespace RSI_X_Desktop.forms
                 Audience Audit = new();
                 AgoraObject.CurrentForm = CurForm.FormAudience;
                 Audit.Show(this);
+
+                Audit.FormClosed += (s, e) =>
+                {
+                    System.Threading.Thread.Sleep(100);
+                    this.Show();
+                };
             }
         }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
 

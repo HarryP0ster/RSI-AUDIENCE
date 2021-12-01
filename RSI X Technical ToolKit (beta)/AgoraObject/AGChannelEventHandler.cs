@@ -94,11 +94,6 @@ namespace RSI_X_Desktop
                 default:
                     break;
             }
-
-            if (chType is CHANNEL_TYPE.CHANNEL_TRANSL)
-            {
-                //form.ShowRemoteWnd();
-            }
         }
 
         public override void OnUserOffline(string channelId, uint uid, USER_OFFLINE_REASON_TYPE reason)

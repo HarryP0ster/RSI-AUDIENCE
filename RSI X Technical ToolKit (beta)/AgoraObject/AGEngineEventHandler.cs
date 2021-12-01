@@ -11,5 +11,10 @@ namespace RSI_X_Desktop
         {
             this.form = form;
         }
+
+        public override void OnUserInfoUpdated(uint uid, UserInfo info)
+        {
+            AgoraObject.UpdateHostUserInfo(uid, info);
+        }
     }
 }

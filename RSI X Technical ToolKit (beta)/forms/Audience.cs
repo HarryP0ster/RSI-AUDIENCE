@@ -77,7 +77,7 @@ namespace RSI_X_Desktop
             int res = (int)ERROR_CODE_TYPE.ERR_OK;
 
             AgoraObject.Rtc.SetChannelProfile(CHANNEL_PROFILE_TYPE.CHANNEL_PROFILE_COMMUNICATION);
-            AgoraObject.Rtc.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_AUDIENCE);
+            //AgoraObject.Rtc.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_AUDIENCE);
             AgoraObject.Rtc.EnableVideo();
             AgoraObject.Rtc.EnableLocalVideo(false);
             AgoraObject.Rtc.EnableLocalAudio(false);
@@ -224,8 +224,8 @@ namespace RSI_X_Desktop
 
             Devices.waveOutSetVolume(IntPtr.Zero, uint.MaxValue);
 
-            Owner.Show();
-            Owner.Refresh();
+            //Owner.Show();
+            //Owner.Refresh();
         }
 
         private void ResizeForm(Size size, Form target)
@@ -508,6 +508,7 @@ namespace RSI_X_Desktop
                     var ret = new VideoCanvas((ulong)hostBroadcasters[uid].Handle,
                                RENDER_MODE_TYPE.RENDER_MODE_FIT,
                                channelId, uid);
+
                     AgoraObject.Rtc.SetupRemoteVideo(ret);
                 }
             }

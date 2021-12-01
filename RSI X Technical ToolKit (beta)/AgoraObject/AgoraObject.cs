@@ -63,7 +63,8 @@ namespace RSI_X_Desktop
         static AgoraObject() 
         {
             Rtc = AgoraRtcEngine.CreateAgoraRtcEngine();
-            Rtc.Initialize(new RtcEngineContext(AppID));
+
+            int ret = Rtc.Initialize(new RtcEngineContext(AppID));
         }
         #region token logic
         static public bool JoinRoom(string code)
@@ -156,22 +157,23 @@ namespace RSI_X_Desktop
             LeaveHostChannel();
 
             m_channelHost = Rtc.CreateChannel(lpChannelName);
+            ERROR_CODE_TYPE ret = (ERROR_CODE_TYPE)m_channelHost.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_AUDIENCE);
             m_channelHost.InitEventHandler(hostHandler);
-            m_channelHost.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_BROADCASTER);
-            m_channelHost.SetDefaultMuteAllRemoteVideoStreams(false);
 
             ChannelMediaOptions options = new();
             options.autoSubscribeAudio = !IsAllRemoteAudioMute;
             options.autoSubscribeVideo = !IsAllRemoteVideoMute;
+            options.publishLocalAudio = false;
+            options.publishLocalVideo = false;
 
 
-            //ERROR_CODE ret = m_channelHost.JoinChannel(token, info, nUID, options);
-            var ret = m_channelHost.JoinChannelWithUserAccount(token, "SPECTRATOR", options);
+            //ret = (ERROR_CODE_TYPE)m_channelHost.JoinChannel(token, info, nUID, options);
+            ret = (ERROR_CODE_TYPE)m_channelHost.JoinChannelWithUserAccount(token, "SPECTRATOR", 
+                new ChannelMediaOptions(true, true, false, false));
 
+            m_channelHostJoin = (ERROR_CODE_TYPE.ERR_OK == ret);
 
-            m_channelHostJoin = ((int)ERROR_CODE_TYPE.ERR_OK == ret);
-
-            return (int)ERROR_CODE_TYPE.ERR_OK == ret;
+            return ERROR_CODE_TYPE.ERR_OK == ret;
         }
         public static void LeaveHostChannel()
         {
