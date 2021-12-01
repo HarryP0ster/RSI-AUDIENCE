@@ -243,6 +243,7 @@ namespace RSI_X_Desktop
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Owner.Close();
             Close();
         }
 
