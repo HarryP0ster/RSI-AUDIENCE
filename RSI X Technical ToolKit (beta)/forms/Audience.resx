@@ -57,11 +57,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="tableLayoutPanel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="tableLayoutPanel1.Locked" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PictureBoxLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+  <data name="PictureBoxLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAGYCAYAAAA0pVpJAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAVq9JREFUeF7tnQe4FcX5xr3n3H65FHsvsddoNMbYY0li1MSaRAV7AQUEC1KlSOeC
@@ -437,7 +437,7 @@
         ZLXV/h/DfBU/HfM/0QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="HomeBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="HomeBtn.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAWtJREFUSEvt
         071Kw1AYBuAYcEroIBJ/FofOJrgKIg4uDk4OuQoXF8dkTXIBbskteBsquElAEMT6AyZD0Oqk8f2ar5By
@@ -449,7 +449,7 @@
         PNP7BgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Settings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Settings.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAfdJREFUSEvt
         lT9IQlEUxl8mBGURDfoKGh8NTUUOFWjgqEFBEAhBQ9Ak7RH+WYKGlhpaoiHMMUg3t5ZocQ4CV8MyhKIk
@@ -463,7 +463,7 @@
         HXGMhK5/R+hccJcuzqBpX1Ri34gK5fqVAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ExitApp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ExitApp.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAVlJREFUSEvt
         lkFOg0AYhUlbyxZY6VIT2Ok5dKF4iO66g2VN4x00MdGz1D0HUbiATbow+H54k7hwmGEkmBi+5E/oMO+9
@@ -474,10 +474,10 @@
         y1YyCL0Oe2vUUMfbNW3N4BC+QJdvUHfSbkdEmyZJYn+g/8d43hdglXGMRLYcfgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="streamsTable.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="streamsTable.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+gAAARMCAYAAAAKibmSAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAArlNJREFUeF7s3Qe4JUW59fGPmWFyOMeAATFgzmLEnL3Gaw4DDDlLDqIIChIkM1eQ
+        EAAACxABrSO9dQAArlNJREFUeF7s3Qe4JUW59fGPmWFyOMeAATFgzmLEnL3Gaw4DDDlLDqIIChIkM1eQ
         IFFQBEQJEkSRixhR0kUQEZSgAiJBcoZvvTJHz8xZM3PO7Orq6tp/nuf39Ny6QlW/Xbun197d1f/v0Ucf
         BQAAAAAALbONAAAAAAAgL9sIAAAAAADyso0AAAAAACAv2wgAAAAAAPKyjQAAAAAAIC/bCAAAAAAA8rKN
         AAAAAAAgL9sIAAAAAADyso0AAAAAACAv2wgAAAAAAPKyjQAAAAAAIC/bCAAAAAAA8rKNAAAAAAAgL9sI
@@ -1224,7 +1224,7 @@
         H3+/zBCOl5UpAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAEBAAAAEAIABoBAAANgAAACAgAAABACAAqBAAAJ4EAAAwMAAAAQAgAKglAABGFQAAKAAAABAA
         AAAgAAAAAQAgAAAAAAAABAAAEwsAABMLAAAAAAAAAAAAAP///wT///9e////Iv///wAAAAAAAAAAAAAA
