@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using ReaLTaiizor;
-using agorartc;
+using agora.rtc;
 using RSI_X_Desktop.forms;
 using static System.Environment;
 
@@ -21,9 +21,10 @@ namespace RSI_X_Desktop.forms
         public  static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume); //Контроль громкости
         private static int volume = 100;
         public int Volume { get => volume; }
+        private int GetSelectAudioIndex { get => comboBoxAudioOutput.SelectedIndex; }
         
         private IFormHostHolder workForm = AgoraObject.GetWorkForm;
-        private AgoraAudioPlaybackDeviceManager SpeakersManager;
+        private IAgoraRtcAudioPlaybackDeviceManager SpeakersManager;
         static List<string> Speakers;
 
         private static int oldVolumeOut;
@@ -44,7 +45,7 @@ namespace RSI_X_Desktop.forms
 
         private void NewDevices_Load(object sender, EventArgs e)
         {
-            SpeakersManager = AgoraObject.Rtc.CreateAudioPlaybackDeviceManager();
+            SpeakersManager = AgoraObject.Rtc.GetAgoraRtcAudioPlaybackDeviceManager();
 
             oldVolumeOut = Volume;
             trackBarSoundOut.Value = oldVolumeOut;
@@ -88,16 +89,13 @@ namespace RSI_X_Desktop.forms
         {
             int id = -1;
 
-            SpeakersManager.GetCurrentDeviceInfo(out string idAcvite, out string nameAcitve);
+            var device = SpeakersManager.GetPlaybackDeviceInfo();
 
-            for (int i = 0; i < SpeakersManager.GetDeviceCount(); i++)
+            foreach (var dev in SpeakersManager.EnumeratePlaybackDevices())
             {
-                var ret = SpeakersManager.GetDeviceInfoByIndex(i, out string name, out string deviceid);
-                if (idAcvite == deviceid)
-                {
-                    id = i;
+                if (device.deviceId == dev.deviceId)
                     break;
-                }
+                id++;
 
             }
             return id;
@@ -109,14 +107,9 @@ namespace RSI_X_Desktop.forms
         {
             List<string> devicesOut = new();
 
-            for (int i = 0; i < SpeakersManager.GetDeviceCount(); i++)
+            foreach (var dev in SpeakersManager.EnumeratePlaybackDevices())
             {
-                string device, id;
-
-                var ret = SpeakersManager.GetDeviceInfoByIndex(i, out device, out id);
-
-                if (ret == ERROR_CODE.ERR_OK)
-                    devicesOut.Add(device);
+                devicesOut.Add(dev.deviceName);
             }
 
             return devicesOut;
@@ -128,10 +121,15 @@ namespace RSI_X_Desktop.forms
         private void comboBoxAudioOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
             int ind = ((ComboBox)sender).SelectedIndex;
-            string name, id;
 
-            SpeakersManager.GetDeviceInfoByIndex(ind, out name, out id);
-            //audioOutDeviceManager.SetCurrentDevice(id);
+            if (ind >= SpeakersManager.EnumeratePlaybackDevices().Count()) 
+            {
+                UpdateComboBoxSpeaker();
+                return;
+            }
+
+            var dev = SpeakersManager.EnumeratePlaybackDevices()[ind];
+            SpeakersManager.SetPlaybackDevice(dev.deviceId);
         }
 
         #endregion
@@ -146,7 +144,7 @@ namespace RSI_X_Desktop.forms
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
-            oldSpeaker = Speakers[comboBoxAudioOutput.SelectedIndex];
+            oldSpeaker = Speakers[GetSelectAudioIndex];
             oldVolumeOut = trackBarSoundOut.Value;
 
             CloseButton_Click(sender, e);
@@ -157,7 +155,8 @@ namespace RSI_X_Desktop.forms
             trackBarSoundOut.Value = oldVolumeOut;
             trackBarSoundOut_ValueChanged();
 
-            SpeakersManager.SetCurrentDevice(oldSpeaker);
+            var dev = SpeakersManager.EnumeratePlaybackDevices()[GetSelectAudioIndex];
+            SpeakersManager.SetPlaybackDevice(dev.deviceId);
 
             AgoraObject.GetWorkForm?.DevicesClosed(this);
             Close();

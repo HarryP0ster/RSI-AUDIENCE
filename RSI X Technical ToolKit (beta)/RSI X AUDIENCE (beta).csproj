@@ -8,7 +8,7 @@
     <AssemblyName>RSI X Desktop</AssemblyName>
     <StartupObject>RSI_X_Desktop.Program</StartupObject>
     <ApplicationIcon>Resources\logotype.ico</ApplicationIcon>
-    <Platforms>AnyCPU;ARM32;ARM64</Platforms>
+    <Platforms>AnyCPU;x64</Platforms>
     <PackageProjectUrl>https://rsi.exchange</PackageProjectUrl>
     <RepositoryUrl>https://rsi.exchange</RepositoryUrl>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
@@ -20,23 +20,15 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM32'">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM32'">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
@@ -171,12 +163,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="agora_rtc_sdk" Version="3.5.0.3" />
     <PackageReference Include="MaterialSkin.2.NetCore" Version="2.2.1" />
     <PackageReference Include="ReaLTaiizor" Version="3.7.8.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\agorartc\agorartc\agorartc\agorartc.csproj" />
+    <PackageReference Include="SocketIOClient" Version="3.0.3" />
   </ItemGroup>
   
     <ItemGroup>
@@ -248,18 +238,6 @@
     </ItemGroup>
   
   <ItemGroup>
-    <None Update="agorartc.dll">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="agora_rtc_sdk.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="agora_rtc_sdk.lib">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="iris.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="libagora-fdkaac.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

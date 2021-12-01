@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using agorartc;
+using agora.rtc;
 using System.Windows.Forms;
 
 
@@ -16,7 +16,7 @@ namespace RSI_X_Desktop
         CHANNEL_DEST,
         CHANNEL_HOST,
     };
-    public class AGChannelEventHandler : IRtcChannelEventHandlerBase
+    public class AGChannelEventHandler : IAgoraRtcChannelEventHandler
     {
         internal List<uint> hostBroacsters = new();
         private IFormHostHolder form;
@@ -35,7 +35,7 @@ namespace RSI_X_Desktop
         {
         }
 
-        public override void OnChannelJoinChannelSuccess(string channelId, uint uid, int elapsed)
+        public override void OnJoinChannelSuccess(string channelId, uint uid, int elapsed)
         {
             switch (chType)
             {
@@ -48,7 +48,7 @@ namespace RSI_X_Desktop
             }
         }
 
-        public override void OnChannelReJoinChannelSuccess(string channelId, uint uid, int elapsed)
+        public override void OnRejoinChannelSuccess(string channelId, uint uid, int elapsed)
         {
             switch (chType)
             {
@@ -62,7 +62,7 @@ namespace RSI_X_Desktop
         }
 
 
-        public override void OnChannelLeaveChannel(string channelId, RtcStats stats)
+        public override void OnLeaveChannel(string channelId, RtcStats stats)
         {
             switch (chType)
             {
@@ -75,12 +75,12 @@ namespace RSI_X_Desktop
             }
         }
 
-        public override void OnChannelClientRoleChanged(string channelId, CLIENT_ROLE_TYPE oldRole,
+        public override void OnClientRoleChanged(string channelId, CLIENT_ROLE_TYPE oldRole,
             CLIENT_ROLE_TYPE newRole)
         {
         }
 
-        public override void OnChannelUserJoined(string channelId, uint uid, int elapsed)
+        public override void OnUserJoined(string channelId, uint uid, int elapsed)
         {
             switch (chType) 
             {
@@ -101,7 +101,7 @@ namespace RSI_X_Desktop
             }
         }
 
-        public override void OnChannelUserOffLine(string channelId, uint uid, USER_OFFLINE_REASON_TYPE reason)
+        public override void OnUserOffline(string channelId, uint uid, USER_OFFLINE_REASON_TYPE reason)
         {
             switch (chType)
             {
@@ -117,78 +117,78 @@ namespace RSI_X_Desktop
         }
         
 
-        public override void OnChannelConnectionLost(string channelId)
+        public override void OnConnectionLost(string channelId)
         {
         }
 
-        public override void OnChannelRequestToken(string channelId)
+        public override void OnRequestToken(string channelId)
         {
         }
 
-        public override void OnChannelTokenPrivilegeWillExpire(string channelId, string token)
+        public override void OnTokenPrivilegeWillExpire(string channelId, string token)
         {
         }
 
-        public override void OnChannelRtcStats(string channelId, RtcStats stats)
+        public override void OnRtcStats(string channelId, RtcStats stats)
         {
         }
 
-        public override void OnChannelNetworkQuality(string channelId, uint uid, int txQuality, int rxQuality)
+        public override void OnNetworkQuality(string channelId, uint uid, int txQuality, int rxQuality)
         {
         }
 
 
-        public override void OnChannelRemoteVideoStats(string channelId, RemoteVideoStats stats)
+        public override void OnRemoteVideoStats(string channelId, RemoteVideoStats stats)
         {
         }
 
-        public override void OnChannelRemoteAudioStats(string channelId, RemoteAudioStats stats)
+        public override void OnRemoteAudioStats(string channelId, RemoteAudioStats stats)
         {
         }
 
-        public override void OnChannelRemoteAudioStateChanged(string channelId, uint uid, REMOTE_AUDIO_STATE state,
+        public override void OnRemoteAudioStateChanged(string channelId, uint uid, REMOTE_AUDIO_STATE state,
             REMOTE_AUDIO_STATE_REASON reason, int elapsed)
         {
             
         }
 
-        public override void OnChannelAudioPublishStateChanged(string channelId, STREAM_PUBLISH_STATE oldState,
+        public override void OnAudioPublishStateChanged(string channelId, STREAM_PUBLISH_STATE oldState,
             STREAM_PUBLISH_STATE newState, int elapseSinceLastState)
         {
         }
 
-        public override void OnChannelVideoPublishStateChanged(string channelId, STREAM_PUBLISH_STATE oldState,
+        public override void OnVideoPublishStateChanged(string channelId, STREAM_PUBLISH_STATE oldState,
             STREAM_PUBLISH_STATE newState, int elapseSinceLastState)
         {
         }
 
-        public override void OnChannelAudioSubscribeStateChanged(string channelId, uint uid,
+        public override void OnAudioSubscribeStateChanged(string channelId, uint uid,
             STREAM_SUBSCRIBE_STATE oldState,
             STREAM_SUBSCRIBE_STATE newState, int elapseSinceLastState)
         {
         }
 
-        public override void OnChannelVideoSubscribeStateChanged(string channelId, uint uid,
+        public override void OnVideoSubscribeStateChanged(string channelId, uint uid,
             STREAM_SUBSCRIBE_STATE oldState,
             STREAM_SUBSCRIBE_STATE newState, int elapseSinceLastState)
         {
         }
 
-        public override void OnChannelUserSuperResolutionEnabled(string channelId, uint uid, bool enabled,
+        public override void OnUserSuperResolutionEnabled(string channelId, uint uid, bool enabled,
             SUPER_RESOLUTION_STATE_REASON reason)
         {
         }
 
-        public override void OnChannelActiveSpeaker(string channelId, uint uid)
+        public override void OnActiveSpeaker(string channelId, uint uid)
         {
         }
 
         public override void
-            OnChannelVideoSizeChanged(string channelId, uint uid, int width, int height, int rotation)
+            OnVideoSizeChanged(string channelId, uint uid, int width, int height, int rotation)
         {
         }
 
-        public override void OnChannelRemoteVideoStateChanged(string channelId, uint uid, REMOTE_VIDEO_STATE state,
+        public override void OnRemoteVideoStateChanged(string channelId, uint uid, REMOTE_VIDEO_STATE state,
             REMOTE_VIDEO_STATE_REASON reason, int elapsed)
         {
             
@@ -261,11 +261,11 @@ namespace RSI_X_Desktop
         public string message = "";
 
         public override void
-            OnChannelStreamMessage(string channelId, uint uid, int streamId, byte[] data, uint length)
+            OnStreamMessage(string channelId, uint uid, int streamId, byte[] data, uint length)
         {
         }
 
-        public override void OnChannelStreamMessageError(string channelId, uint uid, int streamId, int code,
+        public override void OnStreamMessageError(string channelId, uint uid, int streamId, int code,
             int missed, int cached)
         {
         }
@@ -279,38 +279,34 @@ namespace RSI_X_Desktop
         {
         }
 
-        public override void OnChannelRtmpStreamingStateChanged(string channelId, string url,
+        public override void OnRtmpStreamingStateChanged(string channelId, string url,
             RTMP_STREAM_PUBLISH_STATE state, RTMP_STREAM_PUBLISH_ERROR errCode)
         {
         }
 
-        public override void OnChannelRtmpStreamingEvent(string channelId, string url, RTMP_STREAMING_EVENT eventCode)
+        public override void OnRtmpStreamingEvent(string channelId, string url, RTMP_STREAMING_EVENT eventCode)
         {
         }
 
-        public override void OnChannelTranscodingUpdated(string channelId)
+        public override void OnTranscodingUpdated(string channelId)
         {
         }
 
-        public override void OnChannelStreamInjectedStatus(string channelId, string url, uint uid, int status)
+        public override void OnStreamInjectedStatus(string channelId, string url, uint uid, int status)
         {
         }
 
-        public override void OnChannelRemoteSubscribeFallbackToAudioOnly(string channelId, uint uid,
+        public override void OnRemoteSubscribeFallbackToAudioOnly(string channelId, uint uid,
             bool isFallbackOrRecover)
         {
         }
 
-        public override void OnChannelConnectionStateChanged(string channelId, CONNECTION_STATE_TYPE state,
+        public override void OnConnectionStateChanged(string channelId, CONNECTION_STATE_TYPE state,
             CONNECTION_CHANGED_REASON_TYPE reason)
         {
         }
 
-        public override void OnChannelLocalPublishFallbackToAudioOnly(string channelId, bool isFallbackOrRecover)
-        {
-        }
-
-        public override void OnChannelApiTest(int apiType, string @params)
+        public override void OnLocalPublishFallbackToAudioOnly(string channelId, bool isFallbackOrRecover)
         {
         }
     }

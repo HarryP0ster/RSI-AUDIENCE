@@ -1,5 +1,5 @@
 ﻿using System;
-using agorartc;
+using agora.rtc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -42,12 +42,12 @@ namespace RSI_X_Desktop
         //private static Random rnd = new Random();
         //DELETE LATER
 
-        internal static AgoraRtcEngine Rtc;
+        internal static IAgoraRtcEngine Rtc;
 
         internal static Tokens room = new Tokens();
 
-        internal static AgoraRtcChannel m_channelSrc;
-        internal static AgoraRtcChannel m_channelHost;
+        internal static IAgoraRtcChannel m_channelSrc;
+        internal static IAgoraRtcChannel m_channelHost;
 
         internal static AGChannelEventHandler srcHandler;
         internal static AGChannelEventHandler hostHandler;
@@ -60,12 +60,9 @@ namespace RSI_X_Desktop
 
         internal static Dictionary<uint, UserInfo> hostBroacsters = new();
 
-        [DllImport("USER32.DLL")]
-        static extern bool GetWindowRect(IntPtr hWnd, out System.Drawing.Rectangle lpRect);
-
         static AgoraObject() 
         {
-            Rtc = AgoraRtcEngine.CreateRtcEngine();
+            Rtc = AgoraRtcEngine.CreateAgoraRtcEngine();
             Rtc.Initialize(new RtcEngineContext(AppID));
         }
         #region token logic
@@ -132,18 +129,17 @@ namespace RSI_X_Desktop
             LeaveSrcChannel();
 
             m_channelSrc = Rtc.CreateChannel(lpChannelName);
-            m_channelSrc.InitChannelEventHandler(srcHandler);
+            m_channelSrc.InitEventHandler(srcHandler);
             m_channelSrc.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_AUDIENCE);
 
             ChannelMediaOptions options = new();
             options.autoSubscribeAudio = !IsAllRemoteAudioMute;
             options.autoSubscribeVideo = false;
+            var ret = m_channelSrc.JoinChannel(token, info, nUID, options);
 
-            ERROR_CODE ret = m_channelSrc.JoinChannel(token, info, nUID, options);
+            m_channelSrcJoin = ((int)ERROR_CODE_TYPE.ERR_OK == ret);
 
-            m_channelSrcJoin = (0 == ret);
-
-            return 0 == ret;
+            return (int)ERROR_CODE_TYPE.ERR_OK == ret;
         }
         public static void LeaveSrcChannel()
         {
@@ -160,7 +156,7 @@ namespace RSI_X_Desktop
             LeaveHostChannel();
 
             m_channelHost = Rtc.CreateChannel(lpChannelName);
-            m_channelHost.InitChannelEventHandler(hostHandler);
+            m_channelHost.InitEventHandler(hostHandler);
             m_channelHost.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_BROADCASTER);
             m_channelHost.SetDefaultMuteAllRemoteVideoStreams(false);
 
@@ -170,12 +166,12 @@ namespace RSI_X_Desktop
 
 
             //ERROR_CODE ret = m_channelHost.JoinChannel(token, info, nUID, options);
-            ERROR_CODE ret = m_channelHost.JoinChannelWithUserAccount(token, "SPECTRATOR", options);
+            var ret = m_channelHost.JoinChannelWithUserAccount(token, "SPECTRATOR", options);
 
 
-            m_channelHostJoin = (0 == ret);
+            m_channelHostJoin = ((int)ERROR_CODE_TYPE.ERR_OK == ret);
 
-            return 0 == ret;
+            return (int)ERROR_CODE_TYPE.ERR_OK == ret;
         }
         public static void LeaveHostChannel()
         {

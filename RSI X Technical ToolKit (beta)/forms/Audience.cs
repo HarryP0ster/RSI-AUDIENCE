@@ -1,7 +1,7 @@
 ﻿using RSI_X_Desktop.forms;
 using System;
 using System.Windows.Forms;
-using agorartc;
+using agora.rtc;
 using System.Drawing;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -72,9 +72,9 @@ namespace RSI_X_Desktop
             langBox.SelectedIndex = 0;
         }
 
-        public ERROR_CODE JoinChannel()
+        public int JoinChannel()
         {
-            ERROR_CODE res = ERROR_CODE.ERR_OK;
+            int res = (int)ERROR_CODE_TYPE.ERR_OK;
 
             AgoraObject.Rtc.SetChannelProfile(CHANNEL_PROFILE_TYPE.CHANNEL_PROFILE_COMMUNICATION);
             AgoraObject.Rtc.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_AUDIENCE);
@@ -409,10 +409,12 @@ namespace RSI_X_Desktop
                 }
             }
 
-            var ret = new VideoCanvas((ulong)newPreview.Handle, uid);
-            ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
-            ret.channelId = channelId;
-            ret.uid = uid;
+            var ret = new VideoCanvas((ulong)newPreview.Handle,
+                RENDER_MODE_TYPE.RENDER_MODE_FIT,
+                channelId, uid);
+            //ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
+            //ret.channelId = channelId;
+            //ret.uid = uid;
 
             AgoraObject.Rtc.SetupRemoteVideo(ret);
             streamsTable.Refresh();
@@ -494,21 +496,18 @@ namespace RSI_X_Desktop
                 {
                     Invoke((MethodInvoker)delegate
                     {
-                        var ret = new VideoCanvas((ulong)hostBroadcasters[uid].Handle, uid);
-                        ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
-                        ret.channelId = channelId;
-                        ret.uid = uid;
+                        var ret = new VideoCanvas((ulong)hostBroadcasters[uid].Handle,
+                            RENDER_MODE_TYPE.RENDER_MODE_FIT,
+                            channelId, uid);
 
                         AgoraObject.Rtc.SetupRemoteVideo(ret);
                     });
                 }
                 else
                 {
-                    var ret = new VideoCanvas((ulong)hostBroadcasters[uid].Handle, uid);
-                    ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
-                    ret.channelId = channelId;
-                    ret.uid = uid;
-
+                    var ret = new VideoCanvas((ulong)hostBroadcasters[uid].Handle,
+                               RENDER_MODE_TYPE.RENDER_MODE_FIT,
+                               channelId, uid);
                     AgoraObject.Rtc.SetupRemoteVideo(ret);
                 }
             }
