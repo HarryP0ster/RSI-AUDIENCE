@@ -63,8 +63,7 @@ namespace RSI_X_Desktop
         static AgoraObject() 
         {
             Rtc = AgoraRtcEngine.CreateAgoraRtcEngine();
-
-            int ret = Rtc.Initialize(new RtcEngineContext(AppID));
+            Rtc.Initialize(new RtcEngineContext(AppID));
         }
         #region token logic
         static public bool JoinRoom(string code)
@@ -147,7 +146,6 @@ namespace RSI_X_Desktop
             if (m_channelSrcJoin)
                 m_channelSrc?.LeaveChannel();
             m_channelSrcJoin = false;
-
         }
         #endregion
 

@@ -37,13 +37,18 @@ namespace RSI_X_Desktop.forms
 
         private void JoinButton_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("Button join");
+
             string code = NewTextBox.Text.Remove(4,1);
             if (AgoraObject.JoinRoom(code))
             {
+                System.Diagnostics.Debug.WriteLine("Connect...");
+
                 Hide();
                 Audience Audit = new();
                 AgoraObject.CurrentForm = CurForm.FormAudience;
                 Audit.Show(this);
+
 
                 Audit.FormClosed += (s, e) =>
                 {

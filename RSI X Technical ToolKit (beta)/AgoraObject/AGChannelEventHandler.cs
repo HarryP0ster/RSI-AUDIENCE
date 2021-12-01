@@ -232,24 +232,6 @@ namespace RSI_X_Desktop
                     break;
             }
         }
-
-        private void FirstFrameDecoding(string channelId, uint uid, REMOTE_VIDEO_STATE_REASON reason)
-        {
-            UserInfo user;
-            AgoraObject.Rtc.GetUserInfoByUid(uid, out user);
-
-            VideoCanvas canv;
-
-            switch (chType)
-            {
-                case CHANNEL_TYPE.CHANNEL_HOST:
-                case CHANNEL_TYPE.CHANNEL_TRANSL:
-                case CHANNEL_TYPE.CHANNEL_DEST:
-                case CHANNEL_TYPE.CHANNEL_SRC:
-                default:
-                    break;
-            }
-        }
         //|ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ|
         //|ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ|
 

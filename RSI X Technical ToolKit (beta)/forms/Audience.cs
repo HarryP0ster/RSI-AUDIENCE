@@ -74,12 +74,13 @@ namespace RSI_X_Desktop
 
         public int JoinChannel()
         {
+            System.Diagnostics.Debug.WriteLine("Подключение...");
             int res = (int)ERROR_CODE_TYPE.ERR_OK;
 
             AgoraObject.Rtc.SetChannelProfile(CHANNEL_PROFILE_TYPE.CHANNEL_PROFILE_COMMUNICATION);
             //AgoraObject.Rtc.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_AUDIENCE);
             AgoraObject.Rtc.EnableVideo();
-            AgoraObject.Rtc.EnableLocalVideo(false);
+            AgoraObject.Rtc.EnableLocalVideo(true);
             AgoraObject.Rtc.EnableLocalAudio(false);
             AgoraObject.SetWndEventHandler(this);
 
@@ -89,10 +90,15 @@ namespace RSI_X_Desktop
             
             mSwitchOriginal.Checked = true;
 
-            AgoraObject.JoinChannelHost(AgoraObject.GetHostName(), AgoraObject.GetHostToken(), 0, "");
+            var resJoin = AgoraObject.JoinChannelHost(AgoraObject.GetHostName(), AgoraObject.GetHostToken(), 0, "");
+            System.Diagnostics.Debug.WriteLine(String.Format("Статус подключения {0}", resJoin));
             labelAudio.ForeColor = Color.Red;
             labelVideo.ForeColor = Color.Red;
 
+            var ret = new VideoCanvas((ulong)PictureBoxLogo.Handle,
+                       RENDER_MODE_TYPE.RENDER_MODE_FIT);
+
+            AgoraObject.Rtc.StartPreview();
             return res;
         }
 
@@ -105,6 +111,8 @@ namespace RSI_X_Desktop
             //throw new NotImplementedException(); 
             if (info.userAccount.StartsWith("HOST") && !hostBroadcasters.ContainsKey(uid))
             {
+                System.Diagnostics.Debug.WriteLine(
+                    String.Format("new user {1} with {0} uid", uid, info.userAccount));
                 if (InvokeRequired)
                     Invoke((MethodInvoker)delegate
                     {
@@ -119,6 +127,9 @@ namespace RSI_X_Desktop
             //throw new NotImplementedException(); 
             if (info.userAccount.StartsWith("HOST") && !hostBroadcasters.ContainsKey(uid))
             {
+                System.Diagnostics.Debug.WriteLine(
+                    String.Format("update user {1} with {0} uid", uid, info.userAccount));
+
                 if (InvokeRequired)
                     Invoke((MethodInvoker)delegate
                     {
@@ -133,6 +144,9 @@ namespace RSI_X_Desktop
             //throw new NotImplementedException();
             if (hostBroadcasters.ContainsKey(uid))
             {
+                System.Diagnostics.Debug.WriteLine(
+                    String.Format("remove user {0}", uid));
+
                 if (InvokeRequired)
                     Invoke((MethodInvoker)delegate
                     {
@@ -422,6 +436,9 @@ namespace RSI_X_Desktop
 
         private void RemoveMember(uint uid)
         {
+            System.Diagnostics.Debug.WriteLine(
+                String.Format("remove user {0}", uid));
+
             int index = streamsTable.ColumnCount * streamsTable.RowCount;
             hostBroadcasters.Remove(uid);
 
@@ -476,6 +493,9 @@ namespace RSI_X_Desktop
         {
             if (hostBroadcasters.ContainsKey(uid))
             {
+                System.Diagnostics.Debug.WriteLine(
+                    String.Format("update user {0}", uid));
+
                 if (InvokeRequired)
                 {
                     Invoke((MethodInvoker)delegate
@@ -492,6 +512,9 @@ namespace RSI_X_Desktop
         {
             if (hostBroadcasters.ContainsKey(uid))
             {
+                System.Diagnostics.Debug.WriteLine(
+                    String.Format("update user {0}, on {1}",uid, channelId));
+
                 if (InvokeRequired)
                 {
                     Invoke((MethodInvoker)delegate
