@@ -145,6 +145,8 @@ namespace RSI_X_Desktop
         {
             if (m_channelSrcJoin)
                 m_channelSrc?.LeaveChannel();
+            m_channelSrc?.Dispose();
+            m_channelSrc = null;
             m_channelSrcJoin = false;
         }
         #endregion
@@ -177,6 +179,8 @@ namespace RSI_X_Desktop
         {
             if (m_channelHostJoin)
                 m_channelHost?.LeaveChannel();
+            m_channelHost?.Dispose();
+            m_channelHost = null;
             m_channelHostJoin = false;
         }
         #endregion
