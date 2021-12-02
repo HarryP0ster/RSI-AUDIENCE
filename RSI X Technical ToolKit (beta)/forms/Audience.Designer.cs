@@ -49,6 +49,8 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.mSwitchOriginal = new MaterialSkin.Controls.MaterialSwitch();
             this.labelOrig = new System.Windows.Forms.Label();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelRecord = new System.Windows.Forms.Label();
             this.RemotePanel = new System.Windows.Forms.TableLayoutPanel();
             this.streamsTable = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -64,6 +66,7 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel4.SuspendLayout();
             this.comboBoxPanel.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.RemotePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -225,6 +228,7 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxPanel, 5, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 682);
@@ -270,8 +274,8 @@ namespace RSI_X_Desktop
             // 
             this.tableLayoutPanel4.AutoSize = true;
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.Controls.Add(this.trackBar1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.labelVolume, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -279,8 +283,7 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(236, 65);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(172, 65);
             this.tableLayoutPanel4.TabIndex = 20;
             // 
             // trackBar1
@@ -293,13 +296,13 @@ namespace RSI_X_Desktop
             this.trackBar1.EmptyBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
             this.trackBar1.FillBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(104)))));
             this.trackBar1.JumpToMouse = true;
-            this.trackBar1.Location = new System.Drawing.Point(122, 21);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.trackBar1.Location = new System.Drawing.Point(86, 23);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 3);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Minimum = 0;
             this.trackBar1.MinimumSize = new System.Drawing.Size(47, 22);
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(110, 22);
+            this.trackBar1.Size = new System.Drawing.Size(82, 22);
             this.trackBar1.TabIndex = 22;
             this.trackBar1.Text = "dungeonTrackBar1";
             this.trackBar1.ThumbBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
@@ -320,7 +323,7 @@ namespace RSI_X_Desktop
             this.labelVolume.Location = new System.Drawing.Point(4, 18);
             this.labelVolume.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelVolume.Name = "labelVolume";
-            this.labelVolume.Size = new System.Drawing.Size(110, 29);
+            this.labelVolume.Size = new System.Drawing.Size(74, 29);
             this.labelVolume.TabIndex = 21;
             this.labelVolume.Text = "VOLUME";
             this.labelVolume.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -417,6 +420,36 @@ namespace RSI_X_Desktop
             this.labelOrig.TabIndex = 42;
             this.labelOrig.Text = "ORIGINAL";
             this.labelOrig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.labelRecord, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(313, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(714, 65);
+            this.tableLayoutPanel6.TabIndex = 44;
+            // 
+            // labelRecord
+            // 
+            this.labelRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelRecord.AutoSize = true;
+            this.labelRecord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelRecord.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelRecord.ForeColor = System.Drawing.Color.White;
+            this.labelRecord.Location = new System.Drawing.Point(4, 18);
+            this.labelRecord.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRecord.Name = "labelRecord";
+            this.labelRecord.Size = new System.Drawing.Size(126, 29);
+            this.labelRecord.TabIndex = 22;
+            this.labelRecord.Text = "RECORD AUDIO";
+            this.labelRecord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelRecord.Click += new System.EventHandler(this.label2_Click);
             // 
             // RemotePanel
             // 
@@ -560,6 +593,8 @@ namespace RSI_X_Desktop
             this.comboBoxPanel.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.RemotePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -576,9 +611,6 @@ namespace RSI_X_Desktop
         private System.Windows.Forms.Label labelAudio;
         private System.Windows.Forms.Label labelVideo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label labelVolume;
-        private ReaLTaiizor.Controls.DungeonTrackBar trackBar1;
         private MaterialSkin.Controls.MaterialSwitch mSwitchOriginal;
         private ReaLTaiizor.Controls.Button button1;
         private ReaLTaiizor.Controls.AirTabPage airTabPage1;
@@ -594,5 +626,10 @@ namespace RSI_X_Desktop
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label labelOrig;
         private System.Windows.Forms.TableLayoutPanel streamsTable;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private ReaLTaiizor.Controls.DungeonTrackBar trackBar1;
+        private System.Windows.Forms.Label labelVolume;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Label labelRecord;
     }
 }

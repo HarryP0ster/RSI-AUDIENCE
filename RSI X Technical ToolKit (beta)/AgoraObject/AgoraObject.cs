@@ -29,7 +29,7 @@ namespace RSI_X_Desktop
         public static bool IsHostAudioMute { get; private set; }
         public static bool IsSrcAudioMute { get; private set; }
         public static bool IsAllRemoteVideoMute { get; private set; }
-
+        public static bool IsAudioRecordActive { get; private set; }
         public static bool IsAllTransLatersAudioMute { get; private set; }
 
         public static string CodeRoom { get; private set; } = "";
@@ -206,6 +206,21 @@ namespace RSI_X_Desktop
             {
                 hostBroacsters.Remove(uid);
                 workForm.BroadcasterLeave(uid);
+            }
+        }
+        internal static void RecordAudio(bool state)
+        {
+            IsAudioRecordActive = state;
+            System.IO.Directory.CreateDirectory("c:\\recordings");
+            string direct = "c:/recordings/AudioRecording_" + new Random().Next().ToString() + ".wav";
+            switch (state)
+            {
+                case true:
+                    Rtc.StartAudioRecording(direct, AUDIO_RECORDING_QUALITY_TYPE.AUDIO_RECORDING_QUALITY_MEDIUM);
+                    break;
+                default:
+                    Rtc.StopAudioRecording();
+                    break;
             }
         }
     }
