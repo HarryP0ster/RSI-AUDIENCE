@@ -95,10 +95,6 @@ namespace RSI_X_Desktop
             labelAudio.ForeColor = Color.Red;
             labelVideo.ForeColor = Color.Red;
 
-            var ret = new VideoCanvas((ulong)PictureBoxLogo.Handle,
-                       RENDER_MODE_TYPE.RENDER_MODE_FIT);
-
-            AgoraObject.Rtc.StartPreview();
             return res;
         }
 
@@ -432,6 +428,7 @@ namespace RSI_X_Desktop
             //ret.uid = uid;
 
             AgoraObject.Rtc.SetupRemoteVideo(ret);
+            AgoraObject.Rtc.MuteRemoteVideoStream(uid, false);
             streamsTable.Refresh();
         }
 
@@ -525,6 +522,7 @@ namespace RSI_X_Desktop
                             channelId, uid);
 
                         AgoraObject.Rtc.SetupRemoteVideo(ret);
+                        AgoraObject.Rtc.MuteRemoteVideoStream(uid, false);
                     });
                 }
                 else
@@ -534,6 +532,7 @@ namespace RSI_X_Desktop
                                channelId, uid);
 
                     AgoraObject.Rtc.SetupRemoteVideo(ret);
+                    AgoraObject.Rtc.MuteRemoteVideoStream(uid, false);
                 }
             }
         }

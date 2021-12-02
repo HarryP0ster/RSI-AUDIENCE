@@ -135,6 +135,7 @@ namespace RSI_X_Desktop
 
         public override void OnRemoteVideoStats(string channelId, RemoteVideoStats stats)
         {
+            //System.Diagnostics.Debug.WriteLine(string.Format("uid:{0} | {1} {2}", stats.uid, stats.height, stats.width));
         }
 
         public override void OnRemoteAudioStats(string channelId, RemoteAudioStats stats)
@@ -287,5 +288,4 @@ namespace RSI_X_Desktop
         {
         }
     }
-
 }
