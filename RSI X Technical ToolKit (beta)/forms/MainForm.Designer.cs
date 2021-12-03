@@ -303,7 +303,6 @@ namespace RSI_X_Desktop.forms
             this.NewTextBox.Size = new System.Drawing.Size(204, 56);
             this.NewTextBox.TabIndex = 91;
             this.NewTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.NewTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.NewTextBox_MaskInputRejected);
             this.NewTextBox.Click += new System.EventHandler(this.NewTextBox_Click);
             this.NewTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NewTextBox_KeyPress);
             // 
