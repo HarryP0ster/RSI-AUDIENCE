@@ -27,7 +27,7 @@ namespace RSI_X_Desktop.forms
         static List<string> Speakers;
 
         private static int oldVolumeOut;
-        private static string oldSpeaker;
+        private static string oldSpeaker = null;
 
         public Devices()
         {
@@ -107,7 +107,6 @@ namespace RSI_X_Desktop.forms
                     id = i;
                     break;
                 }
-
             }
             return id;
         }
@@ -155,7 +154,8 @@ namespace RSI_X_Desktop.forms
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
-            oldSpeaker = Speakers[comboBoxAudioOutput.SelectedIndex];
+            if (Speakers.Count > 0)
+                oldSpeaker = Speakers[comboBoxAudioOutput.SelectedIndex];
             oldVolumeOut = trackBarSoundOut.Value;
 
             CloseButton_Click(sender, e);
@@ -166,7 +166,8 @@ namespace RSI_X_Desktop.forms
             trackBarSoundOut.Value = oldVolumeOut;
             trackBarSoundOut_ValueChanged();
 
-            SpeakersManager.SetCurrentDevice(oldSpeaker);
+            if (oldSpeaker != null)
+                SpeakersManager.SetCurrentDevice(oldSpeaker);
 
             AgoraObject.GetWorkForm?.DevicesClosed(this);
             Close();
