@@ -119,5 +119,11 @@ namespace RSI_X_Desktop.forms
         {
 
         }
+
+        private void NewTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                JoinButton_Click(JoinButton, new());
+        }
     }
 }
