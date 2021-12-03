@@ -208,20 +208,45 @@ namespace RSI_X_Desktop
                 workForm.BroadcasterLeave(uid);
             }
         }
-        internal static void RecordAudio(bool state)
+        internal static bool RecordAudio(bool state)
         {
-            IsAudioRecordActive = state;
-            System.IO.Directory.CreateDirectory("c:\\recordings");
-            string direct = "c:/recordings/AudioRecording_" + new Random().Next().ToString() + ".wav";
+            string direct = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic) + "\\RSI";
+            string filename = $"AudioRecording-{DateTime.Now.ToString("dd-MM-yy-HH-mm-ss")}.wav";
+
+            if (false == System.IO.Directory.Exists(direct))
+                System.IO.Directory.CreateDirectory(direct);
+
+            SaveFileDialog fd = new() { 
+                DefaultExt="wav",
+                Filter = "Audio files(*.wav)|*.wav|Audio files(*.acc)|*.acc",
+                InitialDirectory = direct,
+                FileName = filename,
+            };
+
             switch (state)
             {
                 case true:
-                    Rtc.StartAudioRecording(direct, AUDIO_RECORDING_QUALITY_TYPE.AUDIO_RECORDING_QUALITY_MEDIUM);
+                    fd.ShowDialog();
+
+                    filename = fd.FileName;
+
+                    if (System.IO.Path.GetDirectoryName(filename) == String.Empty)
+                        return false;
+
+                    AUDIO_RECORDING_QUALITY_TYPE quality = System.IO.Path.GetExtension(filename) == ".wav" ?
+                        AUDIO_RECORDING_QUALITY_TYPE.AUDIO_RECORDING_QUALITY_MEDIUM :
+                        AUDIO_RECORDING_QUALITY_TYPE.AUDIO_RECORDING_QUALITY_LOW;
+
+                    Rtc.StartAudioRecording(filename, quality);
                     break;
                 default:
                     Rtc.StopAudioRecording();
                     break;
             }
+            IsAudioRecordActive = state;
+            return true;
         }
+
+
     }
 }

@@ -23,7 +23,7 @@ namespace RSI_X_Desktop.forms
         public int Volume { get => volume; }
         
         private IFormHostHolder workForm = AgoraObject.GetWorkForm;
-        private AgoraAudioPlaybackDeviceManager SpeakersManager;
+        private static AgoraAudioPlaybackDeviceManager SpeakersManager;
         static List<string> Speakers;
 
         private static int oldVolumeOut;
@@ -55,14 +55,23 @@ namespace RSI_X_Desktop.forms
         }
         private void UpdateComboBoxSpeaker()
         {
-            bool hasOldSpeaker = Speakers.Any((s) => s == oldSpeaker);
+            Speakers = getListAudioOutDevices();
+            bool hasoldSpeaker = Speakers.Any((s) => s == oldSpeaker);
 
-            int index = hasOldSpeaker ?
+            int index = (oldSpeaker != null) ?
                 Speakers.FindLastIndex((s) => s == oldSpeaker) :
-                index = getActiveAudioOutputDevice();
+                getActiveAudioOutputDevice();
+
+            if (Speakers.Count == 0)
+            {
+                comboBoxAudioOutput.DataSource = new List<string> { "Playback Devices Error" };
+                return;
+            }
+
+            if (index < 0)
+                index = 0;
 
             oldSpeaker = Speakers[index];
-
             comboBoxAudioOutput.DataSource = Speakers;
             comboBoxAudioOutput.SelectedIndex = index;
         }
