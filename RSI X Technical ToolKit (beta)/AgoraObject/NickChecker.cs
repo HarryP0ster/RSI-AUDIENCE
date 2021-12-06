@@ -23,17 +23,6 @@ namespace RSI_X_Desktop
         {
             return $"({langShort}) {nick}";
         }
-        public static CHANNEL_TYPE FromWhatChannel(string nick) 
-        {
-            if (IsHost(nick))
-                return CHANNEL_TYPE.HOST;
-            if (IsAudience(nick))
-                return CHANNEL_TYPE.SRC;
-            if (IsInterpreter(nick))
-                return CHANNEL_TYPE.TRANSL;
-
-            return CHANNEL_TYPE.UNKNOWN;
-        }
         public static bool IsHost(string nick) 
         {
             return nick.StartsWith(HostStartsWith);
