@@ -139,7 +139,7 @@ namespace RSI_X_Desktop
             this.RoomNameLabel.Location = new System.Drawing.Point(124, 0);
             this.RoomNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RoomNameLabel.Name = "RoomNameLabel";
-            this.RoomNameLabel.Size = new System.Drawing.Size(140, 68);
+            this.RoomNameLabel.Size = new System.Drawing.Size(175, 68);
             this.RoomNameLabel.TabIndex = 4;
             this.RoomNameLabel.Text = "Room Name";
             this.RoomNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -245,10 +245,10 @@ namespace RSI_X_Desktop
             this.labelVideo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelVideo.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelVideo.ForeColor = System.Drawing.Color.White;
-            this.labelVideo.Location = new System.Drawing.Point(71, 21);
+            this.labelVideo.Location = new System.Drawing.Point(84, 17);
             this.labelVideo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelVideo.Name = "labelVideo";
-            this.labelVideo.Size = new System.Drawing.Size(57, 29);
+            this.labelVideo.Size = new System.Drawing.Size(71, 36);
             this.labelVideo.TabIndex = 19;
             this.labelVideo.Text = "VIDEO";
             this.labelVideo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -261,10 +261,10 @@ namespace RSI_X_Desktop
             this.labelAudio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelAudio.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelAudio.ForeColor = System.Drawing.Color.White;
-            this.labelAudio.Location = new System.Drawing.Point(4, 21);
+            this.labelAudio.Location = new System.Drawing.Point(4, 17);
             this.labelAudio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAudio.Name = "labelAudio";
-            this.labelAudio.Size = new System.Drawing.Size(59, 29);
+            this.labelAudio.Size = new System.Drawing.Size(72, 36);
             this.labelAudio.TabIndex = 18;
             this.labelAudio.Text = "AUDIO";
             this.labelAudio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -279,11 +279,11 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel4.Controls.Add(this.trackBar1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.labelVolume, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(135, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(162, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(172, 65);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(189, 65);
             this.tableLayoutPanel4.TabIndex = 20;
             // 
             // trackBar1
@@ -296,7 +296,7 @@ namespace RSI_X_Desktop
             this.trackBar1.EmptyBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
             this.trackBar1.FillBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(104)))));
             this.trackBar1.JumpToMouse = true;
-            this.trackBar1.Location = new System.Drawing.Point(86, 23);
+            this.trackBar1.Location = new System.Drawing.Point(103, 23);
             this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 3);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Minimum = 0;
@@ -320,10 +320,10 @@ namespace RSI_X_Desktop
             this.labelVolume.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelVolume.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelVolume.ForeColor = System.Drawing.Color.White;
-            this.labelVolume.Location = new System.Drawing.Point(4, 18);
+            this.labelVolume.Location = new System.Drawing.Point(4, 14);
             this.labelVolume.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelVolume.Name = "labelVolume";
-            this.labelVolume.Size = new System.Drawing.Size(74, 29);
+            this.labelVolume.Size = new System.Drawing.Size(91, 36);
             this.labelVolume.TabIndex = 21;
             this.labelVolume.Text = "VOLUME";
             this.labelVolume.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -384,11 +384,11 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel5.Controls.Add(this.mSwitchOriginal, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.labelOrig, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(1033, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(1011, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(129, 65);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(151, 65);
             this.tableLayoutPanel5.TabIndex = 43;
             // 
             // mSwitchOriginal
@@ -413,10 +413,10 @@ namespace RSI_X_Desktop
             this.labelOrig.AutoSize = true;
             this.labelOrig.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelOrig.ForeColor = System.Drawing.Color.White;
-            this.labelOrig.Location = new System.Drawing.Point(53, 18);
+            this.labelOrig.Location = new System.Drawing.Point(53, 14);
             this.labelOrig.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.labelOrig.Name = "labelOrig";
-            this.labelOrig.Size = new System.Drawing.Size(73, 25);
+            this.labelOrig.Size = new System.Drawing.Size(95, 33);
             this.labelOrig.TabIndex = 42;
             this.labelOrig.Text = "ORIGINAL";
             this.labelOrig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -428,11 +428,11 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.labelRecord, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(313, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(357, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(714, 65);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(648, 65);
             this.tableLayoutPanel6.TabIndex = 44;
             // 
             // labelRecord
@@ -442,10 +442,10 @@ namespace RSI_X_Desktop
             this.labelRecord.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelRecord.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelRecord.ForeColor = System.Drawing.Color.White;
-            this.labelRecord.Location = new System.Drawing.Point(4, 18);
+            this.labelRecord.Location = new System.Drawing.Point(4, 14);
             this.labelRecord.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRecord.Name = "labelRecord";
-            this.labelRecord.Size = new System.Drawing.Size(126, 29);
+            this.labelRecord.Size = new System.Drawing.Size(156, 36);
             this.labelRecord.TabIndex = 22;
             this.labelRecord.Text = "RECORD AUDIO";
             this.labelRecord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

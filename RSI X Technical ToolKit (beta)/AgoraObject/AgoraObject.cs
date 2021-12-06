@@ -8,6 +8,14 @@ using HWND = System.IntPtr;
 
 namespace RSI_X_Desktop
 {
+    public enum CHANNEL_TYPE
+    {
+        SRC = 255,
+        TRANSL,
+        DEST,
+        HOST,
+        UNKNOWN
+    };
     enum CurForm 
     {
         FormTransLater,
@@ -117,8 +125,8 @@ namespace RSI_X_Desktop
         static public void SetWndEventHandler(IFormHostHolder form)
         {
             Rtc.InitEventHandler(new AGEngineEventHandler(form));
-            srcHandler = new AGChannelEventHandler(form, CHANNEL_TYPE.CHANNEL_SRC);
-            hostHandler = new AGChannelEventHandler(form, CHANNEL_TYPE.CHANNEL_HOST);
+            srcHandler = new AGChannelEventHandler(form, CHANNEL_TYPE.SRC);
+            hostHandler = new AGChannelEventHandler(form, CHANNEL_TYPE.HOST);
             workForm = form;
         }
         
@@ -161,7 +169,7 @@ namespace RSI_X_Desktop
 
             m_channelHost = Rtc.CreateChannel(lpChannelName);
             m_channelHost.InitChannelEventHandler(hostHandler);
-            m_channelHost.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_BROADCASTER);
+            m_channelHost.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_AUDIENCE);
             m_channelHost.SetDefaultMuteAllRemoteVideoStreams(false);
 
             ChannelMediaOptions options = new();
@@ -170,7 +178,7 @@ namespace RSI_X_Desktop
 
 
             //ERROR_CODE ret = m_channelHost.JoinChannel(token, info, nUID, options);
-            ERROR_CODE ret = m_channelHost.JoinChannelWithUserAccount(token, "SPECTRATOR", options);
+            ERROR_CODE ret = m_channelHost.JoinChannelWithUserAccount(token, NickCenter.ToAudienceNick(), options);
 
 
             m_channelHostJoin = (0 == ret);
@@ -191,6 +199,7 @@ namespace RSI_X_Desktop
             else
                 hostBroacsters.Add(uid, user);
             workForm.NewBroadcaster(uid, user);
+            System.Diagnostics.Debug.WriteLine($"{DateTime.Now.ToString("HH:mm:ss")}: New user {user.userAccount} {uid}");
         }
         internal static void UpdateHostUserInfo(uint uid, UserInfo user)
         {
@@ -198,6 +207,7 @@ namespace RSI_X_Desktop
             {
                 hostBroacsters[uid] = user;
                 workForm.BroadcasterUpdateInfo(uid, user);
+                System.Diagnostics.Debug.WriteLine($"{DateTime.Now.ToString("HH:mm:ss")}: update user {user.userAccount} {uid}");
             }
         }
         internal static void RemoveHostUserInfo(uint uid)
@@ -206,6 +216,7 @@ namespace RSI_X_Desktop
             {
                 hostBroacsters.Remove(uid);
                 workForm.BroadcasterLeave(uid);
+                System.Diagnostics.Debug.WriteLine($"{DateTime.Now.ToString("HH:mm:ss")}: remove conf {uid}");
             }
         }
         internal static bool RecordAudio(bool state)

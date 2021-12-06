@@ -103,7 +103,8 @@ namespace RSI_X_Desktop
         public void NewBroadcaster(uint uid, UserInfo info)
         {
             //throw new NotImplementedException(); 
-            if (info.userAccount.StartsWith("HOST") && !hostBroadcasters.ContainsKey(uid))
+            if (NickCenter.IsHost(info.userAccount) &&
+                !hostBroadcasters.ContainsKey(uid))
             {
                 if (InvokeRequired)
                     Invoke((MethodInvoker)delegate
@@ -117,7 +118,8 @@ namespace RSI_X_Desktop
         public void BroadcasterUpdateInfo(uint uid, UserInfo info)
         {
             //throw new NotImplementedException(); 
-            if (info.userAccount.StartsWith("HOST") && !hostBroadcasters.ContainsKey(uid))
+            if (NickCenter.IsHost(info.userAccount) &&
+                !hostBroadcasters.ContainsKey(uid))
             {
                 if (InvokeRequired)
                     Invoke((MethodInvoker)delegate

@@ -9,13 +9,6 @@ using System.Windows.Forms;
 
 namespace RSI_X_Desktop
 {
-    public enum CHANNEL_TYPE
-    {
-        CHANNEL_SRC = 255,
-        CHANNEL_TRANSL,
-        CHANNEL_DEST,
-        CHANNEL_HOST,
-    };
     public class AGChannelEventHandler : IRtcChannelEventHandlerBase
     {
         internal List<uint> hostBroacsters = new();
@@ -39,10 +32,10 @@ namespace RSI_X_Desktop
         {
             switch (chType)
             {
-                case CHANNEL_TYPE.CHANNEL_TRANSL:
-                case CHANNEL_TYPE.CHANNEL_HOST:
-                case CHANNEL_TYPE.CHANNEL_DEST:
-                case CHANNEL_TYPE.CHANNEL_SRC:
+                case CHANNEL_TYPE.TRANSL:
+                case CHANNEL_TYPE.HOST:
+                case CHANNEL_TYPE.DEST:
+                case CHANNEL_TYPE.SRC:
                 default:
                     break;
             }
@@ -52,10 +45,10 @@ namespace RSI_X_Desktop
         {
             switch (chType)
             {
-                case CHANNEL_TYPE.CHANNEL_TRANSL:
-                case CHANNEL_TYPE.CHANNEL_HOST:
-                case CHANNEL_TYPE.CHANNEL_DEST:
-                case CHANNEL_TYPE.CHANNEL_SRC:
+                case CHANNEL_TYPE.TRANSL:
+                case CHANNEL_TYPE.HOST:
+                case CHANNEL_TYPE.DEST:
+                case CHANNEL_TYPE.SRC:
                 default:
                     break;
             }
@@ -66,10 +59,10 @@ namespace RSI_X_Desktop
         {
             switch (chType)
             {
-                case CHANNEL_TYPE.CHANNEL_TRANSL:
-                case CHANNEL_TYPE.CHANNEL_HOST:
-                case CHANNEL_TYPE.CHANNEL_DEST:
-                case CHANNEL_TYPE.CHANNEL_SRC:
+                case CHANNEL_TYPE.TRANSL:
+                case CHANNEL_TYPE.HOST:
+                case CHANNEL_TYPE.DEST:
+                case CHANNEL_TYPE.SRC:
                 default:
                     break;
             }
@@ -84,18 +77,18 @@ namespace RSI_X_Desktop
         {
             switch (chType) 
             {
-                case CHANNEL_TYPE.CHANNEL_TRANSL:
-                case CHANNEL_TYPE.CHANNEL_DEST:
-                case CHANNEL_TYPE.CHANNEL_HOST:
+                case CHANNEL_TYPE.TRANSL:
+                case CHANNEL_TYPE.DEST:
+                case CHANNEL_TYPE.HOST:
                     AgoraObject.Rtc.GetUserInfoByUid(uid, out UserInfo user);
                     AgoraObject.NewUserOnHost(uid, user);
                     break;
-                case CHANNEL_TYPE.CHANNEL_SRC:
+                case CHANNEL_TYPE.SRC:
                 default:
                     break;
             }
 
-            if (chType is CHANNEL_TYPE.CHANNEL_TRANSL)
+            if (chType is CHANNEL_TYPE.TRANSL)
             {
                 //form.ShowRemoteWnd();
             }
@@ -105,12 +98,12 @@ namespace RSI_X_Desktop
         {
             switch (chType)
             {
-                case CHANNEL_TYPE.CHANNEL_TRANSL:
-                case CHANNEL_TYPE.CHANNEL_DEST:
-                case CHANNEL_TYPE.CHANNEL_HOST:
+                case CHANNEL_TYPE.TRANSL:
+                case CHANNEL_TYPE.DEST:
+                case CHANNEL_TYPE.HOST:
                     AgoraObject.RemoveHostUserInfo(uid);
                     break;
-                case CHANNEL_TYPE.CHANNEL_SRC:
+                case CHANNEL_TYPE.SRC:
                 default:
                     break;
             }
@@ -195,20 +188,20 @@ namespace RSI_X_Desktop
             //TODO: добавить очистку окон коллег через state == REMOTE_VIDEO_STATE_STOPPED
             switch (state) {
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_DECODING:
-                    if (chType == CHANNEL_TYPE.CHANNEL_HOST)
+                    if (chType == CHANNEL_TYPE.HOST)
                         (form as Audience).UpdateMember(uid, channelId);
                     break;
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_STOPPED:
                     VideoStreamHasStopped(channelId, uid, reason);
-                    if (chType == CHANNEL_TYPE.CHANNEL_HOST)
+                    if (chType == CHANNEL_TYPE.HOST)
                         (form as Audience).UpdateMember(uid);
                     break;
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_FROZEN:
-                    if (chType == CHANNEL_TYPE.CHANNEL_HOST)
+                    if (chType == CHANNEL_TYPE.HOST)
                         (form as Audience).UpdateMember(uid);
                     break;
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_FAILED:
-                    if (chType == CHANNEL_TYPE.CHANNEL_HOST)
+                    if (chType == CHANNEL_TYPE.HOST)
                         (form as Audience).UpdateMember(uid);
                     break;
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_STARTING:
@@ -229,10 +222,10 @@ namespace RSI_X_Desktop
 
             switch (chType)
             {
-                case CHANNEL_TYPE.CHANNEL_HOST:
-                case CHANNEL_TYPE.CHANNEL_DEST:
-                case CHANNEL_TYPE.CHANNEL_TRANSL:
-                case CHANNEL_TYPE.CHANNEL_SRC:
+                case CHANNEL_TYPE.HOST:
+                case CHANNEL_TYPE.DEST:
+                case CHANNEL_TYPE.TRANSL:
+                case CHANNEL_TYPE.SRC:
                 default:
                     break;
             }
@@ -247,10 +240,10 @@ namespace RSI_X_Desktop
 
             switch (chType)
             {
-                case CHANNEL_TYPE.CHANNEL_HOST:
-                case CHANNEL_TYPE.CHANNEL_TRANSL:
-                case CHANNEL_TYPE.CHANNEL_DEST:
-                case CHANNEL_TYPE.CHANNEL_SRC:
+                case CHANNEL_TYPE.HOST:
+                case CHANNEL_TYPE.TRANSL:
+                case CHANNEL_TYPE.DEST:
+                case CHANNEL_TYPE.SRC:
                 default:
                     break;
             }
