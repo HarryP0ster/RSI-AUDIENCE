@@ -154,8 +154,10 @@ namespace RSI_X_Desktop.forms
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
-            if (Speakers.Count > 0)
-                oldSpeaker = Speakers[comboBoxAudioOutput.SelectedIndex];
+            var aout = comboBoxAudioOutput.SelectedIndex;
+            
+            if (Speakers.Count() < aout) oldSpeaker = Speakers[aout];
+
             oldVolumeOut = trackBarSoundOut.Value;
 
             CloseButton_Click(sender, e);
