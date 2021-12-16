@@ -39,6 +39,8 @@ namespace RSI_X_Desktop
             this.Settings = new ReaLTaiizor.Controls.Button();
             this.ExitApp = new ReaLTaiizor.Controls.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.button3 = new ReaLTaiizor.Controls.Button();
             this.labelVideo = new System.Windows.Forms.Label();
             this.labelAudio = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,8 +51,6 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.mSwitchOriginal = new MaterialSkin.Controls.MaterialSwitch();
             this.labelOrig = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelRecord = new System.Windows.Forms.Label();
             this.RemotePanel = new System.Windows.Forms.TableLayoutPanel();
             this.streamsTable = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -63,10 +63,10 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.comboBoxPanel.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.RemotePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -223,12 +223,12 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelVideo, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelAudio, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxPanel, 5, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 4, 0);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 682);
@@ -238,6 +238,42 @@ namespace RSI_X_Desktop
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1274, 71);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Controls.Add(this.button3, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(357, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(648, 65);
+            this.tableLayoutPanel6.TabIndex = 45;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.EnteredColor = System.Drawing.Color.DarkRed;
+            this.button3.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.Image = null;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.button3.Location = new System.Drawing.Point(211, 3);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.button3.Name = "button3";
+            this.button3.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.button3.Size = new System.Drawing.Size(120, 52);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "SIGN OFF";
+            this.button3.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.button3.Click += new System.EventHandler(this.HomeBtn_Click);
+            // 
             // labelVideo
             // 
             this.labelVideo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -245,7 +281,7 @@ namespace RSI_X_Desktop
             this.labelVideo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelVideo.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelVideo.ForeColor = System.Drawing.Color.White;
-            this.labelVideo.Location = new System.Drawing.Point(84, 17);
+            this.labelVideo.Location = new System.Drawing.Point(4, 17);
             this.labelVideo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelVideo.Name = "labelVideo";
             this.labelVideo.Size = new System.Drawing.Size(71, 36);
@@ -261,7 +297,7 @@ namespace RSI_X_Desktop
             this.labelAudio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelAudio.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelAudio.ForeColor = System.Drawing.Color.White;
-            this.labelAudio.Location = new System.Drawing.Point(4, 17);
+            this.labelAudio.Location = new System.Drawing.Point(83, 17);
             this.labelAudio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAudio.Name = "labelAudio";
             this.labelAudio.Size = new System.Drawing.Size(72, 36);
@@ -421,36 +457,6 @@ namespace RSI_X_Desktop
             this.labelOrig.Text = "ORIGINAL";
             this.labelOrig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.labelRecord, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(357, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(648, 65);
-            this.tableLayoutPanel6.TabIndex = 44;
-            // 
-            // labelRecord
-            // 
-            this.labelRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelRecord.AutoSize = true;
-            this.labelRecord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelRecord.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelRecord.ForeColor = System.Drawing.Color.White;
-            this.labelRecord.Location = new System.Drawing.Point(4, 14);
-            this.labelRecord.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelRecord.Name = "labelRecord";
-            this.labelRecord.Size = new System.Drawing.Size(156, 36);
-            this.labelRecord.TabIndex = 22;
-            this.labelRecord.Text = "RECORD AUDIO";
-            this.labelRecord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelRecord.Click += new System.EventHandler(this.label2_Click);
-            // 
             // RemotePanel
             // 
             this.RemotePanel.ColumnCount = 2;
@@ -588,13 +594,12 @@ namespace RSI_X_Desktop
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.comboBoxPanel.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
             this.RemotePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -630,6 +635,6 @@ namespace RSI_X_Desktop
         private ReaLTaiizor.Controls.DungeonTrackBar trackBar1;
         private System.Windows.Forms.Label labelVolume;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label labelRecord;
+        private ReaLTaiizor.Controls.Button button3;
     }
 }

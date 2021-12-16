@@ -379,7 +379,7 @@ namespace agorartc
             switch (@event)
             {
                 case "onStreamMessage":
-                    var length = (uint) AgoraUtil.GetData<uint>(data, "length");
+                    var length = (uint) AgoraUtil.GetData<uint>(data, "(unsigned) length");
                     var streamData = new byte[length];
                     if (buffer != IntPtr.Zero) Marshal.Copy(buffer, streamData, 0, (int) length);
                     Rtc.engineEventHandler?.OnStreamMessage((uint) AgoraUtil.GetData<uint>(data, "uid"),

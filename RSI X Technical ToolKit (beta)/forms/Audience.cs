@@ -517,13 +517,5 @@ namespace RSI_X_Desktop
             }
         }
         #endregion
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            AgoraObject.RecordAudio(!AgoraObject.IsAudioRecordActive);
-            labelRecord.ForeColor = AgoraObject.IsAudioRecordActive ?
-                Color.Red :
-                Color.White;
-        }
     }
 }
