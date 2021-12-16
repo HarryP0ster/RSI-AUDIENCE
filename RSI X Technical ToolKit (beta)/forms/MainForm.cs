@@ -45,6 +45,8 @@ namespace RSI_X_Desktop.forms
                 AgoraObject.CurrentForm = CurForm.FormAudience;
                 Audit.Show(this);
             }
+            else
+                NewTextBox.Clear();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -124,6 +126,11 @@ namespace RSI_X_Desktop.forms
         {
             if (e.KeyChar == (char)Keys.Enter)
                 JoinButton_Click(JoinButton, new());
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            NewTextBox.Focus();
         }
     }
 }

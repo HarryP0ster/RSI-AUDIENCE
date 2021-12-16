@@ -37,6 +37,7 @@ namespace RSI_X_Desktop
         private void Audience_Load(object sender, EventArgs e)
         {
             this.DoubleBuffered = true;
+            SignOffToCenter();
             FormAudience.Parent = this;
             ResizeForm(new Size(1280, 800), this);
 
@@ -46,7 +47,12 @@ namespace RSI_X_Desktop
             
             JoinChannel();
         }
-
+        private void SignOffToCenter()
+        {
+            float width_left = tableLayoutPanel4.Width + labelAudio.Width + labelVideo.Width;
+            float width_right = tableLayoutPanel5.Width + comboBoxPanel.Width;
+            tableLayoutPanel3.ColumnStyles[6].Width = width_left - width_right;
+        }
         public void RefreshDelegate()
         {
             streamsTable.Visible = !AgoraObject.IsAllRemoteVideoMute;
