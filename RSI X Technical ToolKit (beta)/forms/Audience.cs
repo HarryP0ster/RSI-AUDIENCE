@@ -303,17 +303,12 @@ namespace RSI_X_Desktop
 
         public void Animator(Panel panel, int offset_x, int offset_y, int itterations, int delay)
         {
-            //pictureBoxRemoteVideo.Refresh();
             Thread.Sleep(delay);
-            streamsTable.SuspendLayout();
             for (int ind = 0; ind < itterations; ind++)
             {
                 RemotePanel.ColumnStyles[1].Width = RemotePanel.ColumnStyles[1].Width - offset_x;
-                streamsTable.Size = new Size(streamsTable.Size.Width - offset_x, streamsTable.Size.Height);
-                //Thread.Sleep(1);
+                streamsTable.Refresh();
             }
-            streamsTable.ResumeLayout();
-            streamsTable.Refresh();
         }
 
         private void nightControlBox1_MouseClick(object sender, MouseEventArgs e)
