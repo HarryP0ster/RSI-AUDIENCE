@@ -36,6 +36,9 @@ namespace RSI_X_Desktop
 
         private void Audience_Load(object sender, EventArgs e)
         {
+            RemotePanel.ColumnStyles[1].SizeType = SizeType.Absolute;
+            RemotePanel.ColumnStyles[0].Width = 100;
+            RemotePanel.ColumnStyles[1].Width = 0;
             this.DoubleBuffered = true;
             SignOffToCenter();
             FormAudience.Parent = this;
@@ -276,40 +279,38 @@ namespace RSI_X_Desktop
 
         private void CallSidePanel(Form Wnd)
         {
-            panel1.SuspendLayout();
-            Wnd.Size = panel1.Size;
-            Wnd.Location = panel1.Location;
             Wnd.TopLevel = false;
             Wnd.Dock = DockStyle.Fill;
             panel1.Controls.Add(Wnd);
             panel1.BringToFront();
             if (panel1.Visible == false || Wnd.Visible == false)
             {
-                panel1.ResumeLayout();
-                //panel1.Location = new Point(Size.Width, panel1.Location.Y);
+                panel1.Location = new Point(Size.Width, panel1.Location.Y);
                 panel1.Show();
-                Animator(panel1, -2, 0, 25, 1);
+                Animator(panel1, -5, 0, 90, 1);
                 Wnd.Show();
             }
         }
 
         public void DevicesClosed(Form Wnd)
         {
-            Wnd.Close();
-            Animator(panel1, 2, 0, 25, 1);
+            Animator(panel1, 5, 0, 90, 1);
             panel1.Hide();
+            Wnd.Close();
             GC.Collect();
         }
 
-        public void Animator(Panel panel, int offset_x, int offset_y, int itterations, int delay)
+        public void Animator(System.Windows.Forms.Panel panel, int offset_x, int offset_y, int itterations, int delay)
         {
             Thread.Sleep(delay);
+            panel.SuspendLayout();
             for (int ind = 0; ind < itterations; ind++)
             {
                 RemotePanel.ColumnStyles[1].Width = RemotePanel.ColumnStyles[1].Width - offset_x;
-                streamsTable.Refresh();
             }
+            panel.ResumeLayout();
         }
+
 
         private void nightControlBox1_MouseClick(object sender, MouseEventArgs e)
         {
