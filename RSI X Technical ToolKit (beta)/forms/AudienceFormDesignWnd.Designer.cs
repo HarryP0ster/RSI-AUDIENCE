@@ -35,11 +35,22 @@ namespace RSI_X_Desktop.forms
             this.LeftSidePanel = new System.Windows.Forms.TableLayoutPanel();
             this.PictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.MiddleLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.ControlsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.FullScreen = new System.Windows.Forms.Label();
+            this.labelVideo = new System.Windows.Forms.Label();
+            this.labelAudio = new System.Windows.Forms.Label();
+            this.comboBoxPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.langBox = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.mSwitchOriginal = new MaterialSkin.Controls.MaterialSwitch();
+            this.HomeBtn = new ReaLTaiizor.Controls.Button();
             this.FormOuter.SuspendLayout();
             this.MainLayout.SuspendLayout();
             this.LeftSidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).BeginInit();
             this.MiddleLayout.SuspendLayout();
+            this.ControlsTable.SuspendLayout();
+            this.comboBoxPanel.SuspendLayout();
+            this.SuspendLayout();
             // 
             // FormOuter
             // 
@@ -105,6 +116,7 @@ namespace RSI_X_Desktop.forms
             // 
             this.MiddleLayout.ColumnCount = 1;
             this.MiddleLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.MiddleLayout.Controls.Add(this.ControlsTable, 0, 1);
             this.MiddleLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MiddleLayout.Location = new System.Drawing.Point(128, 0);
             this.MiddleLayout.Margin = new System.Windows.Forms.Padding(0);
@@ -115,6 +127,152 @@ namespace RSI_X_Desktop.forms
             this.MiddleLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.MiddleLayout.Size = new System.Drawing.Size(1152, 778);
             this.MiddleLayout.TabIndex = 1;
+            // 
+            // ControlsTable
+            // 
+            this.ControlsTable.ColumnCount = 6;
+            this.ControlsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.ControlsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.ControlsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.ControlsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.ControlsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.ControlsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.ControlsTable.Controls.Add(this.FullScreen, 0, 0);
+            this.ControlsTable.Controls.Add(this.labelVideo, 0, 0);
+            this.ControlsTable.Controls.Add(this.labelAudio, 0, 0);
+            this.ControlsTable.Controls.Add(this.comboBoxPanel, 5, 0);
+            this.ControlsTable.Controls.Add(this.mSwitchOriginal, 4, 0);
+            this.ControlsTable.Controls.Add(this.HomeBtn, 3, 0);
+            this.ControlsTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ControlsTable.Location = new System.Drawing.Point(3, 664);
+            this.ControlsTable.Name = "ControlsTable";
+            this.ControlsTable.RowCount = 1;
+            this.ControlsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ControlsTable.Size = new System.Drawing.Size(1146, 111);
+            this.ControlsTable.TabIndex = 0;
+            // 
+            // FullScreen
+            // 
+            this.FullScreen.AutoSize = true;
+            this.FullScreen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FullScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FullScreen.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FullScreen.ForeColor = System.Drawing.Color.White;
+            this.FullScreen.Location = new System.Drawing.Point(114, 0);
+            this.FullScreen.Margin = new System.Windows.Forms.Padding(0);
+            this.FullScreen.Name = "FullScreen";
+            this.FullScreen.Size = new System.Drawing.Size(57, 111);
+            this.FullScreen.TabIndex = 21;
+            this.FullScreen.Text = "Full Screen";
+            this.FullScreen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelVideo
+            // 
+            this.labelVideo.AutoSize = true;
+            this.labelVideo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelVideo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelVideo.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelVideo.ForeColor = System.Drawing.Color.White;
+            this.labelVideo.Location = new System.Drawing.Point(57, 0);
+            this.labelVideo.Margin = new System.Windows.Forms.Padding(0);
+            this.labelVideo.Name = "labelVideo";
+            this.labelVideo.Size = new System.Drawing.Size(57, 111);
+            this.labelVideo.TabIndex = 20;
+            this.labelVideo.Text = "VIDEO";
+            this.labelVideo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelAudio
+            // 
+            this.labelAudio.AutoSize = true;
+            this.labelAudio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelAudio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelAudio.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAudio.ForeColor = System.Drawing.Color.White;
+            this.labelAudio.Location = new System.Drawing.Point(0, 0);
+            this.labelAudio.Margin = new System.Windows.Forms.Padding(0);
+            this.labelAudio.Name = "labelAudio";
+            this.labelAudio.Size = new System.Drawing.Size(57, 111);
+            this.labelAudio.TabIndex = 19;
+            this.labelAudio.Text = "AUDIO";
+            this.labelAudio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBoxPanel
+            // 
+            this.comboBoxPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxPanel.BackColor = System.Drawing.Color.Silver;
+            this.comboBoxPanel.ColumnCount = 1;
+            this.comboBoxPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.comboBoxPanel.Controls.Add(this.langBox, 0, 0);
+            this.comboBoxPanel.Location = new System.Drawing.Point(1029, 30);
+            this.comboBoxPanel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.comboBoxPanel.Name = "comboBoxPanel";
+            this.comboBoxPanel.RowCount = 1;
+            this.comboBoxPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.comboBoxPanel.Size = new System.Drawing.Size(117, 51);
+            this.comboBoxPanel.TabIndex = 43;
+            // 
+            // langBox
+            // 
+            this.langBox.AutoResize = false;
+            this.langBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.langBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.langBox.Depth = 0;
+            this.langBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.langBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.langBox.DropDownHeight = 174;
+            this.langBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.langBox.DropDownWidth = 94;
+            this.langBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.langBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point);
+            this.langBox.ForeColor = System.Drawing.Color.White;
+            this.langBox.IntegralHeight = false;
+            this.langBox.ItemHeight = 43;
+            this.langBox.Items.AddRange(new object[] {
+            "ENG"});
+            this.langBox.Location = new System.Drawing.Point(3, 3);
+            this.langBox.MaxDropDownItems = 4;
+            this.langBox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.langBox.Name = "langBox";
+            this.langBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.langBox.Size = new System.Drawing.Size(111, 49);
+            this.langBox.StartIndex = 0;
+            this.langBox.TabIndex = 43;
+            // 
+            // mSwitchOriginal
+            // 
+            this.mSwitchOriginal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.mSwitchOriginal.Depth = 0;
+            this.mSwitchOriginal.Font = new System.Drawing.Font("Segoe UI", 2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mSwitchOriginal.Location = new System.Drawing.Point(915, 37);
+            this.mSwitchOriginal.Margin = new System.Windows.Forms.Padding(0);
+            this.mSwitchOriginal.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mSwitchOriginal.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mSwitchOriginal.Name = "mSwitchOriginal";
+            this.mSwitchOriginal.Ripple = true;
+            this.mSwitchOriginal.Size = new System.Drawing.Size(114, 37);
+            this.mSwitchOriginal.TabIndex = 44;
+            this.mSwitchOriginal.Text = "Original";
+            this.mSwitchOriginal.UseVisualStyleBackColor = true;
+            // 
+            // HomeBtn
+            // 
+            this.HomeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.HomeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.HomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HomeBtn.EnteredColor = System.Drawing.Color.DarkRed;
+            this.HomeBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HomeBtn.Image = null;
+            this.HomeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.HomeBtn.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.HomeBtn.Location = new System.Drawing.Point(471, 24);
+            this.HomeBtn.Margin = new System.Windows.Forms.Padding(300, 3, 300, 10);
+            this.HomeBtn.Name = "HomeBtn";
+            this.HomeBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.HomeBtn.Size = new System.Drawing.Size(144, 55);
+            this.HomeBtn.TabIndex = 45;
+            this.HomeBtn.Text = "SIGN OFF";
+            this.HomeBtn.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // AudienceFormDesignWnd
             // 
@@ -137,7 +295,9 @@ namespace RSI_X_Desktop.forms
             this.LeftSidePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).EndInit();
             this.MiddleLayout.ResumeLayout(false);
-            this.MiddleLayout.PerformLayout();
+            this.ControlsTable.ResumeLayout(false);
+            this.ControlsTable.PerformLayout();
+            this.comboBoxPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -149,5 +309,13 @@ namespace RSI_X_Desktop.forms
         private System.Windows.Forms.TableLayoutPanel LeftSidePanel;
         private System.Windows.Forms.PictureBox PictureBoxLogo;
         private System.Windows.Forms.TableLayoutPanel MiddleLayout;
+        private System.Windows.Forms.TableLayoutPanel ControlsTable;
+        private System.Windows.Forms.Label labelAudio;
+        private System.Windows.Forms.Label labelVideo;
+        private System.Windows.Forms.Label FullScreen;
+        private System.Windows.Forms.TableLayoutPanel comboBoxPanel;
+        private ReaLTaiizor.Controls.MaterialComboBox langBox;
+        private MaterialSkin.Controls.MaterialSwitch mSwitchOriginal;
+        private ReaLTaiizor.Controls.Button HomeBtn;
     }
 }

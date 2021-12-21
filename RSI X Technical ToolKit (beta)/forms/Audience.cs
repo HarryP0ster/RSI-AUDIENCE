@@ -167,7 +167,7 @@ namespace RSI_X_Desktop
             }
         }
 
-        private void labelMicrophone_Click(object sender, EventArgs e)
+        internal void labelMicrophone_Click(object sender, EventArgs e)
         {
             AgoraObject.MuteAllRemoteAudioStream(!AgoraObject.IsAllRemoteAudioMute);
             labelAudio.ForeColor = AgoraObject.IsAllRemoteAudioMute ?
@@ -175,7 +175,7 @@ namespace RSI_X_Desktop
                 Color.Red;
         }
 
-        private void labelVideo_Click(object sender, EventArgs e)
+        internal void labelVideo_Click(object sender, EventArgs e)
         {
             AgoraObject.MuteAllRemoteVideoStream(!AgoraObject.IsAllRemoteVideoMute);
             labelVideo.ForeColor = AgoraObject.IsAllRemoteVideoMute ?
@@ -205,7 +205,7 @@ namespace RSI_X_Desktop
             trackBar1.Value = volume;
         }
 
-        private void langBox_SelectedIndexChanged(object sender, EventArgs e)
+        internal void langBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Выпадающий список языков
             if (!IsOriginal)
@@ -217,7 +217,7 @@ namespace RSI_X_Desktop
             }
         }
 
-        private void mSwitchOriginal_CheckedChanged(object sender, EventArgs e)
+        internal void mSwitchOriginal_CheckedChanged(object sender, EventArgs e)
         {
             //Включение оригинальной дорожки (floor)
             if (IsOriginal)
@@ -285,7 +285,7 @@ namespace RSI_X_Desktop
             }
         }
 
-        private void HomeBtn_Click(object sender, EventArgs e)
+        internal void HomeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }

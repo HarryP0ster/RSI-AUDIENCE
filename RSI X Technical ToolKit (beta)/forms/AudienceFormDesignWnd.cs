@@ -29,6 +29,11 @@ namespace RSI_X_Desktop.forms
         private void Owner_LocationChanged(object sender, EventArgs e) //Initial loading
         {
             this.Location = Owner.Location;
+            HomeBtn.Click += (Owner as Audience).HomeBtn_Click;
+            labelVideo.Click += (Owner as Audience).labelVideo_Click;
+            labelAudio.Click += (Owner as Audience).labelMicrophone_Click;
+            langBox.SelectedIndexChanged += (Owner as Audience).langBox_SelectedIndexChanged;
+            mSwitchOriginal.CheckedChanged += (Owner as Audience).mSwitchOriginal_CheckedChanged;
         }
 
         private void SetLeftSidePanelRegion()
