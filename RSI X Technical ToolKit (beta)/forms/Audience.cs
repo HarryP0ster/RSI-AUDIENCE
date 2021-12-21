@@ -5,6 +5,7 @@ using agorartc;
 using System.Drawing;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using RSI_X_Desktop.forms.HelpingClass;
 using System.Threading;
 
 namespace RSI_X_Desktop
@@ -19,7 +20,10 @@ namespace RSI_X_Desktop
         private bool IsMixerOpen = false;
         public delegate void RefreshRemoteWnd(bool param);
         public RefreshRemoteWnd CallRefresh;
-
+        //Design windows
+        AudienceFormDesignWnd ExternWnd = new();
+        BottomPanelWnd bottomPanel = new();
+        //Design windows
         private bool AddOrder = false;
         private bool[] TakenPages = new bool[1];
         private Dictionary<uint, PictureBox> hostBroadcasters = new();
@@ -49,6 +53,15 @@ namespace RSI_X_Desktop
             CallRefresh = new RefreshRemoteWnd(RefreshDelegate);
             
             JoinChannel();
+            bottomPanel.Width = Width;
+            bottomPanel.Height = Height/7;
+            bottomPanel.Location = new Point(Location.X,Location.Y + Height);
+            ExternWnd.Size = Size;
+            ExternWnd.Location = Location;
+            bottomPanel.Show(this);
+            ExternWnd.Show(this);
+            bottomPanel.SuspendLayout();
+            ExternWnd.SuspendLayout();
         }
         private void SignOffToCenter()
         {
