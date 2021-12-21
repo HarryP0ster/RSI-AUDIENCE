@@ -65,9 +65,9 @@ namespace RSI_X_Desktop
         }
         private void SignOffToCenter()
         {
-            float width_left = tableLayoutPanel4.Width + labelAudio.Width + labelVideo.Width;
-            float width_right = tableLayoutPanel5.Width + comboBoxPanel.Width;
-            tableLayoutPanel3.ColumnStyles[6].Width = width_left - width_right;
+            //float width_left = tableLayoutPanel4.Width + labelAudio.Width + labelVideo.Width;
+            //float width_right = tableLayoutPanel5.Width + comboBoxPanel.Width;
+            //tableLayoutPanel3.ColumnStyles[6].Width = width_left - width_right;
         }
         public void RefreshDelegate()
         {
@@ -83,15 +83,15 @@ namespace RSI_X_Desktop
         {
             TarLang = AgoraObject.GetLangCollection();
             List<string> test = TarLang;
-            langBox.Items.Clear();
+            ExternWnd.langBox.Items.Clear();
             foreach (string lang in TarLang)
             {
                 // only EN_S_###
                 if (lang.Split('_')[1] != "S") continue;
                 string lang_short = lang.Split('_')[0];
-                langBox.Items.Add(lang_short);
+                ExternWnd.langBox.Items.Add(lang_short);
             }
-            langBox.SelectedIndex = 0;
+            ExternWnd.langBox.SelectedIndex = 0;
         }
 
         public ERROR_CODE JoinChannel()
@@ -108,12 +108,12 @@ namespace RSI_X_Desktop
             //pictureBoxRemoteVideo.Width = this.Width;
             //RemoteWnd = PBRemoteVideo.Handle;
             UpdateLangComboBox();
-            
-            mSwitchOriginal.Checked = true;
+
+            ExternWnd.mSwitchOriginal.Checked = true;
 
             AgoraObject.JoinChannelHost(AgoraObject.GetHostName(), AgoraObject.GetHostToken(), 0, "");
-            labelAudio.ForeColor = Color.Red;
-            labelVideo.ForeColor = Color.Red;
+            ExternWnd.labelAudio.ForeColor = Color.Red;
+            ExternWnd.labelVideo.ForeColor = Color.Red;
 
             return res;
         }
@@ -170,7 +170,7 @@ namespace RSI_X_Desktop
         internal void labelMicrophone_Click(object sender, EventArgs e)
         {
             AgoraObject.MuteAllRemoteAudioStream(!AgoraObject.IsAllRemoteAudioMute);
-            labelAudio.ForeColor = AgoraObject.IsAllRemoteAudioMute ?
+            ExternWnd.labelAudio.ForeColor = AgoraObject.IsAllRemoteAudioMute ?
                 Color.White :
                 Color.Red;
         }
@@ -178,7 +178,7 @@ namespace RSI_X_Desktop
         internal void labelVideo_Click(object sender, EventArgs e)
         {
             AgoraObject.MuteAllRemoteVideoStream(!AgoraObject.IsAllRemoteVideoMute);
-            labelVideo.ForeColor = AgoraObject.IsAllRemoteVideoMute ?
+            ExternWnd.labelVideo.ForeColor = AgoraObject.IsAllRemoteVideoMute ?
                 Color.White :
                 Color.Red;
             //PBRemoteVideo.Visible = !AgoraObject.IsAllRemoteVideoMute;
@@ -186,23 +186,23 @@ namespace RSI_X_Desktop
 
         private void labelVolume_Click(object sender, EventArgs e)
         {
-            IsMixerOpen = !IsMixerOpen;
-            labelVolume.ForeColor = IsMixerOpen ?
-                Color.Red :
-                Color.White;
-            trackBar1.Visible = IsMixerOpen;
+            //IsMixerOpen = !IsMixerOpen;
+            //labelVolume.ForeColor = IsMixerOpen ?
+            //    Color.Red :
+            //    Color.White;
+            //trackBar1.Visible = IsMixerOpen;
         }
 
         private void trackBar1_ValueChanged()
         {
-            Devices.SetVolume(trackBar1.Value);
-            if (devices != null && devices.IsDisposed == false)
-                devices.UpdateSoundTrackBar();
+            //Devices.SetVolume(trackBar1.Value);
+            //if (devices != null && devices.IsDisposed == false)
+            //    devices.UpdateSoundTrackBar();
 
         }
         public void SetTrackBarVolume(int volume) 
         {
-            trackBar1.Value = volume;
+            //trackBar1.Value = volume;
         }
 
         internal void langBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -210,7 +210,7 @@ namespace RSI_X_Desktop
             //Выпадающий список языков
             if (!IsOriginal)
             {
-                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
+                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(ExternWnd.langBox.SelectedIndex + 1);
                 bool ret = AgoraObject.JoinChannelSrc(InterRoom);
                 AgoraObject.MuteSrcAudioStream(false);
                 //RoomNameLabel.Focus();
@@ -222,21 +222,21 @@ namespace RSI_X_Desktop
             //Включение оригинальной дорожки (floor)
             if (IsOriginal)
             {
-                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
+                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(ExternWnd.langBox.SelectedIndex + 1);
                 AgoraObject.JoinChannelSrc(InterRoom);
                 AgoraObject.MuteHostAudioStream(true);
                 AgoraObject.MuteSrcAudioStream(AgoraObject.IsAllRemoteAudioMute);
-                langBox.Focus();
-                labelOrig.ForeColor = Color.White;
+                ExternWnd.langBox.Focus();
+                //labelOrig.ForeColor = Color.White;
             }
             else
             {
                 AgoraObject.MuteHostAudioStream(AgoraObject.IsAllRemoteAudioMute);
                 AgoraObject.MuteSrcAudioStream(true);
-                labelOrig.ForeColor = Color.Red;
+                //labelOrig.ForeColor = Color.Red;
             }
-            mSwitchOriginal.Checked = !IsOriginal;
-            langBox.Enabled = IsOriginal;
+            ExternWnd.mSwitchOriginal.Checked = !IsOriginal;
+            ExternWnd.langBox.Enabled = IsOriginal;
             IsOriginal = !IsOriginal;
         }
         private void Spectator_FormClosed(object sender, FormClosedEventArgs e)
@@ -351,12 +351,12 @@ namespace RSI_X_Desktop
 
         private void langBox_MouseEnter(object sender, EventArgs e)
         {
-            langBox.Refresh();
+            ExternWnd.langBox.Refresh();
         }
 
         private void langBox_Click(object sender, EventArgs e)
         {
-            langBox.Refresh();
+            ExternWnd.langBox.Refresh();
         }
 
 

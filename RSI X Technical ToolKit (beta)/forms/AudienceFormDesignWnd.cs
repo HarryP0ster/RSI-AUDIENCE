@@ -15,6 +15,7 @@ namespace RSI_X_Desktop.forms
 
     public partial class AudienceFormDesignWnd : Form
     {
+        private bool IsOriginal = false;
         public AudienceFormDesignWnd()
         {
             InitializeComponent();
@@ -29,11 +30,11 @@ namespace RSI_X_Desktop.forms
         private void Owner_LocationChanged(object sender, EventArgs e) //Initial loading
         {
             this.Location = Owner.Location;
-            HomeBtn.Click += (Owner as Audience).HomeBtn_Click;
-            labelVideo.Click += (Owner as Audience).labelVideo_Click;
-            labelAudio.Click += (Owner as Audience).labelMicrophone_Click;
-            langBox.SelectedIndexChanged += (Owner as Audience).langBox_SelectedIndexChanged;
-            mSwitchOriginal.CheckedChanged += (Owner as Audience).mSwitchOriginal_CheckedChanged;
+            HomeBtn.Click += HomeBtn_Click;
+            labelVideo.Click += labelVideo_Click;
+            labelAudio.Click += labelMicrophone_Click;
+            langBox.SelectedIndexChanged += langBox_SelectedIndexChanged;
+            mSwitchOriginal.CheckedChanged += mSwitchOriginal_CheckedChanged;
         }
 
         private void SetLeftSidePanelRegion()
@@ -47,5 +48,60 @@ namespace RSI_X_Desktop.forms
             path.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
             LeftSidePanel.Region = new Region(path);
         }
+#region EventHabdlers
+        private void labelMicrophone_Click(object sender, EventArgs e)
+        {
+            AgoraObject.MuteAllRemoteAudioStream(!AgoraObject.IsAllRemoteAudioMute);
+            labelAudio.ForeColor = AgoraObject.IsAllRemoteAudioMute ?
+                Color.White :
+                Color.Red;
+        }
+        private void langBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Выпадающий список языков
+            if (!IsOriginal)
+            {
+                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
+                bool ret = AgoraObject.JoinChannelSrc(InterRoom);
+                AgoraObject.MuteSrcAudioStream(false);
+                //RoomNameLabel.Focus();
+            }
+        }
+        private void mSwitchOriginal_CheckedChanged(object sender, EventArgs e)
+        {
+            //Включение оригинальной дорожки (floor)
+            if (IsOriginal)
+            {
+                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
+                AgoraObject.JoinChannelSrc(InterRoom);
+                AgoraObject.MuteHostAudioStream(true);
+                AgoraObject.MuteSrcAudioStream(AgoraObject.IsAllRemoteAudioMute);
+                langBox.Focus();
+                //labelOrig.ForeColor = Color.White;
+            }
+            else
+            {
+                AgoraObject.MuteHostAudioStream(AgoraObject.IsAllRemoteAudioMute);
+                AgoraObject.MuteSrcAudioStream(true);
+                //labelOrig.ForeColor = Color.Red;
+            }
+            mSwitchOriginal.Checked = !IsOriginal;
+            langBox.Enabled = IsOriginal;
+            IsOriginal = !IsOriginal;
+        }
+        private void labelVideo_Click(object sender, EventArgs e)
+        {
+            AgoraObject.MuteAllRemoteVideoStream(!AgoraObject.IsAllRemoteVideoMute);
+            (Owner as Audience).streamsTable.Visible = !AgoraObject.IsAllRemoteVideoMute;
+            labelVideo.ForeColor = AgoraObject.IsAllRemoteVideoMute ?
+                Color.White :
+                Color.Red;
+            //PBRemoteVideo.Visible = !AgoraObject.IsAllRemoteVideoMute;
+        }
+        private void HomeBtn_Click(object sender, EventArgs e)
+        {
+            Owner.Close();
+        }
+        #endregion
     }
 }

@@ -310,12 +310,12 @@ namespace RSI_X_Desktop.forms
         private System.Windows.Forms.PictureBox PictureBoxLogo;
         private System.Windows.Forms.TableLayoutPanel MiddleLayout;
         private System.Windows.Forms.TableLayoutPanel ControlsTable;
-        private System.Windows.Forms.Label labelAudio;
-        private System.Windows.Forms.Label labelVideo;
-        private System.Windows.Forms.Label FullScreen;
         private System.Windows.Forms.TableLayoutPanel comboBoxPanel;
-        private ReaLTaiizor.Controls.MaterialComboBox langBox;
-        private MaterialSkin.Controls.MaterialSwitch mSwitchOriginal;
-        private ReaLTaiizor.Controls.Button HomeBtn;
+        internal System.Windows.Forms.Label labelAudio;
+        internal System.Windows.Forms.Label labelVideo;
+        internal System.Windows.Forms.Label FullScreen;
+        internal ReaLTaiizor.Controls.MaterialComboBox langBox;
+        internal MaterialSkin.Controls.MaterialSwitch mSwitchOriginal;
+        internal ReaLTaiizor.Controls.Button HomeBtn;
     }
 }
