@@ -25,6 +25,8 @@ namespace RSI_X_Desktop.forms
         {
             Owner.LocationChanged += Owner_LocationChanged;
             SetLeftSidePanelRegion(); //cuts the edge of the column with logotype
+            AllowTransparency = true;
+            TransparencyKey = Color.FromArgb(250, 250, 250);
         }
 
         private void Owner_LocationChanged(object sender, EventArgs e) //Initial loading

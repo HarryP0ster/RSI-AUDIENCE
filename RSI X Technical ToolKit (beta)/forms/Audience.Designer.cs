@@ -39,13 +39,13 @@ namespace RSI_X_Desktop
             this.Settings = new ReaLTaiizor.Controls.Button();
             this.ExitApp = new ReaLTaiizor.Controls.Button();
             this.RemotePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.streamsTable = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Nothing = new System.Windows.Forms.Panel();
+            this.streamsTable = new System.Windows.Forms.TableLayoutPanel();
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new ReaLTaiizor.Controls.Button();
             this.airTabPage1 = new ReaLTaiizor.Controls.AirTabPage();
-            this.Nothing = new System.Windows.Forms.Panel();
             this.FormAudience.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -210,6 +210,28 @@ namespace RSI_X_Desktop
             this.RemotePanel.Size = new System.Drawing.Size(1274, 695);
             this.RemotePanel.TabIndex = 3;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(1067, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(204, 689);
+            this.panel1.TabIndex = 1;
+            // 
+            // Nothing
+            // 
+            this.Nothing.BackColor = System.Drawing.Color.Silver;
+            this.Nothing.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.logotype_black;
+            this.Nothing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Nothing.Controls.Add(this.streamsTable);
+            this.Nothing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Nothing.Location = new System.Drawing.Point(0, 0);
+            this.Nothing.Margin = new System.Windows.Forms.Padding(0);
+            this.Nothing.Name = "Nothing";
+            this.Nothing.Size = new System.Drawing.Size(1064, 695);
+            this.Nothing.TabIndex = 2;
+            // 
             // streamsTable
             // 
             this.streamsTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -226,15 +248,6 @@ namespace RSI_X_Desktop
             this.streamsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.streamsTable.Size = new System.Drawing.Size(1064, 695);
             this.streamsTable.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1067, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(204, 689);
-            this.panel1.TabIndex = 1;
             // 
             // nightControlBox1
             // 
@@ -306,19 +319,6 @@ namespace RSI_X_Desktop
             this.airTabPage1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.airTabPage1.SquareColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(87)))), ((int)(((byte)(100)))));
             this.airTabPage1.TabIndex = 5;
-            // 
-            // Nothing
-            // 
-            this.Nothing.BackColor = System.Drawing.Color.Silver;
-            this.Nothing.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.logotype_black;
-            this.Nothing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Nothing.Controls.Add(this.streamsTable);
-            this.Nothing.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Nothing.Location = new System.Drawing.Point(0, 0);
-            this.Nothing.Margin = new System.Windows.Forms.Padding(0);
-            this.Nothing.Name = "Nothing";
-            this.Nothing.Size = new System.Drawing.Size(1064, 695);
-            this.Nothing.TabIndex = 2;
             // 
             // Audience
             // 

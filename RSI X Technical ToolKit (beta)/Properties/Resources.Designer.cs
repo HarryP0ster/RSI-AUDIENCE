@@ -113,6 +113,16 @@ namespace RSI_X_Desktop.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RSI_MUTE {
+            get {
+                object obj = ResourceManager.GetObject("RSI_MUTE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap video_call_empty {
             get {
                 object obj = ResourceManager.GetObject("video_call_empty", resourceCulture);

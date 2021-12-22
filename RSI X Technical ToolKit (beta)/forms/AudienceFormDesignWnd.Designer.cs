@@ -37,12 +37,12 @@ namespace RSI_X_Desktop.forms
             this.MiddleLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ControlsTable = new System.Windows.Forms.TableLayoutPanel();
             this.FullScreen = new System.Windows.Forms.Label();
-            this.labelVideo = new System.Windows.Forms.Label();
-            this.labelAudio = new System.Windows.Forms.Label();
             this.comboBoxPanel = new System.Windows.Forms.TableLayoutPanel();
             this.langBox = new ReaLTaiizor.Controls.MaterialComboBox();
             this.mSwitchOriginal = new MaterialSkin.Controls.MaterialSwitch();
             this.HomeBtn = new ReaLTaiizor.Controls.Button();
+            this.labelVideo = new System.Windows.Forms.Label();
+            this.labelAudio = new System.Windows.Forms.PictureBox();
             this.FormOuter.SuspendLayout();
             this.MainLayout.SuspendLayout();
             this.LeftSidePanel.SuspendLayout();
@@ -50,16 +50,17 @@ namespace RSI_X_Desktop.forms
             this.MiddleLayout.SuspendLayout();
             this.ControlsTable.SuspendLayout();
             this.comboBoxPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.labelAudio)).BeginInit();
             this.SuspendLayout();
             // 
             // FormOuter
             // 
-            this.FormOuter.BackColor = System.Drawing.Color.Fuchsia;
+            this.FormOuter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.FormOuter.Controls.Add(this.MainLayout);
             this.FormOuter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FormOuter.DrawIcon = false;
             this.FormOuter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FormOuter.HeadColor = System.Drawing.Color.Fuchsia;
+            this.FormOuter.HeadColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.FormOuter.Location = new System.Drawing.Point(0, 0);
             this.FormOuter.MinimumSize = new System.Drawing.Size(100, 42);
             this.FormOuter.Name = "FormOuter";
@@ -114,6 +115,7 @@ namespace RSI_X_Desktop.forms
             // 
             // MiddleLayout
             // 
+            this.MiddleLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.MiddleLayout.ColumnCount = 1;
             this.MiddleLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.MiddleLayout.Controls.Add(this.ControlsTable, 0, 1);
@@ -130,6 +132,7 @@ namespace RSI_X_Desktop.forms
             // 
             // ControlsTable
             // 
+            this.ControlsTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ControlsTable.ColumnCount = 6;
             this.ControlsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.ControlsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
@@ -137,12 +140,12 @@ namespace RSI_X_Desktop.forms
             this.ControlsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.ControlsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.ControlsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.ControlsTable.Controls.Add(this.FullScreen, 0, 0);
-            this.ControlsTable.Controls.Add(this.labelVideo, 0, 0);
-            this.ControlsTable.Controls.Add(this.labelAudio, 0, 0);
+            this.ControlsTable.Controls.Add(this.FullScreen, 2, 0);
             this.ControlsTable.Controls.Add(this.comboBoxPanel, 5, 0);
             this.ControlsTable.Controls.Add(this.mSwitchOriginal, 4, 0);
             this.ControlsTable.Controls.Add(this.HomeBtn, 3, 0);
+            this.ControlsTable.Controls.Add(this.labelVideo, 1, 0);
+            this.ControlsTable.Controls.Add(this.labelAudio, 0, 0);
             this.ControlsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ControlsTable.Location = new System.Drawing.Point(3, 664);
             this.ControlsTable.Name = "ControlsTable";
@@ -155,46 +158,15 @@ namespace RSI_X_Desktop.forms
             // 
             this.FullScreen.AutoSize = true;
             this.FullScreen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FullScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FullScreen.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FullScreen.ForeColor = System.Drawing.Color.White;
             this.FullScreen.Location = new System.Drawing.Point(114, 0);
             this.FullScreen.Margin = new System.Windows.Forms.Padding(0);
             this.FullScreen.Name = "FullScreen";
-            this.FullScreen.Size = new System.Drawing.Size(57, 111);
+            this.FullScreen.Size = new System.Drawing.Size(49, 87);
             this.FullScreen.TabIndex = 21;
             this.FullScreen.Text = "Full Screen";
             this.FullScreen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelVideo
-            // 
-            this.labelVideo.AutoSize = true;
-            this.labelVideo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelVideo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelVideo.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelVideo.ForeColor = System.Drawing.Color.White;
-            this.labelVideo.Location = new System.Drawing.Point(57, 0);
-            this.labelVideo.Margin = new System.Windows.Forms.Padding(0);
-            this.labelVideo.Name = "labelVideo";
-            this.labelVideo.Size = new System.Drawing.Size(57, 111);
-            this.labelVideo.TabIndex = 20;
-            this.labelVideo.Text = "VIDEO";
-            this.labelVideo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelAudio
-            // 
-            this.labelAudio.AutoSize = true;
-            this.labelAudio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelAudio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelAudio.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAudio.ForeColor = System.Drawing.Color.White;
-            this.labelAudio.Location = new System.Drawing.Point(0, 0);
-            this.labelAudio.Margin = new System.Windows.Forms.Padding(0);
-            this.labelAudio.Name = "labelAudio";
-            this.labelAudio.Size = new System.Drawing.Size(57, 111);
-            this.labelAudio.TabIndex = 19;
-            this.labelAudio.Text = "AUDIO";
-            this.labelAudio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxPanel
             // 
@@ -242,8 +214,10 @@ namespace RSI_X_Desktop.forms
             // mSwitchOriginal
             // 
             this.mSwitchOriginal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.mSwitchOriginal.BackColor = System.Drawing.Color.Fuchsia;
             this.mSwitchOriginal.Depth = 0;
             this.mSwitchOriginal.Font = new System.Drawing.Font("Segoe UI", 2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mSwitchOriginal.ForeColor = System.Drawing.Color.Black;
             this.mSwitchOriginal.Location = new System.Drawing.Point(915, 37);
             this.mSwitchOriginal.Margin = new System.Windows.Forms.Padding(0);
             this.mSwitchOriginal.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -253,12 +227,12 @@ namespace RSI_X_Desktop.forms
             this.mSwitchOriginal.Size = new System.Drawing.Size(114, 37);
             this.mSwitchOriginal.TabIndex = 44;
             this.mSwitchOriginal.Text = "Original";
-            this.mSwitchOriginal.UseVisualStyleBackColor = true;
+            this.mSwitchOriginal.UseVisualStyleBackColor = false;
             // 
             // HomeBtn
             // 
             this.HomeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.HomeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.HomeBtn.BackColor = System.Drawing.Color.Fuchsia;
             this.HomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HomeBtn.EnteredColor = System.Drawing.Color.DarkRed;
             this.HomeBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -274,6 +248,31 @@ namespace RSI_X_Desktop.forms
             this.HomeBtn.Text = "SIGN OFF";
             this.HomeBtn.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // labelVideo
+            // 
+            this.labelVideo.AutoSize = true;
+            this.labelVideo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelVideo.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelVideo.ForeColor = System.Drawing.Color.White;
+            this.labelVideo.Location = new System.Drawing.Point(57, 0);
+            this.labelVideo.Margin = new System.Windows.Forms.Padding(0);
+            this.labelVideo.Name = "labelVideo";
+            this.labelVideo.Size = new System.Drawing.Size(57, 29);
+            this.labelVideo.TabIndex = 20;
+            this.labelVideo.Text = "VIDEO";
+            this.labelVideo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelAudio
+            // 
+            this.labelAudio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelAudio.Image = global::RSI_X_Desktop.Properties.Resources.RSI_MUTE;
+            this.labelAudio.Location = new System.Drawing.Point(3, 3);
+            this.labelAudio.Name = "labelAudio";
+            this.labelAudio.Size = new System.Drawing.Size(51, 105);
+            this.labelAudio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.labelAudio.TabIndex = 46;
+            this.labelAudio.TabStop = false;
+            // 
             // AudienceFormDesignWnd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -288,7 +287,7 @@ namespace RSI_X_Desktop.forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "dungeonForm1";
-            this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            this.TransparencyKey = System.Drawing.Color.WhiteSmoke;
             this.Load += new System.EventHandler(this.AudienceFormDesignWnd_Load);
             this.FormOuter.ResumeLayout(false);
             this.MainLayout.ResumeLayout(false);
@@ -298,6 +297,7 @@ namespace RSI_X_Desktop.forms
             this.ControlsTable.ResumeLayout(false);
             this.ControlsTable.PerformLayout();
             this.comboBoxPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.labelAudio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,11 +311,11 @@ namespace RSI_X_Desktop.forms
         private System.Windows.Forms.TableLayoutPanel MiddleLayout;
         private System.Windows.Forms.TableLayoutPanel ControlsTable;
         private System.Windows.Forms.TableLayoutPanel comboBoxPanel;
-        internal System.Windows.Forms.Label labelAudio;
         internal System.Windows.Forms.Label labelVideo;
         internal System.Windows.Forms.Label FullScreen;
         internal ReaLTaiizor.Controls.MaterialComboBox langBox;
         internal MaterialSkin.Controls.MaterialSwitch mSwitchOriginal;
         internal ReaLTaiizor.Controls.Button HomeBtn;
+        internal System.Windows.Forms.PictureBox labelAudio;
     }
 }
