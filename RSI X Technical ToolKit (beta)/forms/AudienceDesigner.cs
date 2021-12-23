@@ -24,8 +24,13 @@ namespace RSI_X_Desktop.forms
 
         private void AudienceDesigner_Load(object sender, EventArgs e)
         {
-            Owner.SizeChanged += delegate { Size = Owner.Size; };
-            Owner.LocationChanged += delegate { Location = Owner.Location; };
+            Owner.SizeChanged += delegate {
+                MaximumSize = Owner.MaximumSize;
+                MinimumSize = Owner.MinimumSize;
+                Size = Owner.Size;
+            };
+            ResizeRedraw = true;
+            Owner.LocationChanged += delegate { Location = new Point(Owner.Location.X, Owner.Location.Y); };
             SetLeftSidePanelRegion();
             SighnOffToCenter();
             RoomNameLabel.Text = AgoraObject.GetComplexToken().GetRoomName;
@@ -116,6 +121,14 @@ namespace RSI_X_Desktop.forms
         private void HomeBtn_Click(object sender, EventArgs e)
         {
             Owner.Close();
+        }
+
+        private void trackBar1_ValueChanged()
+        {
+            Devices.SetVolume(volumeTrackBar.Value);
+            if ((Owner as Audience).devices != null && (Owner as Audience).devices.IsDisposed == false)
+                (Owner as Audience).devices.UpdateSoundTrackBar();
+
         }
         #endregion
     }

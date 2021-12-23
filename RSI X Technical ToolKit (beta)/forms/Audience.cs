@@ -13,7 +13,7 @@ namespace RSI_X_Desktop
     public partial class Audience : Form, IFormHostHolder
     {
         public IntPtr RemoteWnd { get; private set; }
-        private Devices devices;
+        internal Devices devices;
 
         private List<string> TarLang;
         private bool IsOriginal = false;
@@ -183,25 +183,9 @@ namespace RSI_X_Desktop
             //PBRemoteVideo.Visible = !AgoraObject.IsAllRemoteVideoMute;
         }
 
-        private void labelVolume_Click(object sender, EventArgs e)
-        {
-            //IsMixerOpen = !IsMixerOpen;
-            //labelVolume.ForeColor = IsMixerOpen ?
-            //    Color.Red :
-            //    Color.White;
-            //trackBar1.Visible = IsMixerOpen;
-        }
-
-        private void trackBar1_ValueChanged()
-        {
-            //Devices.SetVolume(trackBar1.Value);
-            //if (devices != null && devices.IsDisposed == false)
-            //    devices.UpdateSoundTrackBar();
-
-        }
         public void SetTrackBarVolume(int volume) 
         {
-            //trackBar1.Value = volume;
+            ExternWnd.volumeTrackBar.Value = volume;
         }
 
         internal void langBox_SelectedIndexChanged(object sender, EventArgs e)

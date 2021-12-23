@@ -67,6 +67,7 @@ namespace RSI_X_Desktop.forms
             // 
             this.MainLayout.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.MainLayout.Appearance.Options.UseBackColor = true;
+            this.MainLayout.AutoSize = true;
             this.MainLayout.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 10F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 90F)});
@@ -78,7 +79,7 @@ namespace RSI_X_Desktop.forms
             this.MainLayout.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 22F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F)});
-            this.MainLayout.Size = new System.Drawing.Size(1278, 768);
+            this.MainLayout.Size = new System.Drawing.Size(1280, 800);
             this.MainLayout.TabIndex = 0;
             // 
             // LeftSidePanel
@@ -94,7 +95,7 @@ namespace RSI_X_Desktop.forms
             this.LeftSidePanel.Name = "LeftSidePanel";
             this.LeftSidePanel.Padding = new System.Windows.Forms.Padding(5, 35, 20, 0);
             this.MainLayout.SetRow(this.LeftSidePanel, 1);
-            this.LeftSidePanel.Size = new System.Drawing.Size(128, 746);
+            this.LeftSidePanel.Size = new System.Drawing.Size(128, 778);
             this.LeftSidePanel.TabIndex = 2;
             // 
             // Logo
@@ -113,6 +114,7 @@ namespace RSI_X_Desktop.forms
             // 
             // CenterPanel
             // 
+            this.CenterPanel.AutoSize = true;
             this.MainLayout.SetColumn(this.CenterPanel, 1);
             this.CenterPanel.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
@@ -126,11 +128,12 @@ namespace RSI_X_Desktop.forms
             this.CenterPanel.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 85F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 15F)});
-            this.CenterPanel.Size = new System.Drawing.Size(1150, 746);
+            this.CenterPanel.Size = new System.Drawing.Size(1152, 778);
             this.CenterPanel.TabIndex = 1;
             // 
             // tablePanel1
             // 
+            this.tablePanel1.AutoSize = true;
             this.CenterPanel.SetColumn(this.tablePanel1, 0);
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
@@ -143,7 +146,7 @@ namespace RSI_X_Desktop.forms
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 7F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 93F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1144, 628);
+            this.tablePanel1.Size = new System.Drawing.Size(1146, 655);
             this.tablePanel1.TabIndex = 1;
             // 
             // RoomNameLabel
@@ -153,7 +156,7 @@ namespace RSI_X_Desktop.forms
             this.RoomNameLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.RoomNameLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RoomNameLabel.ForeColor = System.Drawing.Color.White;
-            this.RoomNameLabel.Location = new System.Drawing.Point(35, 41);
+            this.RoomNameLabel.Location = new System.Drawing.Point(35, 43);
             this.RoomNameLabel.Margin = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.RoomNameLabel.Name = "RoomNameLabel";
             this.tablePanel1.SetRow(this.RoomNameLabel, 1);
@@ -166,18 +169,19 @@ namespace RSI_X_Desktop.forms
             // 
             this.IconsPanel.Appearance.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.IconsPanel.Appearance.Options.UseBackColor = true;
+            this.IconsPanel.AutoSize = true;
             this.CenterPanel.SetColumn(this.IconsPanel, 0);
             this.IconsPanel.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 7F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 10F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 10F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 35F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 32F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 10F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 7F)});
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 10F)});
             this.IconsPanel.Controls.Add(this.langBox);
             this.IconsPanel.Controls.Add(this.audioLabel);
             this.IconsPanel.Controls.Add(this.volumeTrackBar);
@@ -187,13 +191,13 @@ namespace RSI_X_Desktop.forms
             this.IconsPanel.Controls.Add(this.signOff);
             this.IconsPanel.Controls.Add(this.videoLabel);
             this.IconsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.IconsPanel.Location = new System.Drawing.Point(0, 634);
+            this.IconsPanel.Location = new System.Drawing.Point(0, 661);
             this.IconsPanel.Margin = new System.Windows.Forms.Padding(0);
             this.IconsPanel.Name = "IconsPanel";
             this.CenterPanel.SetRow(this.IconsPanel, 1);
             this.IconsPanel.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.IconsPanel.Size = new System.Drawing.Size(1150, 112);
+            this.IconsPanel.Size = new System.Drawing.Size(1152, 117);
             this.IconsPanel.TabIndex = 0;
             // 
             // langBox
@@ -201,7 +205,7 @@ namespace RSI_X_Desktop.forms
             this.langBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.langBox.BackColor = System.Drawing.Color.Transparent;
+            this.langBox.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.langBox.BGColorA = System.Drawing.Color.Transparent;
             this.langBox.BGColorB = System.Drawing.Color.Transparent;
             this.langBox.BorderColorA = System.Drawing.Color.Transparent;
@@ -220,16 +224,17 @@ namespace RSI_X_Desktop.forms
             this.langBox.LineColorB = System.Drawing.Color.Transparent;
             this.langBox.LineColorC = System.Drawing.Color.Transparent;
             this.langBox.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.langBox.ListBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.langBox.ListBorderColor = System.Drawing.Color.White;
             this.langBox.ListDashType = System.Drawing.Drawing2D.DashStyle.Dot;
             this.langBox.ListForeColor = System.Drawing.Color.Black;
             this.langBox.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.langBox.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.langBox.Location = new System.Drawing.Point(1082, 43);
+            this.langBox.Location = new System.Drawing.Point(1071, 49);
+            this.langBox.Margin = new System.Windows.Forms.Padding(20, 10, 10, 3);
             this.langBox.Name = "langBox";
             this.IconsPanel.SetRow(this.langBox, 0);
-            this.langBox.Size = new System.Drawing.Size(65, 26);
-            this.langBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.langBox.Size = new System.Drawing.Size(71, 26);
+            this.langBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             this.langBox.StartIndex = 0;
             this.langBox.TabIndex = 12;
             this.langBox.TriangleColorA = System.Drawing.Color.White;
@@ -250,7 +255,7 @@ namespace RSI_X_Desktop.forms
             this.audioLabel.Margin = new System.Windows.Forms.Padding(0);
             this.audioLabel.Name = "audioLabel";
             this.IconsPanel.SetRow(this.audioLabel, 0);
-            this.audioLabel.Size = new System.Drawing.Size(71, 112);
+            this.audioLabel.Size = new System.Drawing.Size(71, 117);
             this.audioLabel.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.audioLabel.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("audioLabel.SvgImage")));
             this.audioLabel.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
@@ -270,8 +275,8 @@ namespace RSI_X_Desktop.forms
             this.volumeTrackBar.EmptyBackColor = System.Drawing.SystemColors.ScrollBar;
             this.volumeTrackBar.FillBackColor = System.Drawing.Color.White;
             this.volumeTrackBar.JumpToMouse = true;
-            this.volumeTrackBar.Location = new System.Drawing.Point(981, 45);
-            this.volumeTrackBar.Maximum = 10;
+            this.volumeTrackBar.Location = new System.Drawing.Point(953, 47);
+            this.volumeTrackBar.Maximum = 100;
             this.volumeTrackBar.Minimum = 0;
             this.volumeTrackBar.MinimumSize = new System.Drawing.Size(47, 22);
             this.volumeTrackBar.Name = "volumeTrackBar";
@@ -280,9 +285,10 @@ namespace RSI_X_Desktop.forms
             this.volumeTrackBar.TabIndex = 5;
             this.volumeTrackBar.ThumbBackColor = System.Drawing.Color.White;
             this.volumeTrackBar.ThumbBorderColor = System.Drawing.Color.White;
-            this.volumeTrackBar.Value = 0;
+            this.volumeTrackBar.Value = 100;
             this.volumeTrackBar.ValueDivison = ReaLTaiizor.Controls.DungeonTrackBar.ValueDivisor.By1;
-            this.volumeTrackBar.ValueToSet = 0F;
+            this.volumeTrackBar.ValueToSet = 100F;
+            this.volumeTrackBar.ValueChanged += new ReaLTaiizor.Controls.DungeonTrackBar.ValueChangedEventHandler(this.trackBar1_ValueChanged);
             // 
             // volumeIcon
             // 
@@ -291,11 +297,11 @@ namespace RSI_X_Desktop.forms
             this.volumeIcon.ItemAppearance.Normal.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.volumeIcon.ItemAppearance.Normal.BorderThickness = 0F;
             this.volumeIcon.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
-            this.volumeIcon.Location = new System.Drawing.Point(928, 0);
+            this.volumeIcon.Location = new System.Drawing.Point(899, 0);
             this.volumeIcon.Margin = new System.Windows.Forms.Padding(0);
             this.volumeIcon.Name = "volumeIcon";
             this.IconsPanel.SetRow(this.volumeIcon, 0);
-            this.volumeIcon.Size = new System.Drawing.Size(50, 112);
+            this.volumeIcon.Size = new System.Drawing.Size(51, 117);
             this.volumeIcon.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("volumeIcon.SvgImage")));
             this.volumeIcon.TabIndex = 4;
             // 
@@ -306,11 +312,11 @@ namespace RSI_X_Desktop.forms
             this.turnOrig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.turnOrig.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
             this.turnOrig.ItemAppearance.Normal.BorderThickness = 0F;
-            this.turnOrig.Location = new System.Drawing.Point(726, 0);
+            this.turnOrig.Location = new System.Drawing.Point(697, 0);
             this.turnOrig.Margin = new System.Windows.Forms.Padding(0);
             this.turnOrig.Name = "turnOrig";
             this.IconsPanel.SetRow(this.turnOrig, 0);
-            this.turnOrig.Size = new System.Drawing.Size(202, 112);
+            this.turnOrig.Size = new System.Drawing.Size(202, 117);
             this.turnOrig.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("turnOrig.SvgImage")));
             this.turnOrig.TabIndex = 3;
             this.turnOrig.Click += new System.EventHandler(this.mSwitchOriginal_CheckedChanged);
@@ -329,7 +335,7 @@ namespace RSI_X_Desktop.forms
             this.devicesLabel.Margin = new System.Windows.Forms.Padding(0);
             this.devicesLabel.Name = "devicesLabel";
             this.IconsPanel.SetRow(this.devicesLabel, 0);
-            this.devicesLabel.Size = new System.Drawing.Size(101, 112);
+            this.devicesLabel.Size = new System.Drawing.Size(101, 117);
             this.devicesLabel.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.devicesLabel.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("devicesLabel.SvgImage")));
             this.devicesLabel.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
@@ -347,7 +353,7 @@ namespace RSI_X_Desktop.forms
             this.signOff.Margin = new System.Windows.Forms.Padding(0);
             this.signOff.Name = "signOff";
             this.IconsPanel.SetRow(this.signOff, 0);
-            this.signOff.Size = new System.Drawing.Size(353, 112);
+            this.signOff.Size = new System.Drawing.Size(324, 117);
             this.signOff.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.signOff.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("signOff.SvgImage")));
             this.signOff.TabIndex = 2;
@@ -368,7 +374,7 @@ namespace RSI_X_Desktop.forms
             this.videoLabel.Margin = new System.Windows.Forms.Padding(0);
             this.videoLabel.Name = "videoLabel";
             this.IconsPanel.SetRow(this.videoLabel, 0);
-            this.videoLabel.Size = new System.Drawing.Size(101, 112);
+            this.videoLabel.Size = new System.Drawing.Size(101, 117);
             this.videoLabel.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.videoLabel.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("videoLabel.SvgImage")));
             this.videoLabel.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
@@ -381,14 +387,17 @@ namespace RSI_X_Desktop.forms
             this.Appearance.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1278, 768);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1280, 800);
             this.Controls.Add(this.MainLayout);
             this.DoubleBuffered = true;
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1280, 800);
+            this.MinimumSize = new System.Drawing.Size(1280, 800);
             this.Name = "AudienceDesigner";
             this.ShowInTaskbar = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AudienceDesigner";
             this.TransparencyKey = System.Drawing.SystemColors.ButtonShadow;
@@ -396,10 +405,12 @@ namespace RSI_X_Desktop.forms
             this.Shown += new System.EventHandler(this.AudienceDesigner_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.MainLayout)).EndInit();
             this.MainLayout.ResumeLayout(false);
+            this.MainLayout.PerformLayout();
             this.LeftSidePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CenterPanel)).EndInit();
             this.CenterPanel.ResumeLayout(false);
+            this.CenterPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
@@ -412,6 +423,7 @@ namespace RSI_X_Desktop.forms
             ((System.ComponentModel.ISupportInitialize)(this.signOff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.videoLabel)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -420,17 +432,17 @@ namespace RSI_X_Desktop.forms
         private DevExpress.Utils.Layout.TablePanel MainLayout;
         private DevExpress.Utils.Layout.TablePanel CenterPanel;
         private DevExpress.Utils.Layout.TablePanel IconsPanel;
-        private DevExpress.XtraEditors.SvgImageBox audioLabel;
         private DevExpress.XtraEditors.SidePanel LeftSidePanel;
         private System.Windows.Forms.PictureBox Logo;
-        private DevExpress.XtraEditors.SvgImageBox videoLabel;
-        private DevExpress.XtraEditors.SvgImageBox devicesLabel;
         private DevExpress.XtraEditors.SvgImageBox turnOrig;
         private DevExpress.XtraEditors.SvgImageBox signOff;
         private DevExpress.XtraEditors.SvgImageBox volumeIcon;
-        private ReaLTaiizor.Controls.DungeonTrackBar volumeTrackBar;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         internal ReaLTaiizor.Controls.SkyComboBox langBox;
         internal ReaLTaiizor.Controls.SkyLabel RoomNameLabel;
+        internal ReaLTaiizor.Controls.DungeonTrackBar volumeTrackBar;
+        internal DevExpress.XtraEditors.SvgImageBox audioLabel;
+        internal DevExpress.XtraEditors.SvgImageBox videoLabel;
+        internal DevExpress.XtraEditors.SvgImageBox devicesLabel;
     }
 }
