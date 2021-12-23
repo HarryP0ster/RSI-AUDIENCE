@@ -21,7 +21,7 @@ namespace RSI_X_Desktop
         public delegate void RefreshRemoteWnd(bool param);
         public RefreshRemoteWnd CallRefresh;
         //Design windows
-        AudienceFormDesignWnd ExternWnd = new();
+        AudienceDesigner ExternWnd = new();
         BottomPanelWnd bottomPanel = new();
         //Design windows
         private bool AddOrder = false;
@@ -48,7 +48,6 @@ namespace RSI_X_Desktop
             FormAudience.Parent = this;
             ResizeForm(new Size(1280, 800), this);
 
-            RoomNameLabel.Text = AgoraObject.GetComplexToken().GetRoomName;
             RemotePanel.ColumnStyles[1].Width = 0;
             CallRefresh = new RefreshRemoteWnd(RefreshDelegate);
             
@@ -109,11 +108,11 @@ namespace RSI_X_Desktop
             //RemoteWnd = PBRemoteVideo.Handle;
             UpdateLangComboBox();
 
-            ExternWnd.mSwitchOriginal.Checked = true;
+            //ExternWnd.mSwitchOriginal.Checked = true;
 
             AgoraObject.JoinChannelHost(AgoraObject.GetHostName(), AgoraObject.GetHostToken(), 0, "");
-            ExternWnd.labelAudio.ForeColor = Color.Red;
-            ExternWnd.labelVideo.ForeColor = Color.Red;
+            //ExternWnd.labelAudio.ForeColor = Color.Red;
+            //ExternWnd.labelVideo.ForeColor = Color.Red;
 
             return res;
         }
@@ -170,17 +169,17 @@ namespace RSI_X_Desktop
         internal void labelMicrophone_Click(object sender, EventArgs e)
         {
             AgoraObject.MuteAllRemoteAudioStream(!AgoraObject.IsAllRemoteAudioMute);
-            ExternWnd.labelAudio.ForeColor = AgoraObject.IsAllRemoteAudioMute ?
-                Color.White :
-                Color.Red;
+            //ExternWnd.labelAudio.ForeColor = AgoraObject.IsAllRemoteAudioMute ?
+            //    Color.White :
+            //    Color.Red;
         }
 
         internal void labelVideo_Click(object sender, EventArgs e)
         {
             AgoraObject.MuteAllRemoteVideoStream(!AgoraObject.IsAllRemoteVideoMute);
-            ExternWnd.labelVideo.ForeColor = AgoraObject.IsAllRemoteVideoMute ?
-                Color.White :
-                Color.Red;
+            //ExternWnd.labelVideo.ForeColor = AgoraObject.IsAllRemoteVideoMute ?
+            //    Color.White :
+            //    Color.Red;
             //PBRemoteVideo.Visible = !AgoraObject.IsAllRemoteVideoMute;
         }
 
@@ -213,7 +212,6 @@ namespace RSI_X_Desktop
                 var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(ExternWnd.langBox.SelectedIndex + 1);
                 bool ret = AgoraObject.JoinChannelSrc(InterRoom);
                 AgoraObject.MuteSrcAudioStream(false);
-                //RoomNameLabel.Focus();
             }
         }
 
@@ -235,7 +233,7 @@ namespace RSI_X_Desktop
                 AgoraObject.MuteSrcAudioStream(true);
                 //labelOrig.ForeColor = Color.Red;
             }
-            ExternWnd.mSwitchOriginal.Checked = !IsOriginal;
+            //ExternWnd.mSwitchOriginal.Checked = !IsOriginal;
             ExternWnd.langBox.Enabled = IsOriginal;
             IsOriginal = !IsOriginal;
         }
@@ -351,12 +349,12 @@ namespace RSI_X_Desktop
 
         private void langBox_MouseEnter(object sender, EventArgs e)
         {
-            ExternWnd.langBox.Refresh();
+            //ExternWnd.langBox.Refresh();
         }
 
         private void langBox_Click(object sender, EventArgs e)
         {
-            ExternWnd.langBox.Refresh();
+            //ExternWnd.langBox.Refresh();
         }
 
 

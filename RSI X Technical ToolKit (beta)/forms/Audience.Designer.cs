@@ -32,12 +32,6 @@ namespace RSI_X_Desktop
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audience));
             this.FormAudience = new ReaLTaiizor.Forms.FormTheme();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.RoomNameLabel = new ReaLTaiizor.Controls.SkyLabel();
-            this.PictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.HomeBtn = new ReaLTaiizor.Controls.Button();
-            this.Settings = new ReaLTaiizor.Controls.Button();
-            this.ExitApp = new ReaLTaiizor.Controls.Button();
             this.RemotePanel = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Nothing = new System.Windows.Forms.Panel();
@@ -48,8 +42,6 @@ namespace RSI_X_Desktop
             this.airTabPage1 = new ReaLTaiizor.Controls.AirTabPage();
             this.FormAudience.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).BeginInit();
             this.RemotePanel.SuspendLayout();
             this.Nothing.SuspendLayout();
             this.SuspendLayout();
@@ -77,123 +69,18 @@ namespace RSI_X_Desktop
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.RemotePanel, 0, 1);
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 92F));
+            this.tableLayoutPanel1.Controls.Add(this.RemotePanel, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 22);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1280, 778);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 5;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel2.Controls.Add(this.RoomNameLabel, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.PictureBoxLogo, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.HomeBtn, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Settings, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.ExitApp, 4, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 4);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1274, 68);
-            this.tableLayoutPanel2.TabIndex = 1;
-            // 
-            // RoomNameLabel
-            // 
-            this.RoomNameLabel.AutoSize = true;
-            this.RoomNameLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.RoomNameLabel.Font = new System.Drawing.Font("Bahnschrift Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RoomNameLabel.ForeColor = System.Drawing.Color.White;
-            this.RoomNameLabel.Location = new System.Drawing.Point(124, 0);
-            this.RoomNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.RoomNameLabel.Name = "RoomNameLabel";
-            this.RoomNameLabel.Size = new System.Drawing.Size(140, 68);
-            this.RoomNameLabel.TabIndex = 4;
-            this.RoomNameLabel.Text = "Room Name";
-            this.RoomNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // PictureBoxLogo
-            // 
-            this.PictureBoxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PictureBoxLogo.BackgroundImage")));
-            this.PictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PictureBoxLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PictureBoxLogo.Location = new System.Drawing.Point(3, 3);
-            this.PictureBoxLogo.Name = "PictureBoxLogo";
-            this.PictureBoxLogo.Size = new System.Drawing.Size(114, 62);
-            this.PictureBoxLogo.TabIndex = 0;
-            this.PictureBoxLogo.TabStop = false;
-            // 
-            // HomeBtn
-            // 
-            this.HomeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.HomeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.HomeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.HomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HomeBtn.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.HomeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.HomeBtn.Image = ((System.Drawing.Image)(resources.GetObject("HomeBtn.Image")));
-            this.HomeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.HomeBtn.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.HomeBtn.Location = new System.Drawing.Point(1079, 14);
-            this.HomeBtn.Name = "HomeBtn";
-            this.HomeBtn.PressedColor = System.Drawing.Color.Firebrick;
-            this.HomeBtn.Size = new System.Drawing.Size(60, 40);
-            this.HomeBtn.TabIndex = 5;
-            this.HomeBtn.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.HomeBtn.Click += new System.EventHandler(this.HomeBtn_Click);
-            // 
-            // Settings
-            // 
-            this.Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.Settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Settings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Settings.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.Settings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Settings.Image = ((System.Drawing.Image)(resources.GetObject("Settings.Image")));
-            this.Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Settings.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.Settings.Location = new System.Drawing.Point(1145, 14);
-            this.Settings.Name = "Settings";
-            this.Settings.PressedColor = System.Drawing.Color.Firebrick;
-            this.Settings.Size = new System.Drawing.Size(60, 40);
-            this.Settings.TabIndex = 6;
-            this.Settings.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.Settings.Click += new System.EventHandler(this.Settings_Click);
-            // 
-            // ExitApp
-            // 
-            this.ExitApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExitApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.ExitApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ExitApp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitApp.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.ExitApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ExitApp.Image = ((System.Drawing.Image)(resources.GetObject("ExitApp.Image")));
-            this.ExitApp.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ExitApp.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.ExitApp.Location = new System.Drawing.Point(1211, 14);
-            this.ExitApp.Name = "ExitApp";
-            this.ExitApp.PressedColor = System.Drawing.Color.Firebrick;
-            this.ExitApp.Size = new System.Drawing.Size(60, 40);
-            this.ExitApp.TabIndex = 7;
-            this.ExitApp.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.ExitApp.Click += new System.EventHandler(this.button4_Click);
             // 
             // RemotePanel
             // 
@@ -203,20 +90,21 @@ namespace RSI_X_Desktop
             this.RemotePanel.Controls.Add(this.panel1, 1, 0);
             this.RemotePanel.Controls.Add(this.Nothing, 0, 0);
             this.RemotePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RemotePanel.Location = new System.Drawing.Point(3, 80);
+            this.RemotePanel.Location = new System.Drawing.Point(102, 0);
+            this.RemotePanel.Margin = new System.Windows.Forms.Padding(0);
             this.RemotePanel.Name = "RemotePanel";
             this.RemotePanel.RowCount = 1;
             this.RemotePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.RemotePanel.Size = new System.Drawing.Size(1274, 695);
+            this.RemotePanel.Size = new System.Drawing.Size(1178, 778);
             this.RemotePanel.TabIndex = 3;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1067, 3);
+            this.panel1.Location = new System.Drawing.Point(987, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(204, 689);
+            this.panel1.Size = new System.Drawing.Size(188, 772);
             this.panel1.TabIndex = 1;
             // 
             // Nothing
@@ -229,7 +117,7 @@ namespace RSI_X_Desktop
             this.Nothing.Location = new System.Drawing.Point(0, 0);
             this.Nothing.Margin = new System.Windows.Forms.Padding(0);
             this.Nothing.Name = "Nothing";
-            this.Nothing.Size = new System.Drawing.Size(1064, 695);
+            this.Nothing.Size = new System.Drawing.Size(984, 778);
             this.Nothing.TabIndex = 2;
             // 
             // streamsTable
@@ -242,11 +130,12 @@ namespace RSI_X_Desktop
             this.streamsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.streamsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.streamsTable.Location = new System.Drawing.Point(0, 0);
+            this.streamsTable.Margin = new System.Windows.Forms.Padding(0);
             this.streamsTable.Name = "streamsTable";
             this.streamsTable.RowCount = 1;
             this.streamsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.streamsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.streamsTable.Size = new System.Drawing.Size(1064, 695);
+            this.streamsTable.Size = new System.Drawing.Size(984, 778);
             this.streamsTable.TabIndex = 2;
             // 
             // nightControlBox1
@@ -338,9 +227,6 @@ namespace RSI_X_Desktop
             this.Resize += new System.EventHandler(this.Audience_Resize);
             this.FormAudience.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogo)).EndInit();
             this.RemotePanel.ResumeLayout(false);
             this.Nothing.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -351,16 +237,10 @@ namespace RSI_X_Desktop
 
         private ReaLTaiizor.Forms.FormTheme FormAudience;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.PictureBox PictureBoxLogo;
-        private ReaLTaiizor.Controls.SkyLabel RoomNameLabel;
         private System.Windows.Forms.Label label1;
         private ReaLTaiizor.Controls.Button button1;
         private ReaLTaiizor.Controls.AirTabPage airTabPage1;
         private ReaLTaiizor.Controls.Button button2;
-        private ReaLTaiizor.Controls.Button Settings;
-        private ReaLTaiizor.Controls.Button ExitApp;
-        private ReaLTaiizor.Controls.Button HomeBtn;
         private System.Windows.Forms.TableLayoutPanel RemotePanel;
         private System.Windows.Forms.Panel panel1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
