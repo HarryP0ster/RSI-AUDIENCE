@@ -192,15 +192,15 @@ namespace RSI_X_Desktop.forms
         private void SpeakerTestBtn_Click(object sender, EventArgs e) //Plays a simple beep sound to indicate selected speaker
         {
 
-            //int device_index = GetDeviceIndex(comboBoxAudioOutput.Text);
+            int device_index = GetDeviceIndex(comboBoxAudioOutput.Text);
 
-            Bass.BASS_Init(-1, 44100, BASSInit.BASS_DEVICE_SPEAKERS, IntPtr.Zero);
-            Bass.BASS_SetDevice(-1);
+            Bass.BASS_Init(device_index, 44100, BASSInit.BASS_DEVICE_SPEAKERS, IntPtr.Zero);
+            Bass.BASS_SetDevice(device_index);
             string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
             string File = projectDirectory + "\\Resources\\OutputBeep.wav";
             int stream = Bass.BASS_StreamCreateFile(File, 0, Properties.Resources.OutputBeep.Length, BASSFlag.BASS_SAMPLE_FLOAT | BASSFlag.BASS_STREAM_PRESCAN);
-            Bass.BASS_ChannelSetDevice(stream, comboBoxAudioOutput.SelectedIndex + 2);
+            Bass.BASS_ChannelSetDevice(stream, device_index);
             if (stream != 0)
                 Bass.BASS_ChannelPlay(stream, true);
         }
