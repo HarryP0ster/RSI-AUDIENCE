@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 using DevExpress.Utils.Svg;
 using DevExpress.Utils.Drawing;
 
@@ -34,6 +35,8 @@ namespace RSI_X_Desktop.forms
             SetLeftSidePanelRegion();
             SighnOffToCenter();
             RoomNameLabel.Text = AgoraObject.GetComplexToken().GetRoomName;
+            AudioColorUpdate();
+            VideoColorUpdate();
         }
 
         private void SetLeftSidePanelRegion()
@@ -69,12 +72,31 @@ namespace RSI_X_Desktop.forms
         {
         }
 
-        private void labelMicrophone_Click(object sender, EventArgs e)
+        internal void labelMicrophone_Click(object sender, EventArgs e)
         {
             AgoraObject.MuteAllRemoteAudioStream(!AgoraObject.IsAllRemoteAudioMute);
-            //labelAudio.ForeColor = AgoraObject.IsAllRemoteAudioMute ?
-            //    Color.White :
-            //    Color.Red;
+            AudioColorUpdate();
+        }
+
+        private void AudioColorUpdate()
+        {
+            audioLabel.ItemAppearance.Normal.FillColor = AgoraObject.IsAllRemoteAudioMute ?
+                Color.WhiteSmoke :
+                Color.Crimson;
+
+            audioLabel.ItemAppearance.Normal.BorderColor = AgoraObject.IsAllRemoteAudioMute ?
+                Color.White :
+                Color.Crimson;
+        }
+        private void VideoColorUpdate()
+        {
+            videoLabel.ItemAppearance.Normal.FillColor = AgoraObject.IsAllRemoteVideoMute ?
+                Color.WhiteSmoke :
+                Color.Crimson;
+
+            videoLabel.ItemAppearance.Normal.BorderColor = AgoraObject.IsAllRemoteVideoMute ?
+                Color.White :
+                Color.Crimson;
         }
         private void langBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -109,14 +131,11 @@ namespace RSI_X_Desktop.forms
             langBox.Enabled = IsOriginal;
             IsOriginal = !IsOriginal;
         }
-        private void labelVideo_Click(object sender, EventArgs e)
+        internal void labelVideo_Click(object sender, EventArgs e)
         {
             AgoraObject.MuteAllRemoteVideoStream(!AgoraObject.IsAllRemoteVideoMute);
             (Owner as Audience).streamsTable.Visible = !AgoraObject.IsAllRemoteVideoMute;
-            //labelVideo.ForeColor = AgoraObject.IsAllRemoteVideoMute ?
-            //    Color.White :
-            //    Color.Red;
-            //PBRemoteVideo.Visible = !AgoraObject.IsAllRemoteVideoMute;
+            VideoColorUpdate();
         }
         private void HomeBtn_Click(object sender, EventArgs e)
         {
@@ -130,6 +149,30 @@ namespace RSI_X_Desktop.forms
                 (Owner as Audience).devices.UpdateSoundTrackBar();
 
         }
+
+
         #endregion
+
+        internal void audioLabel_MouseLeave(object sender, EventArgs e)
+        {
+            audioLabel.ItemAppearance.Normal.BorderThickness = 0;
+        }
+
+        internal void audioLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            audioLabel.ItemAppearance.Normal.BorderThickness = 1;
+        }
+
+        internal void videoLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            videoLabel.ItemAppearance.Normal.BorderThickness = 1;
+        }
+
+        internal void videoLabel_MouseLeave(object sender, EventArgs e)
+        {
+            videoLabel.ItemAppearance.Normal.BorderThickness = 0;
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorKey(Color.FromArgb(200, 200, 200), Color.FromArgb(240, 240, 240));
+        }
     }
 }

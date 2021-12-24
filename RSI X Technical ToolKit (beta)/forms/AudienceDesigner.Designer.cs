@@ -247,9 +247,9 @@ namespace RSI_X_Desktop.forms
             this.IconsPanel.SetColumn(this.audioLabel, 0);
             this.audioLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.audioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.audioLabel.ItemAppearance.Normal.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.audioLabel.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
             this.audioLabel.ItemAppearance.Normal.BorderThickness = 0F;
-            this.audioLabel.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
+            this.audioLabel.ItemAppearance.Normal.FillColor = System.Drawing.Color.WhiteSmoke;
             this.audioLabel.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
             this.audioLabel.Location = new System.Drawing.Point(0, 0);
             this.audioLabel.Margin = new System.Windows.Forms.Padding(0);
@@ -262,6 +262,7 @@ namespace RSI_X_Desktop.forms
             this.audioLabel.TabIndex = 0;
             this.audioLabel.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.False;
             this.audioLabel.Click += new System.EventHandler(this.labelMicrophone_Click);
+            this.audioLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.audioLabel_MouseMove);
             // 
             // volumeTrackBar
             // 
@@ -327,9 +328,9 @@ namespace RSI_X_Desktop.forms
             this.IconsPanel.SetColumn(this.devicesLabel, 2);
             this.devicesLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.devicesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.devicesLabel.ItemAppearance.Normal.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.devicesLabel.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
             this.devicesLabel.ItemAppearance.Normal.BorderThickness = 0F;
-            this.devicesLabel.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
+            this.devicesLabel.ItemAppearance.Normal.FillColor = System.Drawing.Color.WhiteSmoke;
             this.devicesLabel.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
             this.devicesLabel.Location = new System.Drawing.Point(172, 0);
             this.devicesLabel.Margin = new System.Windows.Forms.Padding(0);
@@ -366,9 +367,9 @@ namespace RSI_X_Desktop.forms
             this.IconsPanel.SetColumn(this.videoLabel, 1);
             this.videoLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.videoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.videoLabel.ItemAppearance.Normal.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.videoLabel.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
             this.videoLabel.ItemAppearance.Normal.BorderThickness = 0F;
-            this.videoLabel.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
+            this.videoLabel.ItemAppearance.Normal.FillColor = System.Drawing.Color.WhiteSmoke;
             this.videoLabel.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
             this.videoLabel.Location = new System.Drawing.Point(71, 0);
             this.videoLabel.Margin = new System.Windows.Forms.Padding(0);
@@ -381,6 +382,7 @@ namespace RSI_X_Desktop.forms
             this.videoLabel.TabIndex = 1;
             this.videoLabel.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.False;
             this.videoLabel.Click += new System.EventHandler(this.labelVideo_Click);
+            this.videoLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.videoLabel_MouseMove);
             // 
             // AudienceDesigner
             // 

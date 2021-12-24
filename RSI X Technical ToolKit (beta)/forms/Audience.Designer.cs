@@ -119,6 +119,8 @@ namespace RSI_X_Desktop
             this.Nothing.Name = "Nothing";
             this.Nothing.Size = new System.Drawing.Size(984, 778);
             this.Nothing.TabIndex = 2;
+            this.Nothing.Click += new System.EventHandler(this.streamsTable_Click);
+            this.Nothing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.streamsTable_MouseMove);
             // 
             // streamsTable
             // 
@@ -137,6 +139,8 @@ namespace RSI_X_Desktop
             this.streamsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.streamsTable.Size = new System.Drawing.Size(984, 778);
             this.streamsTable.TabIndex = 2;
+            this.streamsTable.Click += new System.EventHandler(this.streamsTable_Click);
+            this.streamsTable.MouseMove += new System.Windows.Forms.MouseEventHandler(this.streamsTable_MouseMove);
             // 
             // nightControlBox1
             // 
