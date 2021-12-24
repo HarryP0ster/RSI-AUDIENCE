@@ -346,6 +346,8 @@ namespace RSI_X_Desktop.forms
             this.devicesLabel.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.devicesLabel.TabIndex = 1;
             this.devicesLabel.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.False;
+            this.devicesLabel.Click += new System.EventHandler(this.devicesLabel_Click);
+            this.devicesLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.devicesLabel_MouseMove);
             // 
             // signOff
             // 

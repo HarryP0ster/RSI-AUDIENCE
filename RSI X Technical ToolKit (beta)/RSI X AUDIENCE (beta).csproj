@@ -84,7 +84,6 @@
     <None Remove="Resources\LiveIcon.png" />
     <None Remove="Resources\LiveIcon1.png" />
     <None Remove="Resources\logotype.jpg" />
-    <None Remove="Resources\logotype_compressed.png" />
     <None Remove="Resources\logo_new_h.png" />
     <None Remove="Resources\logo_new_v.png" />
     <None Remove="Resources\megaphone.png" />
@@ -179,6 +178,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\agorartc\agorartc\agorartc\agorartc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Bass.Net">
+      <HintPath>Bass.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   
     <ItemGroup>
@@ -281,6 +286,15 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Update="Resources\apply.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Cancel.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Confirm.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\devices.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -291,6 +305,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\orig_check.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\OutputBeep.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\sign_off.svg">

@@ -8,9 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Imaging;
-using DevExpress.Utils.Svg;
-using DevExpress.Utils.Drawing;
 
 namespace RSI_X_Desktop.forms
 {
@@ -83,22 +80,22 @@ namespace RSI_X_Desktop.forms
         private void AudioColorUpdate()
         {
             audioLabel.ItemAppearance.Normal.FillColor = AgoraObject.IsAllRemoteAudioMute ?
-                Color.WhiteSmoke :
-                Color.Red;
+                Color.FromArgb(150, 150, 150) :
+                Color.White;
 
             audioLabel.ItemAppearance.Normal.BorderColor = AgoraObject.IsAllRemoteAudioMute ?
-                Color.White :
-                Color.Red;
+                Color.FromArgb(185, 185, 185) :
+                Color.White;
         }
         private void VideoColorUpdate()
         {
             videoLabel.ItemAppearance.Normal.FillColor = AgoraObject.IsAllRemoteVideoMute ?
-                Color.WhiteSmoke :
-                Color.Red;
+                Color.FromArgb(150, 150, 150) :
+                Color.White;
 
             videoLabel.ItemAppearance.Normal.BorderColor = AgoraObject.IsAllRemoteVideoMute ?
-                Color.White :
-                Color.Red;
+                Color.FromArgb(185, 185, 185) :
+                Color.White;
         }
         private void langBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -141,7 +138,7 @@ namespace RSI_X_Desktop.forms
         }
         private void HomeBtn_Click(object sender, EventArgs e)
         {
-            Owner.Close();
+            AgoraObject.GetWorkForm?.ExitApp();
         }
 
         private void trackBar1_ValueChanged()
@@ -149,7 +146,6 @@ namespace RSI_X_Desktop.forms
             Devices.SetVolume(volumeTrackBar.Value);
             if ((Owner as Audience).devices != null && (Owner as Audience).devices.IsDisposed == false)
                 (Owner as Audience).devices.UpdateSoundTrackBar();
-
         }
 
 
@@ -173,8 +169,6 @@ namespace RSI_X_Desktop.forms
         internal void videoLabel_MouseLeave(object sender, EventArgs e)
         {
             videoLabel.ItemAppearance.Normal.BorderThickness = 0;
-            ImageAttributes img = new ImageAttributes();
-            img.SetColorKey(Color.FromArgb(200, 200, 200), Color.FromArgb(240, 240, 240));
         }
 
         internal void turnOrig_MouseMove(object sender, MouseEventArgs e)
@@ -190,6 +184,21 @@ namespace RSI_X_Desktop.forms
         private void langBox_EnabledChanged(object sender, EventArgs e)
         {
             langBox.ForeColor = langBox.Enabled ? Color.White : Color.FromArgb(180,180,180);
+        }
+
+        private void devicesLabel_Click(object sender, EventArgs e)
+        {
+            (Owner as Audience).Settings_Click(sender, e);
+        }
+
+        internal void devicesLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            devicesLabel.ItemAppearance.Normal.BorderThickness = 1;
+        }
+
+        internal void devicesLabel_MouseLeave(object sender, EventArgs e)
+        {
+            devicesLabel.ItemAppearance.Normal.BorderThickness = 0;
         }
     }
 }
