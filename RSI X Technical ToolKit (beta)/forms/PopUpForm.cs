@@ -201,6 +201,7 @@ namespace RSI_X_Desktop.forms
             string File = projectDirectory + "\\Resources\\OutputBeep.wav";
             int stream = Bass.BASS_StreamCreateFile(File, 0, Properties.Resources.OutputBeep.Length, BASSFlag.BASS_SAMPLE_FLOAT | BASSFlag.BASS_STREAM_PRESCAN);
             Bass.BASS_ChannelSetDevice(stream, device_index);
+            Bass.BASS_ChannelSetAttribute(stream, BASSAttribute.BASS_ATTRIB_VOL, (float)trackBarSoundOut.Value/100f);
             if (stream != 0)
                 Bass.BASS_ChannelPlay(stream, true);
         }
