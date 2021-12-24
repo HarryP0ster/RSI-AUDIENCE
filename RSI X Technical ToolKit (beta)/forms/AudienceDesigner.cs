@@ -26,9 +26,10 @@ namespace RSI_X_Desktop.forms
         private void AudienceDesigner_Load(object sender, EventArgs e)
         {
             Owner.SizeChanged += delegate {
-                MaximumSize = Owner.MaximumSize;
-                MinimumSize = Owner.MinimumSize;
+                MaximumSize = Owner.Size;
+                MinimumSize = Owner.Size;
                 Size = Owner.Size;
+                SetLeftSidePanelRegion();
             };
             ResizeRedraw = true;
             Owner.LocationChanged += delegate { Location = new Point(Owner.Location.X, Owner.Location.Y); };
@@ -37,6 +38,7 @@ namespace RSI_X_Desktop.forms
             RoomNameLabel.Text = AgoraObject.GetComplexToken().GetRoomName;
             AudioColorUpdate();
             VideoColorUpdate();
+            langBox_EnabledChanged(null, null);
         }
 
         private void SetLeftSidePanelRegion()
@@ -82,21 +84,21 @@ namespace RSI_X_Desktop.forms
         {
             audioLabel.ItemAppearance.Normal.FillColor = AgoraObject.IsAllRemoteAudioMute ?
                 Color.WhiteSmoke :
-                Color.Crimson;
+                Color.Red;
 
             audioLabel.ItemAppearance.Normal.BorderColor = AgoraObject.IsAllRemoteAudioMute ?
                 Color.White :
-                Color.Crimson;
+                Color.Red;
         }
         private void VideoColorUpdate()
         {
             videoLabel.ItemAppearance.Normal.FillColor = AgoraObject.IsAllRemoteVideoMute ?
                 Color.WhiteSmoke :
-                Color.Crimson;
+                Color.Red;
 
             videoLabel.ItemAppearance.Normal.BorderColor = AgoraObject.IsAllRemoteVideoMute ?
                 Color.White :
-                Color.Crimson;
+                Color.Red;
         }
         private void langBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -109,7 +111,7 @@ namespace RSI_X_Desktop.forms
                 //RoomNameLabel.Focus();
             }
         }
-        private void mSwitchOriginal_CheckedChanged(object sender, EventArgs e)
+        internal void mSwitchOriginal_CheckedChanged(object sender, EventArgs e)
         {
             //Включение оригинальной дорожки (floor)
             if (IsOriginal)
@@ -119,16 +121,16 @@ namespace RSI_X_Desktop.forms
                 AgoraObject.MuteHostAudioStream(true);
                 AgoraObject.MuteSrcAudioStream(AgoraObject.IsAllRemoteAudioMute);
                 langBox.Focus();
-                //labelOrig.ForeColor = Color.White;
+                turnOrig.ItemAppearance.Normal.FillColor = Color.WhiteSmoke;
             }
             else
             {
                 AgoraObject.MuteHostAudioStream(AgoraObject.IsAllRemoteAudioMute);
                 AgoraObject.MuteSrcAudioStream(true);
-                //labelOrig.ForeColor = Color.Red;
+                turnOrig.ItemAppearance.Normal.FillColor = Color.Empty;
             }
             //mSwitchOriginal.Checked = !IsOriginal;
-            langBox.Enabled = IsOriginal;
+            langBox.Enabled = !IsOriginal;
             IsOriginal = !IsOriginal;
         }
         internal void labelVideo_Click(object sender, EventArgs e)
@@ -173,6 +175,21 @@ namespace RSI_X_Desktop.forms
             videoLabel.ItemAppearance.Normal.BorderThickness = 0;
             ImageAttributes img = new ImageAttributes();
             img.SetColorKey(Color.FromArgb(200, 200, 200), Color.FromArgb(240, 240, 240));
+        }
+
+        internal void turnOrig_MouseMove(object sender, MouseEventArgs e)
+        {
+            turnOrig.ItemAppearance.Normal.BorderThickness = 1;
+        }
+
+        internal void turnOrig_MouseLeave(object sender, EventArgs e)
+        {
+            turnOrig.ItemAppearance.Normal.BorderThickness = 0;
+        }
+
+        private void langBox_EnabledChanged(object sender, EventArgs e)
+        {
+            langBox.ForeColor = langBox.Enabled ? Color.White : Color.FromArgb(180,180,180);
         }
     }
 }

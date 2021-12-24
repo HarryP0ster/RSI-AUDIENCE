@@ -59,8 +59,6 @@ namespace RSI_X_Desktop
             ExternWnd.Location = Location;
             bottomPanel.Show(this);
             ExternWnd.Show(this);
-            bottomPanel.SuspendLayout();
-            ExternWnd.SuspendLayout();
         }
         private void SignOffToCenter()
         {
@@ -524,6 +522,11 @@ namespace RSI_X_Desktop
                 ExternWnd.labelMicrophone_Click(sender, e);
             else if (new System.Drawing.Rectangle(ExternWnd.videoLabel.PointToScreen(Point.Empty).X, ExternWnd.videoLabel.PointToScreen(Point.Empty).Y, ExternWnd.videoLabel.Width, ExternWnd.videoLabel.Height).Contains(Cursor.Position))
                 ExternWnd.labelVideo_Click(sender, e);
+            else if (new System.Drawing.Rectangle(ExternWnd.turnOrig.PointToScreen(Point.Empty).X, ExternWnd.turnOrig.PointToScreen(Point.Empty).Y, ExternWnd.turnOrig.Width, ExternWnd.turnOrig.Height).Contains(Cursor.Position))
+                ExternWnd.mSwitchOriginal_CheckedChanged(sender, e);
+            else if (new System.Drawing.Rectangle(ExternWnd.langBox.PointToScreen(Point.Empty).X, ExternWnd.langBox.PointToScreen(Point.Empty).Y, ExternWnd.langBox.Width, ExternWnd.langBox.Height).Contains(Cursor.Position))
+                if (ExternWnd.langBox.Enabled)
+                    ExternWnd.langBox.DroppedDown = true;
         }
 
         private void streamsTable_MouseMove(object sender, MouseEventArgs e)
@@ -544,6 +547,18 @@ namespace RSI_X_Desktop
             }
             else
                 ExternWnd.videoLabel_MouseLeave(sender, e);
+
+            if (new System.Drawing.Rectangle(ExternWnd.turnOrig.PointToScreen(Point.Empty).X, ExternWnd.turnOrig.PointToScreen(Point.Empty).Y, ExternWnd.turnOrig.Width, ExternWnd.turnOrig.Height).Contains(Cursor.Position))
+            {
+                ExternWnd.turnOrig_MouseMove(sender, e);
+                cursorUpd = true;
+            }
+            else
+                ExternWnd.turnOrig_MouseLeave(sender, e);
+
+            if (new System.Drawing.Rectangle(ExternWnd.langBox.PointToScreen(Point.Empty).X, ExternWnd.langBox.PointToScreen(Point.Empty).Y, ExternWnd.langBox.Width, ExternWnd.langBox.Height).Contains(Cursor.Position))
+                if (ExternWnd.langBox.Enabled)
+                    cursorUpd = true;
 
             Cursor.Current = cursorUpd ? Cursors.Hand : Cursors.Default;
         }

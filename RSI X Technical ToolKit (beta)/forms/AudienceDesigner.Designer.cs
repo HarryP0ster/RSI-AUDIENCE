@@ -216,6 +216,7 @@ namespace RSI_X_Desktop.forms
             this.langBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.langBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.langBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.langBox.Enabled = false;
             this.langBox.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 16.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.langBox.ForeColor = System.Drawing.Color.White;
             this.langBox.ItemHeight = 20;
@@ -239,6 +240,7 @@ namespace RSI_X_Desktop.forms
             this.langBox.TabIndex = 12;
             this.langBox.TriangleColorA = System.Drawing.Color.White;
             this.langBox.TriangleColorB = System.Drawing.Color.White;
+            this.langBox.EnabledChanged += new System.EventHandler(this.langBox_EnabledChanged);
             // 
             // audioLabel
             // 
@@ -313,6 +315,7 @@ namespace RSI_X_Desktop.forms
             this.turnOrig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.turnOrig.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
             this.turnOrig.ItemAppearance.Normal.BorderThickness = 0F;
+            this.turnOrig.ItemAppearance.Normal.FillColor = System.Drawing.Color.WhiteSmoke;
             this.turnOrig.Location = new System.Drawing.Point(697, 0);
             this.turnOrig.Margin = new System.Windows.Forms.Padding(0);
             this.turnOrig.Name = "turnOrig";
@@ -321,6 +324,7 @@ namespace RSI_X_Desktop.forms
             this.turnOrig.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("turnOrig.SvgImage")));
             this.turnOrig.TabIndex = 3;
             this.turnOrig.Click += new System.EventHandler(this.mSwitchOriginal_CheckedChanged);
+            this.turnOrig.MouseMove += new System.Windows.Forms.MouseEventHandler(this.turnOrig_MouseMove);
             // 
             // devicesLabel
             // 
@@ -348,8 +352,8 @@ namespace RSI_X_Desktop.forms
             this.IconsPanel.SetColumn(this.signOff, 4);
             this.signOff.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signOff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.signOff.ItemAppearance.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.signOff.ItemAppearance.Normal.BorderThickness = 1F;
+            this.signOff.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
+            this.signOff.ItemAppearance.Normal.BorderThickness = 0F;
             this.signOff.Location = new System.Drawing.Point(323, 0);
             this.signOff.Margin = new System.Windows.Forms.Padding(0);
             this.signOff.Name = "signOff";
@@ -390,11 +394,10 @@ namespace RSI_X_Desktop.forms
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1280, 800);
             this.Controls.Add(this.MainLayout);
             this.DoubleBuffered = true;
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1280, 800);
             this.MinimumSize = new System.Drawing.Size(1280, 800);
@@ -436,7 +439,6 @@ namespace RSI_X_Desktop.forms
         private DevExpress.Utils.Layout.TablePanel IconsPanel;
         private DevExpress.XtraEditors.SidePanel LeftSidePanel;
         private System.Windows.Forms.PictureBox Logo;
-        private DevExpress.XtraEditors.SvgImageBox turnOrig;
         private DevExpress.XtraEditors.SvgImageBox signOff;
         private DevExpress.XtraEditors.SvgImageBox volumeIcon;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
@@ -446,5 +448,6 @@ namespace RSI_X_Desktop.forms
         internal DevExpress.XtraEditors.SvgImageBox audioLabel;
         internal DevExpress.XtraEditors.SvgImageBox videoLabel;
         internal DevExpress.XtraEditors.SvgImageBox devicesLabel;
+        internal DevExpress.XtraEditors.SvgImageBox turnOrig;
     }
 }

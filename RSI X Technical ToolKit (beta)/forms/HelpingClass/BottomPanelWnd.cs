@@ -20,14 +20,14 @@ namespace RSI_X_Desktop.forms.HelpingClass
             Blur.EnableBlur(this);
         }
 
-        private void Owner_LocationChanged(object sender, EventArgs e)
-        {
-            Location = new Point(Owner.Location.X, Owner.Location.Y + Owner.Height - Height);
-        }
-
         private void BottomPanelWnd_Load(object sender, EventArgs e)
         {
-            Owner.LocationChanged += Owner_LocationChanged;
+            Owner.LocationChanged += delegate { Location = new Point(Owner.Location.X, Owner.Location.Y + Owner.Height - Height); };
+            Owner.SizeChanged += delegate {
+                Width = Owner.Width;
+                Height = Owner.Height / 7;
+                Location = new Point(Owner.Location.X, Owner.Location.Y + Owner.Height - Owner.Height / 7);
+            };
         }
     }
 }
