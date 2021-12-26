@@ -200,5 +200,15 @@ namespace RSI_X_Desktop.forms
         {
             devicesLabel.ItemAppearance.Normal.BorderThickness = 0;
         }
+
+        private void signOff_MouseHover(object sender, EventArgs e)
+        {
+            signOff.Margin = new Padding();
+        }
+
+        private void signOff_MouseLeave(object sender, EventArgs e)
+        {
+            signOff.Margin = new Padding(22);
+        }
     }
 }

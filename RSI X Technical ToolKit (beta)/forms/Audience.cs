@@ -257,9 +257,12 @@ namespace RSI_X_Desktop
         {
             if (devices == null || devices.IsDisposed)
             {
+                BlurWnd blur = new();
                 devices = new PopUpForm();
+                blur.Show(this);
                 devices.ShowDialog(this);
                 devices.Dispose();
+                blur.Dispose();
             }
             else
             {

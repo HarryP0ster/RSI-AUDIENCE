@@ -202,9 +202,6 @@ namespace RSI_X_Desktop.forms
             // 
             // langBox
             // 
-            this.langBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.langBox.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.langBox.BGColorA = System.Drawing.Color.Transparent;
             this.langBox.BGColorB = System.Drawing.Color.Transparent;
@@ -214,6 +211,7 @@ namespace RSI_X_Desktop.forms
             this.langBox.BorderColorD = System.Drawing.Color.Transparent;
             this.IconsPanel.SetColumn(this.langBox, 9);
             this.langBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.langBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.langBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.langBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.langBox.Enabled = false;
@@ -230,12 +228,12 @@ namespace RSI_X_Desktop.forms
             this.langBox.ListForeColor = System.Drawing.Color.Black;
             this.langBox.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.langBox.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.langBox.Location = new System.Drawing.Point(1071, 49);
+            this.langBox.Location = new System.Drawing.Point(1071, 10);
             this.langBox.Margin = new System.Windows.Forms.Padding(20, 10, 10, 3);
             this.langBox.Name = "langBox";
             this.IconsPanel.SetRow(this.langBox, 0);
             this.langBox.Size = new System.Drawing.Size(71, 26);
-            this.langBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.langBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.None;
             this.langBox.StartIndex = 0;
             this.langBox.TabIndex = 12;
             this.langBox.TriangleColorA = System.Drawing.Color.White;
@@ -356,16 +354,18 @@ namespace RSI_X_Desktop.forms
             this.signOff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.signOff.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
             this.signOff.ItemAppearance.Normal.BorderThickness = 0F;
-            this.signOff.Location = new System.Drawing.Point(323, 0);
-            this.signOff.Margin = new System.Windows.Forms.Padding(0);
+            this.signOff.Location = new System.Drawing.Point(345, 22);
+            this.signOff.Margin = new System.Windows.Forms.Padding(22);
             this.signOff.Name = "signOff";
             this.IconsPanel.SetRow(this.signOff, 0);
-            this.signOff.Size = new System.Drawing.Size(324, 117);
+            this.signOff.Size = new System.Drawing.Size(280, 73);
             this.signOff.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.signOff.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("signOff.SvgImage")));
             this.signOff.TabIndex = 2;
             this.signOff.Text = "svgImageBox1";
             this.signOff.Click += new System.EventHandler(this.HomeBtn_Click);
+            this.signOff.MouseLeave += new System.EventHandler(this.signOff_MouseLeave);
+            this.signOff.MouseHover += new System.EventHandler(this.signOff_MouseHover);
             // 
             // videoLabel
             // 

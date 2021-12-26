@@ -65,6 +65,8 @@ namespace RSI_X_Desktop.forms
             // 
             // tablePanel2
             // 
+            this.tablePanel2.Appearance.BackColor = System.Drawing.Color.White;
+            this.tablePanel2.Appearance.Options.UseBackColor = true;
             this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
             this.tablePanel2.Controls.Add(this.tablePanel3);
@@ -174,7 +176,7 @@ namespace RSI_X_Desktop.forms
             this.VolumeLabel.AutoSize = true;
             this.VolumeLabel.BackColor = System.Drawing.Color.Transparent;
             this.VolumeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.VolumeLabel.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.VolumeLabel.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.VolumeLabel.ForeColor = System.Drawing.Color.Black;
             this.VolumeLabel.Location = new System.Drawing.Point(2, 142);
             this.VolumeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -189,7 +191,7 @@ namespace RSI_X_Desktop.forms
             this.Dynamic.AutoSize = true;
             this.Dynamic.BackColor = System.Drawing.Color.Transparent;
             this.Dynamic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Dynamic.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Dynamic.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Dynamic.ForeColor = System.Drawing.Color.Gray;
             this.Dynamic.Location = new System.Drawing.Point(2, 71);
             this.Dynamic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -253,6 +255,8 @@ namespace RSI_X_Desktop.forms
             this.tablePanel1.SetColumn(this.ApplyBtn, 3);
             this.ApplyBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ApplyBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ApplyBtn.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
+            this.ApplyBtn.ItemAppearance.Normal.BorderThickness = 1F;
             this.ApplyBtn.Location = new System.Drawing.Point(337, 15);
             this.ApplyBtn.Margin = new System.Windows.Forms.Padding(15);
             this.ApplyBtn.Name = "ApplyBtn";
@@ -263,12 +267,16 @@ namespace RSI_X_Desktop.forms
             this.ApplyBtn.TabIndex = 2;
             this.ApplyBtn.Text = "svgImageBox3";
             this.ApplyBtn.Click += new System.EventHandler(this.ApplyBtn_Click);
+            this.ApplyBtn.MouseLeave += new System.EventHandler(this.ApplyBtn_MouseLeave);
+            this.ApplyBtn.MouseHover += new System.EventHandler(this.ApplyBtn_MouseEnter);
             // 
             // ConfirmBtn
             // 
             this.tablePanel1.SetColumn(this.ConfirmBtn, 2);
             this.ConfirmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ConfirmBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ConfirmBtn.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
+            this.ConfirmBtn.ItemAppearance.Normal.BorderThickness = 1F;
             this.ConfirmBtn.Location = new System.Drawing.Point(187, 15);
             this.ConfirmBtn.Margin = new System.Windows.Forms.Padding(15);
             this.ConfirmBtn.Name = "ConfirmBtn";
@@ -279,12 +287,15 @@ namespace RSI_X_Desktop.forms
             this.ConfirmBtn.TabIndex = 1;
             this.ConfirmBtn.Text = "svgImageBox2";
             this.ConfirmBtn.Click += new System.EventHandler(this.AcceptButton_Click);
+            this.ConfirmBtn.MouseLeave += new System.EventHandler(this.ConfirmBtn_MouseLeave);
+            this.ConfirmBtn.MouseHover += new System.EventHandler(this.ConfirmBtn_MouseEnter);
             // 
             // CancelBtn
             // 
             this.tablePanel1.SetColumn(this.CancelBtn, 1);
             this.CancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CancelBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CancelBtn.ItemAppearance.Normal.BorderThickness = 1F;
             this.CancelBtn.Location = new System.Drawing.Point(37, 15);
             this.CancelBtn.Margin = new System.Windows.Forms.Padding(15);
             this.CancelBtn.Name = "CancelBtn";
@@ -295,6 +306,8 @@ namespace RSI_X_Desktop.forms
             this.CancelBtn.TabIndex = 0;
             this.CancelBtn.Text = "svgImageBox1";
             this.CancelBtn.Click += new System.EventHandler(this.CloseButton_Click);
+            this.CancelBtn.MouseLeave += new System.EventHandler(this.CancelBtn_MouseLeave);
+            this.CancelBtn.MouseHover += new System.EventHandler(this.CancelBtn_MouseEnter);
             // 
             // tableLayoutPanel5
             // 
@@ -364,14 +377,17 @@ namespace RSI_X_Desktop.forms
             // 
             // PopUpForm
             // 
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(500, 600);
             this.Controls.Add(this.tablePanel2);
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PopUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PopUpForm";
+            this.TransparencyKey = System.Drawing.Color.Silver;
             this.Load += new System.EventHandler(this.PopUpForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
             this.tablePanel2.ResumeLayout(false);

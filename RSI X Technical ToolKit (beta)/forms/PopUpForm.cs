@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using agorartc;
 using Un4seen.Bass;
@@ -23,6 +24,8 @@ namespace RSI_X_Desktop.forms
 
         private static int oldVolumeOut;
         private static string oldSpeaker = null;
+        Padding DefaultMargin = new Padding(15, 15, 15, 15);
+        Padding Hovered = new Padding(5, 5, 5, 5);
 
         public PopUpForm()
         {
@@ -39,6 +42,7 @@ namespace RSI_X_Desktop.forms
 
         private void PopUpForm_Load(object sender, EventArgs e)
         {
+            SetWndRegion();
             SpeakersManager = AgoraObject.Rtc.CreateAudioPlaybackDeviceManager();
 
             oldVolumeOut = (Owner as Audience).ExternWnd.volumeTrackBar.Value;
@@ -47,6 +51,18 @@ namespace RSI_X_Desktop.forms
             Speakers = getListAudioOutDevices();
             UpdateComboBoxSpeaker();
             getComputerDescription();
+        }
+
+        private void SetWndRegion()
+        {
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            int d = 45;
+            System.Drawing.Rectangle r = new System.Drawing.Rectangle(0, 0, Width, Height);
+            path.AddArc(r.X, r.Y, d, d, 180, 90);
+            path.AddArc(r.X + r.Width - d, r.Y, d, d, 270, 90);
+            path.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
+            path.AddArc(r.X , r.Y + r.Height - d, d, d, 90, 90);
+            this.Region = new Region(path);
         }
         private void UpdateComboBoxSpeaker()
         {
@@ -124,7 +140,6 @@ namespace RSI_X_Desktop.forms
 
             return devicesOut;
         }
-        #endregion
 
         #region ComboBoxEventHandlers
 
@@ -205,6 +220,7 @@ namespace RSI_X_Desktop.forms
             if (stream != 0)
                 Bass.BASS_ChannelPlay(stream, true);
         }
+        #endregion
         private int GetDeviceIndex(string devicename)
         {
             var devices = Bass.BASS_GetDeviceInfos();
@@ -217,6 +233,36 @@ namespace RSI_X_Desktop.forms
                     device_index++;
             }
             return -1;
+        }
+
+        private void ApplyBtn_MouseEnter(object sender, EventArgs e)
+        {
+            ApplyBtn.Margin = Hovered;
+        }
+
+        private void ApplyBtn_MouseLeave(object sender, EventArgs e)
+        {
+            ApplyBtn.Margin = DefaultMargin;
+        }
+
+        private void ConfirmBtn_MouseEnter(object sender, EventArgs e)
+        {
+            ConfirmBtn.Margin = Hovered;
+        }
+
+        private void ConfirmBtn_MouseLeave(object sender, EventArgs e)
+        {
+            ConfirmBtn.Margin = DefaultMargin;
+        }
+
+        private void CancelBtn_MouseEnter(object sender, EventArgs e)
+        {
+            CancelBtn.Margin = Hovered;
+        }
+
+        private void CancelBtn_MouseLeave(object sender, EventArgs e)
+        {
+            CancelBtn.Margin = DefaultMargin;
         }
     }
 }

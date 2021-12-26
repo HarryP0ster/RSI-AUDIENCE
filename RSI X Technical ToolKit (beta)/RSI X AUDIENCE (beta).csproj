@@ -306,6 +306,9 @@
     <None Update="Resources\devices.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\devices_form.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\LeftSidePanel.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
