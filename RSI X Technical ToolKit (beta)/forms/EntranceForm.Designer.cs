@@ -31,17 +31,18 @@ namespace RSI_X_Desktop.forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceForm));
             this.formTheme1 = new ReaLTaiizor.Forms.FormTheme();
-            this.controlBox1 = new ReaLTaiizor.Controls.ControlBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.LoginBackground = new DevExpress.XtraEditors.SvgImageBox();
+            this.controlBox1 = new ReaLTaiizor.Controls.ControlBox();
             this.formTheme1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoginBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // formTheme1
             // 
             this.formTheme1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(54)))), ((int)(((byte)(79)))));
-            this.formTheme1.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.RSI_TEXTURE;
-            this.formTheme1.Controls.Add(this.LoginBackground);
+            this.formTheme1.Controls.Add(this.panel1);
             this.formTheme1.Controls.Add(this.controlBox1);
             this.formTheme1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formTheme1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -56,6 +57,30 @@ namespace RSI_X_Desktop.forms
             this.formTheme1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.formTheme1.TabIndex = 0;
             this.formTheme1.Text = "RSI EXCHANGE AUDIENCE";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.RSI_TEXTURE_COMPRESSED;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.LoginBackground);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Enabled = false;
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1000, 675);
+            this.panel1.TabIndex = 95;
+            // 
+            // LoginBackground
+            // 
+            this.LoginBackground.BackColor = System.Drawing.Color.Transparent;
+            this.LoginBackground.Enabled = false;
+            this.LoginBackground.ItemAppearance.Normal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.LoginBackground.Location = new System.Drawing.Point(277, 98);
+            this.LoginBackground.Name = "LoginBackground";
+            this.LoginBackground.Size = new System.Drawing.Size(500, 490);
+            this.LoginBackground.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
+            this.LoginBackground.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("LoginBackground.SvgImage")));
+            this.LoginBackground.TabIndex = 0;
             // 
             // controlBox1
             // 
@@ -77,18 +102,6 @@ namespace RSI_X_Desktop.forms
             this.controlBox1.TabIndex = 94;
             this.controlBox1.Text = "controlBox1";
             // 
-            // LoginBackground
-            // 
-            this.LoginBackground.BackColor = System.Drawing.Color.Transparent;
-            this.LoginBackground.Enabled = false;
-            this.LoginBackground.ItemAppearance.Normal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.LoginBackground.Location = new System.Drawing.Point(296, 87);
-            this.LoginBackground.Name = "LoginBackground";
-            this.LoginBackground.Size = new System.Drawing.Size(500, 490);
-            this.LoginBackground.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.LoginBackground.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("LoginBackground.SvgImage")));
-            this.LoginBackground.TabIndex = 0;
-            // 
             // EntranceForm
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
@@ -96,6 +109,7 @@ namespace RSI_X_Desktop.forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1000, 700);
             this.Controls.Add(this.formTheme1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(126, 50);
             this.Name = "EntranceForm";
@@ -105,6 +119,7 @@ namespace RSI_X_Desktop.forms
             this.Load += new System.EventHandler(this.EntranceForm_Load);
             this.VisibleChanged += new System.EventHandler(this.EntranceForm_VisibleChanged);
             this.formTheme1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LoginBackground)).EndInit();
             this.ResumeLayout(false);
 
@@ -115,5 +130,6 @@ namespace RSI_X_Desktop.forms
         private ReaLTaiizor.Forms.FormTheme formTheme1;
         private ReaLTaiizor.Controls.ControlBox controlBox1;
         internal DevExpress.XtraEditors.SvgImageBox LoginBackground;
+        private System.Windows.Forms.Panel panel1;
     }
 }
