@@ -239,6 +239,7 @@ namespace RSI_X_Desktop.forms
             this.langBox.TabIndex = 12;
             this.langBox.TriangleColorA = System.Drawing.Color.White;
             this.langBox.TriangleColorB = System.Drawing.Color.White;
+            this.langBox.SelectedIndexChanged += new System.EventHandler(this.langBox_SelectedIndexChanged_1);
             this.langBox.EnabledChanged += new System.EventHandler(this.langBox_EnabledChanged);
             // 
             // signOff

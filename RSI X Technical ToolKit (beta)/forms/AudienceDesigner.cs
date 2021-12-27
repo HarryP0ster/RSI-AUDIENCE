@@ -14,7 +14,7 @@ namespace RSI_X_Desktop.forms
 {
     public partial class AudienceDesigner : DevExpress.XtraEditors.XtraForm
     {
-        private bool IsOriginal = false;
+        private bool IsOriginal = true;
         internal bool turnOrigRect;
 
         public AudienceDesigner()
@@ -140,7 +140,9 @@ namespace RSI_X_Desktop.forms
                 turnOrig.ItemAppearance.Normal.FillColor = Color.Empty;
             }
             //mSwitchOriginal.Checked = !IsOriginal;
-            langBox.Enabled = !IsOriginal;
+            DebugWriter.WriteTime($"change floor channel: {IsOriginal}");
+
+            langBox.Enabled = IsOriginal;
             IsOriginal = !IsOriginal;
         }
         internal void labelVideo_Click(object sender, EventArgs e)
@@ -255,6 +257,16 @@ namespace RSI_X_Desktop.forms
             videoLabel.PointToScreen(Point.Empty).Y,
             videoLabel.Width,
             videoLabel.Height);
+        }
+
+        private void langBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (!IsOriginal)
+            {
+                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
+                bool ret = AgoraObject.JoinChannelSrc(InterRoom);
+                AgoraObject.MuteSrcAudioStream(false);
+            }
         }
     }
 }

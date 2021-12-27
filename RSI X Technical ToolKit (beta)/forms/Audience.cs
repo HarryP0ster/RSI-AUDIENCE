@@ -222,18 +222,12 @@ namespace RSI_X_Desktop
         }
         private void Audience_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //ExternWnd.Close();
-            //bottomPanel.Close();
-
             AgoraObject.LeaveHostChannel();
             AgoraObject.LeaveSrcChannel();
             AgoraObject.MuteAllRemoteAudioStream(false);
             AgoraObject.MuteAllRemoteVideoStream(false);
 
             PopUpForm.waveOutSetVolume(IntPtr.Zero, uint.MaxValue);
-
-            Owner.Show();
-            Owner.Refresh();
         }
 
         private void ResizeForm(Size size, Form target)
@@ -247,12 +241,6 @@ namespace RSI_X_Desktop
             target.MaximumSize = size;
             target.MinimumSize = size;
             target.Size = size;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Owner.Close();
-            Close();
         }
         internal void Settings_Click(object sender, EventArgs e)
         {
@@ -270,11 +258,7 @@ namespace RSI_X_Desktop
                 devices.Dispose();
             }
         }
-        internal void HomeBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        
         public void ExitApp()
         {
             ExternWnd.Hide();
@@ -348,17 +332,6 @@ namespace RSI_X_Desktop
             //CenterToScreen();
         }
         #endregion
-
-        private void langBox_MouseEnter(object sender, EventArgs e)
-        {
-            //ExternWnd.langBox.Refresh();
-        }
-
-        private void langBox_Click(object sender, EventArgs e)
-        {
-            //ExternWnd.langBox.Refresh();
-        }
-
 
         #region MembersControl
 
@@ -438,7 +411,6 @@ namespace RSI_X_Desktop
             AgoraObject.Rtc.SetupRemoteVideo(ret);
             streamsTable.Refresh();
         }
-
         private void RemoveMember(uint uid)
         {
             int index = streamsTable.ColumnCount * streamsTable.RowCount;
@@ -490,7 +462,6 @@ namespace RSI_X_Desktop
             }
             streamsTable.Refresh();
         }
-
         internal void UpdateMember(uint uid)
         {
             if (hostBroadcasters.ContainsKey(uid))
@@ -506,7 +477,6 @@ namespace RSI_X_Desktop
                     hostBroadcasters[uid].Invalidate();
             }
         }
-
         internal void UpdateMember(uint uid, string channelId)
         {
             if (hostBroadcasters.ContainsKey(uid))
@@ -553,7 +523,6 @@ namespace RSI_X_Desktop
             if (ExternWnd.HomeBtnRect.Contains(Cursor.Position))
                 ExternWnd.HomeBtn_Click(null, null);
         }
-
         private void streamsTable_MouseMove(object sender, MouseEventArgs e)
         {
             if (Disposing || IsDisposed ||
