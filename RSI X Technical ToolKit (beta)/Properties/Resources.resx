@@ -139,8 +139,14 @@
   <data name="Hidden" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hidden.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="JoinButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JoinButton.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="LeftSidePanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LeftSidePanel.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LoginForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoginForm.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="logotype" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logotype.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,6 +162,9 @@
   </data>
   <data name="Muted" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Muted.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NicknameTextBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NicknameTextBox.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="orig_check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\orig_check.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -174,6 +183,9 @@
   </data>
   <data name="RSI_MUTE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RSI_MUTE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RSI_TEXTURE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RSI_TEXTURE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sign_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign_off.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
