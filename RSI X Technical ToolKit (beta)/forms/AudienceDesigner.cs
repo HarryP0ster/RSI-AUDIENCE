@@ -15,6 +15,7 @@ namespace RSI_X_Desktop.forms
     public partial class AudienceDesigner : DevExpress.XtraEditors.XtraForm
     {
         private bool IsOriginal = false;
+        internal bool turnOrigRect;
 
         public AudienceDesigner()
         {
@@ -31,7 +32,7 @@ namespace RSI_X_Desktop.forms
                 SighnOffToCenter();
             };
             AllowTransparency = true;
-            Owner.LocationChanged += delegate { Location = new Point(Owner.Location.X, Owner.Location.Y); };
+            Owner.LocationChanged += (s, e) => { Location = new Point(Owner.Location.X, Owner.Location.Y); };
             SetLeftSidePanelRegion();
             SighnOffToCenter();
             RoomNameLabel.Text = AgoraObject.GetComplexToken().GetRoomName;
@@ -148,7 +149,7 @@ namespace RSI_X_Desktop.forms
             (Owner as Audience).streamsTable.Visible = !AgoraObject.IsAllRemoteVideoMute;
             VideoColorUpdate();
         }
-        private void HomeBtn_Click(object sender, EventArgs e)
+        public void HomeBtn_Click(object sender, EventArgs e)
         {
             AgoraObject.GetWorkForm?.ExitApp();
         }
@@ -213,6 +214,47 @@ namespace RSI_X_Desktop.forms
         internal void devicesLabel_MouseLeave(object sender, EventArgs e)
         {
             devicesLabel.ItemAppearance.Normal.BorderThickness = 0;
+        }
+
+        public Rectangle HomeBtnRect
+        {
+            get => new Rectangle(
+                signOff.PointToScreen(Point.Empty).X, 
+                signOff.PointToScreen(Point.Empty).Y, 
+                signOff.Width,
+                signOff.Height);
+        }
+        public Rectangle LangBoxRect
+        {
+            get => new Rectangle(
+                langBox.PointToScreen(Point.Empty).X,
+                langBox.PointToScreen(Point.Empty).Y,
+                langBox.Width,
+                langBox.Height);
+        }
+        public Rectangle DevicesLblRect
+        {
+            get => new Rectangle(
+                devicesLabel.PointToScreen(Point.Empty).X,
+                devicesLabel.PointToScreen(Point.Empty).Y,
+                devicesLabel.Width,
+                devicesLabel.Height);
+        }
+        public Rectangle turnOrigRectangle 
+        { 
+            get => new Rectangle(
+                turnOrig.PointToScreen(Point.Empty).X, 
+                turnOrig.PointToScreen(Point.Empty).Y, 
+                turnOrig.Width, 
+                turnOrig.Height); 
+        }
+        public Rectangle LabelVideoRect 
+        {
+            get => new Rectangle(
+            videoLabel.PointToScreen(Point.Empty).X,
+            videoLabel.PointToScreen(Point.Empty).Y,
+            videoLabel.Width,
+            videoLabel.Height);
         }
     }
 }

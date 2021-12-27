@@ -28,13 +28,13 @@ namespace RSI_X_Desktop
         private bool[] TakenPages = new bool[1];
         private Dictionary<uint, PictureBox> hostBroadcasters = new();
 
-        [DllImport("winmm.dll")]
-        public static extern int waveOutGetVolume(IntPtr hwo, out uint dwVolume); //Контроль громкости
 
+        public MainForm mainForm { get; }
 
-        public Audience()
+        public Audience(MainForm form)
         {
             InitializeComponent();
+            mainForm = form;
         }
 
 
@@ -222,8 +222,12 @@ namespace RSI_X_Desktop
         }
         private void Spectator_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ExternWnd.Close();
-            bottomPanel.Close();
+        }
+        private void Audience_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //ExternWnd.Close();
+            //bottomPanel.Close();
+
             AgoraObject.LeaveHostChannel();
             AgoraObject.LeaveSrcChannel();
             AgoraObject.MuteAllRemoteAudioStream(false);
@@ -231,8 +235,8 @@ namespace RSI_X_Desktop
 
             PopUpForm.waveOutSetVolume(IntPtr.Zero, uint.MaxValue);
 
-            Owner.Show();
-            Owner.Refresh();
+            mainForm.Show();
+            mainForm.Refresh();
         }
 
         private void ResizeForm(Size size, Form target)
@@ -250,10 +254,9 @@ namespace RSI_X_Desktop
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Owner.Close();
+            mainForm.Close();
             Close();
         }
-
         internal void Settings_Click(object sender, EventArgs e)
         {
             if (devices == null || devices.IsDisposed)
@@ -270,7 +273,6 @@ namespace RSI_X_Desktop
                 devices.Dispose();
             }
         }
-
         internal void HomeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -278,7 +280,19 @@ namespace RSI_X_Desktop
 
         public void ExitApp()
         {
-            this.Close();
+            ExternWnd.Hide();
+            bottomPanel.Hide();
+            Hide();
+
+            AgoraObject.LeaveHostChannel();
+            AgoraObject.LeaveSrcChannel();
+            AgoraObject.MuteAllRemoteAudioStream(false);
+            AgoraObject.MuteAllRemoteVideoStream(false);
+
+            PopUpForm.waveOutSetVolume(IntPtr.Zero, uint.MaxValue);
+
+            mainForm.Show();
+            mainForm.Refresh();
         }
 
         private void CallSidePanel(Form Wnd)
@@ -295,7 +309,6 @@ namespace RSI_X_Desktop
                 Wnd.Show();
             }
         }
-
         public void DevicesClosed(Form Wnd)
         {
             Animator(panel1, 45, 0, 10, 1);
@@ -303,7 +316,6 @@ namespace RSI_X_Desktop
             Wnd.Close();
             GC.Collect();
         }
-
         public void Animator(System.Windows.Forms.Panel panel, int offset_x, int offset_y, int itterations, int delay)
         {
             Thread.Sleep(delay);
@@ -531,19 +543,29 @@ namespace RSI_X_Desktop
         {
             if (new System.Drawing.Rectangle(ExternWnd.audioLabel.PointToScreen(Point.Empty).X, ExternWnd.audioLabel.PointToScreen(Point.Empty).Y, ExternWnd.audioLabel.Width, ExternWnd.audioLabel.Height).Contains(Cursor.Position))
                 ExternWnd.labelMicrophone_Click(sender, e);
-            else if (new System.Drawing.Rectangle(ExternWnd.videoLabel.PointToScreen(Point.Empty).X, ExternWnd.videoLabel.PointToScreen(Point.Empty).Y, ExternWnd.videoLabel.Width, ExternWnd.videoLabel.Height).Contains(Cursor.Position))
+            else if (.Contains(Cursor.Position))
                 ExternWnd.labelVideo_Click(sender, e);
-            else if (new System.Drawing.Rectangle(ExternWnd.turnOrig.PointToScreen(Point.Empty).X, ExternWnd.turnOrig.PointToScreen(Point.Empty).Y, ExternWnd.turnOrig.Width, ExternWnd.turnOrig.Height).Contains(Cursor.Position))
+            else if (ExternWnd.turnOrigRectangle.Contains(Cursor.Position))
                 ExternWnd.mSwitchOriginal_CheckedChanged(sender, e);
-            else if (new System.Drawing.Rectangle(ExternWnd.devicesLabel.PointToScreen(Point.Empty).X, ExternWnd.devicesLabel.PointToScreen(Point.Empty).Y, ExternWnd.devicesLabel.Width, ExternWnd.devicesLabel.Height).Contains(Cursor.Position))
+            else if (ExternWnd.DevicesLblRect.Contains(Cursor.Position))
                 Settings_Click(sender, e);
-            else if (new System.Drawing.Rectangle(ExternWnd.langBox.PointToScreen(Point.Empty).X, ExternWnd.langBox.PointToScreen(Point.Empty).Y, ExternWnd.langBox.Width, ExternWnd.langBox.Height).Contains(Cursor.Position))
+            else if (ExternWnd.LangBoxRect.Contains(Cursor.Position))
                 if (ExternWnd.langBox.Enabled)
                     ExternWnd.langBox.DroppedDown = true;
+
+            if (ExternWnd.HomeBtnRect.Contains(Cursor.Position))
+                ExternWnd.HomeBtn_Click(null, null);
         }
 
         private void streamsTable_MouseMove(object sender, MouseEventArgs e)
         {
+            if (Disposing || IsDisposed ||
+                ExternWnd.Disposing || ExternWnd.IsDisposed)
+            {
+                Close();
+                return;
+            }
+
             bool cursorUpd = false;
             if (new System.Drawing.Rectangle(ExternWnd.audioLabel.PointToScreen(Point.Empty).X, ExternWnd.audioLabel.PointToScreen(Point.Empty).Y, ExternWnd.audioLabel.Width, ExternWnd.audioLabel.Height).Contains(Cursor.Position))
             {
@@ -580,7 +602,6 @@ namespace RSI_X_Desktop
             if (new System.Drawing.Rectangle(ExternWnd.langBox.PointToScreen(Point.Empty).X, ExternWnd.langBox.PointToScreen(Point.Empty).Y, ExternWnd.langBox.Width, ExternWnd.langBox.Height).Contains(Cursor.Position))
                 if (ExternWnd.langBox.Enabled)
                     cursorUpd = true;
-
             Cursor.Current = cursorUpd ? Cursors.Hand : Cursors.Default;
         }
     }

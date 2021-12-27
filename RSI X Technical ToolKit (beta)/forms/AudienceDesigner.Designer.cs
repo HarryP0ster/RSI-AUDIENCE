@@ -38,12 +38,12 @@ namespace RSI_X_Desktop.forms
             this.RoomNameLabel = new ReaLTaiizor.Controls.SkyLabel();
             this.IconsPanel = new DevExpress.Utils.Layout.TablePanel();
             this.langBox = new ReaLTaiizor.Controls.SkyComboBox();
+            this.signOff = new DevExpress.XtraEditors.SvgImageBox();
             this.audioLabel = new DevExpress.XtraEditors.SvgImageBox();
             this.volumeTrackBar = new ReaLTaiizor.Controls.DungeonTrackBar();
             this.volumeIcon = new DevExpress.XtraEditors.SvgImageBox();
             this.turnOrig = new DevExpress.XtraEditors.SvgImageBox();
             this.devicesLabel = new DevExpress.XtraEditors.SvgImageBox();
-            this.signOff = new DevExpress.XtraEditors.SvgImageBox();
             this.videoLabel = new DevExpress.XtraEditors.SvgImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.MainLayout)).BeginInit();
             this.MainLayout.SuspendLayout();
@@ -55,11 +55,11 @@ namespace RSI_X_Desktop.forms
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconsPanel)).BeginInit();
             this.IconsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.signOff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.audioLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.volumeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnOrig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devicesLabel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.signOff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videoLabel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,11 +156,11 @@ namespace RSI_X_Desktop.forms
             this.RoomNameLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.RoomNameLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RoomNameLabel.ForeColor = System.Drawing.Color.White;
-            this.RoomNameLabel.Location = new System.Drawing.Point(35, 43);
+            this.RoomNameLabel.Location = new System.Drawing.Point(35, 42);
             this.RoomNameLabel.Margin = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.RoomNameLabel.Name = "RoomNameLabel";
             this.tablePanel1.SetRow(this.RoomNameLabel, 1);
-            this.RoomNameLabel.Size = new System.Drawing.Size(168, 39);
+            this.RoomNameLabel.Size = new System.Drawing.Size(207, 48);
             this.RoomNameLabel.TabIndex = 5;
             this.RoomNameLabel.Text = "Room Name";
             this.RoomNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,12 +183,12 @@ namespace RSI_X_Desktop.forms
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 10F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 10F)});
             this.IconsPanel.Controls.Add(this.langBox);
+            this.IconsPanel.Controls.Add(this.signOff);
             this.IconsPanel.Controls.Add(this.audioLabel);
             this.IconsPanel.Controls.Add(this.volumeTrackBar);
             this.IconsPanel.Controls.Add(this.volumeIcon);
             this.IconsPanel.Controls.Add(this.turnOrig);
             this.IconsPanel.Controls.Add(this.devicesLabel);
-            this.IconsPanel.Controls.Add(this.signOff);
             this.IconsPanel.Controls.Add(this.videoLabel);
             this.IconsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.IconsPanel.Location = new System.Drawing.Point(0, 661);
@@ -240,6 +240,24 @@ namespace RSI_X_Desktop.forms
             this.langBox.TriangleColorA = System.Drawing.Color.White;
             this.langBox.TriangleColorB = System.Drawing.Color.White;
             this.langBox.EnabledChanged += new System.EventHandler(this.langBox_EnabledChanged);
+            // 
+            // signOff
+            // 
+            this.signOff.BackColor = System.Drawing.Color.Transparent;
+            this.IconsPanel.SetColumn(this.signOff, 4);
+            this.signOff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.signOff.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
+            this.signOff.ItemAppearance.Normal.BorderThickness = 0F;
+            this.signOff.Location = new System.Drawing.Point(323, 0);
+            this.signOff.Margin = new System.Windows.Forms.Padding(0);
+            this.signOff.Name = "signOff";
+            this.IconsPanel.SetRow(this.signOff, 0);
+            this.signOff.Size = new System.Drawing.Size(324, 117);
+            this.signOff.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
+            this.signOff.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("signOff.SvgImage")));
+            this.signOff.TabIndex = 2;
+            this.signOff.Text = "svgImageBox1";
+            this.signOff.Click += new System.EventHandler(this.HomeBtn_Click);
             // 
             // audioLabel
             // 
@@ -347,25 +365,6 @@ namespace RSI_X_Desktop.forms
             this.devicesLabel.Click += new System.EventHandler(this.devicesLabel_Click);
             this.devicesLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.devicesLabel_MouseMove);
             // 
-            // signOff
-            // 
-            this.signOff.BackColor = System.Drawing.Color.Transparent;
-            this.IconsPanel.SetColumn(this.signOff, 4);
-            this.signOff.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signOff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.signOff.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
-            this.signOff.ItemAppearance.Normal.BorderThickness = 0F;
-            this.signOff.Location = new System.Drawing.Point(323, 0);
-            this.signOff.Margin = new System.Windows.Forms.Padding(0);
-            this.signOff.Name = "signOff";
-            this.IconsPanel.SetRow(this.signOff, 0);
-            this.signOff.Size = new System.Drawing.Size(324, 117);
-            this.signOff.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
-            this.signOff.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("signOff.SvgImage")));
-            this.signOff.TabIndex = 2;
-            this.signOff.Text = "svgImageBox1";
-            this.signOff.Click += new System.EventHandler(this.HomeBtn_Click);
-            // 
             // videoLabel
             // 
             this.videoLabel.BackColor = System.Drawing.Color.Transparent;
@@ -423,11 +422,11 @@ namespace RSI_X_Desktop.forms
             this.tablePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconsPanel)).EndInit();
             this.IconsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.signOff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.audioLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.volumeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnOrig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devicesLabel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.signOff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.videoLabel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
