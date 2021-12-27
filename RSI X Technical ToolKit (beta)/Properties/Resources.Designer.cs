@@ -133,9 +133,29 @@ namespace RSI_X_Desktop.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] JoinButton {
+            get {
+                object obj = ResourceManager.GetObject("JoinButton", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] LeftSidePanel {
             get {
                 object obj = ResourceManager.GetObject("LeftSidePanel", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] LoginForm {
+            get {
+                object obj = ResourceManager.GetObject("LoginForm", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -186,6 +206,16 @@ namespace RSI_X_Desktop.Properties {
         internal static byte[] Muted {
             get {
                 object obj = ResourceManager.GetObject("Muted", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] NicknameTextBox {
+            get {
+                object obj = ResourceManager.GetObject("NicknameTextBox", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -245,6 +275,16 @@ namespace RSI_X_Desktop.Properties {
         internal static System.Drawing.Bitmap RSI_MUTE {
             get {
                 object obj = ResourceManager.GetObject("RSI_MUTE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RSI_TEXTURE {
+            get {
+                object obj = ResourceManager.GetObject("RSI_TEXTURE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
