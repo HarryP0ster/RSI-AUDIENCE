@@ -32,10 +32,12 @@ namespace RSI_X_Desktop.forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceForm));
             this.formTheme1 = new ReaLTaiizor.Forms.FormTheme();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.JoinBtn = new DevExpress.XtraEditors.SvgImageBox();
             this.LoginBackground = new DevExpress.XtraEditors.SvgImageBox();
             this.controlBox1 = new ReaLTaiizor.Controls.ControlBox();
             this.formTheme1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.JoinBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginBackground)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@ namespace RSI_X_Desktop.forms
             this.formTheme1.Margin = new System.Windows.Forms.Padding(0);
             this.formTheme1.Name = "formTheme1";
             this.formTheme1.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
-            this.formTheme1.Sizable = true;
+            this.formTheme1.Sizable = false;
             this.formTheme1.Size = new System.Drawing.Size(1000, 700);
             this.formTheme1.SmartBounds = false;
             this.formTheme1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -62,13 +64,26 @@ namespace RSI_X_Desktop.forms
             // 
             this.panel1.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.RSI_TEXTURE_COMPRESSED;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.JoinBtn);
             this.panel1.Controls.Add(this.LoginBackground);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 675);
             this.panel1.TabIndex = 95;
+            // 
+            // JoinBtn
+            // 
+            this.JoinBtn.BackColor = System.Drawing.Color.Transparent;
+            this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JoinBtn.Location = new System.Drawing.Point(26, 98);
+            this.JoinBtn.Name = "JoinBtn";
+            this.JoinBtn.Size = new System.Drawing.Size(236, 222);
+            this.JoinBtn.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
+            this.JoinBtn.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("JoinBtn.SvgImage")));
+            this.JoinBtn.TabIndex = 1;
+            this.JoinBtn.Text = "svgImageBox1";
+            this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_Click);
             // 
             // LoginBackground
             // 
@@ -107,19 +122,23 @@ namespace RSI_X_Desktop.forms
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(1000, 700);
             this.Controls.Add(this.formTheme1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("EntranceForm.IconOptions.Icon")));
             this.MinimumSize = new System.Drawing.Size(126, 50);
             this.Name = "EntranceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RSI EXCHANGE AUDIENCE";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.EntranceForm_Load);
+            this.Shown += new System.EventHandler(this.EntranceForm_Shown);
             this.VisibleChanged += new System.EventHandler(this.EntranceForm_VisibleChanged);
             this.formTheme1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.JoinBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginBackground)).EndInit();
             this.ResumeLayout(false);
 
@@ -131,5 +150,6 @@ namespace RSI_X_Desktop.forms
         private ReaLTaiizor.Controls.ControlBox controlBox1;
         internal DevExpress.XtraEditors.SvgImageBox LoginBackground;
         private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SvgImageBox JoinBtn;
     }
 }

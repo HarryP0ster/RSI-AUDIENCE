@@ -16,7 +16,7 @@ namespace RSI_X_Desktop
         [STAThread]
         static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.DpiUnawareGdiScaled);
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new EntranceForm());

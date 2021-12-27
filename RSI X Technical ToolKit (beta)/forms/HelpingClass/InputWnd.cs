@@ -24,6 +24,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
 
         private void InputWnd_Load(object sender, EventArgs e)
         {
+            Location = Owner.Location;
             Owner.LocationChanged += delegate { Location = Owner.Location; };
         }
 
