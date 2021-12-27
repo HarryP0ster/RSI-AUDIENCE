@@ -58,6 +58,7 @@ namespace RSI_X_Desktop
             ExternWnd.Size = Size;
             ExternWnd.Location = Location;
             bottomPanel.Show(this);
+            bottomPanel.Enabled = false;
             ExternWnd.Show(this);
         }
         private void SignOffToCenter()

@@ -167,21 +167,21 @@ namespace RSI_X_Desktop.forms
             // 
             // IconsPanel
             // 
-            this.IconsPanel.Appearance.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.IconsPanel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.IconsPanel.Appearance.Options.UseBackColor = true;
             this.IconsPanel.AutoSize = true;
             this.CenterPanel.SetColumn(this.IconsPanel, 0);
             this.IconsPanel.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 7F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 10F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 10F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 7F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 10F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 10F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 32F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 10F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 10F)});
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 20F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 5F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 10F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 10F)});
             this.IconsPanel.Controls.Add(this.langBox);
             this.IconsPanel.Controls.Add(this.audioLabel);
             this.IconsPanel.Controls.Add(this.volumeTrackBar);
@@ -202,7 +202,9 @@ namespace RSI_X_Desktop.forms
             // 
             // langBox
             // 
-            this.langBox.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.langBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.langBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.langBox.BGColorA = System.Drawing.Color.Transparent;
             this.langBox.BGColorB = System.Drawing.Color.Transparent;
             this.langBox.BorderColorA = System.Drawing.Color.Transparent;
@@ -211,7 +213,6 @@ namespace RSI_X_Desktop.forms
             this.langBox.BorderColorD = System.Drawing.Color.Transparent;
             this.IconsPanel.SetColumn(this.langBox, 9);
             this.langBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.langBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.langBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.langBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.langBox.Enabled = false;
@@ -228,7 +229,7 @@ namespace RSI_X_Desktop.forms
             this.langBox.ListForeColor = System.Drawing.Color.Black;
             this.langBox.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.langBox.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.langBox.Location = new System.Drawing.Point(1071, 10);
+            this.langBox.Location = new System.Drawing.Point(1071, 49);
             this.langBox.Margin = new System.Windows.Forms.Padding(20, 10, 10, 3);
             this.langBox.Name = "langBox";
             this.IconsPanel.SetRow(this.langBox, 0);
@@ -243,13 +244,12 @@ namespace RSI_X_Desktop.forms
             // audioLabel
             // 
             this.audioLabel.BackColor = System.Drawing.Color.Transparent;
-            this.audioLabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.audioLabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.IconsPanel.SetColumn(this.audioLabel, 0);
             this.audioLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.audioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.audioLabel.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
             this.audioLabel.ItemAppearance.Normal.BorderThickness = 0F;
-            this.audioLabel.ItemAppearance.Normal.FillColor = System.Drawing.Color.WhiteSmoke;
             this.audioLabel.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
             this.audioLabel.Location = new System.Drawing.Point(0, 0);
             this.audioLabel.Margin = new System.Windows.Forms.Padding(0);
@@ -258,7 +258,6 @@ namespace RSI_X_Desktop.forms
             this.audioLabel.Size = new System.Drawing.Size(71, 117);
             this.audioLabel.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.audioLabel.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("audioLabel.SvgImage")));
-            this.audioLabel.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
             this.audioLabel.TabIndex = 0;
             this.audioLabel.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.False;
             this.audioLabel.Click += new System.EventHandler(this.labelMicrophone_Click);
@@ -327,6 +326,7 @@ namespace RSI_X_Desktop.forms
             // devicesLabel
             // 
             this.devicesLabel.BackColor = System.Drawing.Color.Transparent;
+            this.devicesLabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.IconsPanel.SetColumn(this.devicesLabel, 2);
             this.devicesLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.devicesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -349,26 +349,26 @@ namespace RSI_X_Desktop.forms
             // 
             // signOff
             // 
+            this.signOff.BackColor = System.Drawing.Color.Transparent;
             this.IconsPanel.SetColumn(this.signOff, 4);
             this.signOff.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signOff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.signOff.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
             this.signOff.ItemAppearance.Normal.BorderThickness = 0F;
-            this.signOff.Location = new System.Drawing.Point(345, 22);
-            this.signOff.Margin = new System.Windows.Forms.Padding(22);
+            this.signOff.Location = new System.Drawing.Point(323, 0);
+            this.signOff.Margin = new System.Windows.Forms.Padding(0);
             this.signOff.Name = "signOff";
             this.IconsPanel.SetRow(this.signOff, 0);
-            this.signOff.Size = new System.Drawing.Size(280, 73);
+            this.signOff.Size = new System.Drawing.Size(324, 117);
             this.signOff.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.signOff.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("signOff.SvgImage")));
             this.signOff.TabIndex = 2;
             this.signOff.Text = "svgImageBox1";
             this.signOff.Click += new System.EventHandler(this.HomeBtn_Click);
-            this.signOff.MouseLeave += new System.EventHandler(this.signOff_MouseLeave);
-            this.signOff.MouseHover += new System.EventHandler(this.signOff_MouseHover);
             // 
             // videoLabel
             // 
+            this.videoLabel.BackColor = System.Drawing.Color.Transparent;
             this.videoLabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.IconsPanel.SetColumn(this.videoLabel, 1);
             this.videoLabel.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -392,7 +392,7 @@ namespace RSI_X_Desktop.forms
             // 
             // AudienceDesigner
             // 
-            this.Appearance.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
@@ -407,7 +407,7 @@ namespace RSI_X_Desktop.forms
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AudienceDesigner";
-            this.TransparencyKey = System.Drawing.SystemColors.ButtonShadow;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.Load += new System.EventHandler(this.AudienceDesigner_Load);
             this.Shown += new System.EventHandler(this.AudienceDesigner_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.MainLayout)).EndInit();

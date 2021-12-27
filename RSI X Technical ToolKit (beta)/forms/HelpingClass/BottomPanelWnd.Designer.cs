@@ -40,6 +40,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             this.Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.Layout.Controls.Add(this.TopPanel, 0, 0);
             this.Layout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Layout.Enabled = false;
             this.Layout.Location = new System.Drawing.Point(0, 0);
             this.Layout.Name = "Layout";
             this.Layout.RowCount = 2;
@@ -52,6 +53,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TopPanel.Enabled = false;
             this.TopPanel.Location = new System.Drawing.Point(0, 0);
             this.TopPanel.Margin = new System.Windows.Forms.Padding(0);
             this.TopPanel.Name = "TopPanel";
@@ -61,6 +63,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             // BottomPanelWnd
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.Fuchsia;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Layout);
@@ -69,6 +72,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             this.MinimizeBox = false;
             this.Name = "BottomPanelWnd";
             this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "BottomPanelWnd";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;

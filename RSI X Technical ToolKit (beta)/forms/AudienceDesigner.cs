@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.Utils.Svg;
 
 namespace RSI_X_Desktop.forms
 {
@@ -27,8 +28,9 @@ namespace RSI_X_Desktop.forms
                 MinimumSize = Owner.Size;
                 Size = Owner.Size;
                 SetLeftSidePanelRegion();
+                SighnOffToCenter();
             };
-            ResizeRedraw = true;
+            AllowTransparency = true;
             Owner.LocationChanged += delegate { Location = new Point(Owner.Location.X, Owner.Location.Y); };
             SetLeftSidePanelRegion();
             SighnOffToCenter();
@@ -53,7 +55,7 @@ namespace RSI_X_Desktop.forms
         private void SighnOffToCenter()
         {
             int leftSide = audioLabel.Width + videoLabel.Width + devicesLabel.Width;
-            int rightSide = turnOrig.Width + volumeIcon.Width + volumeTrackBar.Width + langBox.Width;
+            int rightSide = turnOrig.Width + volumeIcon.Width + volumeTrackBar.Width + langBox.Width + langBox.Margin.Left;
             if (leftSide > rightSide)
             {
                 IconsPanel.Columns[5].Width = leftSide - rightSide;
@@ -79,23 +81,33 @@ namespace RSI_X_Desktop.forms
 
         private void AudioColorUpdate()
         {
-            audioLabel.ItemAppearance.Normal.FillColor = AgoraObject.IsAllRemoteAudioMute ?
-                Color.FromArgb(150, 150, 150) :
+            audioLabel.ItemAppearance.Normal.BorderColor = AgoraObject.IsAllRemoteAudioMute ?
+                Color.WhiteSmoke :
                 Color.White;
 
-            audioLabel.ItemAppearance.Normal.BorderColor = AgoraObject.IsAllRemoteAudioMute ?
-                Color.FromArgb(185, 185, 185) :
+            audioLabel.ItemAppearance.Normal.FillColor = AgoraObject.IsAllRemoteAudioMute ?
+                Color.Empty :
                 Color.White;
+
+            audioLabel.Enabled = false; //prevents crash
+            audioLabel.SvgImage = AgoraObject.IsAllRemoteAudioMute ?
+                SvgImage.FromFile("Resources\\Muted.svg") :
+                SvgImage.FromFile("Resources\\mute.svg");
         }
         private void VideoColorUpdate()
         {
-            videoLabel.ItemAppearance.Normal.FillColor = AgoraObject.IsAllRemoteVideoMute ?
-                Color.FromArgb(150, 150, 150) :
+            videoLabel.ItemAppearance.Normal.BorderColor = AgoraObject.IsAllRemoteVideoMute ?
+                Color.WhiteSmoke :
                 Color.White;
 
-            videoLabel.ItemAppearance.Normal.BorderColor = AgoraObject.IsAllRemoteVideoMute ?
-                Color.FromArgb(185, 185, 185) :
+            videoLabel.ItemAppearance.Normal.FillColor = AgoraObject.IsAllRemoteVideoMute ?
+                Color.Empty :
                 Color.White;
+
+            videoLabel.Enabled = false; //prevents crash
+            videoLabel.SvgImage = AgoraObject.IsAllRemoteVideoMute ?
+                SvgImage.FromFile("Resources\\Hidden.svg") :
+                SvgImage.FromFile("Resources\\video.svg");
         }
         private void langBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -183,7 +195,9 @@ namespace RSI_X_Desktop.forms
 
         private void langBox_EnabledChanged(object sender, EventArgs e)
         {
-            langBox.ForeColor = langBox.Enabled ? Color.White : Color.FromArgb(180,180,180);
+            langBox.ForeColor = langBox.Enabled ? Color.White : Color.FromArgb(5, 0, 0, 0);
+            langBox.TriangleColorA = langBox.Enabled ? Color.White : Color.FromArgb(5, 0, 0, 0);
+            langBox.TriangleColorB = langBox.Enabled ? Color.White : Color.FromArgb(5, 0, 0, 0);
         }
 
         private void devicesLabel_Click(object sender, EventArgs e)
@@ -199,16 +213,6 @@ namespace RSI_X_Desktop.forms
         internal void devicesLabel_MouseLeave(object sender, EventArgs e)
         {
             devicesLabel.ItemAppearance.Normal.BorderThickness = 0;
-        }
-
-        private void signOff_MouseHover(object sender, EventArgs e)
-        {
-            signOff.Margin = new Padding();
-        }
-
-        private void signOff_MouseLeave(object sender, EventArgs e)
-        {
-            signOff.Margin = new Padding(22);
         }
     }
 }
