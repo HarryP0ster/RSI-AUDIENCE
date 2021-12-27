@@ -29,12 +29,9 @@ namespace RSI_X_Desktop
         private Dictionary<uint, PictureBox> hostBroadcasters = new();
 
 
-        public MainForm mainForm { get; }
-
-        public Audience(MainForm form)
+        public Audience()
         {
             InitializeComponent();
-            mainForm = form;
         }
 
 
@@ -235,8 +232,8 @@ namespace RSI_X_Desktop
 
             PopUpForm.waveOutSetVolume(IntPtr.Zero, uint.MaxValue);
 
-            mainForm.Show();
-            mainForm.Refresh();
+            Owner.Show();
+            Owner.Refresh();
         }
 
         private void ResizeForm(Size size, Form target)
@@ -254,7 +251,7 @@ namespace RSI_X_Desktop
 
         private void button4_Click(object sender, EventArgs e)
         {
-            mainForm.Close();
+            Owner.Close();
             Close();
         }
         internal void Settings_Click(object sender, EventArgs e)
@@ -291,8 +288,8 @@ namespace RSI_X_Desktop
 
             PopUpForm.waveOutSetVolume(IntPtr.Zero, uint.MaxValue);
 
-            mainForm.Show();
-            mainForm.Refresh();
+            Owner.Show();
+            Owner.Refresh();
         }
 
         private void CallSidePanel(Form Wnd)
@@ -543,7 +540,7 @@ namespace RSI_X_Desktop
         {
             if (new System.Drawing.Rectangle(ExternWnd.audioLabel.PointToScreen(Point.Empty).X, ExternWnd.audioLabel.PointToScreen(Point.Empty).Y, ExternWnd.audioLabel.Width, ExternWnd.audioLabel.Height).Contains(Cursor.Position))
                 ExternWnd.labelMicrophone_Click(sender, e);
-            else if (.Contains(Cursor.Position))
+            else if (ExternWnd.LabelVideoRect.Contains(Cursor.Position))
                 ExternWnd.labelVideo_Click(sender, e);
             else if (ExternWnd.turnOrigRectangle.Contains(Cursor.Position))
                 ExternWnd.mSwitchOriginal_CheckedChanged(sender, e);

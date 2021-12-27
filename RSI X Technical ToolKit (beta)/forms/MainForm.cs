@@ -41,7 +41,7 @@ namespace RSI_X_Desktop.forms
             if (AgoraObject.JoinRoom(code))
             {
                 Hide();
-                Audience Audit = new(this);
+                Audience Audit = new();
                 AgoraObject.CurrentForm = CurForm.FormAudience;
                 Audit.Show(this);
             }
