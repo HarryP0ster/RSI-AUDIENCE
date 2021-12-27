@@ -15,6 +15,7 @@ namespace RSI_X_Desktop.forms
     public partial class EntranceForm : DevExpress.XtraEditors.XtraForm
     {
         LoginWnd loginWnd;
+        
         public EntranceForm()
         {
             InitializeComponent();
@@ -26,22 +27,22 @@ namespace RSI_X_Desktop.forms
             panel1.Controls.Clear();
             panel1.ColumnStyles.Clear();
             panel1.RowStyles.Clear();
-
+            Controls.Remove(LoginBackground);
             panel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             panel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
             panel1.Controls.Add(LoginBackground,0,0);
             LoginBackground.Anchor = AnchorStyles.None;
-            
+            panel1.SuspendLayout();
+
             loginWnd.Show(this);
-            panel1.Refresh();
         }
 
         private void EntranceForm_Load(object sender, EventArgs e)
         {
+            LoginBackground.Visible = false;
             JoinBtn.Location = new Point(Width/2 - JoinBtn.Width/2, Height - Height / 2);
             JoinBtn.BringToFront();
-            LoginBackground.Visible = false;
             timer1.Start();
         }
 
