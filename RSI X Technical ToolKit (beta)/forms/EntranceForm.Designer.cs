@@ -29,12 +29,16 @@ namespace RSI_X_Desktop.forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceForm));
             this.formTheme1 = new ReaLTaiizor.Forms.FormTheme();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.LocalTimeLabel = new ReaLTaiizor.Controls.MoonLabel();
+            this.TimeLabel = new ReaLTaiizor.Controls.MoonLabel();
+            this.controlBox1 = new ReaLTaiizor.Controls.ControlBox();
             this.JoinBtn = new DevExpress.XtraEditors.SvgImageBox();
             this.LoginBackground = new DevExpress.XtraEditors.SvgImageBox();
-            this.controlBox1 = new ReaLTaiizor.Controls.ControlBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.formTheme1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JoinBtn)).BeginInit();
@@ -46,6 +50,7 @@ namespace RSI_X_Desktop.forms
             this.formTheme1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(54)))), ((int)(((byte)(79)))));
             this.formTheme1.Controls.Add(this.panel1);
             this.formTheme1.Controls.Add(this.controlBox1);
+            this.formTheme1.Controls.Add(this.LoginBackground);
             this.formTheme1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formTheme1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.formTheme1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
@@ -62,40 +67,53 @@ namespace RSI_X_Desktop.forms
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.RSI_TEXTURE_COMPRESSED;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.JoinBtn);
-            this.panel1.Controls.Add(this.LoginBackground);
+            this.panel1.ColumnCount = 1;
+            this.panel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panel1.Controls.Add(this.LocalTimeLabel, 0, 2);
+            this.panel1.Controls.Add(this.TimeLabel, 0, 1);
+            this.panel1.Controls.Add(this.JoinBtn, 0, 3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
+            this.panel1.RowCount = 4;
+            this.panel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.panel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.panel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.panel1.Size = new System.Drawing.Size(1000, 675);
             this.panel1.TabIndex = 95;
             // 
-            // JoinBtn
+            // LocalTimeLabel
             // 
-            this.JoinBtn.BackColor = System.Drawing.Color.Transparent;
-            this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JoinBtn.Location = new System.Drawing.Point(26, 98);
-            this.JoinBtn.Name = "JoinBtn";
-            this.JoinBtn.Size = new System.Drawing.Size(236, 222);
-            this.JoinBtn.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
-            this.JoinBtn.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("JoinBtn.SvgImage")));
-            this.JoinBtn.TabIndex = 1;
-            this.JoinBtn.Text = "svgImageBox1";
-            this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_Click);
+            this.LocalTimeLabel.AutoSize = true;
+            this.LocalTimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.LocalTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LocalTimeLabel.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LocalTimeLabel.ForeColor = System.Drawing.Color.White;
+            this.LocalTimeLabel.Location = new System.Drawing.Point(4, 216);
+            this.LocalTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LocalTimeLabel.Name = "LocalTimeLabel";
+            this.LocalTimeLabel.Size = new System.Drawing.Size(992, 42);
+            this.LocalTimeLabel.TabIndex = 94;
+            this.LocalTimeLabel.Text = "Local Time";
+            this.LocalTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LoginBackground
+            // TimeLabel
             // 
-            this.LoginBackground.BackColor = System.Drawing.Color.Transparent;
-            this.LoginBackground.Enabled = false;
-            this.LoginBackground.ItemAppearance.Normal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.LoginBackground.Location = new System.Drawing.Point(277, 98);
-            this.LoginBackground.Name = "LoginBackground";
-            this.LoginBackground.Size = new System.Drawing.Size(500, 490);
-            this.LoginBackground.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
-            this.LoginBackground.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("LoginBackground.SvgImage")));
-            this.LoginBackground.TabIndex = 0;
+            this.TimeLabel.AutoSize = true;
+            this.TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TimeLabel.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TimeLabel.ForeColor = System.Drawing.Color.White;
+            this.TimeLabel.Location = new System.Drawing.Point(4, 139);
+            this.TimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(992, 77);
+            this.TimeLabel.TabIndex = 93;
+            this.TimeLabel.Text = "12:00";
+            this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // controlBox1
             // 
@@ -116,6 +134,36 @@ namespace RSI_X_Desktop.forms
             this.controlBox1.Size = new System.Drawing.Size(90, 25);
             this.controlBox1.TabIndex = 94;
             this.controlBox1.Text = "controlBox1";
+            // 
+            // JoinBtn
+            // 
+            this.JoinBtn.BackColor = System.Drawing.Color.Transparent;
+            this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JoinBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.JoinBtn.Location = new System.Drawing.Point(3, 261);
+            this.JoinBtn.Name = "JoinBtn";
+            this.JoinBtn.Size = new System.Drawing.Size(994, 411);
+            this.JoinBtn.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
+            this.JoinBtn.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("JoinBtn.SvgImage")));
+            this.JoinBtn.TabIndex = 1;
+            this.JoinBtn.Text = "svgImageBox1";
+            this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_Click);
+            // 
+            // LoginBackground
+            // 
+            this.LoginBackground.BackColor = System.Drawing.Color.Transparent;
+            this.LoginBackground.Enabled = false;
+            this.LoginBackground.ItemAppearance.Normal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.LoginBackground.Location = new System.Drawing.Point(787, -42);
+            this.LoginBackground.Name = "LoginBackground";
+            this.LoginBackground.Size = new System.Drawing.Size(500, 490);
+            this.LoginBackground.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
+            this.LoginBackground.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("LoginBackground.SvgImage")));
+            this.LoginBackground.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // EntranceForm
             // 
@@ -138,6 +186,7 @@ namespace RSI_X_Desktop.forms
             this.VisibleChanged += new System.EventHandler(this.EntranceForm_VisibleChanged);
             this.formTheme1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JoinBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginBackground)).EndInit();
             this.ResumeLayout(false);
@@ -149,7 +198,10 @@ namespace RSI_X_Desktop.forms
         private ReaLTaiizor.Forms.FormTheme formTheme1;
         private ReaLTaiizor.Controls.ControlBox controlBox1;
         internal DevExpress.XtraEditors.SvgImageBox LoginBackground;
-        private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SvgImageBox JoinBtn;
+        private System.Windows.Forms.Timer timer1;
+        private ReaLTaiizor.Controls.MoonLabel TimeLabel;
+        private ReaLTaiizor.Controls.MoonLabel LocalTimeLabel;
+        private System.Windows.Forms.TableLayoutPanel panel1;
     }
 }
