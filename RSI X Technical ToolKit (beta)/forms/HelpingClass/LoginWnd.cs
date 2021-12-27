@@ -13,7 +13,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
 {
     public partial class LoginWnd : DevExpress.XtraEditors.XtraForm
     {
-        internal InputWnd loginInput = new();
+        internal InputWnd loginInput;
         public LoginWnd()
         {
             InitializeComponent();
@@ -21,8 +21,9 @@ namespace RSI_X_Desktop.forms.HelpingClass
 
         private void LoginWnd_Load(object sender, EventArgs e)
         {
+            Location = new Point(Owner.Location.X + Owner.Width / 2 - Width / 2, Owner.Location.Y + Owner.Height / 2 - 2 * Height / 5);
             Owner.LocationChanged += delegate { Location = new Point(Owner.Location.X + Owner.Width/2 - Width/2, Owner.Location.Y + Owner.Height/2 - 2*Height/5); };
-            loginInput.Show(this);
+            (loginInput = new()).Show(this);
         }
 
         private void svgImageBox2_Click(object sender, EventArgs e)

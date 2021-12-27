@@ -24,18 +24,12 @@ namespace RSI_X_Desktop.forms.HelpingClass
 
         private void InputWnd_Load(object sender, EventArgs e)
         {
-            //NewTextBox.Mask = "";
-            //NewTextBox.Font = new Font("Bahnschrift Condensed", 16);
-            //NewTextBox.Text = "Code of conference";
+            Location = Owner.Location;
             Owner.LocationChanged += delegate { Location = Owner.Location; };
         }
 
         private void NewTextBox_Click(object sender, EventArgs e)
         {
-            //NewTextBox.Font = new Font("Bahnschrift Condensed", 22);
-            //NewTextBox.Mask = "0000-0000";
-            //NewTextBox.Text = "";
-            //NewTextBox.SelectionStart = 0;
         }
 
         private void InputWnd_Shown(object sender, EventArgs e)

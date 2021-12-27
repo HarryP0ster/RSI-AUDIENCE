@@ -62,6 +62,8 @@ namespace RSI_X_Desktop.forms.HelpingClass
             this.NewTextBox.Location = new System.Drawing.Point(55, 175);
             this.NewTextBox.Margin = new System.Windows.Forms.Padding(55, 0, 55, 10);
             this.NewTextBox.Mask = "0000-0000";
+            this.NewTextBox.MaximumSize = new System.Drawing.Size(240, 39);
+            this.NewTextBox.MinimumSize = new System.Drawing.Size(240, 39);
             this.NewTextBox.Name = "NewTextBox";
             this.tablePanel1.SetRow(this.NewTextBox, 3);
             this.NewTextBox.Size = new System.Drawing.Size(240, 39);
@@ -73,8 +75,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             // 
             this.Appearance.BackColor = System.Drawing.Color.Fuchsia;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(350, 350);
             this.Controls.Add(this.tablePanel1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
