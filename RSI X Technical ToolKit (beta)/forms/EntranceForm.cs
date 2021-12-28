@@ -23,7 +23,7 @@ namespace RSI_X_Desktop.forms
 
         private void ShowLogin()
         {
-
+            panel2.BackgroundImage = null;
             panel1.Controls.Clear();
             panel1.ColumnStyles.Clear();
             panel1.RowStyles.Clear();
@@ -41,6 +41,9 @@ namespace RSI_X_Desktop.forms
             backButton.Visible = true;
 
             loginWnd.Show(this);
+
+            panel2.Update();
+            panel2.BackgroundImage = Properties.Resources.BckgFade;
         }
 
         private void EntranceForm_Load(object sender, EventArgs e)
@@ -48,7 +51,6 @@ namespace RSI_X_Desktop.forms
             JoinBtn.Location = new Point(Width/2 - JoinBtn.Width/2, Height - Height / 2);
             JoinBtn.BringToFront();
             timer1.Start();
-            Background.SuspendLayout();
         }
 
         private void EntranceForm_VisibleChanged(object sender, EventArgs e)
@@ -58,6 +60,8 @@ namespace RSI_X_Desktop.forms
                 loginWnd.Visible = Visible;
                 loginWnd.loginInput.Visible = Visible;
             }
+
+            panel2.BackgroundImage = Visible ? Properties.Resources.BckgFade : null;
         }
 
         private void JoinBtn_Click(object sender, EventArgs e)
@@ -98,6 +102,7 @@ namespace RSI_X_Desktop.forms
 
         private void backButton_Click(object sender, EventArgs e)
         {
+            panel2.BackgroundImage = null;
             loginWnd.Hide();
             LoginBackground.Visible = false;
             backButton.Visible = false;
@@ -124,6 +129,8 @@ namespace RSI_X_Desktop.forms
             this.tableLayoutPanel1.Controls.Add(this.backButton, 0, 0);
 
             JoinBtn.Show();
+            panel2.Update();
+            panel2.BackgroundImage = Properties.Resources.BckgFade;
         }
     }
 }
