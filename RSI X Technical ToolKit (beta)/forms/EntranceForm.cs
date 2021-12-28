@@ -15,7 +15,8 @@ namespace RSI_X_Desktop.forms
     public partial class EntranceForm : DevExpress.XtraEditors.XtraForm
     {
         LoginWnd loginWnd;
-        
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, Int32 wMsg, bool wParam, Int32 lParam);
         public EntranceForm()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace RSI_X_Desktop.forms
 
         private void ShowLogin()
         {
-            panel2.BackgroundImage = null;
+            SendMessage(this.Handle, 11, false, 0);
             panel1.Controls.Clear();
             panel1.ColumnStyles.Clear();
             panel1.RowStyles.Clear();
@@ -32,18 +33,17 @@ namespace RSI_X_Desktop.forms
             panel1.RowStyles.Add(new RowStyle(SizeType.Percent, 87));
             panel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13));
 
-            panel1.Controls.Add(LoginBackground,0,0);
-            panel1.Controls.Add(backButton,0,1);
+            panel1.Controls.Add(LoginBackground, 0, 0);
+            panel1.Controls.Add(backButton, 0, 1);
             backButton.Dock = DockStyle.Left;
             LoginBackground.Anchor = AnchorStyles.Bottom;
 
             LoginBackground.Visible = true;
             backButton.Visible = true;
 
+            SendMessage(this.Handle, 11, true, 0);
+            Refresh();
             loginWnd.Show(this);
-
-            panel2.Update();
-            panel2.BackgroundImage = Properties.Resources.BckgFade;
         }
 
         private void EntranceForm_Load(object sender, EventArgs e)
@@ -61,12 +61,11 @@ namespace RSI_X_Desktop.forms
                 loginWnd.loginInput.Visible = Visible;
             }
 
-            panel2.BackgroundImage = Visible ? Properties.Resources.BckgFade : null;
+            Fade.BackgroundImage = Visible ? Properties.Resources.BckgFade : null;
         }
 
         private void JoinBtn_Click(object sender, EventArgs e)
         {
-            JoinBtn.Hide();
             ShowLogin();
         }
 
@@ -102,8 +101,9 @@ namespace RSI_X_Desktop.forms
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            panel2.BackgroundImage = null;
             loginWnd.Hide();
+            SendMessage(this.Handle, 11, false, 0);
+
             LoginBackground.Visible = false;
             backButton.Visible = false;
             panel1.Controls.Clear();
@@ -128,9 +128,8 @@ namespace RSI_X_Desktop.forms
             this.tableLayoutPanel1.Controls.Add(this.svgImageBox2, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.backButton, 0, 0);
 
-            JoinBtn.Show();
-            panel2.Update();
-            panel2.BackgroundImage = Properties.Resources.BckgFade;
+            SendMessage(this.Handle, 11, true, 0);
+            Refresh();
         }
     }
 }

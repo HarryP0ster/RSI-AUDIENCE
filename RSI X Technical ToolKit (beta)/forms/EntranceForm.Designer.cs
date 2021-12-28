@@ -33,6 +33,7 @@ namespace RSI_X_Desktop.forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceForm));
             this.formTheme1 = new ReaLTaiizor.Forms.FormTheme();
             this.Background = new System.Windows.Forms.Panel();
+            this.Fade = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LocalTimeLabel = new ReaLTaiizor.Controls.MoonLabel();
             this.TimeLabel = new ReaLTaiizor.Controls.MoonLabel();
@@ -43,16 +44,15 @@ namespace RSI_X_Desktop.forms
             this.controlBox1 = new ReaLTaiizor.Controls.ControlBox();
             this.LoginBackground = new DevExpress.XtraEditors.SvgImageBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
             this.formTheme1.SuspendLayout();
             this.Background.SuspendLayout();
+            this.Fade.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JoinBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginBackground)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // formTheme1
@@ -78,12 +78,26 @@ namespace RSI_X_Desktop.forms
             // Background
             // 
             this.Background.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.RSI_TEXTURE_COMPRESSED;
-            this.Background.Controls.Add(this.panel2);
+            this.Background.Controls.Add(this.Fade);
             this.Background.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Background.Location = new System.Drawing.Point(0, 25);
+            this.Background.Margin = new System.Windows.Forms.Padding(0);
             this.Background.Name = "Background";
             this.Background.Size = new System.Drawing.Size(1000, 675);
             this.Background.TabIndex = 97;
+            // 
+            // Fade
+            // 
+            this.Fade.BackColor = System.Drawing.Color.Transparent;
+            this.Fade.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.BckgFade;
+            this.Fade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Fade.Controls.Add(this.panel1);
+            this.Fade.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Fade.Location = new System.Drawing.Point(0, 0);
+            this.Fade.Margin = new System.Windows.Forms.Padding(0);
+            this.Fade.Name = "Fade";
+            this.Fade.Size = new System.Drawing.Size(1000, 675);
+            this.Fade.TabIndex = 96;
             // 
             // panel1
             // 
@@ -192,7 +206,9 @@ namespace RSI_X_Desktop.forms
             // 
             this.backButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backButton.ItemAppearance.Hovered.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.backButton.ItemAppearance.Normal.FillColor = System.Drawing.Color.Silver;
+            this.backButton.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
             this.backButton.Location = new System.Drawing.Point(3, 288);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(120, 120);
@@ -240,18 +256,6 @@ namespace RSI_X_Desktop.forms
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.BckgFade;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 675);
-            this.panel2.TabIndex = 96;
-            // 
             // EntranceForm
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
@@ -273,6 +277,7 @@ namespace RSI_X_Desktop.forms
             this.VisibleChanged += new System.EventHandler(this.EntranceForm_VisibleChanged);
             this.formTheme1.ResumeLayout(false);
             this.Background.ResumeLayout(false);
+            this.Fade.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -280,7 +285,6 @@ namespace RSI_X_Desktop.forms
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginBackground)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -299,6 +303,6 @@ namespace RSI_X_Desktop.forms
         private System.Windows.Forms.Panel Background;
         private DevExpress.XtraEditors.SvgImageBox LoginBackground;
         private DevExpress.XtraEditors.SvgImageBox backButton;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel Fade;
     }
 }
