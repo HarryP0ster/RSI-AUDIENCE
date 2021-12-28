@@ -57,7 +57,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             this.NewTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(67)))), ((int)(((byte)(80)))));
             this.NewTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablePanel1.SetColumn(this.NewTextBox, 0);
-            this.NewTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NewTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NewTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.NewTextBox.Location = new System.Drawing.Point(55, 175);
             this.NewTextBox.Margin = new System.Windows.Forms.Padding(55, 0, 55, 10);

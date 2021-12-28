@@ -14,12 +14,19 @@ namespace RSI_X_Desktop.forms
 {
     public partial class EntranceForm : DevExpress.XtraEditors.XtraForm
     {
+        public enum DPI 
+        {
+            P100 = 96,
+            P125 = 120,
+            P150 = 144
+        }
         LoginWnd loginWnd;
         TableLayoutPanel LoginTable = new();
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, Int32 wMsg, bool wParam, Int32 lParam);
         public EntranceForm()
         {
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             InitializeComponent();
         }
 

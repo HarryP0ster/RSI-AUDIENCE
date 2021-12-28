@@ -30,6 +30,7 @@ namespace RSI_X_Desktop.forms
                 SetLeftSidePanelRegion();
                 SighnOffToCenter();
             };
+
             AllowTransparency = true;
             Owner.LocationChanged += (s, e) => { Location = new Point(Owner.Location.X, Owner.Location.Y); };
             SetLeftSidePanelRegion();
@@ -38,6 +39,22 @@ namespace RSI_X_Desktop.forms
             AudioColorUpdate();
             VideoColorUpdate();
             langBox_EnabledChanged(null, null);
+
+
+            //if (IconsPanel.DeviceDpi >= (int)EntranceForm.DPI.P150) 
+            //{
+            //var coll = IconsPanel.Columns;
+            //coll.BeginUpdate();
+            //coll[0].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
+            //coll[1].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
+            //coll[2].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
+
+            //coll[0].Width = 65F;
+            //coll[1].Width = 35F;
+            //coll[2].Width = 45F;
+
+            //IconsPanel.Columns.Insert()
+            //}
         }
 
         private void SetLeftSidePanelRegion()
