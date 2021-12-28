@@ -268,13 +268,13 @@ namespace RSI_X_Desktop.forms
             // 
             this.audioLabel.BackColor = System.Drawing.Color.Transparent;
             this.audioLabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.IconsPanel.SetColumn(this.audioLabel, 1);
+            this.IconsPanel.SetColumn(this.audioLabel, 0);
             this.audioLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.audioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.audioLabel.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
             this.audioLabel.ItemAppearance.Normal.BorderThickness = 0F;
             this.audioLabel.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.audioLabel.Location = new System.Drawing.Point(149, 0);
+            this.audioLabel.Location = new System.Drawing.Point(0, 0);
             this.audioLabel.Margin = new System.Windows.Forms.Padding(0);
             this.audioLabel.Name = "audioLabel";
             this.IconsPanel.SetRow(this.audioLabel, 0);
@@ -374,14 +374,14 @@ namespace RSI_X_Desktop.forms
             this.videoLabel.AutoSizeInLayoutControl = true;
             this.videoLabel.BackColor = System.Drawing.Color.Transparent;
             this.videoLabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.IconsPanel.SetColumn(this.videoLabel, 0);
+            this.IconsPanel.SetColumn(this.videoLabel, 1);
             this.videoLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.videoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.videoLabel.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
             this.videoLabel.ItemAppearance.Normal.BorderThickness = 0F;
             this.videoLabel.ItemAppearance.Normal.FillColor = System.Drawing.Color.WhiteSmoke;
             this.videoLabel.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
-            this.videoLabel.Location = new System.Drawing.Point(0, 0);
+            this.videoLabel.Location = new System.Drawing.Point(80, 0);
             this.videoLabel.Margin = new System.Windows.Forms.Padding(0);
             this.videoLabel.Name = "videoLabel";
             this.IconsPanel.SetRow(this.videoLabel, 0);
