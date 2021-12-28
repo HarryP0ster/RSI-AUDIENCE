@@ -14,10 +14,17 @@ namespace RSI_X_Desktop.forms
 {
     public partial class EntranceForm : DevExpress.XtraEditors.XtraForm
     {
+        public enum DPI 
+        {
+            P100 = 96,
+            P125 = 120,
+            P150 = 144
+        }
         LoginWnd loginWnd;
         
         public EntranceForm()
         {
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             InitializeComponent();
         }
 
@@ -27,6 +34,7 @@ namespace RSI_X_Desktop.forms
             panel1.Controls.Clear();
             panel1.ColumnStyles.Clear();
             panel1.RowStyles.Clear();
+
             Controls.Remove(LoginBackground);
             panel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             panel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100));

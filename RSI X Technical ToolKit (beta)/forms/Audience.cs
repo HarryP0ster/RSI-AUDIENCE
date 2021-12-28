@@ -32,6 +32,7 @@ namespace RSI_X_Desktop
         public Audience()
         {
             InitializeComponent();
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
         }
 
 

@@ -13,9 +13,12 @@ namespace RSI_X_Desktop.forms.HelpingClass
 {
     public partial class LoginWnd : DevExpress.XtraEditors.XtraForm
     {
+        public Font LargeFont = new Font("Bahnschrift Condensed", 22F);
+        public Font SmallFont = new Font("Bahnschrift Condensed", 16F);
         internal InputWnd loginInput;
         public LoginWnd()
         {
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             InitializeComponent();
         }
 
@@ -25,6 +28,11 @@ namespace RSI_X_Desktop.forms.HelpingClass
             Owner.LocationChanged += delegate { Location = new Point(Owner.Location.X + Owner.Width/2 - Width/2, Owner.Location.Y + Owner.Height/2 - 2*Height/5); };
             (loginInput = new()).Show(this);
             SuspendLayout();
+
+            loginInput.NewTextBox.Font = loginInput.DeviceDpi >= (int)EntranceForm.DPI.P125 ? 
+                    SmallFont : LargeFont;
+
+            loginInput.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
         }
 
         private void svgImageBox2_Click(object sender, EventArgs e)

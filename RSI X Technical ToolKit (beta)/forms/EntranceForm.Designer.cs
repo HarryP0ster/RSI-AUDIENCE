@@ -111,10 +111,10 @@ namespace RSI_X_Desktop.forms
             this.LocalTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LocalTimeLabel.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LocalTimeLabel.ForeColor = System.Drawing.Color.White;
-            this.LocalTimeLabel.Location = new System.Drawing.Point(4, 216);
+            this.LocalTimeLabel.Location = new System.Drawing.Point(4, 239);
             this.LocalTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LocalTimeLabel.Name = "LocalTimeLabel";
-            this.LocalTimeLabel.Size = new System.Drawing.Size(992, 42);
+            this.LocalTimeLabel.Size = new System.Drawing.Size(992, 64);
             this.LocalTimeLabel.TabIndex = 94;
             this.LocalTimeLabel.Text = "Local Time";
             this.LocalTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,10 +126,10 @@ namespace RSI_X_Desktop.forms
             this.TimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TimeLabel.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TimeLabel.ForeColor = System.Drawing.Color.White;
-            this.TimeLabel.Location = new System.Drawing.Point(4, 139);
+            this.TimeLabel.Location = new System.Drawing.Point(4, 124);
             this.TimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(992, 77);
+            this.TimeLabel.Size = new System.Drawing.Size(992, 115);
             this.TimeLabel.TabIndex = 93;
             this.TimeLabel.Text = "12:00";
             this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,11 +149,11 @@ namespace RSI_X_Desktop.forms
             this.tableLayoutPanel1.Controls.Add(this.svgImageBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.svgImageBox2, 5, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 261);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 306);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(994, 411);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(994, 366);
             this.tableLayoutPanel1.TabIndex = 95;
             // 
             // JoinBtn
@@ -166,7 +166,7 @@ namespace RSI_X_Desktop.forms
             this.JoinBtn.Location = new System.Drawing.Point(409, 65);
             this.JoinBtn.Margin = new System.Windows.Forms.Padding(3, 65, 3, 65);
             this.JoinBtn.Name = "JoinBtn";
-            this.JoinBtn.Size = new System.Drawing.Size(172, 281);
+            this.JoinBtn.Size = new System.Drawing.Size(172, 236);
             this.JoinBtn.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.JoinBtn.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("JoinBtn.SvgImage")));
             this.JoinBtn.TabIndex = 1;
@@ -181,7 +181,7 @@ namespace RSI_X_Desktop.forms
             this.svgImageBox1.Location = new System.Drawing.Point(181, 65);
             this.svgImageBox1.Margin = new System.Windows.Forms.Padding(3, 65, 3, 65);
             this.svgImageBox1.Name = "svgImageBox1";
-            this.svgImageBox1.Size = new System.Drawing.Size(172, 281);
+            this.svgImageBox1.Size = new System.Drawing.Size(172, 236);
             this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
             this.svgImageBox1.TabIndex = 2;
@@ -195,7 +195,7 @@ namespace RSI_X_Desktop.forms
             this.svgImageBox2.Location = new System.Drawing.Point(637, 65);
             this.svgImageBox2.Margin = new System.Windows.Forms.Padding(3, 65, 3, 65);
             this.svgImageBox2.Name = "svgImageBox2";
-            this.svgImageBox2.Size = new System.Drawing.Size(172, 281);
+            this.svgImageBox2.Size = new System.Drawing.Size(172, 236);
             this.svgImageBox2.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.svgImageBox2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox2.SvgImage")));
             this.svgImageBox2.TabIndex = 3;
