@@ -42,20 +42,20 @@ namespace RSI_X_Desktop.forms
             langBox_EnabledChanged(null, null);
 
 
-            if (IconsPanel.DeviceDpi >= (int)EntranceForm.DPI.P150) 
-            {
-                //var coll = IconsPanel.Columns;
-                //coll.BeginUpdate();
-                //coll[0].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
-                //coll[1].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
-                //coll[2].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
+            //if (IconsPanel.DeviceDpi >= (int)EntranceForm.DPI.P150) 
+            //{
+            //var coll = IconsPanel.Columns;
+            //coll.BeginUpdate();
+            //coll[0].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
+            //coll[1].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
+            //coll[2].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
 
-                //coll[0].Width = 65F;
-                //coll[1].Width = 35F;
-                //coll[2].Width = 45F;
+            //coll[0].Width = 65F;
+            //coll[1].Width = 35F;
+            //coll[2].Width = 45F;
 
-                //IconsPanel.Columns.Insert()
-            }
+            //IconsPanel.Columns.Insert()
+            //}
         }
 
         private void SetLeftSidePanelRegion()
