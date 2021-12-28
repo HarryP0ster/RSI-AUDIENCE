@@ -26,8 +26,8 @@ namespace RSI_X_Desktop.forms
         private void ShowLogin()
         {
             SendMessage(this.Handle, 11, false, 0);
-            Fade.Controls.Remove(panel1);
-            Fade.Controls.Add(LoginTable);
+            formTheme1.Controls.Remove(panel1);
+            formTheme1.Controls.Add(LoginTable);
             SendMessage(this.Handle, 11, true, 0);
             Refresh();
             loginWnd.Show(this);
@@ -49,8 +49,6 @@ namespace RSI_X_Desktop.forms
                 loginWnd.Visible = Visible;
                 loginWnd.loginInput.Visible = Visible;
             }
-
-            Fade.BackgroundImage = Visible ? Properties.Resources.BckgFade : null;
         }
 
         private void InitLoginTable()
@@ -62,10 +60,13 @@ namespace RSI_X_Desktop.forms
             LoginBackground.Anchor = AnchorStyles.Bottom;
             LoginBackground.Visible = true;
             backButton.Visible = true;
+            backButton.BackColor = Color.Transparent;
             LoginTable.Controls.Add(LoginBackground, 0, 0);
             LoginTable.Controls.Add(backButton, 0, 1);
             LoginTable.Dock = DockStyle.Fill;
-            LoginTable.BackColor = Color.Transparent;
+            LoginTable.BackgroundImage = Properties.Resources.BckgFade;
+            LoginTable.BackgroundImageLayout = ImageLayout.Stretch;
+            LoginTable.BackColor = Color.FromArgb(97, 54, 79);
         }
 
         private void JoinBtn_Click(object sender, EventArgs e)
@@ -107,8 +108,8 @@ namespace RSI_X_Desktop.forms
         {
             loginWnd.Hide();
             SendMessage(this.Handle, 11, false, 0);
-            Fade.Controls.Remove(LoginTable);
-            Fade.Controls.Add(panel1);
+            formTheme1.Controls.Remove(LoginTable);
+            formTheme1.Controls.Add(panel1);
             SendMessage(this.Handle, 11, true, 0);
             Refresh();
         }

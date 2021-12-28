@@ -32,8 +32,6 @@ namespace RSI_X_Desktop.forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceForm));
             this.formTheme1 = new ReaLTaiizor.Forms.FormTheme();
-            this.Background = new System.Windows.Forms.Panel();
-            this.Fade = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LocalTimeLabel = new ReaLTaiizor.Controls.MoonLabel();
             this.TimeLabel = new ReaLTaiizor.Controls.MoonLabel();
@@ -45,8 +43,6 @@ namespace RSI_X_Desktop.forms
             this.LoginBackground = new DevExpress.XtraEditors.SvgImageBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.formTheme1.SuspendLayout();
-            this.Background.SuspendLayout();
-            this.Fade.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JoinBtn)).BeginInit();
@@ -58,7 +54,7 @@ namespace RSI_X_Desktop.forms
             // formTheme1
             // 
             this.formTheme1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(54)))), ((int)(((byte)(79)))));
-            this.formTheme1.Controls.Add(this.Background);
+            this.formTheme1.Controls.Add(this.panel1);
             this.formTheme1.Controls.Add(this.controlBox1);
             this.formTheme1.Controls.Add(this.LoginBackground);
             this.formTheme1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -75,33 +71,10 @@ namespace RSI_X_Desktop.forms
             this.formTheme1.TabIndex = 0;
             this.formTheme1.Text = "RSI EXCHANGE AUDIENCE";
             // 
-            // Background
-            // 
-            this.Background.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.RSI_TEXTURE_COMPRESSED;
-            this.Background.Controls.Add(this.Fade);
-            this.Background.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Background.Location = new System.Drawing.Point(0, 25);
-            this.Background.Margin = new System.Windows.Forms.Padding(0);
-            this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(1000, 675);
-            this.Background.TabIndex = 97;
-            // 
-            // Fade
-            // 
-            this.Fade.BackColor = System.Drawing.Color.Transparent;
-            this.Fade.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.BckgFade;
-            this.Fade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Fade.Controls.Add(this.panel1);
-            this.Fade.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Fade.Location = new System.Drawing.Point(0, 0);
-            this.Fade.Margin = new System.Windows.Forms.Padding(0);
-            this.Fade.Name = "Fade";
-            this.Fade.Size = new System.Drawing.Size(1000, 675);
-            this.Fade.TabIndex = 96;
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(54)))), ((int)(((byte)(79)))));
+            this.panel1.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.BckgFade;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.ColumnCount = 1;
             this.panel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -109,7 +82,7 @@ namespace RSI_X_Desktop.forms
             this.panel1.Controls.Add(this.TimeLabel, 0, 1);
             this.panel1.Controls.Add(this.tableLayoutPanel1, 0, 3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
             this.panel1.RowCount = 4;
             this.panel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -276,8 +249,6 @@ namespace RSI_X_Desktop.forms
             this.Shown += new System.EventHandler(this.EntranceForm_Shown);
             this.VisibleChanged += new System.EventHandler(this.EntranceForm_VisibleChanged);
             this.formTheme1.ResumeLayout(false);
-            this.Background.ResumeLayout(false);
-            this.Fade.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -300,9 +271,7 @@ namespace RSI_X_Desktop.forms
         private System.Windows.Forms.TableLayoutPanel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox2;
-        private System.Windows.Forms.Panel Background;
         private DevExpress.XtraEditors.SvgImageBox LoginBackground;
         private DevExpress.XtraEditors.SvgImageBox backButton;
-        private System.Windows.Forms.Panel Fade;
     }
 }
