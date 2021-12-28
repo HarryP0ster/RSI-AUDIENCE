@@ -26,6 +26,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
         {
             Location = Owner.Location;
             Owner.LocationChanged += delegate { Location = Owner.Location; };
+            Owner.VisibleChanged += delegate { Visible = Owner.Visible; };
         }
 
         private void NewTextBox_Click(object sender, EventArgs e)

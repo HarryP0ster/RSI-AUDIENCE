@@ -104,7 +104,7 @@ namespace RSI_X_Desktop
             //RemoteWnd = PBRemoteVideo.Handle;
             UpdateLangComboBox();
 
-            //ExternWnd.mSwitchOriginal.Checked = true;
+            ExternWnd.mSwitchOriginal_CheckedChanged(null, null);
 
             AgoraObject.JoinChannelHost(AgoraObject.GetHostName(), AgoraObject.GetHostToken(), 0, "");
             //ExternWnd.labelAudio.ForeColor = Color.Red;

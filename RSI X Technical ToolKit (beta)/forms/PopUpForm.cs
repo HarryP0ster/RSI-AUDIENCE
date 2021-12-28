@@ -24,8 +24,8 @@ namespace RSI_X_Desktop.forms
 
         private static int oldVolumeOut;
         private static string oldSpeaker = null;
-        Padding DefaultMargin = new Padding(15, 15, 15, 15);
-        Padding Hovered = new Padding(5, 5, 5, 5);
+        Padding DefaultMargin = new Padding(15);
+        Padding Hovered = new Padding(13);
 
         public PopUpForm()
         {
@@ -238,6 +238,7 @@ namespace RSI_X_Desktop.forms
         private void ApplyBtn_MouseEnter(object sender, EventArgs e)
         {
             ApplyBtn.Margin = Hovered;
+            ApplyBtn.Focus();
         }
 
         private void ApplyBtn_MouseLeave(object sender, EventArgs e)
@@ -248,6 +249,7 @@ namespace RSI_X_Desktop.forms
         private void ConfirmBtn_MouseEnter(object sender, EventArgs e)
         {
             ConfirmBtn.Margin = Hovered;
+            ConfirmBtn.Focus();
         }
 
         private void ConfirmBtn_MouseLeave(object sender, EventArgs e)
@@ -258,6 +260,7 @@ namespace RSI_X_Desktop.forms
         private void CancelBtn_MouseEnter(object sender, EventArgs e)
         {
             CancelBtn.Margin = Hovered;
+            CancelBtn.Focus();
         }
 
         private void CancelBtn_MouseLeave(object sender, EventArgs e)

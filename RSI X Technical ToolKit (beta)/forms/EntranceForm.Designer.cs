@@ -38,19 +38,21 @@ namespace RSI_X_Desktop.forms
             this.TimeLabel = new ReaLTaiizor.Controls.MoonLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.JoinBtn = new DevExpress.XtraEditors.SvgImageBox();
-            this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
             this.svgImageBox2 = new DevExpress.XtraEditors.SvgImageBox();
+            this.backButton = new DevExpress.XtraEditors.SvgImageBox();
             this.controlBox1 = new ReaLTaiizor.Controls.ControlBox();
             this.LoginBackground = new DevExpress.XtraEditors.SvgImageBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
             this.formTheme1.SuspendLayout();
             this.Background.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JoinBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginBackground)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // formTheme1
@@ -76,7 +78,7 @@ namespace RSI_X_Desktop.forms
             // Background
             // 
             this.Background.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.RSI_TEXTURE_COMPRESSED;
-            this.Background.Controls.Add(this.panel1);
+            this.Background.Controls.Add(this.panel2);
             this.Background.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Background.Location = new System.Drawing.Point(0, 25);
             this.Background.Name = "Background";
@@ -86,7 +88,6 @@ namespace RSI_X_Desktop.forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.BckgFade;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.ColumnCount = 1;
             this.panel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -137,17 +138,17 @@ namespace RSI_X_Desktop.forms
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 7;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.JoinBtn, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.svgImageBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.svgImageBox2, 5, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.JoinBtn, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.svgImageBox2, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.backButton, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 261);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -163,43 +164,44 @@ namespace RSI_X_Desktop.forms
             this.JoinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JoinBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.JoinBtn.Location = new System.Drawing.Point(409, 65);
+            this.JoinBtn.Location = new System.Drawing.Point(286, 65);
             this.JoinBtn.Margin = new System.Windows.Forms.Padding(3, 65, 3, 65);
             this.JoinBtn.Name = "JoinBtn";
-            this.JoinBtn.Size = new System.Drawing.Size(172, 281);
+            this.JoinBtn.Size = new System.Drawing.Size(182, 281);
             this.JoinBtn.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.JoinBtn.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("JoinBtn.SvgImage")));
             this.JoinBtn.TabIndex = 1;
             this.JoinBtn.Text = "svgImageBox1";
             this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_Click);
             // 
-            // svgImageBox1
-            // 
-            this.svgImageBox1.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.ButtonShadow;
-            this.svgImageBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.svgImageBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.svgImageBox1.Location = new System.Drawing.Point(181, 65);
-            this.svgImageBox1.Margin = new System.Windows.Forms.Padding(3, 65, 3, 65);
-            this.svgImageBox1.Name = "svgImageBox1";
-            this.svgImageBox1.Size = new System.Drawing.Size(172, 281);
-            this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
-            this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
-            this.svgImageBox1.TabIndex = 2;
-            this.svgImageBox1.Text = "svgImageBox1";
-            // 
             // svgImageBox2
             // 
             this.svgImageBox2.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.ButtonShadow;
             this.svgImageBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.svgImageBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.svgImageBox2.Location = new System.Drawing.Point(637, 65);
+            this.svgImageBox2.Location = new System.Drawing.Point(524, 65);
             this.svgImageBox2.Margin = new System.Windows.Forms.Padding(3, 65, 3, 65);
             this.svgImageBox2.Name = "svgImageBox2";
-            this.svgImageBox2.Size = new System.Drawing.Size(172, 281);
+            this.svgImageBox2.Size = new System.Drawing.Size(182, 281);
             this.svgImageBox2.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.svgImageBox2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox2.SvgImage")));
             this.svgImageBox2.TabIndex = 3;
             this.svgImageBox2.Text = "svgImageBox2";
+            // 
+            // backButton
+            // 
+            this.backButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backButton.ItemAppearance.Normal.FillColor = System.Drawing.Color.Silver;
+            this.backButton.Location = new System.Drawing.Point(3, 288);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(120, 120);
+            this.backButton.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
+            this.backButton.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("backButton.SvgImage")));
+            this.backButton.TabIndex = 4;
+            this.backButton.Text = "svgImageBox1";
+            this.backButton.Visible = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // controlBox1
             // 
@@ -226,16 +228,29 @@ namespace RSI_X_Desktop.forms
             this.LoginBackground.BackColor = System.Drawing.Color.Transparent;
             this.LoginBackground.Enabled = false;
             this.LoginBackground.ItemAppearance.Normal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.LoginBackground.Location = new System.Drawing.Point(740, -38);
+            this.LoginBackground.Location = new System.Drawing.Point(373, -16);
             this.LoginBackground.Name = "LoginBackground";
             this.LoginBackground.Size = new System.Drawing.Size(500, 490);
             this.LoginBackground.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.LoginBackground.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("LoginBackground.SvgImage")));
             this.LoginBackground.TabIndex = 0;
+            this.LoginBackground.Visible = false;
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.BckgFade;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1000, 675);
+            this.panel2.TabIndex = 96;
             // 
             // EntranceForm
             // 
@@ -262,9 +277,10 @@ namespace RSI_X_Desktop.forms
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.JoinBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginBackground)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -279,9 +295,10 @@ namespace RSI_X_Desktop.forms
         private ReaLTaiizor.Controls.MoonLabel LocalTimeLabel;
         private System.Windows.Forms.TableLayoutPanel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private DevExpress.XtraEditors.SvgImageBox svgImageBox1;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox2;
         private System.Windows.Forms.Panel Background;
         private DevExpress.XtraEditors.SvgImageBox LoginBackground;
+        private DevExpress.XtraEditors.SvgImageBox backButton;
+        private System.Windows.Forms.Panel panel2;
     }
 }

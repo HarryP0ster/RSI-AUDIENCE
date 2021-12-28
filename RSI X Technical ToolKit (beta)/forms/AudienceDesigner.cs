@@ -14,8 +14,7 @@ namespace RSI_X_Desktop.forms
 {
     public partial class AudienceDesigner : DevExpress.XtraEditors.XtraForm
     {
-        private bool IsOriginal = true;
-        internal bool turnOrigRect;
+        private bool IsOriginal = false;
 
         public AudienceDesigner()
         {
@@ -131,13 +130,13 @@ namespace RSI_X_Desktop.forms
                 AgoraObject.MuteHostAudioStream(true);
                 AgoraObject.MuteSrcAudioStream(AgoraObject.IsAllRemoteAudioMute);
                 langBox.Focus();
-                turnOrig.ItemAppearance.Normal.FillColor = Color.WhiteSmoke;
+                turnOrig.ItemAppearance.Normal.FillColor = Color.Empty;
             }
             else
             {
                 AgoraObject.MuteHostAudioStream(AgoraObject.IsAllRemoteAudioMute);
                 AgoraObject.MuteSrcAudioStream(true);
-                turnOrig.ItemAppearance.Normal.FillColor = Color.Empty;
+                turnOrig.ItemAppearance.Normal.FillColor = Color.White;
             }
             //mSwitchOriginal.Checked = !IsOriginal;
             DebugWriter.WriteTime($"change floor channel: {IsOriginal}");
