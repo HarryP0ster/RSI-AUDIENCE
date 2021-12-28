@@ -24,6 +24,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             Location = new Point(Owner.Location.X + Owner.Width / 2 - Width / 2, Owner.Location.Y + Owner.Height / 2 - 2 * Height / 5);
             Owner.LocationChanged += delegate { Location = new Point(Owner.Location.X + Owner.Width/2 - Width/2, Owner.Location.Y + Owner.Height/2 - 2*Height/5); };
             (loginInput = new()).Show(this);
+            SuspendLayout();
         }
 
         private void svgImageBox2_Click(object sender, EventArgs e)

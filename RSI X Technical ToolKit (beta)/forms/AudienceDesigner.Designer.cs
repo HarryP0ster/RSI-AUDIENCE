@@ -156,11 +156,11 @@ namespace RSI_X_Desktop.forms
             this.RoomNameLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.RoomNameLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RoomNameLabel.ForeColor = System.Drawing.Color.White;
-            this.RoomNameLabel.Location = new System.Drawing.Point(35, 42);
+            this.RoomNameLabel.Location = new System.Drawing.Point(35, 43);
             this.RoomNameLabel.Margin = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.RoomNameLabel.Name = "RoomNameLabel";
             this.tablePanel1.SetRow(this.RoomNameLabel, 1);
-            this.RoomNameLabel.Size = new System.Drawing.Size(207, 48);
+            this.RoomNameLabel.Size = new System.Drawing.Size(168, 39);
             this.RoomNameLabel.TabIndex = 5;
             this.RoomNameLabel.Text = "Room Name";
             this.RoomNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -245,8 +245,10 @@ namespace RSI_X_Desktop.forms
             // signOff
             // 
             this.signOff.BackColor = System.Drawing.Color.Transparent;
+            this.signOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.IconsPanel.SetColumn(this.signOff, 4);
             this.signOff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.signOff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.signOff.ItemAppearance.Normal.BorderColor = System.Drawing.Color.White;
             this.signOff.ItemAppearance.Normal.BorderThickness = 0F;
             this.signOff.Location = new System.Drawing.Point(323, 0);

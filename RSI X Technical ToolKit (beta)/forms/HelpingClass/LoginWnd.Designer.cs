@@ -45,6 +45,8 @@ namespace RSI_X_Desktop.forms.HelpingClass
             // LoginTextBox
             // 
             this.LoginTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.LoginTextBox.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.TextBoxShadow;
+            this.LoginTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tablePanel1.SetColumn(this.LoginTextBox, 0);
             this.LoginTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoginTextBox.ItemAppearance.Normal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(67)))), ((int)(((byte)(80)))));
@@ -80,6 +82,8 @@ namespace RSI_X_Desktop.forms.HelpingClass
             // svgImageBox2
             // 
             this.svgImageBox2.BackColor = System.Drawing.Color.Transparent;
+            this.svgImageBox2.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.TextBoxShadow;
+            this.svgImageBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tablePanel1.SetColumn(this.svgImageBox2, 0);
             this.svgImageBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.svgImageBox2.Dock = System.Windows.Forms.DockStyle.Fill;

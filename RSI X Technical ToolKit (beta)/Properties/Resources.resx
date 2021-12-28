@@ -121,6 +121,12 @@
   <data name="apply" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apply.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="BckgFade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BckgFade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ButtonShadow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ButtonShadow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -163,6 +169,9 @@
   <data name="Muted" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Muted.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="new_meeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new_meeting.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="NicknameTextBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NicknameTextBox.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -193,8 +202,14 @@
   <data name="RSI_TEXTURE_COMPRESSED" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RSI_TEXTURE_COMPRESSED.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="schedule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\schedule.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="sign_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign_off.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextBoxShadow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TextBoxShadow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="video" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\video.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
