@@ -15,8 +15,7 @@ namespace RSI_X_Desktop.forms
     public partial class EntranceForm : DevExpress.XtraEditors.XtraForm
     {
         LoginWnd loginWnd;
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, Int32 wMsg, bool wParam, Int32 lParam);
+        TableLayoutPanel LoginTable = new();
         public EntranceForm()
         {
             InitializeComponent();
@@ -24,25 +23,9 @@ namespace RSI_X_Desktop.forms
 
         private void ShowLogin()
         {
-            SendMessage(this.Handle, 11, false, 0);
-            panel1.Controls.Clear();
-            panel1.ColumnStyles.Clear();
-            panel1.RowStyles.Clear();
-            Controls.Remove(LoginBackground);
-            panel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
-            panel1.RowStyles.Add(new RowStyle(SizeType.Percent, 87));
-            panel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13));
+            Fade.Controls.Remove(panel1);
+            Fade.Controls.Add(LoginTable);
 
-            panel1.Controls.Add(LoginBackground, 0, 0);
-            panel1.Controls.Add(backButton, 0, 1);
-            backButton.Dock = DockStyle.Left;
-            LoginBackground.Anchor = AnchorStyles.Bottom;
-
-            LoginBackground.Visible = true;
-            backButton.Visible = true;
-
-            SendMessage(this.Handle, 11, true, 0);
-            Refresh();
             loginWnd.Show(this);
         }
 
@@ -51,6 +34,8 @@ namespace RSI_X_Desktop.forms
             JoinBtn.Location = new Point(Width/2 - JoinBtn.Width/2, Height - Height / 2);
             JoinBtn.BringToFront();
             timer1.Start();
+            Controls.Remove(LoginBackground);
+            InitLoginTable();
         }
 
         private void EntranceForm_VisibleChanged(object sender, EventArgs e)
@@ -62,6 +47,21 @@ namespace RSI_X_Desktop.forms
             }
 
             Fade.BackgroundImage = Visible ? Properties.Resources.BckgFade : null;
+        }
+
+        private void InitLoginTable()
+        {
+            LoginTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            LoginTable.RowStyles.Add(new RowStyle(SizeType.Percent, 87));
+            LoginTable.RowStyles.Add(new RowStyle(SizeType.Percent, 13));
+            backButton.Dock = DockStyle.Left;
+            LoginBackground.Anchor = AnchorStyles.Bottom;
+            LoginBackground.Visible = true;
+            backButton.Visible = true;
+            LoginTable.Controls.Add(LoginBackground, 0, 0);
+            LoginTable.Controls.Add(backButton, 0, 1);
+            LoginTable.Dock = DockStyle.Fill;
+            LoginTable.BackColor = Color.Transparent;
         }
 
         private void JoinBtn_Click(object sender, EventArgs e)
@@ -102,34 +102,9 @@ namespace RSI_X_Desktop.forms
         private void backButton_Click(object sender, EventArgs e)
         {
             loginWnd.Hide();
-            SendMessage(this.Handle, 11, false, 0);
 
-            LoginBackground.Visible = false;
-            backButton.Visible = false;
-            panel1.Controls.Clear();
-            panel1.ColumnStyles.Clear();
-            panel1.RowStyles.Clear();
-
-            this.panel1.ColumnCount = 1;
-            this.panel1.RowCount = 4;
-
-            this.panel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-
-            this.panel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.panel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.panel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-
-            this.panel1.Controls.Add(this.LocalTimeLabel, 0, 2);
-            this.panel1.Controls.Add(this.TimeLabel, 0, 1);
-            this.panel1.Controls.Add(this.tableLayoutPanel1, 0, 3);
-
-            this.tableLayoutPanel1.Controls.Add(this.JoinBtn, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.svgImageBox2, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.backButton, 0, 0);
-
-            SendMessage(this.Handle, 11, true, 0);
-            Refresh();
+            Fade.Controls.Remove(LoginTable);
+            Fade.Controls.Add(panel1);
         }
     }
 }
