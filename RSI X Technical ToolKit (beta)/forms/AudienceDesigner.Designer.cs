@@ -29,6 +29,7 @@ namespace RSI_X_Desktop.forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AudienceDesigner));
             this.MainLayout = new DevExpress.Utils.Layout.TablePanel();
             this.LeftSidePanel = new DevExpress.XtraEditors.SidePanel();
@@ -45,6 +46,7 @@ namespace RSI_X_Desktop.forms
             this.turnOrig = new DevExpress.XtraEditors.SvgImageBox();
             this.devicesLabel = new DevExpress.XtraEditors.SvgImageBox();
             this.videoLabel = new DevExpress.XtraEditors.SvgImageBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MainLayout)).BeginInit();
             this.MainLayout.SuspendLayout();
             this.LeftSidePanel.SuspendLayout();
@@ -393,6 +395,11 @@ namespace RSI_X_Desktop.forms
             this.videoLabel.Click += new System.EventHandler(this.labelVideo_Click);
             this.videoLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.videoLabel_MouseMove);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // AudienceDesigner
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
@@ -454,5 +461,6 @@ namespace RSI_X_Desktop.forms
         internal DevExpress.XtraEditors.SvgImageBox videoLabel;
         internal DevExpress.XtraEditors.SvgImageBox devicesLabel;
         internal DevExpress.XtraEditors.SvgImageBox turnOrig;
+        private System.Windows.Forms.Timer timer1;
     }
 }

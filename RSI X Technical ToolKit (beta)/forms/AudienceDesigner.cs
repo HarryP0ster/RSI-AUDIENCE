@@ -15,7 +15,7 @@ namespace RSI_X_Desktop.forms
     public partial class AudienceDesigner : DevExpress.XtraEditors.XtraForm
     {
         private bool IsOriginal = false;
-
+        bool canSelect = true;
         public AudienceDesigner()
         {
             InitializeComponent();
@@ -92,8 +92,12 @@ namespace RSI_X_Desktop.forms
 
         internal void labelMicrophone_Click(object sender, EventArgs e)
         {
-            AgoraObject.MuteAllRemoteAudioStream(!AgoraObject.IsAllRemoteAudioMute);
-            AudioColorUpdate();
+            if (canSelect)
+            {
+                canSelect = false;
+                AgoraObject.MuteAllRemoteAudioStream(!AgoraObject.IsAllRemoteAudioMute);
+                timer1.Start();
+            }
         }
 
         private void AudioColorUpdate()
@@ -106,7 +110,6 @@ namespace RSI_X_Desktop.forms
                 Color.Empty :
                 Color.White;
 
-            audioLabel.Enabled = false; //prevents crash
             audioLabel.SvgImage = AgoraObject.IsAllRemoteAudioMute ?
                 SvgImage.FromFile("Resources\\Muted.svg") :
                 SvgImage.FromFile("Resources\\mute.svg");
@@ -121,7 +124,6 @@ namespace RSI_X_Desktop.forms
                 Color.Empty :
                 Color.White;
 
-            videoLabel.Enabled = false; //prevents crash
             videoLabel.SvgImage = AgoraObject.IsAllRemoteVideoMute ?
                 SvgImage.FromFile("Resources\\Hidden.svg") :
                 SvgImage.FromFile("Resources\\video.svg");
@@ -163,9 +165,13 @@ namespace RSI_X_Desktop.forms
         }
         internal void labelVideo_Click(object sender, EventArgs e)
         {
-            AgoraObject.MuteAllRemoteVideoStream(!AgoraObject.IsAllRemoteVideoMute);
-            (Owner as Audience).streamsTable.Visible = !AgoraObject.IsAllRemoteVideoMute;
-            VideoColorUpdate();
+            if (canSelect)
+            {
+                canSelect = false;
+                AgoraObject.MuteAllRemoteVideoStream(!AgoraObject.IsAllRemoteVideoMute);
+                (Owner as Audience).streamsTable.Visible = !AgoraObject.IsAllRemoteVideoMute;
+                timer1.Start();
+            }
         }
         public void HomeBtn_Click(object sender, EventArgs e)
         {
@@ -283,6 +289,18 @@ namespace RSI_X_Desktop.forms
                 bool ret = AgoraObject.JoinChannelSrc(InterRoom);
                 AgoraObject.MuteSrcAudioStream(false);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Point oldPos = Cursor.Position;
+            timer1.Stop();
+            Cursor.Position = PointToScreen(new Point(Width / 2, Height / 2));
+            AudioColorUpdate();
+            VideoColorUpdate();
+            Cursor.Position = oldPos;
+            System.Threading.Thread.Sleep(100);
+            canSelect = true;
         }
     }
 }
