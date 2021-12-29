@@ -217,10 +217,11 @@ namespace RSI_X_Desktop.forms
             this.langBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.langBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.langBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.langBox.DropDownWidth = 74;
             this.langBox.Enabled = false;
-            this.langBox.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 16.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.langBox.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.langBox.ForeColor = System.Drawing.Color.White;
-            this.langBox.ItemHeight = 20;
+            this.langBox.ItemHeight = 22;
             this.langBox.ItemHighlightColor = System.Drawing.Color.Transparent;
             this.langBox.LineColorA = System.Drawing.Color.Transparent;
             this.langBox.LineColorB = System.Drawing.Color.Transparent;
@@ -231,11 +232,11 @@ namespace RSI_X_Desktop.forms
             this.langBox.ListForeColor = System.Drawing.Color.Black;
             this.langBox.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.langBox.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.langBox.Location = new System.Drawing.Point(1071, 49);
+            this.langBox.Location = new System.Drawing.Point(1071, 48);
             this.langBox.Margin = new System.Windows.Forms.Padding(20, 10, 10, 3);
             this.langBox.Name = "langBox";
             this.IconsPanel.SetRow(this.langBox, 0);
-            this.langBox.Size = new System.Drawing.Size(71, 26);
+            this.langBox.Size = new System.Drawing.Size(71, 28);
             this.langBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.None;
             this.langBox.StartIndex = 0;
             this.langBox.TabIndex = 12;
