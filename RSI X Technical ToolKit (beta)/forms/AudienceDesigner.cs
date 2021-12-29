@@ -40,6 +40,14 @@ namespace RSI_X_Desktop.forms
             VideoColorUpdate();
             langBox_EnabledChanged(null, null);
 
+            if (langBox.DeviceDpi >= (int)Constants.DPI.P175)
+                langBox.Font = Constants.Bahnschrift12;
+            else if (langBox.DeviceDpi >= (int)Constants.DPI.P150)
+                langBox.Font = Constants.Bahnschrift14;
+            else if (langBox.DeviceDpi >= (int)Constants.DPI.P125)
+                langBox.Font = Constants.Bahnschrift16;
+            else if (langBox.DeviceDpi >= (int)Constants.DPI.P100)
+                langBox.Font = Constants.Bahnschrift22;
 
             //if (IconsPanel.DeviceDpi >= (int)EntranceForm.DPI.P150) 
             //{

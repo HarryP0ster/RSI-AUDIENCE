@@ -20,6 +20,15 @@ namespace RSI_X_Desktop.forms.HelpingClass
         public InputWnd()
         {
             InitializeComponent();
+
+            if (NewTextBox.DeviceDpi >= (int)Constants.DPI.P175)
+                NewTextBox.Font = Constants.Bahnschrift16;
+            else if (NewTextBox.DeviceDpi >= (int)Constants.DPI.P150)
+                NewTextBox.Font = Constants.Bahnschrift18;
+            else if (NewTextBox.DeviceDpi >= (int)Constants.DPI.P125)
+                NewTextBox.Font = Constants.Bahnschrift20;
+            else if (NewTextBox.DeviceDpi >= (int)Constants.DPI.P100)
+                NewTextBox.Font = Constants.Bahnschrift24;
         }
 
         private void InputWnd_Load(object sender, EventArgs e)

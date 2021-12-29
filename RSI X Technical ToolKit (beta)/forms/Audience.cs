@@ -80,6 +80,7 @@ namespace RSI_X_Desktop
             TarLang = AgoraObject.GetLangCollection();
             List<string> test = TarLang;
             ExternWnd.langBox.Items.Clear();
+
             foreach (string lang in TarLang)
             {
                 // only EN_S_###

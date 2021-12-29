@@ -14,12 +14,6 @@ namespace RSI_X_Desktop.forms
 {
     public partial class EntranceForm : DevExpress.XtraEditors.XtraForm
     {
-        public enum DPI 
-        {
-            P100 = 96,
-            P125 = 120,
-            P150 = 144
-        }
         LoginWnd loginWnd;
         TableLayoutPanel LoginTable = new();
         [DllImport("user32.dll")]
