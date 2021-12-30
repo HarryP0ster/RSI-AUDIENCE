@@ -20,6 +20,8 @@ namespace RSI_X_Desktop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new EntranceForm());
+
+            AgoraObject.Release();
         }
     }
 }

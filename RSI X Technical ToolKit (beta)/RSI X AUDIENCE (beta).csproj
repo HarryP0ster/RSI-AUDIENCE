@@ -173,6 +173,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\agorartc\agorartc.csproj" />
     <ProjectReference Include="..\agorartc\agorartc\agorartc\agorartc.csproj" />
   </ItemGroup>
 

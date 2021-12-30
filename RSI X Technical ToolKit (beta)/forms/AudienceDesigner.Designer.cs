@@ -158,11 +158,11 @@ namespace RSI_X_Desktop.forms
             this.RoomNameLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.RoomNameLabel.Font = new System.Drawing.Font("Bahnschrift SemiLight SemiConde", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RoomNameLabel.ForeColor = System.Drawing.Color.White;
-            this.RoomNameLabel.Location = new System.Drawing.Point(35, 43);
+            this.RoomNameLabel.Location = new System.Drawing.Point(35, 41);
             this.RoomNameLabel.Margin = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.RoomNameLabel.Name = "RoomNameLabel";
             this.tablePanel1.SetRow(this.RoomNameLabel, 1);
-            this.RoomNameLabel.Size = new System.Drawing.Size(168, 39);
+            this.RoomNameLabel.Size = new System.Drawing.Size(292, 68);
             this.RoomNameLabel.TabIndex = 5;
             this.RoomNameLabel.Text = "Room Name";
             this.RoomNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,7 +223,7 @@ namespace RSI_X_Desktop.forms
             this.langBox.Enabled = false;
             this.langBox.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.langBox.ForeColor = System.Drawing.Color.White;
-            this.langBox.ItemHeight = 22;
+            this.langBox.ItemHeight = 24;
             this.langBox.ItemHighlightColor = System.Drawing.Color.Transparent;
             this.langBox.LineColorA = System.Drawing.Color.Transparent;
             this.langBox.LineColorB = System.Drawing.Color.Transparent;
@@ -234,11 +234,11 @@ namespace RSI_X_Desktop.forms
             this.langBox.ListForeColor = System.Drawing.Color.Black;
             this.langBox.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.langBox.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.langBox.Location = new System.Drawing.Point(1071, 48);
+            this.langBox.Location = new System.Drawing.Point(1071, 47);
             this.langBox.Margin = new System.Windows.Forms.Padding(20, 10, 10, 3);
             this.langBox.Name = "langBox";
             this.IconsPanel.SetRow(this.langBox, 0);
-            this.langBox.Size = new System.Drawing.Size(71, 28);
+            this.langBox.Size = new System.Drawing.Size(71, 30);
             this.langBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.None;
             this.langBox.StartIndex = 0;
             this.langBox.TabIndex = 12;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using agorartc;
+using agora.rtc;
 using Un4seen.Bass;
 using System.IO;
 
@@ -19,11 +19,13 @@ namespace RSI_X_Desktop.forms
         public int Volume { get => volume; }
 
         private IFormHostHolder workForm = AgoraObject.GetWorkForm;
-        private static AgoraAudioPlaybackDeviceManager SpeakersManager;
-        static List<string> Speakers;
+        private static IAgoraRtcAudioPlaybackDeviceManager SpeakersManager;
+        static List<DeviceInfo> Speakers;
 
         private static int oldVolumeOut;
-        private static string oldSpeaker = null;
+        private static DeviceInfo oldSpeaker;
+        public DeviceInfo SelectedSpeaker { get; private set; }
+
         Padding DefaultMargin = new Padding(15);
         Padding Hovered = new Padding(13);
 
@@ -43,7 +45,7 @@ namespace RSI_X_Desktop.forms
         private void PopUpForm_Load(object sender, EventArgs e)
         {
             SetWndRegion();
-            SpeakersManager = AgoraObject.Rtc.CreateAudioPlaybackDeviceManager();
+            SpeakersManager = AgoraObject.Rtc.GetAgoraRtcAudioPlaybackDeviceManager();
 
             oldVolumeOut = (Owner as Audience).ExternWnd.volumeTrackBar.Value;
             trackBarSoundOut.Value = oldVolumeOut;
@@ -67,10 +69,10 @@ namespace RSI_X_Desktop.forms
         private void UpdateComboBoxSpeaker()
         {
             Speakers = getListAudioOutDevices();
-            bool hasoldSpeaker = Speakers.Any((s) => s == oldSpeaker);
+            bool hasoldSpeaker = Speakers.Any((s) => s.deviceId == oldSpeaker.deviceId);
 
-            int index = (oldSpeaker != null) ?
-                Speakers.FindLastIndex((s) => s == oldSpeaker) :
+            int index = (oldSpeaker.deviceId != null) ?
+                Speakers.FindLastIndex((s) => s.deviceId == oldSpeaker.deviceId) :
                 getActiveAudioOutputDevice();
 
             if (Speakers.Count == 0)
@@ -106,37 +108,28 @@ namespace RSI_X_Desktop.forms
 
         private int getActiveAudioOutputDevice()
         {
-            int id = -1;
+            bool found = false;
+            int id = 0;
+            var device = SpeakersManager.GetPlaybackDevice();
 
-            SpeakersManager.GetCurrentDeviceInfo(out string idAcvite, out string nameAcitve);
-
-            for (int i = 0; i < SpeakersManager.GetDeviceCount(); i++)
+            foreach (var dev in SpeakersManager.EnumeratePlaybackDevices())
             {
-                var ret = SpeakersManager.GetDeviceInfoByIndex(i, out string name, out string deviceid);
-                if (idAcvite == deviceid)
-                {
-                    id = i;
-                    break;
-                }
+                if (device == dev.deviceId) { found = true; break; };
+                id += 1;
             }
+
+            if (!found)
+                id = -1;
+
             return id;
         }
 
         #region getDevicesList
 
-        private List<string> getListAudioOutDevices()
+        private List<DeviceInfo> getListAudioOutDevices()
         {
-            List<string> devicesOut = new();
-
-            for (int i = 0; i < SpeakersManager.GetDeviceCount(); i++)
-            {
-                string device, id;
-
-                var ret = SpeakersManager.GetDeviceInfoByIndex(i, out device, out id);
-
-                if (ret == ERROR_CODE.ERR_OK)
-                    devicesOut.Add(device);
-            }
+            List<DeviceInfo> devicesOut = new();
+            devicesOut.AddRange(SpeakersManager.EnumeratePlaybackDevices());
 
             return devicesOut;
         }
@@ -145,11 +138,15 @@ namespace RSI_X_Desktop.forms
 
         private void comboBoxAudioOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int ind = ((System.Windows.Forms.ComboBox)sender).SelectedIndex;
-            string name, id;
+            DeviceInfo dev;
+            int ind = (sender as System.Windows.Forms.ComboBox).SelectedIndex;
+            var RecorderList = SpeakersManager.EnumeratePlaybackDevices();
 
-            SpeakersManager.GetDeviceInfoByIndex(ind, out name, out id);
-            //audioOutDeviceManager.SetCurrentDevice(id);
+            if (RecorderList.Length > ind)
+                dev = RecorderList[ind];
+
+            SelectedSpeaker = dev;
+            SpeakersManager.SetPlaybackDevice(dev.deviceId);
         }
 
         #endregion
@@ -178,8 +175,8 @@ namespace RSI_X_Desktop.forms
             trackBarSoundOut.Value = oldVolumeOut;
             trackBarSoundOut_ValueChanged();
 
-            if (oldSpeaker != null)
-                SpeakersManager.SetCurrentDevice(oldSpeaker);
+            if (oldSpeaker.deviceId != null)
+                SpeakersManager.SetPlaybackDevice(oldSpeaker.deviceId);
 
             Close();
         }
