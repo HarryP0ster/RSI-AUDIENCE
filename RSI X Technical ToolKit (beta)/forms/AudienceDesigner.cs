@@ -79,17 +79,17 @@ namespace RSI_X_Desktop.forms
 
         private void SighnOffToCenter()
         {
-            int leftSide = audioLabel.Width + videoLabel.Width + devicesLabel.Width;
+            int leftSide = audioLabel.Width + videoLabel.Width + devicesLabel.Width + Record.Width;
             int rightSide = turnOrig.Width + volumeIcon.Width + volumeTrackBar.Width + langBox.Width + langBox.Margin.Left;
             if (leftSide > rightSide)
             {
-                IconsPanel.Columns[5].Width = leftSide - rightSide;
-                IconsPanel.Columns[3].Width = 0;
+                IconsPanel.Columns[6].Width = leftSide - rightSide;
+                IconsPanel.Columns[4].Width = 0;
             }
             else
             {
-                IconsPanel.Columns[3].Width = rightSide - leftSide;
-                IconsPanel.Columns[5].Width = 0;
+                IconsPanel.Columns[4].Width = rightSide - leftSide;
+                IconsPanel.Columns[6].Width = 0;
             }
         }
 
@@ -289,6 +289,15 @@ namespace RSI_X_Desktop.forms
             videoLabel.Height);
         }
 
+        public Rectangle RecordRect
+        {
+            get => new Rectangle(
+            Record.PointToScreen(Point.Empty).X,
+            Record.PointToScreen(Point.Empty).Y,
+            Record.Width,
+            Record.Height);
+        }
+
         private void langBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (!IsOriginal)
@@ -309,6 +318,21 @@ namespace RSI_X_Desktop.forms
             Cursor.Position = oldPos;
             System.Threading.Thread.Sleep(100);
             canSelect = true;
+        }
+
+        internal void Record_MouseMove(object sender, MouseEventArgs e)
+        {
+            Record.ItemAppearance.Normal.BorderColor = Color.White;
+        }
+
+        internal void Record_MouseLeave(object sender, EventArgs e)
+        {
+            Record.ItemAppearance.Normal.BorderColor = Color.Empty;
+        }
+
+        internal void Record_Click(object sender, EventArgs e)
+        {
+            (Owner as Audience).Record_Click(sender, e);
         }
     }
 }

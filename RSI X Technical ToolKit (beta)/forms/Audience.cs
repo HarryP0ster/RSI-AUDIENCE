@@ -14,6 +14,7 @@ namespace RSI_X_Desktop
     {
         public IntPtr RemoteWnd { get; private set; }
         internal PopUpForm devices;
+        internal Record recordWnd;
 
         private List<string> TarLang;
         private bool IsOriginal = false;
@@ -27,7 +28,7 @@ namespace RSI_X_Desktop
         private bool AddOrder = false;
         private bool[] TakenPages = new bool[1];
         private Dictionary<uint, PictureBox> hostBroadcasters = new();
-
+        bool IsRecoringActive;
 
         public Audience()
         {
@@ -221,6 +222,7 @@ namespace RSI_X_Desktop
         }
         private void Spectator_FormClosed(object sender, FormClosedEventArgs e)
         {
+            recordWnd.Close();
         }
         private void Audience_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -260,7 +262,21 @@ namespace RSI_X_Desktop
                 devices.Dispose();
             }
         }
-        
+
+        internal void Record_Click(object sender, EventArgs e)
+        {
+            if (recordWnd == null || recordWnd.IsDisposed)
+            {
+                recordWnd = new Record();
+                recordWnd.Show();
+            }
+            else
+            {
+                recordWnd.BringToFront();
+                recordWnd.Focus();
+            }
+        }
+
         public void ExitApp()
         {
             ExternWnd.Hide();
@@ -519,8 +535,12 @@ namespace RSI_X_Desktop
             else if (ExternWnd.DevicesLblRect.Contains(Cursor.Position))
                 Settings_Click(sender, e);
             else if (ExternWnd.LangBoxRect.Contains(Cursor.Position))
+            {
                 if (ExternWnd.langBox.Enabled)
                     ExternWnd.langBox.DroppedDown = true;
+            }
+            else if (ExternWnd.RecordRect.Contains(Cursor.Position))
+                Record_Click(sender, e);
 
             if (ExternWnd.HomeBtnRect.Contains(Cursor.Position))
                 ExternWnd.HomeBtn_Click(null, null);
@@ -567,10 +587,26 @@ namespace RSI_X_Desktop
             else
                 ExternWnd.devicesLabel_MouseLeave(sender, e);
 
+            if (ExternWnd.RecordRect.Contains(Cursor.Position))
+            {
+                ExternWnd.Record_MouseMove(sender, e);
+                cursorUpd = true;
+            }
+            else
+                ExternWnd.Record_MouseLeave(sender, e);
+
             if (new System.Drawing.Rectangle(ExternWnd.langBox.PointToScreen(Point.Empty).X, ExternWnd.langBox.PointToScreen(Point.Empty).Y, ExternWnd.langBox.Width, ExternWnd.langBox.Height).Contains(Cursor.Position))
                 if (ExternWnd.langBox.Enabled)
                     cursorUpd = true;
             Cursor.Current = cursorUpd ? Cursors.Hand : Cursors.Default;
+        }
+
+        public void UpdateRecording()
+        {
+            IsRecoringActive = !IsRecoringActive;
+            ExternWnd.Record.SvgImage = IsRecoringActive ?
+                DevExpress.Utils.Svg.SvgImage.FromFile("Resources\\recording_active.svg") :
+                DevExpress.Utils.Svg.SvgImage.FromFile("Resources\\recording.svg");
         }
     }
 }

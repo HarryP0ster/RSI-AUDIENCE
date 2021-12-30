@@ -12,6 +12,7 @@ namespace RSI_X_Desktop
         public void BroadcasterUpdateInfo(uint uid, agorartc.UserInfo info);
         public void BroadcasterLeave(uint uid);
         public void ExitApp();
+        public void UpdateRecording();
     }
     public interface IFormInterpreterHolder 
     { }
