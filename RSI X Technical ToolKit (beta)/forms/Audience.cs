@@ -27,6 +27,7 @@ namespace RSI_X_Desktop
         private bool AddOrder = false;
         private bool[] TakenPages = new bool[1];
         private Dictionary<uint, PictureBox> hostBroadcasters = new();
+        private HashSet<uint> RunningBroadcasters = new();
 
 
         public Audience()
@@ -405,15 +406,17 @@ namespace RSI_X_Desktop
                 }
             }
 
-            var ret = new VideoCanvas((ulong)newPreview.Handle, 
-                RENDER_MODE_TYPE.RENDER_MODE_FIT,
-                uid:uid);
-            ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
-            ret.channelId = channelId;
-            ret.uid = uid;
+            //var ret = new VideoCanvas((ulong)newPreview.Handle, 
+            //    RENDER_MODE_TYPE.RENDER_MODE_FIT,
+            //    channelId, uid);
+            //ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
+            //ret.channelId = channelId;
+            //ret.uid = uid;
 
-            AgoraObject.Rtc.SetupRemoteVideo(ret);
+            //AgoraObject.Rtc.SetupRemoteVideo(ret);
             streamsTable.Refresh();
+            UpdateMember(uid, channelId);
+            //MessageBox.Show($"new: {channelId} | {uid}");
         }
         private void RemoveMember(uint uid)
         {
@@ -464,6 +467,7 @@ namespace RSI_X_Desktop
                     }
                 }
             }
+
             streamsTable.Refresh();
         }
         internal void UpdateMember(uint uid)
@@ -503,12 +507,14 @@ namespace RSI_X_Desktop
         {
             var ret = new VideoCanvas((ulong)hostBroadcasters[uid].Handle, 
                 RENDER_MODE_TYPE.RENDER_MODE_FIT,
-                uid:uid);
-            ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
-            ret.channelId = channelId;
-            ret.uid = uid;
+                channelId, uid);
+            //ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FIT;
+            //ret.channelId = channelId;
+            //ret.uid = uid;
 
             AgoraObject.Rtc.SetupRemoteVideo(ret);
+            hostBroadcasters[uid].Invalidate();
+
         }
         #endregion
 

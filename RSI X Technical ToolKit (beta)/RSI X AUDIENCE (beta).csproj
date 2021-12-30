@@ -169,12 +169,12 @@
     <PackageReference Include="DevExpress.Utils" Version="21.2.4" />
     <PackageReference Include="DevExpress.Win.Design" Version="21.2.4" />
     <PackageReference Include="MaterialSkin.2.NetCore" Version="2.2.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="ReaLTaiizor" Version="3.7.8.5" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\agorartc\agorartc.csproj" />
-    <ProjectReference Include="..\agorartc\agorartc\agorartc\agorartc.csproj" />
   </ItemGroup>
 
   <ItemGroup>

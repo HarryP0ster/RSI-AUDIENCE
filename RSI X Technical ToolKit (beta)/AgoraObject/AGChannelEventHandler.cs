@@ -59,7 +59,11 @@ namespace RSI_X_Desktop
         public override void OnRemoteVideoStateChanged(string channelId, uint uid, REMOTE_VIDEO_STATE state,
             REMOTE_VIDEO_STATE_REASON reason, int elapsed)
         {
-            
+            string msg = $"{channelId} {uid} \n{state}\n{reason}";
+
+            DebugWriter.WriteTime(msg);
+            //MessageBox.Show(msg);
+
             //TODO: добавить очистку окон коллег через state == REMOTE_VIDEO_STATE_STOPPED
             switch (state) {
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_DECODING:
@@ -79,6 +83,8 @@ namespace RSI_X_Desktop
                         (form as Audience).UpdateMember(uid);
                     break;
                 case REMOTE_VIDEO_STATE.REMOTE_VIDEO_STATE_STARTING:
+                    if (chType == CHANNEL_TYPE.HOST)
+                        (form as Audience).UpdateMember(uid, channelId);
                     break;
                 default:
                     break;
