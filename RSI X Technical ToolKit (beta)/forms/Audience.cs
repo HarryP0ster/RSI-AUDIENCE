@@ -222,7 +222,8 @@ namespace RSI_X_Desktop
         }
         private void Spectator_FormClosed(object sender, FormClosedEventArgs e)
         {
-            recordWnd.Close();
+            if (recordWnd != null && !recordWnd.IsDisposed)
+                recordWnd.Close();
         }
         private void Audience_FormClosing(object sender, FormClosingEventArgs e)
         {

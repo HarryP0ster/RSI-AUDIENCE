@@ -64,7 +64,7 @@ namespace RSI_X_Desktop
             this.FormAudience.SmartBounds = false;
             this.FormAudience.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormAudience.TabIndex = 0;
-            this.FormAudience.Text = "RSI X DESKTOP AUDIENCE";
+            this.FormAudience.Text = "RSI X DESKTOP RECORDER";
             // 
             // tableLayoutPanel1
             // 
@@ -224,7 +224,7 @@ namespace RSI_X_Desktop
             this.MinimumSize = new System.Drawing.Size(126, 50);
             this.Name = "Audience";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RSI X DESKTOP AUDIENCE";
+            this.Text = "RSI X DESKTOP RECORDER";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Audience_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Spectator_FormClosed);

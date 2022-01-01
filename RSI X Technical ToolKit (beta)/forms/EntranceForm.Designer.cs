@@ -69,7 +69,7 @@ namespace RSI_X_Desktop.forms
             this.formTheme1.SmartBounds = false;
             this.formTheme1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.formTheme1.TabIndex = 0;
-            this.formTheme1.Text = "RSI EXCHANGE AUDIENCE";
+            this.formTheme1.Text = "RSI EXCHANGE RECORDER";
             // 
             // panel1
             // 
@@ -243,7 +243,7 @@ namespace RSI_X_Desktop.forms
             this.MinimumSize = new System.Drawing.Size(126, 50);
             this.Name = "EntranceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RSI EXCHANGE AUDIENCE";
+            this.Text = "RSI EXCHANGE RECORDER";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.Load += new System.EventHandler(this.EntranceForm_Load);
             this.Shown += new System.EventHandler(this.EntranceForm_Shown);
