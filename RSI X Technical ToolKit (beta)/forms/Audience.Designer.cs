@@ -70,8 +70,8 @@ namespace RSI_X_Desktop
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 92F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.RemotePanel, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 22);
@@ -90,19 +90,19 @@ namespace RSI_X_Desktop
             this.RemotePanel.Controls.Add(this.panel1, 1, 0);
             this.RemotePanel.Controls.Add(this.Nothing, 0, 0);
             this.RemotePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RemotePanel.Location = new System.Drawing.Point(102, 0);
+            this.RemotePanel.Location = new System.Drawing.Point(100, 0);
             this.RemotePanel.Margin = new System.Windows.Forms.Padding(0);
             this.RemotePanel.Name = "RemotePanel";
             this.RemotePanel.RowCount = 1;
             this.RemotePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.RemotePanel.Size = new System.Drawing.Size(1178, 778);
+            this.RemotePanel.Size = new System.Drawing.Size(1180, 778);
             this.RemotePanel.TabIndex = 3;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(987, 3);
+            this.panel1.Location = new System.Drawing.Point(989, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 772);
             this.panel1.TabIndex = 1;
@@ -117,7 +117,7 @@ namespace RSI_X_Desktop
             this.Nothing.Location = new System.Drawing.Point(0, 0);
             this.Nothing.Margin = new System.Windows.Forms.Padding(0);
             this.Nothing.Name = "Nothing";
-            this.Nothing.Size = new System.Drawing.Size(984, 778);
+            this.Nothing.Size = new System.Drawing.Size(986, 778);
             this.Nothing.TabIndex = 2;
             this.Nothing.Click += new System.EventHandler(this.streamsTable_Click);
             this.Nothing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.streamsTable_MouseMove);
@@ -137,7 +137,7 @@ namespace RSI_X_Desktop
             this.streamsTable.RowCount = 1;
             this.streamsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.streamsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.streamsTable.Size = new System.Drawing.Size(984, 778);
+            this.streamsTable.Size = new System.Drawing.Size(986, 778);
             this.streamsTable.TabIndex = 2;
             this.streamsTable.Click += new System.EventHandler(this.streamsTable_Click);
             this.streamsTable.MouseMove += new System.Windows.Forms.MouseEventHandler(this.streamsTable_MouseMove);

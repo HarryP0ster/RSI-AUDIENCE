@@ -123,7 +123,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             this.tablePanel1.SetRow(this.NameLabel, 1);
             this.NameLabel.Size = new System.Drawing.Size(344, 50);
             this.NameLabel.TabIndex = 3;
-            this.NameLabel.Text = "RSI X AUDIENCE";
+            this.NameLabel.Text = "RSI X RECORDER";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // LoginWnd

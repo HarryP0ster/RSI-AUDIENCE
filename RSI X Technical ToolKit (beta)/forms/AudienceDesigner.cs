@@ -83,13 +83,13 @@ namespace RSI_X_Desktop.forms
             int rightSide = turnOrig.Width + volumeIcon.Width + volumeTrackBar.Width + langBox.Width + langBox.Margin.Left;
             if (leftSide > rightSide)
             {
-                IconsPanel.Columns[6].Width = leftSide - rightSide;
-                IconsPanel.Columns[4].Width = 0;
+                IconsPanel.Columns[7].Width = leftSide - rightSide;
+                IconsPanel.Columns[5].Width = 0;
             }
             else
             {
-                IconsPanel.Columns[4].Width = rightSide - leftSide;
-                IconsPanel.Columns[6].Width = 0;
+                IconsPanel.Columns[5].Width = rightSide - leftSide;
+                IconsPanel.Columns[7].Width = 0;
             }
         }
 

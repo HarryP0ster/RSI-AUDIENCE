@@ -22,11 +22,14 @@ namespace RSI_X_Desktop.forms.HelpingClass
 
         private void BottomPanelWnd_Load(object sender, EventArgs e)
         {
+            Width = Owner.Width;
+            Height = 125;
+            Location = new Point(Owner.Location.X, Owner.Location.Y + Owner.Height - Height);
             Owner.LocationChanged += delegate { Location = new Point(Owner.Location.X, Owner.Location.Y + Owner.Height - Height); };
             Owner.SizeChanged += delegate {
                 Width = Owner.Width;
-                Height = Owner.Height / 7;
-                Location = new Point(Owner.Location.X, Owner.Location.Y + Owner.Height - Owner.Height / 7);
+                Height = 125;
+                Location = new Point(Owner.Location.X, Owner.Location.Y + Owner.Height - Height);
             };
         }
     }

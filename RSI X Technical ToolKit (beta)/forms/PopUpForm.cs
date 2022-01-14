@@ -61,7 +61,7 @@ namespace RSI_X_Desktop.forms
             path.AddArc(r.X, r.Y, d, d, 180, 90);
             path.AddArc(r.X + r.Width - d, r.Y, d, d, 270, 90);
             path.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
-            path.AddArc(r.X , r.Y + r.Height - d, d, d, 90, 90);
+            path.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
             this.Region = new Region(path);
         }
         private void UpdateComboBoxSpeaker()
@@ -164,11 +164,7 @@ namespace RSI_X_Desktop.forms
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
-            var aout = comboBoxAudioOutput.SelectedIndex;
-
-            if (Speakers.Count() < aout) oldSpeaker = Speakers[aout];
-
-            oldVolumeOut = trackBarSoundOut.Value;
+            ApplyBtn_Click(sender, e);
 
             CloseButton_Click(sender, e);
         }
@@ -202,6 +198,7 @@ namespace RSI_X_Desktop.forms
             if (Speakers.Count() < aout) oldSpeaker = Speakers[aout];
 
             oldVolumeOut = trackBarSoundOut.Value;
+            oldSpeaker = (string)comboBoxAudioOutput.SelectedItem;
         }
 
         private void SpeakerTestBtn_Click(object sender, EventArgs e) //Plays a simple beep sound to indicate selected speaker
@@ -216,7 +213,7 @@ namespace RSI_X_Desktop.forms
             string File = projectDirectory + "\\Resources\\OutputBeep.wav";
             int stream = Bass.BASS_StreamCreateFile(File, 0, Properties.Resources.OutputBeep.Length, BASSFlag.BASS_SAMPLE_FLOAT | BASSFlag.BASS_STREAM_PRESCAN);
             Bass.BASS_ChannelSetDevice(stream, device_index);
-            Bass.BASS_ChannelSetAttribute(stream, BASSAttribute.BASS_ATTRIB_VOL, (float)trackBarSoundOut.Value/100f);
+            Bass.BASS_ChannelSetAttribute(stream, BASSAttribute.BASS_ATTRIB_VOL, (float)trackBarSoundOut.Value / 100f);
             if (stream != 0)
                 Bass.BASS_ChannelPlay(stream, true);
         }
