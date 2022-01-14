@@ -29,6 +29,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputWnd));
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.NewTextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
@@ -80,6 +81,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             this.Controls.Add(this.tablePanel1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("InputWnd.IconOptions.Icon")));
             this.Name = "InputWnd";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

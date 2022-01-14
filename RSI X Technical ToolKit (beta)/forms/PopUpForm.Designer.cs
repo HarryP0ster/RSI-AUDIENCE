@@ -384,6 +384,7 @@ namespace RSI_X_Desktop.forms
             this.Controls.Add(this.tablePanel2);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PopUpForm.IconOptions.Icon")));
             this.Name = "PopUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PopUpForm";

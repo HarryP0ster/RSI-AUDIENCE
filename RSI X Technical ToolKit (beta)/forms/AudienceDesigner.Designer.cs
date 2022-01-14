@@ -433,6 +433,7 @@ namespace RSI_X_Desktop.forms
             this.DoubleBuffered = true;
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("AudienceDesigner.IconOptions.Icon")));
             this.MaximumSize = new System.Drawing.Size(1280, 800);
             this.MinimumSize = new System.Drawing.Size(1280, 800);
             this.Name = "AudienceDesigner";
