@@ -135,6 +135,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             this.Controls.Add(this.tablePanel1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("LoginWnd.IconOptions.Icon")));
             this.Name = "LoginWnd";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

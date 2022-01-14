@@ -173,7 +173,7 @@ namespace RSI_X_Desktop.forms
 
         private void trackBar1_ValueChanged()
         {
-            Devices.SetVolume(volumeTrackBar.Value);
+            PopUpForm.SetVolume(volumeTrackBar.Value);
             if ((Owner as Audience).devices != null && (Owner as Audience).devices.IsDisposed == false)
                 (Owner as Audience).devices.UpdateSoundTrackBar();
         }
