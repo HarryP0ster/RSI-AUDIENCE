@@ -25,8 +25,8 @@ namespace RSI_X_Desktop.forms.HelpingClass
             Owner.LocationChanged += delegate { Location = new Point(Owner.Location.X, Owner.Location.Y + Owner.Height - Height); };
             Owner.SizeChanged += delegate {
                 Width = Owner.Width;
-                Height = Owner.Height / 7;
-                Location = new Point(Owner.Location.X, Owner.Location.Y + Owner.Height - Owner.Height / 7);
+                Height = 125;
+                Location = new Point(Owner.Location.X, Owner.Location.Y + Owner.Height - Height);
             };
         }
     }

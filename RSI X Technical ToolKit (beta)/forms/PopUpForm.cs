@@ -164,11 +164,7 @@ namespace RSI_X_Desktop.forms
 
         private void AcceptButton_Click(object sender, EventArgs e)
         {
-            var aout = comboBoxAudioOutput.SelectedIndex;
-
-            if (Speakers.Count() < aout) oldSpeaker = Speakers[aout];
-
-            oldVolumeOut = trackBarSoundOut.Value;
+            ApplyBtn_Click(sender, e);
 
             CloseButton_Click(sender, e);
         }
@@ -202,6 +198,7 @@ namespace RSI_X_Desktop.forms
             if (Speakers.Count() < aout) oldSpeaker = Speakers[aout];
 
             oldVolumeOut = trackBarSoundOut.Value;
+            oldSpeaker = (string)comboBoxAudioOutput.SelectedItem;
         }
 
         private void SpeakerTestBtn_Click(object sender, EventArgs e) //Plays a simple beep sound to indicate selected speaker

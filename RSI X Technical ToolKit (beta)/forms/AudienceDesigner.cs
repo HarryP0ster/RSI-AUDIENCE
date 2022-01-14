@@ -48,21 +48,6 @@ namespace RSI_X_Desktop.forms
                 langBox.Font = Constants.Bahnschrift16;
             else if (langBox.DeviceDpi >= (int)Constants.DPI.P100)
                 langBox.Font = Constants.Bahnschrift22;
-
-            //if (IconsPanel.DeviceDpi >= (int)EntranceForm.DPI.P150) 
-            //{
-            //var coll = IconsPanel.Columns;
-            //coll.BeginUpdate();
-            //coll[0].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
-            //coll[1].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
-            //coll[2].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
-
-            //coll[0].Width = 65F;
-            //coll[1].Width = 35F;
-            //coll[2].Width = 45F;
-
-            //IconsPanel.Columns.Insert()
-            //}
         }
 
         private void SetLeftSidePanelRegion()
@@ -83,13 +68,13 @@ namespace RSI_X_Desktop.forms
             int rightSide = turnOrig.Width + volumeIcon.Width + volumeTrackBar.Width + langBox.Width + langBox.Margin.Left;
             if (leftSide > rightSide)
             {
-                IconsPanel.Columns[5].Width = leftSide - rightSide;
-                IconsPanel.Columns[3].Width = 0;
+                IconsPanel.Columns[6].Width = leftSide - rightSide;
+                IconsPanel.Columns[4].Width = 0;
             }
             else
             {
-                IconsPanel.Columns[3].Width = rightSide - leftSide;
-                IconsPanel.Columns[5].Width = 0;
+                IconsPanel.Columns[4].Width = rightSide - leftSide;
+                IconsPanel.Columns[6].Width = 0;
             }
         }
 
