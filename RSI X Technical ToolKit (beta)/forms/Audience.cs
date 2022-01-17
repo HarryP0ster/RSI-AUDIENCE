@@ -350,6 +350,7 @@ namespace RSI_X_Desktop
                 ResizeForm(new Size(1280, 800), this);
                 ResizeForm(new Size(1280, 800), FormAudience);
             }
+            RebindVideoWnd();
         }
         #region Events
         private void Audience_Resize(object sender, EventArgs e)
