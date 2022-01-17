@@ -129,10 +129,10 @@ namespace RSI_X_Desktop
                 if (InvokeRequired)
                     Invoke((MethodInvoker)delegate
                     {
-                        AddNewMember(uid);
+                        AddNewMember(uid, info.userAccount);
                     });
                 else
-                    AddNewMember(uid);
+                    AddNewMember(uid, info.userAccount);
             }
         }
         public void BroadcasterUpdateInfo(uint uid, UserInfo info)
@@ -144,16 +144,18 @@ namespace RSI_X_Desktop
                 if (InvokeRequired)
                     Invoke((MethodInvoker)delegate
                     {
-                        AddNewMember(uid);
+                        AddNewMember(uid, info.userAccount);
                     });
                 else
-                    AddNewMember(uid);
+                    AddNewMember(uid, info.userAccount);
             }
         }
         public void BroadcasterLeave(uint uid)
         {
             //throw new NotImplementedException();
-            if (hostBroadcasters.ContainsKey(uid))
+            if (hostBroadcasters.ContainsKey(uid) ||
+                UIDChecker.IsPresident(uid) ||
+                UIDChecker.IsSecretary(uid))
             {
                 if (InvokeRequired)
                     Invoke((MethodInvoker)delegate
@@ -332,6 +334,7 @@ namespace RSI_X_Desktop
                 ResizeForm(new Size(1280, 800), this);
                 ResizeForm(new Size(1280, 800), FormAudience);
             }
+            RebindVideoWnd();
         }
         #region Events
         private void Audience_Resize(object sender, EventArgs e)
