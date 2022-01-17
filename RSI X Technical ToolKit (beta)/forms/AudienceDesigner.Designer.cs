@@ -278,10 +278,10 @@ namespace RSI_X_Desktop.forms
             this.audioLabel.ItemAppearance.Normal.BorderThickness = 0F;
             this.audioLabel.ItemHitTestType = DevExpress.XtraEditors.ItemHitTestType.BoundingBox;
             this.audioLabel.Location = new System.Drawing.Point(0, 0);
-            this.audioLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.audioLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.audioLabel.Name = "audioLabel";
             this.IconsPanel.SetRow(this.audioLabel, 0);
-            this.audioLabel.Size = new System.Drawing.Size(80, 120);
+            this.audioLabel.Size = new System.Drawing.Size(80, 116);
             this.audioLabel.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("audioLabel.SvgImage")));
             this.audioLabel.TabIndex = 0;
             this.audioLabel.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.False;

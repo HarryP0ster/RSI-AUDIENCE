@@ -297,6 +297,12 @@
     <None Update="Resources\apply.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\aud_mute.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\aud_muted.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Cancel.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

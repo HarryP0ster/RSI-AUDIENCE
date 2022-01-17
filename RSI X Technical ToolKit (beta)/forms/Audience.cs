@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using RSI_X_Desktop.forms.HelpingClass;
+using RSI_X_Desktop.other;
 using System.Threading;
 
 namespace RSI_X_Desktop
@@ -221,6 +222,10 @@ namespace RSI_X_Desktop
         }
         private void Spectator_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (e == null)
+                EntranceForm._instance.Show();
+            else
+                EntranceForm._instance.Dispose();
         }
         private void Audience_FormClosing(object sender, FormClosingEventArgs e)
         {

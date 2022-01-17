@@ -104,8 +104,8 @@ namespace RSI_X_Desktop.forms
                 Color.White;
 
             audioLabel.SvgImage = AgoraObject.IsAllRemoteAudioMute ?
-                SvgImage.FromFile("Resources\\Muted.svg") :
-                SvgImage.FromFile("Resources\\mute.svg");
+                SvgImage.FromFile("Resources\\aud_muted.svg") :
+                SvgImage.FromFile("Resources\\aud_mute.svg");
         }
         private void VideoColorUpdate()
         {

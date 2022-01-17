@@ -121,6 +121,12 @@
   <data name="apply" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apply.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="aud_mute" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aud_mute.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="aud_muted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aud_muted.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="BckgFade" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BckgFade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
