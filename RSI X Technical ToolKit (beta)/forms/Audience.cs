@@ -337,11 +337,31 @@ namespace RSI_X_Desktop
 
         #region MembersControl
 
-        private void AddNewMember(uint uid)
+        private void AddNewMember(uint uid, string username = "")
         {
             PictureBox newPreview = new();
 
             string channelId = AgoraObject.GetHostName();
+
+            if (NickCenter.IsPresident(username) || NickCenter.IsSecretary(username))
+            {
+                foreach (var wnd in otherWnd)
+                    if (wnd.nUID == uid)
+                    {
+                        BroadcasterLeave(wnd.nUID);
+                        break;
+                    }
+
+                InitNewWnd(channelId, uid, username);
+                RebindVideoWnd();
+
+                if (NickCenter.IsPresident(username))
+                    UIDChecker.NewPresident(uid, username);
+
+                if (NickCenter.IsSecretary(username))
+                    UIDChecker.NewSecretary(uid, username);
+                return;
+            }
 
             newPreview.Dock = DockStyle.Fill;
             newPreview.BackgroundImage = Properties.Resources.video_call_empty;
@@ -415,6 +435,11 @@ namespace RSI_X_Desktop
         }
         private void RemoveMember(uint uid)
         {
+            if (RemoveWnd(uid))
+            {
+                RebindVideoWnd();
+                return;
+            }
             int index = streamsTable.ColumnCount * streamsTable.RowCount;
             hostBroadcasters.Remove(uid);
 
