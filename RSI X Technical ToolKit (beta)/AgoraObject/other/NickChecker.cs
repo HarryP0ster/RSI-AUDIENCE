@@ -10,6 +10,8 @@ namespace RSI_X_Desktop
     {
         const string HostStartsWith = "HOST";
         const string AudienceStartsWith = "SPECTRATOR";
+        const string SECRETARY = "HOST_SECRETARY";
+        const string PRESIDENT = "HOST_PRESIDENT";
 
         public static string ToHostNick(string nick)
         {
@@ -35,6 +37,15 @@ namespace RSI_X_Desktop
         {
             return nick.Split(' ')[0].Contains('(') &&
                    nick.Split(' ')[0].Contains(')');
+        }
+        internal static bool IsPresident(string username)
+        {
+            return username.StartsWith(PRESIDENT);
+        }
+
+        internal static bool IsSecretary(string username)
+        {
+            return username.StartsWith(SECRETARY);
         }
     }
 }

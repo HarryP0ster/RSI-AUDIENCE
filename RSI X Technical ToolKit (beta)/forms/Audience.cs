@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using RSI_X_Desktop.forms.HelpingClass;
+using RSI_X_Desktop.other;
 using System.Threading;
 
 namespace RSI_X_Desktop
@@ -129,10 +130,10 @@ namespace RSI_X_Desktop
                 if (InvokeRequired)
                     Invoke((MethodInvoker)delegate
                     {
-                        AddNewMember(uid);
+                        AddNewMember(uid, info.userAccount);
                     });
                 else
-                    AddNewMember(uid);
+                    AddNewMember(uid, info.userAccount);
             }
         }
         public void BroadcasterUpdateInfo(uint uid, UserInfo info)
@@ -144,16 +145,18 @@ namespace RSI_X_Desktop
                 if (InvokeRequired)
                     Invoke((MethodInvoker)delegate
                     {
-                        AddNewMember(uid);
+                        AddNewMember(uid, info.userAccount);
                     });
                 else
-                    AddNewMember(uid);
+                    AddNewMember(uid, info.userAccount);
             }
         }
         public void BroadcasterLeave(uint uid)
         {
             //throw new NotImplementedException();
-            if (hostBroadcasters.ContainsKey(uid))
+            if (hostBroadcasters.ContainsKey(uid) ||
+                UIDChecker.IsPresident(uid) ||
+                UIDChecker.IsSecretary(uid))
             {
                 if (InvokeRequired)
                     Invoke((MethodInvoker)delegate
@@ -223,6 +226,10 @@ namespace RSI_X_Desktop
         private void Spectator_FormClosed(object sender, FormClosedEventArgs e)
         {
             recordWnd?.Close();
+            if (e == null)
+                EntranceForm._instance.Show();
+            else
+                EntranceForm._instance.Dispose();
         }
         private void Audience_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -353,11 +360,31 @@ namespace RSI_X_Desktop
 
         #region MembersControl
 
-        private void AddNewMember(uint uid)
+        private void AddNewMember(uint uid, string username = "")
         {
             PictureBox newPreview = new();
 
             string channelId = AgoraObject.GetHostName();
+
+            if (NickCenter.IsPresident(username) || NickCenter.IsSecretary(username))
+            {
+                foreach (var wnd in otherWnd)
+                    if (wnd.nUID == uid)
+                    {
+                        BroadcasterLeave(wnd.nUID);
+                        break;
+                    }
+
+                InitNewWnd(channelId, uid, username);
+                RebindVideoWnd();
+
+                if (NickCenter.IsPresident(username))
+                    UIDChecker.NewPresident(uid, username);
+
+                if (NickCenter.IsSecretary(username))
+                    UIDChecker.NewSecretary(uid, username);
+                return;
+            }
 
             newPreview.Dock = DockStyle.Fill;
             newPreview.BackgroundImage = Properties.Resources.video_call_empty;
@@ -431,6 +458,11 @@ namespace RSI_X_Desktop
         }
         private void RemoveMember(uint uid)
         {
+            if (RemoveWnd(uid))
+            {
+                RebindVideoWnd();
+                return;
+            }
             int index = streamsTable.ColumnCount * streamsTable.RowCount;
             hostBroadcasters.Remove(uid);
 

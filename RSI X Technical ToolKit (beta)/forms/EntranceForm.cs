@@ -18,6 +18,8 @@ namespace RSI_X_Desktop.forms
         TableLayoutPanel LoginTable = new();
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, Int32 wMsg, bool wParam, Int32 lParam);
+        public static EntranceForm _instance;
+
         public EntranceForm()
         {
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -78,6 +80,7 @@ namespace RSI_X_Desktop.forms
         private void EntranceForm_Shown(object sender, EventArgs e)
         {
             (loginWnd = new LoginWnd()).Hide();
+            _instance = this;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
