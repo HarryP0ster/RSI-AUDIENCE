@@ -178,6 +178,7 @@ namespace RSI_X_Desktop.forms
                 canSelect = false;
                 AgoraObject.MuteAllRemoteVideoStream(!AgoraObject.IsAllRemoteVideoMute);
                 (Owner as Audience).streamsTable.Visible = !AgoraObject.IsAllRemoteVideoMute;
+                (Owner as Audience).MuteAll();
                 timer1.Start();
             }
         }

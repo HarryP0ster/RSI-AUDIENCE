@@ -227,5 +227,24 @@ namespace RSI_X_Desktop
 
         //    return dict;
         //}
+
+        internal void MuteAll()
+        {
+            if (AgoraObject.IsAllRemoteVideoMute)
+            {
+                foreach (_AGVIDEO_WNDINFO curWnd in otherWnd)
+                {
+                    var ret = new VideoCanvas(0, 0);
+                    ret.renderMode = (int)RENDER_MODE_TYPE.RENDER_MODE_FILL;
+                    ret.channelId = curWnd.channelID;
+                    ret.uid = curWnd.nUID;
+
+                    AgoraObject.Rtc.SetupRemoteVideo(ret);
+                    curWnd.HWnd.Refresh();
+                }
+            }
+            else
+                RebindVideoWnd();
+        }
     }
 }
