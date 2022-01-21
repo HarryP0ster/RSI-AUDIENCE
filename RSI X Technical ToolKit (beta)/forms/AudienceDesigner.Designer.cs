@@ -213,6 +213,7 @@ namespace RSI_X_Desktop.forms
             this.IconsPanel.SetColumn(this.Record, 3);
             this.Record.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Record.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Record.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.Record.ItemAppearance.Normal.BorderThickness = 2F;
             this.Record.Location = new System.Drawing.Point(332, 0);
             this.Record.Margin = new System.Windows.Forms.Padding(0);
