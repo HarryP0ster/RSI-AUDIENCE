@@ -16,8 +16,6 @@ namespace RSI_X_Desktop.forms
     {
         LoginWnd loginWnd;
         TableLayoutPanel LoginTable = new();
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, Int32 wMsg, bool wParam, Int32 lParam);
         public static EntranceForm _instance;
 
         public EntranceForm()
@@ -28,16 +26,14 @@ namespace RSI_X_Desktop.forms
 
         private void ShowLogin()
         {
-            SendMessage(this.Handle, 11, false, 0);
             formTheme1.Controls.Remove(panel1);
             formTheme1.Controls.Add(LoginTable);
-            SendMessage(this.Handle, 11, true, 0);
-            Refresh();
             loginWnd.Show(this);
         }
 
         private void EntranceForm_Load(object sender, EventArgs e)
         {
+            LoginRegion();
             timer1_Tick(null, null);
             JoinBtn.Location = new Point(Width/2 - JoinBtn.Width/2, Height - Height / 2);
             JoinBtn.BringToFront();
@@ -112,11 +108,23 @@ namespace RSI_X_Desktop.forms
         private void backButton_Click(object sender, EventArgs e)
         {
             loginWnd.Hide();
-            SendMessage(this.Handle, 11, false, 0);
             formTheme1.Controls.Remove(LoginTable);
             formTheme1.Controls.Add(panel1);
-            SendMessage(this.Handle, 11, true, 0);
-            Refresh();
+        }
+
+        private void LoginRegion()
+        {
+            Region reg = new();
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            int d = 60;
+            System.Drawing.Rectangle r = new System.Drawing.Rectangle(3, -4, LoginBackground.Width - 6, LoginBackground.Height - 3);
+            path.AddArc(r.X, r.Y, d, d, 180, 90);
+            path.AddArc(r.X + r.Width - d, r.Y, d, d, 270, 90);
+            path.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
+            path.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
+            reg = new Region(path);
+
+            LoginBackground.Region = reg;
         }
     }
 }
