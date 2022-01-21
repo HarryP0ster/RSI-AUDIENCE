@@ -266,6 +266,7 @@ namespace RSI_X_Desktop.forms
             this.ApplyBtn.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ApplyBtn.SvgImage")));
             this.ApplyBtn.TabIndex = 2;
             this.ApplyBtn.Text = "svgImageBox3";
+            this.ApplyBtn.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.True;
             this.ApplyBtn.Click += new System.EventHandler(this.ApplyBtn_Click);
             this.ApplyBtn.MouseLeave += new System.EventHandler(this.ApplyBtn_MouseLeave);
             this.ApplyBtn.MouseHover += new System.EventHandler(this.ApplyBtn_MouseEnter);
@@ -286,6 +287,7 @@ namespace RSI_X_Desktop.forms
             this.ConfirmBtn.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ConfirmBtn.SvgImage")));
             this.ConfirmBtn.TabIndex = 1;
             this.ConfirmBtn.Text = "svgImageBox2";
+            this.ConfirmBtn.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.True;
             this.ConfirmBtn.Click += new System.EventHandler(this.AcceptButton_Click);
             this.ConfirmBtn.MouseLeave += new System.EventHandler(this.ConfirmBtn_MouseLeave);
             this.ConfirmBtn.MouseHover += new System.EventHandler(this.ConfirmBtn_MouseEnter);
@@ -305,6 +307,7 @@ namespace RSI_X_Desktop.forms
             this.CancelBtn.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("CancelBtn.SvgImage")));
             this.CancelBtn.TabIndex = 0;
             this.CancelBtn.Text = "svgImageBox1";
+            this.CancelBtn.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.True;
             this.CancelBtn.Click += new System.EventHandler(this.CloseButton_Click);
             this.CancelBtn.MouseLeave += new System.EventHandler(this.CancelBtn_MouseLeave);
             this.CancelBtn.MouseHover += new System.EventHandler(this.CancelBtn_MouseEnter);

@@ -58,6 +58,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             this.LoginTextBox.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.LoginTextBox.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("LoginTextBox.SvgImage")));
             this.LoginTextBox.TabIndex = 1;
+            this.LoginTextBox.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.True;
             // 
             // tablePanel1
             // 
@@ -95,6 +96,7 @@ namespace RSI_X_Desktop.forms.HelpingClass
             this.svgImageBox2.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             this.svgImageBox2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox2.SvgImage")));
             this.svgImageBox2.TabIndex = 93;
+            this.svgImageBox2.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.True;
             this.svgImageBox2.Click += new System.EventHandler(this.svgImageBox2_Click);
             // 
             // pictureBox1

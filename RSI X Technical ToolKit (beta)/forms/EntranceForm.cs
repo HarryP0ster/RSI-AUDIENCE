@@ -37,6 +37,7 @@ namespace RSI_X_Desktop.forms
 
         private void EntranceForm_Load(object sender, EventArgs e)
         {
+            timer1_Tick(null, null);
             JoinBtn.Location = new Point(Width/2 - JoinBtn.Width/2, Height - Height / 2);
             JoinBtn.BringToFront();
             timer1.Start();
