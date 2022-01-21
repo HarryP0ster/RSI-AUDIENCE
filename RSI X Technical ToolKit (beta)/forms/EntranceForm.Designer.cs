@@ -223,6 +223,7 @@ namespace RSI_X_Desktop.forms
             this.LoginBackground.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.LoginBackground.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("LoginBackground.SvgImage")));
             this.LoginBackground.TabIndex = 0;
+            this.LoginBackground.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.True;
             this.LoginBackground.Visible = false;
             // 
             // timer1
