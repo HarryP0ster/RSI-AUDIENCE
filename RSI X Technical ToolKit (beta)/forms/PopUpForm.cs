@@ -232,35 +232,35 @@ namespace RSI_X_Desktop.forms
             return -1;
         }
 
-        private void ApplyBtn_MouseEnter(object sender, EventArgs e)
+        private void ApplyBtn_MouseEnter(object sender, MouseEventArgs e)
         {
             ApplyBtn.Margin = Hovered;
             ApplyBtn.Focus();
         }
 
-        private void ApplyBtn_MouseLeave(object sender, EventArgs e)
+        private void ApplyBtn_MouseLeave(object sender, MouseEventArgs e)
         {
             ApplyBtn.Margin = DefaultMargin;
         }
 
-        private void ConfirmBtn_MouseEnter(object sender, EventArgs e)
+        private void ConfirmBtn_MouseEnter(object sender, MouseEventArgs e)
         {
             ConfirmBtn.Margin = Hovered;
             ConfirmBtn.Focus();
         }
 
-        private void ConfirmBtn_MouseLeave(object sender, EventArgs e)
+        private void ConfirmBtn_MouseLeave(object sender, MouseEventArgs e)
         {
             ConfirmBtn.Margin = DefaultMargin;
         }
 
-        private void CancelBtn_MouseEnter(object sender, EventArgs e)
+        private void CancelBtn_MouseEnter(object sender, MouseEventArgs e)
         {
             CancelBtn.Margin = Hovered;
             CancelBtn.Focus();
         }
 
-        private void CancelBtn_MouseLeave(object sender, EventArgs e)
+        private void CancelBtn_MouseLeave(object sender, MouseEventArgs e)
         {
             CancelBtn.Margin = DefaultMargin;
         }
