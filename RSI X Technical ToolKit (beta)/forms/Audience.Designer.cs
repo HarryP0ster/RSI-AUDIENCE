@@ -229,7 +229,6 @@ namespace RSI_X_Desktop
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Audience_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Spectator_FormClosed);
             this.Load += new System.EventHandler(this.Audience_Load);
-            this.Resize += new System.EventHandler(this.Audience_Resize);
             this.FormAudience.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.RemotePanel.ResumeLayout(false);

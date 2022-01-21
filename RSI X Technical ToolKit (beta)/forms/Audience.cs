@@ -44,7 +44,6 @@ namespace RSI_X_Desktop
             RemotePanel.ColumnStyles[0].Width = 100;
             RemotePanel.ColumnStyles[1].Width = 0;
             this.DoubleBuffered = true;
-            SignOffToCenter();
             FormAudience.Parent = this;
             ResizeForm(new Size(1280, 800), this);
 
@@ -60,16 +59,6 @@ namespace RSI_X_Desktop
             bottomPanel.Show(this);
             bottomPanel.Enabled = false;
             ExternWnd.Show(this);
-        }
-        private void SignOffToCenter()
-        {
-            //float width_left = tableLayoutPanel4.Width + labelAudio.Width + labelVideo.Width;
-            //float width_right = tableLayoutPanel5.Width + comboBoxPanel.Width;
-            //tableLayoutPanel3.ColumnStyles[6].Width = width_left - width_right;
-        }
-        public void RefreshDelegate()
-        {
-            streamsTable.Visible = !AgoraObject.IsAllRemoteVideoMute;
         }
 
         public void RefreshDelegate(bool state)
@@ -123,7 +112,6 @@ namespace RSI_X_Desktop
         }
         public void NewBroadcaster(uint uid, UserInfo info)
         {
-            //throw new NotImplementedException(); 
             if (NickCenter.IsHost(info.userAccount) &&
                 !hostBroadcasters.ContainsKey(uid))
             {
@@ -138,7 +126,6 @@ namespace RSI_X_Desktop
         }
         public void BroadcasterUpdateInfo(uint uid, UserInfo info)
         {
-            //throw new NotImplementedException(); 
             if (NickCenter.IsHost(info.userAccount) &&
                 !hostBroadcasters.ContainsKey(uid))
             {
@@ -153,7 +140,6 @@ namespace RSI_X_Desktop
         }
         public void BroadcasterLeave(uint uid)
         {
-            //throw new NotImplementedException();
             if (hostBroadcasters.ContainsKey(uid) ||
                 UIDChecker.IsPresident(uid) ||
                 UIDChecker.IsSecretary(uid))
@@ -168,60 +154,9 @@ namespace RSI_X_Desktop
             }
         }
 
-        internal void labelMicrophone_Click(object sender, EventArgs e)
-        {
-            AgoraObject.MuteAllRemoteAudioStream(!AgoraObject.IsAllRemoteAudioMute);
-            //ExternWnd.labelAudio.ForeColor = AgoraObject.IsAllRemoteAudioMute ?
-            //    Color.White :
-            //    Color.Red;
-        }
-
-        internal void labelVideo_Click(object sender, EventArgs e)
-        {
-            AgoraObject.MuteAllRemoteVideoStream(!AgoraObject.IsAllRemoteVideoMute);
-            //ExternWnd.labelVideo.ForeColor = AgoraObject.IsAllRemoteVideoMute ?
-            //    Color.White :
-            //    Color.Red;
-            //PBRemoteVideo.Visible = !AgoraObject.IsAllRemoteVideoMute;
-        }
-
         public void SetTrackBarVolume(int volume) 
         {
             ExternWnd.volumeTrackBar.Value = volume;
-        }
-
-        internal void langBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Выпадающий список языков
-            if (!IsOriginal)
-            {
-                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(ExternWnd.langBox.SelectedIndex + 1);
-                bool ret = AgoraObject.JoinChannelSrc(InterRoom);
-                AgoraObject.MuteSrcAudioStream(false);
-            }
-        }
-
-        internal void mSwitchOriginal_CheckedChanged(object sender, EventArgs e)
-        {
-            //Включение оригинальной дорожки (floor)
-            if (IsOriginal)
-            {
-                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(ExternWnd.langBox.SelectedIndex + 1);
-                AgoraObject.JoinChannelSrc(InterRoom);
-                AgoraObject.MuteHostAudioStream(true);
-                AgoraObject.MuteSrcAudioStream(AgoraObject.IsAllRemoteAudioMute);
-                ExternWnd.langBox.Focus();
-                //labelOrig.ForeColor = Color.White;
-            }
-            else
-            {
-                AgoraObject.MuteHostAudioStream(AgoraObject.IsAllRemoteAudioMute);
-                AgoraObject.MuteSrcAudioStream(true);
-                //labelOrig.ForeColor = Color.Red;
-            }
-            //ExternWnd.mSwitchOriginal.Checked = !IsOriginal;
-            ExternWnd.langBox.Enabled = IsOriginal;
-            IsOriginal = !IsOriginal;
         }
         private void Spectator_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -301,40 +236,6 @@ namespace RSI_X_Desktop
             Owner.Refresh();
         }
 
-        private void CallSidePanel(Form Wnd)
-        {
-            Wnd.TopLevel = false;
-            Wnd.Dock = DockStyle.Fill;
-            panel1.Controls.Add(Wnd);
-            panel1.BringToFront();
-            if (panel1.Visible == false || Wnd.Visible == false)
-            {
-                panel1.Location = new Point(Size.Width, panel1.Location.Y);
-                panel1.Show();
-                Animator(panel1, -45, 0, 10, 1);
-                Wnd.Show();
-            }
-        }
-        public void DevicesClosed(Form Wnd)
-        {
-            Animator(panel1, 45, 0, 10, 1);
-            panel1.Hide();
-            Wnd.Close();
-            GC.Collect();
-        }
-        public void Animator(System.Windows.Forms.Panel panel, int offset_x, int offset_y, int itterations, int delay)
-        {
-            Thread.Sleep(delay);
-            panel.SuspendLayout();
-            for (int ind = 0; ind < itterations; ind++)
-            {
-                RemotePanel.ColumnStyles[1].Width = RemotePanel.ColumnStyles[1].Width - offset_x;
-                Update();
-            }
-            panel.ResumeLayout();
-        }
-
-
         private void nightControlBox1_MouseClick(object sender, MouseEventArgs e)
         {
             Point ptn = e.Location;
@@ -352,12 +253,6 @@ namespace RSI_X_Desktop
             }
             RebindVideoWnd();
         }
-        #region Events
-        private void Audience_Resize(object sender, EventArgs e)
-        {
-            //CenterToScreen();
-        }
-        #endregion
 
         #region MembersControl
 
@@ -634,9 +529,9 @@ namespace RSI_X_Desktop
             Cursor.Current = cursorUpd ? Cursors.Hand : Cursors.Default;
         }
 
-        public void UpdateRecording()
+        public void UpdateRecording(bool isPublishing)
         {
-            IsRecoringActive = !IsRecoringActive;
+            IsRecoringActive = isPublishing;
             ExternWnd.Record.SvgImage = IsRecoringActive ?
                 DevExpress.Utils.Svg.SvgImage.FromFile("Resources\\recording_active.svg") :
                 DevExpress.Utils.Svg.SvgImage.FromFile("Resources\\recording.svg");

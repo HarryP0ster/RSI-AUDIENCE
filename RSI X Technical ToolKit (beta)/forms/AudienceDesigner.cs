@@ -21,6 +21,58 @@ namespace RSI_X_Desktop.forms
             InitializeComponent();
         }
 
+        #region Rectangles
+        public Rectangle HomeBtnRect
+        {
+            get => new Rectangle(
+                signOff.PointToScreen(Point.Empty).X,
+                signOff.PointToScreen(Point.Empty).Y,
+                signOff.Width,
+                signOff.Height);
+        }
+        public Rectangle LangBoxRect
+        {
+            get => new Rectangle(
+                langBox.PointToScreen(Point.Empty).X,
+                langBox.PointToScreen(Point.Empty).Y,
+                langBox.Width,
+                langBox.Height);
+        }
+        public Rectangle DevicesLblRect
+        {
+            get => new Rectangle(
+                devicesLabel.PointToScreen(Point.Empty).X,
+                devicesLabel.PointToScreen(Point.Empty).Y,
+                devicesLabel.Width,
+                devicesLabel.Height);
+        }
+        public Rectangle turnOrigRectangle
+        {
+            get => new Rectangle(
+                turnOrig.PointToScreen(Point.Empty).X,
+                turnOrig.PointToScreen(Point.Empty).Y,
+                turnOrig.Width,
+                turnOrig.Height);
+        }
+        public Rectangle LabelVideoRect
+        {
+            get => new Rectangle(
+            videoLabel.PointToScreen(Point.Empty).X,
+            videoLabel.PointToScreen(Point.Empty).Y,
+            videoLabel.Width,
+            videoLabel.Height);
+        }
+
+        public Rectangle RecordRect
+        {
+            get => new Rectangle(
+            Record.PointToScreen(Point.Empty).X,
+            Record.PointToScreen(Point.Empty).Y,
+            Record.Width,
+            Record.Height);
+        }
+        #endregion
+
         private void AudienceDesigner_Load(object sender, EventArgs e)
         {
             Owner.SizeChanged += delegate {
@@ -48,23 +100,8 @@ namespace RSI_X_Desktop.forms
                 langBox.Font = Constants.Bahnschrift16;
             else if (langBox.DeviceDpi >= (int)Constants.DPI.P100)
                 langBox.Font = Constants.Bahnschrift22;
-
-            //if (IconsPanel.DeviceDpi >= (int)EntranceForm.DPI.P150) 
-            //{
-            //var coll = IconsPanel.Columns;
-            //coll.BeginUpdate();
-            //coll[0].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
-            //coll[1].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
-            //coll[2].Style = DevExpress.Utils.Layout.TablePanelEntityStyle.Relative;
-
-            //coll[0].Width = 65F;
-            //coll[1].Width = 35F;
-            //coll[2].Width = 45F;
-
-            //IconsPanel.Columns.Insert()
-            //}
         }
-
+        #region RealTimeDesigner
         private void SetLeftSidePanelRegion()
         {
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
@@ -92,6 +129,7 @@ namespace RSI_X_Desktop.forms
                 IconsPanel.Columns[7].Width = 0;
             }
         }
+        #endregion
 
         #region EventHabdlers
         private void AudienceDesigner_Shown(object sender, EventArgs e)
@@ -144,7 +182,6 @@ namespace RSI_X_Desktop.forms
                 var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
                 bool ret = AgoraObject.JoinChannelSrc(InterRoom);
                 AgoraObject.MuteSrcAudioStream(false);
-                //RoomNameLabel.Focus();
             }
         }
         internal void mSwitchOriginal_CheckedChanged(object sender, EventArgs e)
@@ -165,7 +202,6 @@ namespace RSI_X_Desktop.forms
                 AgoraObject.MuteSrcAudioStream(true);
                 turnOrig.ItemAppearance.Normal.FillColor = Color.White;
             }
-            //mSwitchOriginal.Checked = !IsOriginal;
             DebugWriter.WriteTime($"change floor channel: {IsOriginal}");
 
             langBox.Enabled = IsOriginal;
@@ -193,9 +229,6 @@ namespace RSI_X_Desktop.forms
             if ((Owner as Audience).devices != null && (Owner as Audience).devices.IsDisposed == false)
                 (Owner as Audience).devices.UpdateSoundTrackBar();
         }
-
-
-        #endregion
 
         internal void audioLabel_MouseLeave(object sender, EventArgs e)
         {
@@ -249,66 +282,6 @@ namespace RSI_X_Desktop.forms
             devicesLabel.ItemAppearance.Normal.BorderThickness = 0;
         }
 
-        public Rectangle HomeBtnRect
-        {
-            get => new Rectangle(
-                signOff.PointToScreen(Point.Empty).X, 
-                signOff.PointToScreen(Point.Empty).Y, 
-                signOff.Width,
-                signOff.Height);
-        }
-        public Rectangle LangBoxRect
-        {
-            get => new Rectangle(
-                langBox.PointToScreen(Point.Empty).X,
-                langBox.PointToScreen(Point.Empty).Y,
-                langBox.Width,
-                langBox.Height);
-        }
-        public Rectangle DevicesLblRect
-        {
-            get => new Rectangle(
-                devicesLabel.PointToScreen(Point.Empty).X,
-                devicesLabel.PointToScreen(Point.Empty).Y,
-                devicesLabel.Width,
-                devicesLabel.Height);
-        }
-        public Rectangle turnOrigRectangle 
-        { 
-            get => new Rectangle(
-                turnOrig.PointToScreen(Point.Empty).X, 
-                turnOrig.PointToScreen(Point.Empty).Y, 
-                turnOrig.Width, 
-                turnOrig.Height); 
-        }
-        public Rectangle LabelVideoRect 
-        {
-            get => new Rectangle(
-            videoLabel.PointToScreen(Point.Empty).X,
-            videoLabel.PointToScreen(Point.Empty).Y,
-            videoLabel.Width,
-            videoLabel.Height);
-        }
-
-        public Rectangle RecordRect
-        {
-            get => new Rectangle(
-            Record.PointToScreen(Point.Empty).X,
-            Record.PointToScreen(Point.Empty).Y,
-            Record.Width,
-            Record.Height);
-        }
-
-        private void langBox_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (!IsOriginal)
-            {
-                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
-                bool ret = AgoraObject.JoinChannelSrc(InterRoom);
-                AgoraObject.MuteSrcAudioStream(false);
-            }
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             Point oldPos = Cursor.Position;
@@ -335,5 +308,6 @@ namespace RSI_X_Desktop.forms
         {
             (Owner as Audience).Record_Click(sender, e);
         }
+        #endregion
     }
 }

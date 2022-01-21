@@ -128,16 +128,6 @@ namespace RSI_X_Desktop.forms
                 btn.Height = 35;
                 btn.Font = new Font("Segoe UI Semibold", 12);
                 btn.Cursor = Cursors.Hand;
-                //if (!Order)
-                //{
-                //btn.Location = new Point(0, defHeight * offset_l);
-                //offset_l++;
-                //}
-                //else
-                //{
-                //    btn.Location = new Point(284, defHeight * offset_r);
-                //    offset_r++;
-                //}
                 btn.Dock = DockStyle.Top;
                 btn.Show();
                 Order = !Order;
@@ -202,7 +192,7 @@ namespace RSI_X_Desktop.forms
 
             IsPublishing = true;
             btnStart.Text = StopWord;
-            AgoraObject.GetWorkForm.UpdateRecording();
+            AgoraObject.GetWorkForm.UpdateRecording(true);
         }
         internal void UnPublish()
         {
@@ -220,7 +210,7 @@ namespace RSI_X_Desktop.forms
 
             IsPublishing = false;
             btnStart.Text = StartWord;
-            AgoraObject.GetWorkForm.UpdateRecording();
+            AgoraObject.GetWorkForm.UpdateRecording(false);
         }
         private void KillRecProcess()
         {
@@ -287,6 +277,11 @@ namespace RSI_X_Desktop.forms
         private void materialShowTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //
+        }
+
+        private void Record_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UnPublish();
         }
     }
 }
