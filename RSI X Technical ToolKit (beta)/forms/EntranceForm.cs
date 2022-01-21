@@ -16,8 +16,6 @@ namespace RSI_X_Desktop.forms
     {
         LoginWnd loginWnd;
         TableLayoutPanel LoginTable = new();
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, Int32 wMsg, bool wParam, Int32 lParam);
         public static EntranceForm _instance;
         public EntranceForm()
         {
@@ -27,11 +25,8 @@ namespace RSI_X_Desktop.forms
 
         private void ShowLogin()
         {
-            SendMessage(this.Handle, 11, false, 0);
             formTheme1.Controls.Remove(panel1);
             formTheme1.Controls.Add(LoginTable);
-            SendMessage(this.Handle, 11, true, 0);
-            Refresh();
             loginWnd.Show(this);
         }
 
@@ -112,11 +107,8 @@ namespace RSI_X_Desktop.forms
         private void backButton_Click(object sender, EventArgs e)
         {
             loginWnd.Hide();
-            SendMessage(this.Handle, 11, false, 0);
             formTheme1.Controls.Remove(LoginTable);
             formTheme1.Controls.Add(panel1);
-            SendMessage(this.Handle, 11, true, 0);
-            Refresh();
         }
 
         private void LoginRegion()
