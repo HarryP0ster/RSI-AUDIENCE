@@ -131,11 +131,46 @@ namespace RSI_X_Desktop.forms
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Font CommonFont = Constants.Bahnschrift12;
+            int dpi = (sender as Control).DeviceDpi;
+
+            switch (dpi)
+            {
+                case (int)Constants.DPI.P100:
+                    CommonFont = Constants.Bahnschrift12;
+                    break;
+                case (int)Constants.DPI.P125:
+                    CommonFont = Constants.Bahnschrift10;
+                    break;
+                case (int)Constants.DPI.P150:
+                    CommonFont = Constants.Bahnschrift10;
+                    break;
+                case (int)Constants.DPI.P175:
+                    CommonFont = Constants.Bahnschrift8;
+                    break;
+            }
+            string buildDate = $"Build date: {GetBuildDate()}";
+            Size sz = TextRenderer.MeasureText(buildDate, CommonFont);
+
             Brush br = new SolidBrush(Color.LightGray);
 
-            e.Graphics.TranslateTransform((sender as Control).Width - 140, (sender as Control).Height - 30);
+            e.Graphics.TranslateTransform((sender as Control).Width - sz.Width - 5, (sender as Control).Height - 30);
+            e.Graphics.DrawString(buildDate, CommonFont, br, 0, 0);
+        }
 
-            e.Graphics.DrawString("Build date DD :: MM :: YY", CommonFont, br, 0, 0);
+        private static string GetBuildDate()
+        {
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            var version = assembly.GetName().Version;
+
+            var dt = new DateTime(2000, 1, 1, 0, 0, 0);
+            dt = dt.AddDays(version.Build);
+            dt = dt.AddSeconds(version.Revision * 2);
+
+#if DEBUG
+            return $"{dt:dd-MM-yyyy hh:mm}";
+#else
+            return $"{dt:dd-MM-yyyy}";
+#endif
         }
     }
 }
