@@ -64,7 +64,7 @@ namespace RSI_X_Desktop.forms
             LoginTable.Controls.Add(LoginBackground, 0, 0);
             LoginTable.Controls.Add(backButton, 0, 1);
             LoginTable.Dock = DockStyle.Fill;
-            LoginTable.BackgroundImage = Properties.Resources.BckgFade;
+            //LoginTable.BackgroundImage = Properties.Resources.BckgFade;
             LoginTable.BackgroundImageLayout = ImageLayout.Stretch;
             LoginTable.BackColor = Color.FromArgb(97, 54, 79);
             LoginTable.Paint += panel1_Paint;

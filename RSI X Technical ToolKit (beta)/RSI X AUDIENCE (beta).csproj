@@ -5,7 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>RSI_X_Desktop</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
-    <AssemblyName>RSI X Desktop</AssemblyName>
+    <AssemblyName>RSI X Audience</AssemblyName>
     <StartupObject>RSI_X_Desktop.Program</StartupObject>
     <ApplicationIcon>Resources\logotype.ico</ApplicationIcon>
     <Platforms>AnyCPU;ARM32;ARM64</Platforms>
