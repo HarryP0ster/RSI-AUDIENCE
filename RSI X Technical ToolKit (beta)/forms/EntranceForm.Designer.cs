@@ -74,7 +74,6 @@ namespace RSI_X_Desktop.forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(54)))), ((int)(((byte)(79)))));
-            this.panel1.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.BckgFade;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.ColumnCount = 1;
             this.panel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -125,16 +124,14 @@ namespace RSI_X_Desktop.forms
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.JoinBtn, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.svgImageBox2, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.svgImageBox2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.backButton, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 261);
@@ -151,7 +148,7 @@ namespace RSI_X_Desktop.forms
             this.JoinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JoinBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.JoinBtn.Location = new System.Drawing.Point(286, 65);
+            this.JoinBtn.Location = new System.Drawing.Point(312, 65);
             this.JoinBtn.Margin = new System.Windows.Forms.Padding(3, 65, 3, 65);
             this.JoinBtn.Name = "JoinBtn";
             this.JoinBtn.Size = new System.Drawing.Size(182, 281);
@@ -166,7 +163,7 @@ namespace RSI_X_Desktop.forms
             this.svgImageBox2.BackgroundImage = global::RSI_X_Desktop.Properties.Resources.ButtonShadow;
             this.svgImageBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.svgImageBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.svgImageBox2.Location = new System.Drawing.Point(524, 65);
+            this.svgImageBox2.Location = new System.Drawing.Point(500, 65);
             this.svgImageBox2.Margin = new System.Windows.Forms.Padding(3, 65, 3, 65);
             this.svgImageBox2.Name = "svgImageBox2";
             this.svgImageBox2.Size = new System.Drawing.Size(182, 281);
@@ -174,6 +171,7 @@ namespace RSI_X_Desktop.forms
             this.svgImageBox2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox2.SvgImage")));
             this.svgImageBox2.TabIndex = 3;
             this.svgImageBox2.Text = "svgImageBox2";
+            this.svgImageBox2.Visible = false;
             // 
             // backButton
             // 
