@@ -63,6 +63,9 @@ namespace ConsoleAppOut
             Rtc.Initialize(new RtcEngineContext(AppID));
             audioInDeviceManager = Rtc.CreateAudioRecordingDeviceManager();
             audioOutDeviceManager = Rtc.CreateAudioPlaybackDeviceManager();
+
+            Rtc.SetChannelProfile(CHANNEL_PROFILE_TYPE.CHANNEL_PROFILE_GAME);
+            Rtc.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_AUDIENCE);
         }
 
         public static ERROR_CODE SetupOutputDevices(string ind)

@@ -86,7 +86,7 @@ namespace RSI_X_Desktop
         {
             ERROR_CODE res = ERROR_CODE.ERR_OK;
 
-            AgoraObject.Rtc.SetChannelProfile(CHANNEL_PROFILE_TYPE.CHANNEL_PROFILE_COMMUNICATION);
+            AgoraObject.Rtc.SetChannelProfile(CHANNEL_PROFILE_TYPE.CHANNEL_PROFILE_GAME);
             AgoraObject.Rtc.SetClientRole(CLIENT_ROLE_TYPE.CLIENT_ROLE_AUDIENCE);
             AgoraObject.Rtc.EnableVideo();
             AgoraObject.Rtc.EnableLocalVideo(false);

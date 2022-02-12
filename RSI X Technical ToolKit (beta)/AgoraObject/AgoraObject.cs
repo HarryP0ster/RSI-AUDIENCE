@@ -177,10 +177,8 @@ namespace RSI_X_Desktop
             options.autoSubscribeAudio = !IsAllRemoteAudioMute;
             options.autoSubscribeVideo = !IsAllRemoteVideoMute;
 
-
             //ERROR_CODE ret = m_channelHost.JoinChannel(token, info, nUID, options);
             ERROR_CODE ret = m_channelHost.JoinChannelWithUserAccount(token, NickCenter.ToAudienceNick(), options);
-
 
             m_channelHostJoin = (0 == ret);
 
