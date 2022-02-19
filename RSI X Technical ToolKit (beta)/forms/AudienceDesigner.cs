@@ -82,11 +82,7 @@ namespace RSI_X_Desktop.forms
                 SetLeftSidePanelRegion();
                 SighnOffToCenter();
 
-                IconsPanel.Dock = DockStyle.None;
-                if (!IconsScroll.HorizontalScroll.Visible)
-                    IconsPanel.Dock = DockStyle.Fill;
-                else
-                    IconsPanel.Dock = DockStyle.Left;
+                PanelFill();
             };
 
             AllowTransparency = true;
@@ -97,6 +93,7 @@ namespace RSI_X_Desktop.forms
             AudioColorUpdate();
             VideoColorUpdate();
             langBox_EnabledChanged(null, null);
+            PanelFill();
 
             if (langBox.DeviceDpi >= (int)Constants.DPI.P175)
                 langBox.Font = Constants.Bahnschrift12;
@@ -317,5 +314,14 @@ namespace RSI_X_Desktop.forms
             (Owner as Audience).Record_Click(sender, e);
         }
         #endregion
+
+        void PanelFill()
+        {
+            IconsPanel.Dock = DockStyle.None;
+            if (!IconsScroll.HorizontalScroll.Visible)
+                IconsPanel.Dock = DockStyle.Fill;
+            else
+                IconsPanel.Dock = DockStyle.Left;
+        }
     }
 }
