@@ -31,9 +31,13 @@ namespace RSI_X_Desktop
         private Dictionary<uint, PictureBox> hostBroadcasters = new();
         bool IsRecoringActive;
 
+        Size minimizedSize = new Size(1280, 800);
+        bool maximized = false;
+
         public Audience()
         {
             InitializeComponent();
+            minimizedSize = new Size((int)(1280 * EntranceForm.wndScale.Width), (int)(800 * EntranceForm.wndScale.Height));
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
         }
 
@@ -45,7 +49,7 @@ namespace RSI_X_Desktop
             RemotePanel.ColumnStyles[1].Width = 0;
             this.DoubleBuffered = true;
             FormAudience.Parent = this;
-            ResizeForm(new Size(1280, 800), this);
+            //ResizeForm(new Size(1280, 800), this);
 
             RemotePanel.ColumnStyles[1].Width = 0;
             CallRefresh = new RefreshRemoteWnd(RefreshDelegate);
@@ -59,7 +63,11 @@ namespace RSI_X_Desktop
             bottomPanel.Show(this);
             bottomPanel.Enabled = false;
             ExternWnd.Show(this);
-        }
+
+            ResizeForm(minimizedSize, this);
+            ResizeForm(minimizedSize, FormAudience);
+            RebindVideoWnd();
+    }
 
         public void RefreshDelegate(bool state)
         {
@@ -241,16 +249,17 @@ namespace RSI_X_Desktop
             Point ptn = e.Location;
             if (!(ptn.X > 46 && ptn.X < 94)) return;
             this.BringToFront();
-            if (this.Size.Width == 1280)
+            if (!maximized)
             {
                 ResizeForm(Screen.PrimaryScreen.WorkingArea.Size, this);
                 ResizeForm(Screen.PrimaryScreen.WorkingArea.Size, FormAudience);
             }
             else
             {
-                ResizeForm(new Size(1280, 800), this);
-                ResizeForm(new Size(1280, 800), FormAudience);
+                ResizeForm(minimizedSize, this);
+                ResizeForm(minimizedSize, FormAudience);
             }
+            maximized = !maximized;
             RebindVideoWnd();
         }
 

@@ -81,6 +81,12 @@ namespace RSI_X_Desktop.forms
                 Size = Owner.Size;
                 SetLeftSidePanelRegion();
                 SighnOffToCenter();
+
+                IconsPanel.Dock = DockStyle.None;
+                if (!IconsScroll.HorizontalScroll.Visible)
+                    IconsPanel.Dock = DockStyle.Fill;
+                else
+                    IconsPanel.Dock = DockStyle.Left;
             };
 
             AllowTransparency = true;
@@ -177,12 +183,12 @@ namespace RSI_X_Desktop.forms
         private void langBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Выпадающий список языков
-            if (!IsOriginal)
-            {
-                var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
-                bool ret = AgoraObject.JoinChannelSrc(InterRoom);
-                AgoraObject.MuteSrcAudioStream(false);
-            }
+            var InterRoom = AgoraObject.GetComplexToken().GetTargetRoomsAt(langBox.SelectedIndex + 1);
+            bool ret = AgoraObject.JoinChannelSrc(InterRoom);
+            AgoraObject.MuteSrcAudioStream(false);
+
+            if (IsOriginal)
+                mSwitchOriginal_CheckedChanged(sender, e);
         }
         internal void mSwitchOriginal_CheckedChanged(object sender, EventArgs e)
         {
@@ -193,7 +199,7 @@ namespace RSI_X_Desktop.forms
                 AgoraObject.JoinChannelSrc(InterRoom);
                 AgoraObject.MuteHostAudioStream(true);
                 AgoraObject.MuteSrcAudioStream(AgoraObject.IsAllRemoteAudioMute);
-                langBox.Focus();
+                //langBox.Focus();
                 turnOrig.ItemAppearance.Normal.FillColor = Color.Empty;
             }
             else
@@ -204,7 +210,7 @@ namespace RSI_X_Desktop.forms
             }
             DebugWriter.WriteTime($"change floor channel: {IsOriginal}");
 
-            langBox.Enabled = IsOriginal;
+            //langBox.Enabled = IsOriginal;
             IsOriginal = !IsOriginal;
         }
         internal void labelVideo_Click(object sender, EventArgs e)
@@ -286,12 +292,14 @@ namespace RSI_X_Desktop.forms
         {
             Point oldPos = Cursor.Position;
             timer1.Stop();
+            Cursor.Hide();
             Cursor.Position = PointToScreen(new Point(Width / 2, Height / 2));
             AudioColorUpdate();
             VideoColorUpdate();
             Cursor.Position = oldPos;
             System.Threading.Thread.Sleep(100);
             canSelect = true;
+            Cursor.Show();
         }
 
         internal void Record_MouseMove(object sender, MouseEventArgs e)
