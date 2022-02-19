@@ -47,7 +47,6 @@ namespace RSI_X_Desktop
             this.DoubleBuffered = true;
             SignOffToCenter();
             FormAudience.Parent = this;
-            ResizeForm(new Size(1280, 800), this);
 
             RemotePanel.ColumnStyles[1].Width = 0;
             CallRefresh = new RefreshRemoteWnd(RefreshDelegate);
