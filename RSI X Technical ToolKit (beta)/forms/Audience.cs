@@ -28,11 +28,13 @@ namespace RSI_X_Desktop
         private bool AddOrder = false;
         private bool[] TakenPages = new bool[1];
         private Dictionary<uint, PictureBox> hostBroadcasters = new();
-
+        Size minimizedSize = new Size(1280, 800);
+        bool isMaximized = false;
 
         public Audience()
         {
             InitializeComponent();
+            minimizedSize = new Size((int)(1280 * EntranceForm.wndScale.Width), (int)(800 * EntranceForm.wndScale.Height));
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
         }
 
@@ -59,6 +61,10 @@ namespace RSI_X_Desktop
             bottomPanel.Show(this);
             bottomPanel.Enabled = false;
             ExternWnd.Show(this);
+
+            ResizeForm(minimizedSize, this);
+            ResizeForm(minimizedSize, FormAudience);
+            RebindVideoWnd();
         }
         private void SignOffToCenter()
         {
@@ -324,16 +330,17 @@ namespace RSI_X_Desktop
             Point ptn = e.Location;
             if (!(ptn.X > 46 && ptn.X < 94)) return;
             this.BringToFront();
-            if (this.Size.Width == 1280)
+            if (!isMaximized)
             {
                 ResizeForm(Screen.PrimaryScreen.WorkingArea.Size, this);
                 ResizeForm(Screen.PrimaryScreen.WorkingArea.Size, FormAudience);
             }
             else
             {
-                ResizeForm(new Size(1280, 800), this);
-                ResizeForm(new Size(1280, 800), FormAudience);
+                ResizeForm(minimizedSize, this);
+                ResizeForm(minimizedSize, FormAudience);
             }
+            isMaximized = !isMaximized;
             RebindVideoWnd();
         }
         #region Events

@@ -358,7 +358,7 @@
         MDYwNUMxNTkuODA1IDE4LjY0NjUgMTU5Ljk4IDE5LjA5MjQgMTYwLjMzMiAxOS4zOTg0QzE2MC42OSAx
         OS43MDQ0IDE2MS4xODggMTkuODU3NCAxNjEuODI2IDE5Ljg1NzRaTTE3MS42NiAyMUgxNzAuMDM5VjUu
         ODA0NjlIMTcxLjY2VjIxWiIgZmlsbD0id2hpdGUiIC8+DQogIDxjaXJjbGUgY3g9IjcuNSIgY3k9IjEz
-        LjUiIHI9IjciIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMiIgc3Ryb2tlPSIjQ0VDRUNFIiAv
+        LjUiIHI9IjciIGZpbGw9IkJsYWNrIiBmaWxsLW9wYWNpdHk9IjAuNCIgc3Ryb2tlPSIjQ0VDRUNFIiAv
         Pg0KPC9zdmc+Cw==
 </value>
   </data>
@@ -653,6 +653,9 @@
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>85</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="AudienceDesigner.IconOptions.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
